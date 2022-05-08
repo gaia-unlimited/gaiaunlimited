@@ -7,7 +7,6 @@ from scipy import spatial
 from numba import jit
 import astropy.coordinates as coord
 import astropy.units as u
-from icecream import ic
 
 from time import perf_counter
 
@@ -195,6 +194,7 @@ class GaiaScanningLaw(object):
         # cache them to local disk
         tree_cache_path = GAIA_SCANNINLAW_DATADIR / (f"{self.version}-cached-trees.p")
         if tree_cache_path.exists():
+            print(f"Reading existing kdtree from {tree_cache_path}")
             with open(tree_cache_path, "rb") as f:
                 self.tree_fov1, self.tree_fov2 = pickle.load(f)
         else:
@@ -215,6 +215,7 @@ class GaiaScanningLaw(object):
             tree_fov2 = spatial.KDTree(xyz_fov2)
             if not datadir.exists():
                 os.mkdir(datadir)
+            print(f"Writing cached kdtree to {tree_cache_path}")
             with open(tree_cache_path, "wb") as f:
                 pickle.dump((tree_fov1, tree_fov2), f)
             self.tree_fov1, self.tree_fov2 = tree_fov1, tree_fov2
@@ -242,7 +243,6 @@ class GaiaScanningLaw(object):
             tidx = tree_fov.query_ball_point(
                 query_coord_xyz, self.r_search, return_sorted=True
             )
-            ic(tidx)
             if len(tidx) == 0:
                 return
             tidx = np.array(tidx)
