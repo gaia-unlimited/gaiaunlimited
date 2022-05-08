@@ -1,0 +1,11 @@
+﻿start [rev],end [rev],duration [rev],comment
+1088.1200,1090.2000,2.0800,VPU-7 anomaly
+1100.4443,1100.4915,0.0472,Unknown (most likely ground-processing issue)
+1105.0859,1105.3984,0.3125,Micro-propulsion sub-system calibration
+1148.2457,1148.3068,0.0611,Unknown (most likely ground-processing issue)
+1185.1623,1185.3540,0.1917,Station-keeping manoeuvre #10.1
+1189.1651,1189.3540,0.1889,Station-keeping manoeuvre #10.2
+1316.4920,1324.1010,7.6090,Decontamination (Table 1 in Riello et al. 2018)
+1443.9500,1443.9750,0.0250,Refocussing (Table 1 in Riello et al. 2018)
+2330.6160,2338.9620,8.3460,Decontamination (Table 1 in Riello et al. 2018)
+2574.6440,2574.7280,0.0840,Refocussing (Table 1 in Riello et al. 2018)
