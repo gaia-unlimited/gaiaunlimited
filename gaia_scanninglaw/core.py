@@ -7,7 +7,6 @@ from scipy import spatial
 from numba import jit
 import astropy.coordinates as coord
 import astropy.units as u
-from icecream import ic
 
 from time import perf_counter
 
@@ -172,7 +171,8 @@ class GaiaScanningLaw(object):
         self._setup_fov_trees()
 
         # this radius guarantees one sample on either side of the FoV front
-        self.r_search = angle2dist3d(0.4 * u.deg)
+        # self.r_search = angle2dist3d(0.4 * u.deg)
+        self.r_search = np.tan(np.deg2rad(0.35*np.sqrt(2) + 25./3600))
 
         self.gaplist = gaplist
         if gaplist is None:
@@ -198,8 +198,10 @@ class GaiaScanningLaw(object):
             with open(tree_cache_path, "rb") as f:
                 self.tree_fov1, self.tree_fov2 = pickle.load(f)
         else:
-            offset_ac = 221 * u.arcsec
-            offset_al = -0.5 * u.deg
+            # offset_ac = 221 * u.arcsec
+            # offset_al = -0.5 * u.deg
+            offset_ac = 0 * u.arcsec
+            offset_al = 0 * u.deg
             basic_angle = 106.5 * u.deg
 
             x, y, z = coord.spherical_to_cartesian(1, offset_ac, offset_al)
@@ -236,13 +238,12 @@ class GaiaScanningLaw(object):
         for tree_fov, offset, lon0 in zip(
             [self.tree_fov1, self.tree_fov2],
             [221 / 3600.0, -221 / 3600.0],
-            [-0.5, 106.5 - 0.5],
+            [0, 106.5],
         ):
             # first drastically cutdown snapshots to check by positional matching
             tidx = tree_fov.query_ball_point(
                 query_coord_xyz, self.r_search, return_sorted=True
             )
-            ic(tidx)
             if len(tidx) == 0:
                 return
             tidx = np.array(tidx)
@@ -252,7 +253,8 @@ class GaiaScanningLaw(object):
                 "nij,j->ni", self.rotmat[tidx], query_coord_xyz
             )
             lon, lat = cartesian_to_spherical(query_coord_xyz_body_t)
-            fovcond = (np.abs(lat - offset) < 0.35) & (lon > lon0)
+            # fovcond = (np.abs(lat - offset) < 0.35) & (lon > lon0)
+            fovcond = (np.abs(lat - offset) < 0.35) & (np.abs(lon-lon0) < 1.0)
             tidx_in = tidx[fovcond]
             # scanning law is sampled 10s and each scan takes ~6 hrs (21600s)
             tidx_scan = tidx_in[np.insert(tidx_in[1:] - tidx_in[:-1] > 360, 0, True)]
