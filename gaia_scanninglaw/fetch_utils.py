@@ -19,9 +19,18 @@ class DownloadError(Exception):
 
 # adapted from https://gist.github.com/yanqd0/c13ed29e29432e3cf3e7c38467f42f51
 def download(url: str, file, desc=None, chunk_size=1024, md5sum=None):
-    """
-    Download file from a url.
-    """
+    """Download file from a url.
+
+    Args:
+        url (str): url string
+        file (file object): file object to write the content to.
+        desc (str, optional): Description of progressbar. Defaults to None.
+        chunk_size (int, optional): Chunk size to iteratively update progrss and md5sum. Defaults to 1024.
+        md5sum (str, optional): The expected md5sum to check against. Defaults to None.
+
+    Raises:
+        DownloadError: raised when md5sum differs.
+    """    
     resp = requests.get(url, stream=True)
     total = int(resp.headers.get("content-length", 0))
     sig = hashlib.md5()
@@ -89,8 +98,12 @@ def download_scanninglaw(name):
     
     This function downloads and normalizes column names of each data file
     and saves the resulting pandas.DataFrame as pickle.
+
+    Output directory is ~/.gaia_scanninglaw by default but can be set with
+    the environment variable GAIA_SCANNINGLAW_DATADIR.
     
-    name(str) : scanning law name
+    Args:
+        name(str) : scanning law name
     """
     if name not in scanlaw_datafiles and name != 'all':
         raise ValueError("{name} is not a valid scanning law name; should be one of {names}".format(
