@@ -12,10 +12,29 @@ from time import perf_counter
 
 from gaia_scanninglaw.fetch_utils import download_scanninglaw
 
-# __all__ = ["find_nearest", "make_rotmat", "GaiaScanningLaw"]
+__all__ = ["find_nearest", "make_rotmat", "GaiaScanningLaw",
+           "obmt2tcbgaia", "angle2dist3d", "check_gaps"]
 
 datadir = Path(__file__).parent / "data"
-GAIA_SCANNINLAW_DATADIR = Path(os.getenv("GAIA_SCANNINGLAW_DATADIR", "~/.gaia_scanninglaw")).expanduser().resolve()
+GAIA_SCANNINLAW_DATADIR = (
+    Path(os.getenv("GAIA_SCANNINGLAW_DATADIR", "~/.gaia_scanninglaw"))
+    .expanduser()
+    .resolve()
+)
+
+
+def obmt2tcbgaia(obmt):
+    """
+    Calculate Gaia Barycenter coordinate time (TCB, days) from OnBoard Mission Time (OBMT, revs).
+
+    Args:
+        obmt: OBMT in revs.
+
+    Returns:
+        tcb: TCB in days.
+    """    
+    return (obmt - 1717.6256) / 4 - (2455197.5 - 2457023.5 - 0.25)
+
 
 @jit(nopython=True)
 def _find_nearest(array, value):
@@ -44,7 +63,7 @@ def find_nearest(array, value):
 
 def make_rotmat(fov1_xyz, fov2_xyz):
     """Make rotational matrix from ICRS to Gaia body frame(ish).
-    
+
     Args:
     fov1_xyz (array-like): vector pointing to FoV1. Should have shape (..., 3)
     fov2_xyz (array-like): vector pointing to FoV2. Should have shape (..., 3)
@@ -80,6 +99,15 @@ def cartesian_to_spherical(xyz):
 
 # TODO jit
 def check_gaps(gaps, x):
+    """Check if values of array x falls in any gaps.
+
+    Args:
+        gaps (array): 2d array of [n_gaps, 2] defining lower and upper boundary of each gap.
+        x (array): values to check
+
+    Returns:
+        boolean array: True if outside of any gap False if not.
+    """    
     cond = np.full(x.shape, False)
     for i in range(gaps.shape[0]):
         cond = cond | ((x > gaps[i, 0]) & (x < gaps[i, 1]))
@@ -122,6 +150,7 @@ version_mapping = {
 }
 
 
+
 def obmt2tcbgaia(obmt):
     """
     Calculate Gaia Barycenter coordinate time (TCB, days) from OnBoard Mission Time (OBMT, revs).
@@ -132,10 +161,18 @@ def obmt2tcbgaia(obmt):
     Returns:
         tcb (:obj:`np.ndarray`): TCB (days).
     """
-    return (obmt - 1717.6256)/4 -  (2455197.5 - 2457023.5 - 0.25)
+    return (obmt - 1717.6256) / 4 - (2455197.5 - 2457023.5 - 0.25)
 
 
 class GaiaScanningLaw(object):
+
+    version_trange = {
+        "cogi_2020": [1192.13, 3750.56],
+        "cog3_2020": [1192.13, 3750.56],
+        "dr2_nominal": [1192.13, 3750.56],
+        "dr3_nominal": [1192.13, 5230.09],
+    }
+    
     def __init__(self, version="dr3_nominal", gaplist="dr3/Astrometry", **kwargs):
         """Initialize a version of Gaia's scanning law.
 
@@ -154,7 +191,7 @@ class GaiaScanningLaw(object):
         df_path = GAIA_SCANNINLAW_DATADIR / (version + ".pkl")
         if not df_path.exists():
             download_scanninglaw(version)
-        df = pd.read_pickle(df_path).sort_values(by=['tcb_at_gaia'])
+        df = pd.read_pickle(df_path).sort_values(by=["tcb_at_gaia"])
         self.pointingdf = df
 
         self.fov1 = coord.ICRS(
@@ -171,7 +208,8 @@ class GaiaScanningLaw(object):
         self._setup_fov_trees()
 
         # this radius guarantees one sample on either side of the FoV front
-        self.r_search = angle2dist3d(0.4 * u.deg)
+        # self.r_search = angle2dist3d(0.4 * u.deg)
+        self.r_search = np.tan(np.deg2rad(0.35 * np.sqrt(2) + 25.0 / 3600))
 
         self.gaplist = gaplist
         if gaplist is None:
@@ -182,6 +220,13 @@ class GaiaScanningLaw(object):
                 raise ValueError("gaplist is not valid.")
             self.gaps = pd.read_csv(gaplist_path).iloc[:, :2].to_numpy()
             self.gaps = obmt2tcbgaia(self.gaps)
+            self.gaps = np.concatenate(
+                [
+                    [[-np.inf, obmt2tcbgaia(self.version_trange[self.version][0])]],
+                    self.gaps,
+                    [[obmt2tcbgaia(self.version_trange[self.version][1]), np.inf]],
+                ]
+            )
 
     # def rotate_to_bodyframe(self, xyz_icrs):
     #     return
@@ -198,8 +243,10 @@ class GaiaScanningLaw(object):
             with open(tree_cache_path, "rb") as f:
                 self.tree_fov1, self.tree_fov2 = pickle.load(f)
         else:
-            offset_ac = 221 * u.arcsec
-            offset_al = -0.5 * u.deg
+            # offset_ac = 221 * u.arcsec
+            # offset_al = -0.5 * u.deg
+            offset_ac = 0 * u.arcsec
+            offset_al = 0 * u.deg
             basic_angle = 106.5 * u.deg
 
             x, y, z = coord.spherical_to_cartesian(1, offset_ac, offset_al)
@@ -237,7 +284,7 @@ class GaiaScanningLaw(object):
         for tree_fov, offset, lon0 in zip(
             [self.tree_fov1, self.tree_fov2],
             [221 / 3600.0, -221 / 3600.0],
-            [-0.5, 106.5 - 0.5],
+            [0., 106.5],
         ):
             # first drastically cutdown snapshots to check by positional matching
             tidx = tree_fov.query_ball_point(
@@ -252,7 +299,8 @@ class GaiaScanningLaw(object):
                 "nij,j->ni", self.rotmat[tidx], query_coord_xyz
             )
             lon, lat = cartesian_to_spherical(query_coord_xyz_body_t)
-            fovcond = (np.abs(lat - offset) < 0.35) & (lon > lon0)
+            # fovcond = (np.abs(lat - offset) < 0.35) & (lon > lon0)
+            fovcond = (np.abs(lat - offset) < 0.35) & (np.abs(lon - lon0) < 1.0)
             tidx_in = tidx[fovcond]
             # scanning law is sampled 10s and each scan takes ~6 hrs (21600s)
             tidx_scan = tidx_in[np.insert(tidx_in[1:] - tidx_in[:-1] > 360, 0, True)]
