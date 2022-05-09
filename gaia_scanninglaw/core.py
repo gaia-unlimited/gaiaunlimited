@@ -12,7 +12,8 @@ from time import perf_counter
 
 from gaia_scanninglaw.fetch_utils import download_scanninglaw
 
-# __all__ = ["find_nearest", "make_rotmat", "GaiaScanningLaw"]
+__all__ = ["find_nearest", "make_rotmat", "GaiaScanningLaw",
+           "obmt2tcbgaia", "angle2dist3d", "check_gaps"]
 
 datadir = Path(__file__).parent / "data"
 GAIA_SCANNINLAW_DATADIR = (
@@ -98,6 +99,15 @@ def cartesian_to_spherical(xyz):
 
 # TODO jit
 def check_gaps(gaps, x):
+    """Check if values of array x falls in any gaps.
+
+    Args:
+        gaps (array): 2d array of [n_gaps, 2] defining lower and upper boundary of each gap.
+        x (array): values to check
+
+    Returns:
+        boolean array: True if outside of any gap False if not.
+    """    
     cond = np.full(x.shape, False)
     for i in range(gaps.shape[0]):
         cond = cond | ((x > gaps[i, 0]) & (x < gaps[i, 1]))
