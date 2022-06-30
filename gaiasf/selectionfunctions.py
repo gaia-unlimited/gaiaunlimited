@@ -6,7 +6,6 @@ import xarray as xr
 
 from abc import ABC, abstractmethod
 import healpy as hp
-from xarray import Dataset
 from pathlib import Path
 import pickle
 from scipy.special import logit, expit
@@ -14,15 +13,12 @@ import xarray as xr
 import numpy as np
 import h5py
 
-from gaiasf.selectionfunctions import base
-
-
 __all__ = ["validate_ds", "SelectionFunctionBase"]
 
 
 def validate_ds(ds):
     """Validate if xarray.Dataset contains the expected selection function data."""
-    if not isinstance(ds, Dataset):
+    if not isinstance(ds, xr.Dataset):
         raise ValueError("ds must be an xarray.Dataset.")
     for required_coord in ["g", "ipix"]:
         if required_coord not in ds.coords:
@@ -40,15 +36,15 @@ class SelectionFunctionBase(ABC):
     Gaia G magnitude and healpix location, and optionally also on G-G_PR color.
 
     We use xarray.Dataset as the main data structure to contain this
-    multi-dimensional map. This Dataset instance should be attach as `.ds` and
-    have the following schema:
+    multi-dimensional map of probabilities. This Dataset instance should be
+    attach as `.ds` and have the following schema:
         - must contain data variable `p` and `logitp` for selection probability
         and logit of that selection probability.
         - must have coodinates
             - ipix for healpix id in int64 dtype
             - g for Gaia G magnitude
             - c for Gaia G - G_RP color
-    
+
     It is assumed that ipix is the full index array for the given healpix order
     with no missing index.
     """
@@ -66,23 +62,21 @@ class SelectionFunctionBase(ABC):
         #     raise TypeError()
         # TODO
         pass
-    
+
     def coord2healpix(self, coords):
-        #TODO: implement using coord2healpix
+        # TODO: implement using coord2healpix
         pass
 
     def from_conditions(self, conditions):
         # potential idea
-        #TODO: query for conditions and make Dataset from result
+        # TODO: query for conditions and make Dataset from result
         pass
-    
+
     def plot(self, *args, **kwargs):
         pass
-    
-    
 
 
-class DR3RVSSelectionFunction(base.SelectionFunctionBase):
+class DR3RVSSelectionFunction(SelectionFunctionBase):
     """Internal selection function for the RVS sample in DR3.
 
     This function gives the probability
