@@ -10,10 +10,10 @@ import astropy.units as u
 
 from time import perf_counter
 
-from gaia_scanninglaw.fetch_utils import download_scanninglaw
+from gaiasf import fetch_utils
 
 __all__ = ["find_nearest", "make_rotmat", "GaiaScanningLaw",
-           "obmt2tcbgaia", "angle2dist3d", "check_gaps"]
+           "obmt2tcbgaia", "angle2dist3d", "check_gaps", "cartesian_to_spherical"]
 
 datadir = Path(__file__).parent / "data"
 GAIA_SCANNINLAW_DATADIR = (
@@ -190,7 +190,7 @@ class GaiaScanningLaw(object):
         # Get pointing data
         df_path = GAIA_SCANNINLAW_DATADIR / (version + ".pkl")
         if not df_path.exists():
-            download_scanninglaw(version)
+            fetch_utils.download_scanninglaw(version)
         df = pd.read_pickle(df_path).sort_values(by=["tcb_at_gaia"])
         self.pointingdf = df
 

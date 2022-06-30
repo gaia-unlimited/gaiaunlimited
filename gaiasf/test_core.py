@@ -1,5 +1,5 @@
 import numpy as np
-from .core import find_nearest, GaiaScanningLaw
+from .scanninglaw import find_nearest, GaiaScanningLaw
 
 
 def test_find_nearest():
