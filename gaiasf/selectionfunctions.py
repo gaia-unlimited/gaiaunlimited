@@ -13,7 +13,9 @@ import xarray as xr
 import numpy as np
 import h5py
 
-__all__ = ["validate_ds", "SelectionFunctionBase"]
+from gaiasf import utils
+
+# __all__ = ["validate_ds", "SelectionFunctionBase", ]
 
 
 def validate_ds(ds):
@@ -29,7 +31,7 @@ def validate_ds(ds):
 
 
 # TODO: spec out base class and op for combining SFs
-class SelectionFunctionBase(ABC):
+class SelectionFunctionBase(object):
     """Base class for Gaia selection functions.
 
     Selection function is defined as the selection probability as a function of
@@ -48,6 +50,10 @@ class SelectionFunctionBase(ABC):
     It is assumed that ipix is the full index array for the given healpix order
     with no missing index.
     """
+
+    def __init__(self, ds):
+        validate_ds(ds)
+        self.ds = ds
 
     @property
     def order(self):
@@ -75,6 +81,23 @@ class SelectionFunctionBase(ABC):
     def plot(self, *args, **kwargs):
         pass
 
+    def query(self, coords, **kwargs):
+        ipix = utils.coord2healpix(coords, "icrs", self.nside, nest=True)
+        factors = set(self.ds["p"].dims) - set({"ipix"})
+        d = {}
+        for k in factors:
+            if k not in kwargs:
+                raise ValueError(f"{k} values are missing.")
+            d[k] = kwargs[k]
+        d["method"] = "nearest"
+        d["kwargs"] = dict(fill_value=None)  # extrapolates
+        print(ipix, d)
+        out = self.ds["p"].interp(ipix=ipix, **d)
+        return out.to_numpy()
+
+
+# class DownloadableSelectionFunction(object):
+
 
 class DR3RVSSelectionFunction(SelectionFunctionBase):
     """Internal selection function for the RVS sample in DR3.
@@ -85,8 +108,8 @@ class DR3RVSSelectionFunction(SelectionFunctionBase):
     """
 
     def __init__(self):
-        tmpdir = Path("~/Work/GaiaUnlimited/notebooks").expanduser()
-        with open(tmpdir / "wsdb-dr3-rvs-nk-g0_2-c0_4.pickle", "rb") as f:
+        datadir = utils.get_datadir()
+        with open(datadir / "wsdb-dr3-rvs-nk-g0_2-c0_4.pickle", "rb") as f:
             dr3 = pickle.load(f)
         df = dr3["df"].copy()
         df = df.loc[df["i_g"] <= 85]
@@ -97,11 +120,6 @@ class DR3RVSSelectionFunction(SelectionFunctionBase):
         dset_dr3 = dset_dr3.assign_coords(i_g=gcenters, i_c=ccenters)
         dset_dr3 = dset_dr3.rename({"i_g": "g", "i_c": "c"})
         self.ds = dset_dr3
-
-    def query(
-        self,
-    ):
-        pass
 
 
 # Selection functions ported from gaiaverse's work ----------------
@@ -135,11 +153,6 @@ class EDR3RVSSelectionFunction(object):
                 data_vars=dict(logitp=(["g", "c", "ipix6"], x)),
                 coords=dict(g=gcenters, c=ccenters),
             )
-
-    def query(
-        self,
-    ):
-        pass
 
 
 class DR2SelectionFunction:

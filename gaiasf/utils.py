@@ -1,7 +1,10 @@
+import os
+from pathlib import Path
 import numpy as np
 import healpy as hp
 
-__all__ = ['coord2healpix']
+__all__ = ["coord2healpix", "get_datadir"]
+
 
 def coord2healpix(coords, frame, nside, nest=True):
     """
@@ -27,19 +30,26 @@ def coord2healpix(coords, frame, nside, nest=True):
     else:
         c = coords
 
-    if hasattr(c, 'ra'):
+    if hasattr(c, "ra"):
         phi = c.ra.rad
-        theta = 0.5*np.pi - c.dec.rad
+        theta = 0.5 * np.pi - c.dec.rad
         return hp.pixelfunc.ang2pix(nside, theta, phi, nest=nest)
-    elif hasattr(c, 'l'):
+    elif hasattr(c, "l"):
         phi = c.l.rad
-        theta = 0.5*np.pi - c.b.rad
+        theta = 0.5 * np.pi - c.b.rad
         return hp.pixelfunc.ang2pix(nside, theta, phi, nest=nest)
-    elif hasattr(c, 'x'):
+    elif hasattr(c, "x"):
         return hp.pixelfunc.vec2pix(nside, c.x.kpc, c.y.kpc, c.z.kpc, nest=nest)
-    elif hasattr(c, 'w'):
+    elif hasattr(c, "w"):
         return hp.pixelfunc.vec2pix(nside, c.w.kpc, c.u.kpc, c.v.kpc, nest=nest)
     else:
         raise ValueError(
             'No method to transform from coordinate frame "{}" to HEALPix.'.format(
-                frame))
+                frame
+            )
+        )
+
+
+def get_datadir():
+    p = Path(os.getenv("GAIASF_DATADIR", "~/.gaiasf")).expanduser().resolve()
+    return p
