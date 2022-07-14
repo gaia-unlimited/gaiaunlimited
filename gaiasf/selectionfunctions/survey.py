@@ -29,8 +29,7 @@ class DR2SelectionFunction(fetch_utils.DownloadMixin):
 
     def __init__(self):
 
-        datafile = fetch_utils.get_datadir() / "cog_ii_dr2.h5"
-        with h5py.File(datafile) as f:
+        with h5py.File(self._get_data("cog_ii_dr2.h5")) as f:
             # NOTE: HEAL pixelisation is in ICRS in these files!
             # n_field heal order=12, nside=4096
             # neighbour_field heal order=10, nside=1024
@@ -72,6 +71,5 @@ class DR3SelectionFunction(DR2SelectionFunction):
     def __init__(self, *args, **kwargs):
         super(DR3SelectionFunction, self).__init__()
 
-        datafile = fetch_utils.get_datadir() / "n_field_dr3.h5"
-        with h5py.File(datafile) as f:
+        with h5py.File(self._get_data("n_field_dr3.h5")) as f:
             self.ds["n_field"] = ("ipix10", f["n_field"][()].astype(np.uint16))

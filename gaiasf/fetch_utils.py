@@ -142,12 +142,11 @@ def download_scanninglaw(name):
 class DownloadMixin:
     """Mixin for downloading data files."""
 
-    @classmethod
-    def download(cls):
+    def _get_data(self, filename):
         """Download data files specified in datafiles dict class attribute."""
-        datadir = get_datadir()
-        for fn, url in cls.datafiles.items():
-            outpath = datadir / fn
-            if not outpath.exists():
-                with open(outpath, "wb") as f:
-                    download(url, f)
+        fullpath = get_datadir() / filename
+        if not fullpath.exists():
+            url = self.datafiles[filename]
+            with open(fullpath, "wb") as f:
+                download(url, f)
+        return fullpath
