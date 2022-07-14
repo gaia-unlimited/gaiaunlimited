@@ -1,9 +1,25 @@
-import os
-from pathlib import Path
 import numpy as np
 import healpy as hp
+import astropy.coordinates as coord
+import astropy.units as u
 
 __all__ = ["coord2healpix"]
+
+
+def get_healpix_centers(order):
+    """Get centers of HEALPix as astropy coordinates.
+
+    Args:
+        order (int): The order of the pixelisation
+
+    Returns:
+        coords: coordinates of the centers.
+    """
+    nside = hp.order2nside(order)
+    npix = hp.order2npix(order)
+    ipix = np.arange(npix)
+    ra, dec = hp.pix2ang(nside, ipix, lonlat=True)
+    return coord.SkyCoord(ra * u.deg, dec * u.deg)
 
 
 def coord2healpix(coords, frame, nside, nest=True):
