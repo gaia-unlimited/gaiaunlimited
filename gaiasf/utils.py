@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import healpy as hp
 
-__all__ = ["coord2healpix", "get_datadir"]
+__all__ = ["coord2healpix"]
 
 
 def coord2healpix(coords, frame, nside, nest=True):
@@ -48,8 +48,3 @@ def coord2healpix(coords, frame, nside, nest=True):
                 frame
             )
         )
-
-
-def get_datadir():
-    p = Path(os.getenv("GAIASF_DATADIR", "~/.gaiasf")).expanduser().resolve()
-    return p

@@ -8,13 +8,18 @@ import requests
 import pandas as pd
 from tqdm import tqdm
 
-__all__ = ['download', 'download_scanninglaw']
+__all__ = ["download", "download_scanninglaw", "get_datadir", "DownloadMixin"]
 
 
 class DownloadError(Exception):
     """
     An exception that occurs while trying to download a file.
     """
+
+
+def get_datadir():
+    p = Path(os.getenv("GAIASF_DATADIR", "~/.gaiasf")).expanduser().resolve()
+    return p
 
 
 # adapted from https://gist.github.com/yanqd0/c13ed29e29432e3cf3e7c38467f42f51
@@ -30,11 +35,11 @@ def download(url: str, file, desc=None, chunk_size=1024, md5sum=None):
 
     Raises:
         DownloadError: raised when md5sum differs.
-    """    
+    """
     resp = requests.get(url, stream=True)
     total = int(resp.headers.get("content-length", 0))
     sig = hashlib.md5()
-    filename_from_url = url.split('/')[-1]
+    filename_from_url = url.split("/")[-1]
     if desc is None:
         desc = filename_from_url
     with io.BytesIO() as rawfile:
@@ -57,14 +62,14 @@ def download(url: str, file, desc=None, chunk_size=1024, md5sum=None):
                     + "  download: {}\n".format(sig.hexdigest())
                     + "  expected: {}\n".format(md5sum)
                 )
-        
+
         rawfile.seek(0)
         if filename_from_url.endswith("gz"):
             with gzip.open(rawfile) as tmp:
                 shutil.copyfileobj(tmp, file)
         else:
             shutil.copyfileobj(rawfile, file)
-    
+
     file.seek(0)
 
 
@@ -95,35 +100,54 @@ scanlaw_datafiles = {
 def download_scanninglaw(name):
     """
     Download scanning law datafiles if it does not already exist.
-    
+
     This function downloads and normalizes column names of each data file
     and saves the resulting pandas.DataFrame as pickle.
 
     Output directory is ~/.gaia_scanninglaw by default but can be set with
     the environment variable GAIA_SCANNINGLAW_DATADIR.
-    
+
     Args:
         name(str) : scanning law name
     """
-    if name not in scanlaw_datafiles and name != 'all':
-        raise ValueError("{name} is not a valid scanning law name; should be one of {names}".format(
-            name=name, names=scanlaw_datafiles.keys()
-        ))
-    
-    if name == 'all':
+    if name not in scanlaw_datafiles and name != "all":
+        raise ValueError(
+            "{name} is not a valid scanning law name; should be one of {names}".format(
+                name=name, names=scanlaw_datafiles.keys()
+            )
+        )
+
+    if name == "all":
         for k in scanlaw_datafiles.keys():
             download_scanninglaw(k)
     else:
         item = scanlaw_datafiles[name]
-        savedir = Path(os.getenv("GAIA_SCANNINGLAW_DATADIR", "~/.gaia_scanninglaw")).expanduser().resolve()
+        savedir = (
+            Path(os.getenv("GAIA_SCANNINGLAW_DATADIR", "~/.gaia_scanninglaw"))
+            .expanduser()
+            .resolve()
+        )
         savepath = savedir / (name + ".pkl")
         if savepath.exists():
             print("{savepath} already exists; doing nothing.".format(savepath=savepath))
             return
         with io.BytesIO() as f:
             desc = "Downloading {name} scanning law file".format(name=name)
-            download(item['url'], f, md5sum=item['md5sum'], desc=desc)
-            df = pd.read_csv(f).rename(columns=item['column_mapping'])
-            savedir.mkdir(exist_ok = True)
+            download(item["url"], f, md5sum=item["md5sum"], desc=desc)
+            df = pd.read_csv(f).rename(columns=item["column_mapping"])
+            savedir.mkdir(exist_ok=True)
             df.to_pickle(savepath)
 
+
+class DownloadMixin:
+    """Mixin for downloading data files."""
+
+    @classmethod
+    def download(cls):
+        """Download data files specified in datafiles dict class attribute."""
+        datadir = get_datadir()
+        for fn, url in cls.datafiles.items():
+            outpath = datadir / fn
+            if not outpath.exists():
+                with open(outpath, "wb") as f:
+                    download(url, f)
