@@ -1,14 +1,15 @@
 import os
 import pickle
 from pathlib import Path
-import pandas as pd
-import numpy as np
-from scipy import spatial
-from numba import jit
+
+# from time import perf_counter
+
 import astropy.coordinates as coord
 import astropy.units as u
-
-from time import perf_counter
+import numpy as np
+import pandas as pd
+from numba import jit
+from scipy import spatial
 
 from gaiasf import fetch_utils
 
@@ -155,19 +156,6 @@ version_mapping = {
         },
     },
 }
-
-
-def obmt2tcbgaia(obmt):
-    """
-    Calculate Gaia Barycenter coordinate time (TCB, days) from OnBoard Mission Time (OBMT, revs).
-
-    Args:
-        tcb (:obj:`np.ndarray`): OBMT (revs).
-
-    Returns:
-        tcb (:obj:`np.ndarray`): TCB (days).
-    """
-    return (obmt - 1717.6256) / 4 - (2455197.5 - 2457023.5 - 0.25)
 
 
 class GaiaScanningLaw:

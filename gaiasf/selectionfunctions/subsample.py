@@ -1,16 +1,12 @@
-import h5py
-import numpy as np
-import xarray as xr
-
-
-import healpy as hp
 import pickle
-from scipy.special import logit, expit
-import xarray as xr
-import numpy as np
-import h5py
 
-from gaiasf import utils, fetch_utils
+import h5py
+import healpy as hp
+import numpy as np
+import xarray as xr
+from scipy.special import expit, logit
+
+from gaiasf import fetch_utils, utils
 
 
 def validate_ds(ds):

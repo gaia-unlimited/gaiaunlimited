@@ -1,11 +1,12 @@
-from fileinput import filename
-import os, io
 import gzip
+import hashlib
+import io
+import os
 import shutil
 from pathlib import Path
-import hashlib
-import requests
+
 import pandas as pd
+import requests
 from tqdm import tqdm
 
 __all__ = ["download", "download_scanninglaw", "get_datadir", "DownloadMixin"]

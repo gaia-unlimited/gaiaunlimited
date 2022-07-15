@@ -1,7 +1,7 @@
-import numpy as np
-import healpy as hp
 import astropy.coordinates as coord
 import astropy.units as u
+import healpy as hp
+import numpy as np
 
 __all__ = ["coord2healpix"]
 

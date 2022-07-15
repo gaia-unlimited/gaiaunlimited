@@ -1,15 +1,10 @@
 import h5py
-import numpy as np
-from scipy import stats
-import xarray as xr
-
-
 import healpy as hp
-import xarray as xr
 import numpy as np
-import h5py
+import xarray as xr
+from scipy import stats
 
-from gaiasf import utils, fetch_utils
+from gaiasf import fetch_utils, utils
 
 __all__ = ["DR2SelectionFunction", "DR3SelectionFunction"]
 

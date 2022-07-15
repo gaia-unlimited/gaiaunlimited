@@ -1,4 +1,3 @@
-from logging import exception
 import numpy as np
 
 from gaiasf.selectionfunctions.survey import DR2SelectionFunction, DR3SelectionFunction
