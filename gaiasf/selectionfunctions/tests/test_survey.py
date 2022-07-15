@@ -1,6 +1,7 @@
+from logging import exception
 import numpy as np
 
-from gaiasf.selectionfunctions.survey import DR2SelectionFunction
+from gaiasf.selectionfunctions.survey import DR2SelectionFunction, DR3SelectionFunction
 from gaiasf.utils import get_healpix_centers
 
 
@@ -49,3 +50,15 @@ def test_dr2sf():
         ]
     )
     assert np.allclose(result, ans, atol=0.05)
+
+
+def test_dr3sf():
+    x = DR3SelectionFunction()
+    test_coords = get_healpix_centers(0)
+    gmag = np.ones_like(test_coords) * 21.0
+
+    try:
+        x.query(test_coords, gmag, use_modelT=True)
+        x.query(test_coords, gmag)
+    except:
+        assert False, "DR3 query failed."

@@ -22,6 +22,8 @@ class DR2SelectionFunction(fetch_utils.DownloadMixin):
     datafiles = {
         "cog_ii_dr2.h5": "https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/PDFOVC/NYV9DM"
     }
+    nside_n_field = 4096
+    nside_crowding = 1024
 
     def __init__(self):
 
@@ -37,8 +39,8 @@ class DR2SelectionFunction(fetch_utils.DownloadMixin):
                     theta=(["logrho", "g", "perc"], theta),
                     alpha=(["logrho", "g", "perc"], alpha),
                     beta=(["logrho", "g", "perc"], beta),
-                    n_field=("ipix12", f["n_field"][()].astype(np.uint16)),
-                    neighbour_field=(["ipix10"], f["neighbour_field"][()]),
+                    n_field=("ipix", f["n_field"][()].astype(np.uint16)),
+                    neighbour_field=(["ipix_logrho"], f["neighbour_field"][()]),
                 ),
                 coords=dict(
                     logrho=f["log10_rho_grid"][()],
@@ -46,10 +48,9 @@ class DR2SelectionFunction(fetch_utils.DownloadMixin):
                 ),
             )
         # Add logrho
-        nside_crowding = 1024
         ds["logrho_field"] = np.log10(
             np.maximum(1.0, ds["neighbour_field"])
-            / hp.nside2pixarea(nside_crowding, degrees=True)
+            / hp.nside2pixarea(self.nside_crowding, degrees=True)
         )
         self.ds = ds
 
@@ -65,19 +66,19 @@ class DR2SelectionFunction(fetch_utils.DownloadMixin):
         """
         if coords.shape != np.shape(gmag):
             raise ValueError(f"Input shape mismatch: {coords.shape} != {gmag.shape}")
-        ipix12 = utils.coord2healpix(coords, "icrs", 4096)
-        ipix10 = utils.coord2healpix(coords, "icrs", 1024)
-        logrho = self.ds["logrho_field"].sel(ipix10=ipix10).to_numpy()
+        ipix = utils.coord2healpix(coords, "icrs", self.nside_n_field)
+        ipix_logrho = utils.coord2healpix(coords, "icrs", self.nside_crowding)
+        logrho = self.ds["logrho_field"].sel(ipix_logrho=ipix_logrho).to_numpy()
 
         # NOTE: xr.DataArray's interp method calls scipy's interp1d or interpnd
         # depending on the input shape. The two methods do not have a consistent
         # keyword for `fill_value` when we want to force extrapolation.
         # For interp1d, it is 'extrapolate', for interpnd it is None.
         # Let's make input at least 1d array so that we can not worry about this.
-        ipix12 = np.atleast_1d(ipix12)
+        ipix = np.atleast_1d(ipix)
         gmag = np.atleast_1d(gmag)
         logrho = np.atleast_1d(logrho)
-        ns = self.ds["n_field"].sel(ipix12=ipix12).to_numpy()
+        ns = self.ds["n_field"].sel(ipix=ipix).to_numpy()
         kwargs = dict(
             method="nearest",
             kwargs=dict(fill_value=None),
@@ -125,9 +126,11 @@ class DR3SelectionFunction(DR2SelectionFunction):
     datafiles.update(
         {"n_field_dr3.h5": "https://dataverse.harvard.edu/api/access/datafile/4204267"}
     )
+    nside_n_field = 1024
+    nside_crowding = 1024
 
     def __init__(self, *args, **kwargs):
         super(DR3SelectionFunction, self).__init__()
 
         with h5py.File(self._get_data("n_field_dr3.h5")) as f:
-            self.ds["n_field"] = ("ipix10", f["n_field"][()].astype(np.uint16))
+            self.ds["n_field"] = ("ipix", f["n_field"][()].astype(np.uint16))
