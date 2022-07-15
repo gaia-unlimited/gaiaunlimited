@@ -12,8 +12,15 @@ from time import perf_counter
 
 from gaiasf import fetch_utils
 
-__all__ = ["find_nearest", "make_rotmat", "GaiaScanningLaw",
-           "obmt2tcbgaia", "angle2dist3d", "check_gaps", "cartesian_to_spherical"]
+__all__ = [
+    "find_nearest",
+    "make_rotmat",
+    "GaiaScanningLaw",
+    "obmt2tcbgaia",
+    "angle2dist3d",
+    "check_gaps",
+    "cartesian_to_spherical",
+]
 
 datadir = Path(__file__).parent / "data"
 GAIA_SCANNINLAW_DATADIR = (
@@ -32,7 +39,7 @@ def obmt2tcbgaia(obmt):
 
     Returns:
         tcb: TCB in days.
-    """    
+    """
     return (obmt - 1717.6256) / 4 - (2455197.5 - 2457023.5 - 0.25)
 
 
@@ -107,7 +114,7 @@ def check_gaps(gaps, x):
 
     Returns:
         boolean array: True if outside of any gap False if not.
-    """    
+    """
     cond = np.full(x.shape, False)
     for i in range(gaps.shape[0]):
         cond = cond | ((x > gaps[i, 0]) & (x < gaps[i, 1]))
@@ -150,7 +157,6 @@ version_mapping = {
 }
 
 
-
 def obmt2tcbgaia(obmt):
     """
     Calculate Gaia Barycenter coordinate time (TCB, days) from OnBoard Mission Time (OBMT, revs).
@@ -164,7 +170,7 @@ def obmt2tcbgaia(obmt):
     return (obmt - 1717.6256) / 4 - (2455197.5 - 2457023.5 - 0.25)
 
 
-class GaiaScanningLaw(object):
+class GaiaScanningLaw:
 
     version_trange = {
         "cogi_2020": [1192.13, 3750.56],
@@ -172,7 +178,7 @@ class GaiaScanningLaw(object):
         "dr2_nominal": [1192.13, 3750.56],
         "dr3_nominal": [1192.13, 5230.09],
     }
-    
+
     def __init__(self, version="dr3_nominal", gaplist="dr3/Astrometry", **kwargs):
         """Initialize a version of Gaia's scanning law.
 
@@ -284,7 +290,7 @@ class GaiaScanningLaw(object):
         for tree_fov, offset, lon0 in zip(
             [self.tree_fov1, self.tree_fov2],
             [221 / 3600.0, -221 / 3600.0],
-            [0., 106.5],
+            [0.0, 106.5],
         ):
             # first drastically cutdown snapshots to check by positional matching
             tidx = tree_fov.query_ball_point(
