@@ -1,4 +1,3 @@
-from icecream import ic
 import h5py
 import numpy as np
 from scipy import stats
@@ -59,7 +58,7 @@ class DR2SelectionFunction(fetch_utils.DownloadMixin):
 
         Args:
             coords: sky coordinates as an astropy coordinates instance.
-            gmag (float or array): G magnitudes.
+            gmag (float or array): G magnitudes. Should have the same shape as coords.
 
         Returns:
             prob: array of selection probabilities.
