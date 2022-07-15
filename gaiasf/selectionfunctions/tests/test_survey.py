@@ -29,7 +29,7 @@ def test_dr2sf():
             0.98232239,
         ]
     )
-    assert np.allclose(result, ans, atol=0.05)
+    assert np.allclose(result_T, ans_T, atol=0.05)
 
     result = x.query(test_coords, gmag)
     ans = np.array(
