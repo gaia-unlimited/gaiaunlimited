@@ -123,11 +123,7 @@ def download_scanninglaw(name):
             download_scanninglaw(k)
     else:
         item = scanlaw_datafiles[name]
-        savedir = (
-            Path(os.getenv("GAIA_SCANNINGLAW_DATADIR", "~/.gaia_scanninglaw"))
-            .expanduser()
-            .resolve()
-        )
+        savedir = get_datadir()
         savepath = savedir / (name + ".pkl")
         if savepath.exists():
             print("{savepath} already exists; doing nothing.".format(savepath=savepath))

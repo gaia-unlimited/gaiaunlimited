@@ -23,12 +23,7 @@ __all__ = [
     "cartesian_to_spherical",
 ]
 
-datadir = Path(__file__).parent / "data"
-GAIA_SCANNINLAW_DATADIR = (
-    Path(os.getenv("GAIA_SCANNINGLAW_DATADIR", "~/.gaia_scanninglaw"))
-    .expanduser()
-    .resolve()
-)
+pkgdatadir = Path(__file__).parent / "data"
 
 
 def obmt2tcbgaia(obmt):
@@ -182,7 +177,7 @@ class GaiaScanningLaw:
         self.version = version
 
         # Get pointing data
-        df_path = GAIA_SCANNINLAW_DATADIR / (version + ".pkl")
+        df_path = fetch_utils.get_datadir() / (version + ".pkl")
         if not df_path.exists():
             fetch_utils.download_scanninglaw(version)
         df = pd.read_pickle(df_path).sort_values(by=["tcb_at_gaia"])
@@ -209,7 +204,7 @@ class GaiaScanningLaw:
         if gaplist is None:
             self.gaps = np.empty((0, 2))
         else:
-            gaplist_path = datadir / (gaplist + ".csv")
+            gaplist_path = pkgdatadir / (gaplist + ".csv")
             if not gaplist_path.exists():
                 raise ValueError("gaplist is not valid.")
             self.gaps = pd.read_csv(gaplist_path).iloc[:, :2].to_numpy()
@@ -231,7 +226,7 @@ class GaiaScanningLaw:
     def _setup_fov_trees(self):
         # make kdtrees of pre-shifted FoV start locations and
         # cache them to local disk
-        tree_cache_path = GAIA_SCANNINLAW_DATADIR / (f"{self.version}-cached-trees.p")
+        tree_cache_path = fetch_utils.get_datadir() / (f"{self.version}-cached-trees.p")
         if tree_cache_path.exists():
             print(f"Reading existing kdtree from {tree_cache_path}")
             with open(tree_cache_path, "rb") as f:
@@ -254,8 +249,6 @@ class GaiaScanningLaw:
             xyz_fov2_body = np.array([x.value, y.value, z.value])
             xyz_fov2 = np.einsum("nij,i->nj", self.rotmat, xyz_fov2_body)
             tree_fov2 = spatial.KDTree(xyz_fov2)
-            if not datadir.exists():
-                os.mkdir(datadir)
             print(f"Writing cached kdtree to {tree_cache_path}")
             with open(tree_cache_path, "wb") as f:
                 pickle.dump((tree_fov1, tree_fov2), f)
