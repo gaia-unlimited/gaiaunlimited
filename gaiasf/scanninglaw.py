@@ -153,6 +153,14 @@ version_mapping = {
 
 
 class GaiaScanningLaw:
+    """Initialize a version of Gaia's scanning law.
+
+    Args:
+        version (str, optional): Version of the FoV pointing data file to use.
+            One of ["dr3_nominal", "dr2_nominal", "dr2_cog3"]. Defaults to "dr3_nominal".
+        gaplist (str, optional): Name of the gap list. Defaults to "dr2/Astrometry".
+
+    """
 
     version_trange = {
         "cogi_2020": [1192.13, 3750.56],
@@ -162,14 +170,6 @@ class GaiaScanningLaw:
     }
 
     def __init__(self, version="dr3_nominal", gaplist="dr3/Astrometry", **kwargs):
-        """Initialize a version of Gaia's scanning law.
-
-        Args:
-            version (str, optional): Version of the FoV pointing data file to use.
-                One of ["dr3_nominal", "dr2_nominal", "dr2_cog3"]. Defaults to "dr3_nominal".
-            gaplist (str, optional): Name of the gap list. Defaults to "dr2/Astrometry".
-
-        """
 
         if version not in version_mapping:
             raise ValueError("Unsupported version")
