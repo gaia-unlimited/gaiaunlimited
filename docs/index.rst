@@ -10,7 +10,9 @@ Welcome to gaiasf's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   scanninglaw
    getting-started
+   api
 
 
 
