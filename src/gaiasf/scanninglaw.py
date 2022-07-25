@@ -7,13 +7,11 @@ import astropy.coordinates as coord
 import astropy.units as u
 import numpy as np
 import pandas as pd
-from numba import jit
 from scipy import spatial
 
 from gaiasf import fetch_utils
 
 __all__ = [
-    "find_nearest",
     "make_rotmat",
     "GaiaScanningLaw",
     "obmt2tcbgaia",
@@ -36,31 +34,6 @@ def obmt2tcbgaia(obmt):
         tcb: TCB in days.
     """
     return (obmt - 1717.6256) / 4 - (2455197.5 - 2457023.5 - 0.25)
-
-
-@jit(nopython=True)
-def _find_nearest(array, value):
-    # both array and value should be numpy arrays
-    out = np.zeros_like(value, dtype="int")
-    n = len(out)
-    for i in np.arange(n):
-        idx = (np.abs(array - value[i])).argmin()
-        out[i] = idx
-    return out
-
-
-def find_nearest(array, value):
-    """Find the indices to the closest element to value in array.
-
-    Parameters
-    ----------
-    array(array-like): 1-d array
-    value(array-like, float): values to look up
-    """
-    array = np.asarray(array)
-    if np.ndim(value) == 0:
-        return np.abs(array - value).argmin()
-    return _find_nearest(array, np.asarray(value))
 
 
 def make_rotmat(fov1_xyz, fov2_xyz):
