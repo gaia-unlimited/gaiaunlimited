@@ -30,7 +30,6 @@ author = "GaiaUnlimited"
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
-    "numpydoc",
     "sphinx_copybutton",
     "nbsphinx",
     "sphinx_automodapi.automodapi",
