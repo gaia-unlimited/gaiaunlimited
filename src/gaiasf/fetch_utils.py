@@ -137,7 +137,23 @@ def download_scanninglaw(name):
 
 
 class DownloadMixin:
-    """Mixin for downloading data files."""
+    """Mixin for downloading data file(s) from a url to GAIASF_DATADIR.
+
+    The data locations should be specified as a dictionary of (filename, url) key-value pairs.
+    Then, use ``_get_data`` method to retrieve the full Path to the downloaded file.
+
+    Example:
+        class SomeClassUsingLargeDatafile(DownloadMixin):
+            datafiles = {'myfile1': "http://url/to/myfile1", 'myfile2': 'http://url/to/myfile2'}
+
+            def __init__(self, *args, **kwargs):
+                ...
+                # If the file does not exist in GAIASF_DATADIR, the following line will
+                # download it from the url.
+                path_to_file1 = self._get_data('myfile1')
+                with h5py.File(path_to_file1) as f:
+                    ...
+    """
 
     def _get_data(self, filename):
         """Download data files specified in datafiles dict class attribute."""
