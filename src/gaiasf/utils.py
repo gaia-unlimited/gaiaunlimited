@@ -3,7 +3,7 @@ import astropy.units as u
 import healpy as hp
 import numpy as np
 
-__all__ = ["coord2healpix"]
+__all__ = ["coord2healpix", "get_healpix_centers"]
 
 
 def get_healpix_centers(order):
@@ -13,7 +13,7 @@ def get_healpix_centers(order):
         order (int): The order of the pixelisation
 
     Returns:
-        coords: coordinates of the centers.
+        astropy.coordinates.SkyCoord: coordinates of the centers.
     """
     nside = hp.order2nside(order)
     npix = hp.order2npix(order)
@@ -28,19 +28,25 @@ def coord2healpix(coords, frame, nside, nest=True):
     system is defined on the coordinate frame ``frame``.
 
     Args:
-        coords (:obj:`astropy.coordinates.SkyCoord`): The input coordinates.
-        frame (:obj:`str`): The frame in which the HEALPix system is defined.
-        nside (:obj:`int`): The HEALPix nside parameter to use. Must be a power of 2.
-        nest (Optional[:obj:`bool`]): ``True`` (the default) if nested HEALPix ordering
-            is desired. ``False`` for ring ordering.
+        coords (astropy.coordinates.BaseCoordinateFrame): The input coordinates.
+            This can be SkyCoord for any other specific frame instance that can
+            be converted to a SkyCoord.
+        frame (str): The frame in which the HEALPix system is defined. Should be
+            a valid name from astropy.coordinates.
+        nside (int): The HEALPix nside parameter to use. Must be a power of 2.
+        nest (bool): True if the HEALPix uses nested scheme.
 
     Returns:
-        An array of pixel indices (integers), with the same shape as the input
-        SkyCoord coordinates (:obj:`coords.shape`).
+        An array of pixel indices with the same shape as the input
+        coords.
 
     Raises:
-        :obj:`sfexceptions.CoordFrameError`: If the specified frame is not supported.
+        ValueError: The specified frame is not supported.
     """
+    # In case coords is specific frame objects, make it SkyCoord.
+    # Otherwise, there is no 'frame' attribute.
+    if isinstance(coords, coord.SkyCoord):
+        coords = coord.SkyCoord(coords)
     if coords.frame.name != frame:
         c = coords.transform_to(frame)
     else:
