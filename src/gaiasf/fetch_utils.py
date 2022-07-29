@@ -24,7 +24,7 @@ def get_datadir():
 
 
 # adapted from https://gist.github.com/yanqd0/c13ed29e29432e3cf3e7c38467f42f51
-def download(url: str, file, desc=None, chunk_size=1024, md5sum=None):
+def download(url, file, desc=None, chunk_size=1024, md5sum=None):
     """Download file from a url.
 
     Args:
