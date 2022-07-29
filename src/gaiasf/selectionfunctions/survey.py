@@ -54,13 +54,16 @@ class DR2SelectionFunction(fetch_utils.DownloadMixin):
 
         Args:
             coords: sky coordinates as an astropy coordinates instance.
-            gmag (float or array): G magnitudes. Should have the same shape as coords.
+            gmag (float or array): Gaia G magnitudes. Should have the same size as coords.
 
         Returns:
-            prob: array of selection probabilities.
+            np.array : array of selection probabilities.
         """
         if coords.shape != np.shape(gmag):
             raise ValueError(f"Input shape mismatch: {coords.shape} != {gmag.shape}")
+        if coords.ndim >= 2:
+            raise ValueError(f"Input must be a scalar or 1d array")
+
         ipix = utils.coord2healpix(coords, "icrs", self.nside_n_field)
         ipix_logrho = utils.coord2healpix(coords, "icrs", self.nside_crowding)
         logrho = self.ds["logrho_field"].sel(ipix_logrho=ipix_logrho).to_numpy()

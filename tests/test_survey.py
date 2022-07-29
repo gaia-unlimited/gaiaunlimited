@@ -1,13 +1,23 @@
+import pytest
 import numpy as np
+from astropy.coordinates import SkyCoord
 
-from gaiasf.selectionfunctions.survey import DR2SelectionFunction, DR3SelectionFunction
+from gaiasf.selectionfunctions import DR2SelectionFunction, DR3SelectionFunction
 from gaiasf.utils import get_healpix_centers
 
 
 def test_dr2sf():
     x = DR2SelectionFunction()
+
+    # single coordinate
+    test_coord = SkyCoord("12h30m25.3s", "15d15m58.1s")
+    result = x.query(test_coord, 21.2)
+    assert result.shape == (), "Query for single coordinate does not return scalar."
+    assert np.allclose(result, 0.15158, atol=1e-4)
+
+    # coordinates array
     test_coords = get_healpix_centers(0)
-    gmag = np.ones_like(test_coords) * 21.0
+    gmag = np.ones_like(test_coords, dtype=float) * 21.0
 
     # Compared values are from gaiaverse/selectionfunctions.
     # They can be slighly different because they do spline interpolation
@@ -49,6 +59,9 @@ def test_dr2sf():
         ]
     )
     assert np.allclose(result, ans, atol=0.05)
+
+    with pytest.raises(ValueError):
+        x.query(test_coords.reshape((2, -1)), gmag.reshape((2, -1)))
 
 
 def test_dr3sf():
