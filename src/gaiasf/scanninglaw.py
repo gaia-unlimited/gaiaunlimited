@@ -5,6 +5,7 @@ from pathlib import Path
 
 import astropy.coordinates as coord
 import astropy.units as u
+from astropy.coordinates.funcs import spherical_to_cartesian
 import numpy as np
 import pandas as pd
 from scipy import spatial
@@ -189,9 +190,6 @@ class GaiaScanningLaw:
                 ]
             )
 
-    # def rotate_to_bodyframe(self, xyz_icrs):
-    #     return
-
     def __repr__(self):
         return f"GaiaScanningLaw(version='{self.version}', gaplist='{self.gaplist}')"
 
@@ -200,7 +198,6 @@ class GaiaScanningLaw:
         # cache them to local disk
         tree_cache_path = fetch_utils.get_datadir() / (f"{self.version}-cached-trees.p")
         if tree_cache_path.exists():
-            print(f"Reading existing kdtree from {tree_cache_path}")
             with open(tree_cache_path, "rb") as f:
                 self.tree_fov1, self.tree_fov2 = pickle.load(f)
         else:
@@ -226,11 +223,11 @@ class GaiaScanningLaw:
                 pickle.dump((tree_fov1, tree_fov2), f)
             self.tree_fov1, self.tree_fov2 = tree_fov1, tree_fov2
 
-    def query(self, query_coord_xyz, count_only=False):
+    def query(self, ra_deg, dec_deg, count_only=False):
         """Query the scanning law for a given position.
 
-        query_coord_xyz (array-like): unit vector to coordinate to query
-            in cartesian representation, [x, y, z].
+        ra_deg (float): right ascension in degrees
+        dec_deg (float): declination in degrees
 
         count_only (bool): only return the total number of scans.
 
@@ -238,6 +235,9 @@ class GaiaScanningLaw:
             [fov1_times, fov2_times]
             [n_fov1, n_fov2] if count_only=True
         """
+        query_coord_xyz = spherical_to_cartesian(
+            1.0, np.deg2rad(dec_deg), np.deg2rad(ra_deg)
+        )
 
         times = []
         for tree_fov, offset, lon0 in zip(
