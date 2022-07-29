@@ -1,32 +1,37 @@
 import numpy as np
-import pandas as pd
 import healpy as hp
-from gaiasf import fetch_utils
+from gaiasf import fetch_utils, utils
 import h5py
 
 
 class DR3SelectionFunctionTCG:
-
-    modelparams = dict(
-        a=1.0154179774831278,
-        b=-0.008254847738351057,
-        c=0.6981959151433699,
-        d=-0.07503539255843136,
-        e=1.7491113533977052,
-        f=0.4541796235976577,
-        x=-0.06817682843336803,
-        y=1.5712714454917935,
-        z=-0.12236281756914291,
-        lim=20.53035927443456,
-    )
-
     def __init__(self, m10map):
-        self._get_data("allsky_m10_hpx7.h5")
+        # NOTE: HEAL pixelisation is in ICRS in these files!
+        self.m10map = m10map
 
-    def query(
-        self,
-    ):
-        pass
+    def query(self, coords, gmag):
+        """Query the selection function.
+
+        Args:
+            coords: sky coordinates as an astropy coordinates instance.
+            gmag (float or array): G magnitudes. Should have the same shape as coords.
+
+        Returns:
+            prob: array of selection probabilities.
+        """
+        if coords.shape != np.shape(gmag):
+            raise ValueError(f"Input shape mismatch: {coords.shape} != {gmag.shape}")
+        order_map = self.m10map[:, 0].astype(np.int64)
+        ipix_map = self.m10map[:, 1].astype(np.int64)
+        m10_map = self.m10map[:, 2]
+        nside = 2 ** order_map[0]
+        ipix = utils.coord2healpix(coords, "icrs", nside)
+        pointIndices = np.array(
+            [np.where(ipix_map == foo)[0][0] for foo in ipix]
+        )  # horrendous but works
+        allM10 = m10_map[pointIndices]
+        c = selectionFunction(gmag.astype(float), allM10)
+        return c
 
     @classmethod
     def from_patch(cls, *args, **kwargs):
@@ -45,15 +50,19 @@ class DR3SelectionFunctionTCG:
 
 
 class DR3SelectionFunctionTCG7(DR3SelectionFunctionTCG, fetch_utils.DownloadMixin):
-    datafiles = {"allsky_m10_hpx7.h5": "TODO"}
+    datafiles = {
+        "allsky_M10_hpx7.hdf5": "https://github.com/TristanCantatGaudin/GaiaCompleteness/blob/main/allsky_M10_hpx7.hdf5?raw=true"
+    }
 
     def __init__(self):
-        with h5py.File(self._getdata("allsky_m10_hpx7.h5")) as f:
+        with h5py.File(self._get_data("allsky_M10_hpx7.hdf5"), "r") as f:
             m10_order7 = f["data"][()]
         super().__init__(m10_order7)
 
 
-def sigmoid(G: np.ndarray, G0: np.ndarray, invslope: float, shape: float) -> np.ndarray:
+def sigmoid(
+    G: np.ndarray, G0: np.ndarray, invslope: np.ndarray, shape: np.ndarray
+) -> np.ndarray:
     """Generalized sigmoid function
 
     Parameters
@@ -98,7 +107,18 @@ def selectionFunction(G, m10):
 
     """
     # These are the best-fit value of the free parameters we optimised in our model:
-    a, b, c, d, e, f, x, y, z, lim = get_model_parameters().values()
+    a, b, c, d, e, f, x, y, z, lim = dict(
+        a=1.0154179774831278,
+        b=-0.008254847738351057,
+        c=0.6981959151433699,
+        d=-0.07503539255843136,
+        e=1.7491113533977052,
+        f=0.4541796235976577,
+        x=-0.06817682843336803,
+        y=1.5712714454917935,
+        z=-0.12236281756914291,
+        lim=20.53035927443456,
+    ).values()
 
     if isinstance(m10, float):
         m10 = np.array([m10])
@@ -125,55 +145,3 @@ def selectionFunction(G, m10):
         return mask * sigmoid(G, predictedG0, predictedInvslope, predictedShape)[0]
     else:
         return mask * sigmoid(G, predictedG0, predictedInvslope, predictedShape)
-
-
-def selectionFunctionRADEC(ra, dec, G, dfm10) -> np.ndarray:
-    """Evaluate the completeness at ra, dec, for given G array.
-
-    Parameters
-    ----------
-    ra : float or nd.array
-            right ascension in degrees
-    dec: float or nd.array
-            declination in degrees
-    G : float np.ndarray
-            which magnitude to evaluate the completeness
-    dfm10: np.array or pd.DataFrame
-            the M10 array
-
-    Returns
-    -------
-    Evaluated completeness
-
-    TO DO:
-            Check the format of the provided map. Currently an incorrect format can lead to a variety of error messages.
-    """
-    if len(dfm10) == 3:
-        MAPm10, xedges, yedges = dfm10
-        if (
-            ra < min(xedges)
-            or ra > max(xedges)
-            or dec < min(yedges)
-            or dec > max(yedges)
-        ):
-            print(
-                "\x1b[6;30;41m"
-                + "Problem!"
-                + "\x1b[0m"
-                + f" position {ra} {dec} outside map coverage"
-            )
-            print(
-                f"map coverage: ra {min(xedges)} {max(xedges)}, dec {min(yedges)} {max(yedges)}"
-            )
-            print("in function selectionFunctionRADEC")
-            return np.nan
-        indRa = int((ra - xedges[0]) / (xedges[1] - xedges[0]))
-        indDec = int((dec - yedges[0]) / (yedges[1] - yedges[0]))
-        m10 = MAPm10[indRa][indDec]
-    else:
-        # first identify the healpix order from the number of hpx in the map:
-        nbHpx = len(dfm10)
-        healpix_level = int(np.log(nbHpx / 12) / np.log(4))
-        # then find the m10 value in the hpx corresponding to (ra,dec):
-        m10 = dfm10[hp.ang2pix(2**healpix_level, ra, dec, lonlat=True, nest=True)]
-    return selectionFunction(G, m10)
