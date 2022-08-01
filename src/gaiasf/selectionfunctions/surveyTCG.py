@@ -46,8 +46,8 @@ class DR3SelectionFunctionTCG:
             [np.where(ipix_map == foo)[0][0] for foo in ipix]
         )  # horrendous but works, could be clearer with np.in1d?
         allM10 = m10_map[pointIndices]
-        c = selectionFunction(gmag.astype(float), allM10)
-        return c
+        prob = selectionFunction(gmag.astype(float), allM10)
+        return prob
 
     # @classmethod
     # def from_patch(cls, *args, **kwargs):
