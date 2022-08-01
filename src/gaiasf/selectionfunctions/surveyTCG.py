@@ -2,9 +2,15 @@ import numpy as np
 import healpy as hp
 from gaiasf import fetch_utils, utils
 import h5py
+from astroquery.gaia import Gaia
+
+Gaia.MAIN_GAIA_TABLE = "gaiadr3.gaia_source"
+Gaia.ROW_LIMIT = -1  # default is 50 rows max, -1 for unlimited
 
 
 class DR3SelectionFunctionTCG:
+    """Model of the Gaia DR3 survey selection function calibrated on DECaPS."""
+
     def __init__(self, m10map):
         # NOTE: HEAL pixelisation is in ICRS in these files!
         self.m10map = m10map
@@ -26,30 +32,42 @@ class DR3SelectionFunctionTCG:
         m10_map = self.m10map[:, 2]
         nside = 2 ** order_map[0]
         ipix = utils.coord2healpix(coords, "icrs", nside)
+        # if using custom maps, the user might query a point outside the map:
+        is_in_map = np.in1d(ipix, ipix_map)
+        if np.all(is_in_map) == False:
+            print("Warning: the following points are outside the map:")
+            print(coords[~is_in_map])
+            # find the missing ipix, temporarily add them with value Nan
+            missingIpix = sorted(set(ipix[~is_in_map]))
+            for mip in missingIpix:
+                ipix_map = np.append(ipix_map, mip)
+                m10_map = np.append(m10_map, np.nan)
         pointIndices = np.array(
             [np.where(ipix_map == foo)[0][0] for foo in ipix]
-        )  # horrendous but works
+        )  # horrendous but works, could be clearer with np.in1d?
         allM10 = m10_map[pointIndices]
         c = selectionFunction(gmag.astype(float), allM10)
         return c
 
-    @classmethod
-    def from_patch(cls, *args, **kwargs):
-        pass
-        # make m10map
-        # return cls(m10map)
+    # @classmethod
+    # def from_patch(cls, *args, **kwargs):
+    #    pass
+    #    # make m10map
+    #    # return cls(m10map)
 
-    def to_hdf5(self, filename):
-        pass
+    # def to_hdf5(self, filename):
+    #    pass
 
-    @classmethod
-    def from_file(cls, filename):
-        pass
-        # TODO
-        # return cls(m10map)
+    # @classmethod
+    # def from_file(cls, filename):
+    #    pass
+    #    # TODO
+    #    # return cls(m10map)
 
 
 class DR3SelectionFunctionTCG7(DR3SelectionFunctionTCG, fetch_utils.DownloadMixin):
+    """Initialises the model from the all-sky map precomputed in healpix order 7 (Nside=128)."""
+
     datafiles = {
         "allsky_M10_hpx7.hdf5": "https://github.com/TristanCantatGaudin/GaiaCompleteness/blob/main/allsky_M10_hpx7.hdf5?raw=true"
     }
@@ -58,6 +76,120 @@ class DR3SelectionFunctionTCG7(DR3SelectionFunctionTCG, fetch_utils.DownloadMixi
         with h5py.File(self._get_data("allsky_M10_hpx7.hdf5"), "r") as f:
             m10_order7 = f["data"][()]
         super().__init__(m10_order7)
+
+
+class DR3SelectionFunctionTCG_from_patch(DR3SelectionFunctionTCG):
+    """Initialises the model for a requested patch of sky.
+    The field of view is a square of width 'size' centered on (ra,dec).
+    The spatial resolution will vary across the field of view,
+    from healpix order 6 to 12, enforcing that bins must contain
+    at least min_points sources (default 5). A low number makes the map
+    more detailed but also noisier.
+
+    Args:
+        ra: right ascension of centre of field of view, in degrees
+        dec: declination of centre of field of view, in degrees
+        size: width/height of the field of view, in degrees
+        min_points: minimum number of sources used to compute the map"""
+
+    def __init__(self, ra, dec, size, min_points=5):
+        self.ra = ra
+        self.dec = dec
+        self.size = size
+        self.min_points = min_points
+
+        scale = 1.0 / np.cos(np.radians(self.dec))
+
+        queryStringGaia = """SELECT ra, dec, source_id,phot_g_mean_mag
+        FROM gaiadr3.gaia_source 
+        WHERE ra>%.3f and ra<%.3f
+        and dec>%.3f and dec<%.3f
+        and astrometric_matched_transits<11
+        and phot_g_mean_mag<50""" % (
+            self.ra - scale * self.size / 2,
+            self.ra + scale * self.size / 2,
+            self.dec - self.size / 2,
+            self.dec + self.size / 2,
+        )
+        print("Querying the Gaia archive...")
+        job = Gaia.launch_job_async(queryStringGaia)
+        GaiaT = job.get_results()
+        print(f"{len(GaiaT)} sources downloaded.")
+
+        # find all the potential hpx ids of queried sources:
+        allHpx6 = sorted(set(GaiaT["source_id"] // (2**35 * 4 ** (12 - 6))))
+        allHpx7 = [
+            foo for i in allHpx6 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]
+        ]
+        allHpx8 = [
+            foo for i in allHpx7 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]
+        ]
+        allHpx9 = [
+            foo for i in allHpx8 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]
+        ]
+        allHpx10 = [
+            foo for i in allHpx9 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]
+        ]
+        allHpx11 = [
+            foo for i in allHpx10 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]
+        ]
+        allHpx12 = [
+            foo for i in allHpx11 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]
+        ]
+        # identify which ones have centers inside the user-requested patch:
+        allGoodHpx12 = []
+        for h in allHpx12:
+            rah, dech = hp.pix2ang(2**12, h, nest=True, lonlat=True)
+            # print(rah,dech)
+            if (
+                rah < self.ra + scale * self.size / 2
+                and rah > self.ra - scale * size / 2
+                and dech < self.dec + size / 2
+                and dech > self.dec - size / 2
+            ):
+                allGoodHpx12.append(h)
+
+        fineMap = [np.nan for foo in allGoodHpx12]
+        for stepUp in range(5):
+            print(f"Grouping the stars by hpx level {12-stepUp}...")
+            sourceHpxThisOrder = np.array(GaiaT["source_id"]) // (
+                2**35 * 4 ** (12 - (12 - stepUp))
+            )
+            for i, h in enumerate(allGoodHpx12):
+                if np.isnan(fineMap[i]):
+                    gI = GaiaT["phot_g_mean_mag"][
+                        sourceHpxThisOrder == h // 4**stepUp
+                    ]
+                    # print(i,h,gI); input()
+                    if len(gI) >= 5:
+                        fineMap[i] = np.median(gI)
+                    else:
+                        pass
+        fineMap = np.array(fineMap)
+        allGoodHpx12 = np.array(allGoodHpx12)
+        order = 12 * np.ones_like(allGoodHpx12)
+        m10_map = np.column_stack((order, allGoodHpx12, fineMap))
+        self.allGoodHpx12 = allGoodHpx12
+        self.fineMap = fineMap
+        super().__init__(m10_map)
+
+    def display(self):
+        """Uses healpy.gnomview to display the map."""
+        # fill the fullsky map
+        npix = hp.nside2npix(2**12)
+        hpx_map = np.zeros(npix, dtype=float) * np.nan
+        idx = self.allGoodHpx12
+        hpx_map[idx] = self.fineMap
+        hp.gnomview(
+            hpx_map,
+            rot=[self.ra, self.dec],
+            nest=True,
+            xsize=2.1 * 60 * self.size,
+            reso=0.5,
+        )
+        import matplotlib.pyplot as plt
+
+        plt.show()
 
 
 def sigmoid(
