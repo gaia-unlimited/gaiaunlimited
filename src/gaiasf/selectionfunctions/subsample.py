@@ -9,7 +9,7 @@ from scipy.special import expit, logit
 from gaiasf import fetch_utils, utils
 
 
-def validate_ds(ds):
+def _validate_ds(ds):
     """Validate if xarray.Dataset contains the expected selection function data."""
     if not isinstance(ds, xr.Dataset):
         raise ValueError("ds must be an xarray.Dataset.")
@@ -44,16 +44,23 @@ class SelectionFunctionBase:
     """
 
     def __init__(self, ds):
-        validate_ds(ds)
+        _validate_ds(ds)
         self.ds = ds
 
     @property
     def order(self):
+        """Order of the HEALPix."""
         return hp.npix2order(self.ds["ipix"].size)
 
     @property
     def nside(self):
+        """Nside of the HEALPix."""
         return hp.npix2nside(self.ds["ipix"].size)
+
+    @property
+    def factors(self):
+        """Variables other than HEALPix id that define the selection function."""
+        return set(self.ds["logitp"].dims) - set({"ipix"})
 
     def __mul__(self, other):
         # if not isinstance(other, SelectionFunctionBase):
@@ -75,19 +82,31 @@ class SelectionFunctionBase:
         pass
 
     def query(self, coords, **kwargs):
-        # TODO: fix this for the interp keyword consistency issue.
+        """Query the selection function at the given coordinates.
+
+        Args:
+            coords: sky coordinates as an astropy coordinates instance.
+
+        Other factors that determine this selection function should be given
+        as keyword arguments of the same shape as coords.
+
+        Returns:
+            np.array: array of internal selection probabilities.
+        """
+        # NOTE: make input atleast_1d for .interp keyword consistency.
         ipix = utils.coord2healpix(coords, "icrs", self.nside, nest=True)
-        factors = set(self.ds["logitp"].dims) - set({"ipix"})
+        ipix = np.atleast_1d(ipix)
         d = {}
-        for k in factors:
+        for k in self.factors:
             if k not in kwargs:
                 raise ValueError(f"{k} values are missing.")
-            d[k] = xr.DataArray(kwargs[k])
-        print(d)
+            d[k] = xr.DataArray(np.atleast_1d(kwargs[k]))
         d["method"] = "nearest"
         d["kwargs"] = dict(fill_value=None)  # extrapolates
-        out = self.ds["logitp"].interp(ipix=ipix, **d)
-        return expit(out.to_numpy())
+        out = self.ds["logitp"].interp(ipix=ipix, **d).to_numpy()
+        if len(coords.shape) == 0:
+            out = out.squeeze()
+        return expit(out)
 
 
 class DR3RVSSelectionFunction(SelectionFunctionBase):
