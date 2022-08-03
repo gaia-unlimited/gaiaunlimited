@@ -226,10 +226,15 @@ class GaiaScanningLaw:
     def query(self, ra_deg, dec_deg, count_only=False):
         """Query the scanning law for a given position.
 
-        ra_deg (float): right ascension in degrees
-        dec_deg (float): declination in degrees
+        Returned times are in Julian days in TCB with time origin
+        2010-01-01:T00:00 (JD 2455197.5). See `this page`_ for details.
 
-        count_only (bool): only return the total number of scans.
+        .. _this page: https://gea.esac.esa.int/archive/documentation/GEDR3/Gaia_archive/chap_datamodel/sec_dm_auxiliary_tables/ssec_dm_commanded_scan_law.html
+
+        Args:
+            ra_deg (float): right ascension in degrees
+            dec_deg (float): declination in degrees
+            count_only (bool): only return the total number of scans.
 
         Returns
             [fov1_times, fov2_times]
