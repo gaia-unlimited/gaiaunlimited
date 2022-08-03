@@ -67,7 +67,7 @@ def test_dr2sf():
 def test_dr3sf():
     x = DR3SelectionFunction()
     test_coords = get_healpix_centers(0)
-    gmag = np.ones_like(test_coords) * 21.0
+    gmag = np.ones_like(test_coords, dtype=float) * 21.0
 
     try:
         x.query(test_coords, gmag, use_modelT=True)
