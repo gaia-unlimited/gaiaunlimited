@@ -19,6 +19,7 @@ class DownloadError(Exception):
 
 
 def get_datadir():
+    """Get gaiasf data directory as Path."""
     p = Path(os.getenv("GAIASF_DATADIR", "~/.gaiasf")).expanduser().resolve()
     return p
 
@@ -103,13 +104,11 @@ def download_scanninglaw(name):
     Download scanning law datafiles if it does not already exist.
 
     This function downloads and normalizes column names of each data file
-    and saves the resulting pandas.DataFrame as pickle.
-
-    Output directory is ~/.gaia_scanninglaw by default but can be set with
-    the environment variable GAIA_SCANNINGLAW_DATADIR.
+    and saves the resulting pandas.DataFrame as pickle in ``GAIASF_DATADIR``.
 
     Args:
-        name(str) : scanning law name
+        name(str) : scanning law name. One of ["dr2_cog3", "dr3_nominal"] or "all"
+            to download everything.
     """
     if name not in scanlaw_datafiles and name != "all":
         raise ValueError(
