@@ -44,6 +44,8 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
+# hide input prompts in notebooks
+nbsphinx_prompt_width = "0"
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -58,4 +60,5 @@ html_theme = "furo"
 html_static_path = ["_static"]
 
 
-copybutton_prompt_text = r"In \[\d*\]: | {5,8}: "
+# hide coppy button on outputs
+copybutton_selector = "div:not(.output_area) > div.highlight pre"

@@ -6,19 +6,32 @@
 Welcome to gaiasf's documentation!
 ============================================
 
+Gaiasf is a package for querying and constructing selection functions for the
+`Gaia`_ survey. It is developed by the `GaiaUnlimited collaboration <https://gaia-unlimited.org>`_.
+
+.. attention::
+
+   This package is being actively developed in `a public repository on GitHub <http://github.com/gaia-unlimited/gaiasf>`_, and we
+   need your input!
+   If you have any trouble with this code, find a typo, or have requests for new
+   content (tutorials or features), please `open an issue on GitHub <https://github.com/gaia-unlimited/gaiasf/issues/new/choose>`_.
+
+
+Features
+--------
+
++ Query Gaia scanning laws for when a given sky position is scanned.
++ Query Gaia survey selection functions for the probabilities that sources of given properties are included in the Gaia catalog.
++ Query ready-made Gaia DR3 subsample selection functions for the astrometry and RVS sample.
+
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
+   install
    scanninglaw
    getting-started
    api
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. _Gaia: https://www.cosmos.esa.int/web/gaia/home
