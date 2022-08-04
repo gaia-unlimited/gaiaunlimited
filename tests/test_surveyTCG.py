@@ -1,4 +1,4 @@
-from gaiasf.selectionfunctions.surveyTC import DR3SelectionFunctionTCG
+from gaiasf.selectionfunctions.surveyTCG import DR3SelectionFunctionTCG
 
 
 def test_tcg():

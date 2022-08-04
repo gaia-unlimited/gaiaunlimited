@@ -46,7 +46,7 @@ class DR3SelectionFunctionTCG:
             [np.where(ipix_map == foo)[0][0] for foo in ipix]
         )  # horrendous but works, could be clearer with np.in1d?
         allM10 = m10_map[pointIndices]
-        prob = selectionFunction(gmag.astype(float), allM10)
+        prob = m10_to_completeness(gmag.astype(float), allM10)
         return prob
 
     # @classmethod
@@ -65,7 +65,7 @@ class DR3SelectionFunctionTCG:
     #    # return cls(m10map)
 
 
-class DR3SelectionFunctionTCG7(DR3SelectionFunctionTCG, fetch_utils.DownloadMixin):
+class DR3SelectionFunctionTCG_hpx7(DR3SelectionFunctionTCG, fetch_utils.DownloadMixin):
     """Initialises the model from the all-sky map precomputed in healpix order 7 (Nside=128)."""
 
     datafiles = {
@@ -92,7 +92,7 @@ class DR3SelectionFunctionTCG_from_patch(DR3SelectionFunctionTCG):
         size: width/height of the field of view, in degrees
         min_points: minimum number of sources used to compute the map"""
 
-    def __init__(self, ra, dec, size, min_points=5):
+    def __init__(self, ra, dec, size, min_points=20):
         self.ra = ra
         self.dec = dec
         self.size = size
@@ -161,10 +161,11 @@ class DR3SelectionFunctionTCG_from_patch(DR3SelectionFunctionTCG):
                         sourceHpxThisOrder == h // 4**stepUp
                     ]
                     # print(i,h,gI); input()
-                    if len(gI) >= 5:
+                    if len(gI) >= min_points:
                         fineMap[i] = np.median(gI)
                     else:
                         pass
+        print("Done.")
         fineMap = np.array(fineMap)
         allGoodHpx12 = np.array(allGoodHpx12)
         order = 12 * np.ones_like(allGoodHpx12)
@@ -173,19 +174,25 @@ class DR3SelectionFunctionTCG_from_patch(DR3SelectionFunctionTCG):
         self.fineMap = fineMap
         super().__init__(m10_map)
 
-    def display(self):
+    def display(self, G=None):
         """Uses healpy.gnomview to display the map."""
         # fill the fullsky map
         npix = hp.nside2npix(2**12)
         hpx_map = np.zeros(npix, dtype=float) * np.nan
         idx = self.allGoodHpx12
-        hpx_map[idx] = self.fineMap
+        if G is None:
+            cmap = "turbo"
+            hpx_map[idx] = self.fineMap
+        else:
+            cmap = "viridis"
+            hpx_map[idx] = m10_to_completeness(G, self.fineMap)
         hp.gnomview(
             hpx_map,
             rot=[self.ra, self.dec],
             nest=True,
             xsize=2.1 * 60 * self.size,
             reso=0.5,
+            cmap=cmap,
         )
         import matplotlib.pyplot as plt
 
@@ -219,7 +226,7 @@ def sigmoid(
     return 1 - (0.5 * (np.tanh(delta / invslope) + 1)) ** shape
 
 
-def selectionFunction(G, m10):
+def m10_to_completeness(G, m10):
     """Predicts the completeness at magnitude G, given a value of M_10 read from a precomputed map.
 
     Parameters
@@ -239,16 +246,16 @@ def selectionFunction(G, m10):
 
     """
     # These are the best-fit value of the free parameters we optimised in our model:
-    a, b, c, d, e, f, x, y, z, lim = dict(
-        a=1.0154179774831278,
-        b=-0.008254847738351057,
-        c=0.6981959151433699,
-        d=-0.07503539255843136,
-        e=1.7491113533977052,
-        f=0.4541796235976577,
-        x=-0.06817682843336803,
-        y=1.5712714454917935,
-        z=-0.12236281756914291,
+    ax, bx, cx, ay, by, cy, az, bz, cz, lim = dict(
+        ax=1.0154179774831278,
+        bx=-0.008254847738351057,
+        cx=0.6981959151433699,
+        ay=-0.06817682843336803,
+        by=1.5712714454917935,
+        cy=-0.12236281756914291,
+        az=-0.07503539255843136,
+        bz=1.7491113533977052,
+        cz=0.4541796235976577,
         lim=20.53035927443456,
     ).values()
 
@@ -264,14 +271,14 @@ def selectionFunction(G, m10):
     mask = m10 / m10
     m10 = np.nan_to_num(m10)
     #
-    predictedG0 = a * m10 + b
-    predictedG0[m10 > lim] = c * m10[m10 > lim] + (a - c) * lim + b
+    predictedG0 = ax * m10 + bx
+    predictedG0[m10 > lim] = cx * m10[m10 > lim] + (ax - cx) * lim + bx
     #
-    predictedInvslope = x * m10 + y
-    predictedInvslope[m10 > lim] = z * m10[m10 > lim] + (x - z) * lim + y
+    predictedInvslope = ay * m10 + by
+    predictedInvslope[m10 > lim] = cy * m10[m10 > lim] + (ay - cy) * lim + by
     #
-    predictedShape = d * m10 + e
-    predictedShape[m10 > lim] = f * m10[m10 > lim] + (d - f) * lim + e
+    predictedShape = az * m10 + bz
+    predictedShape[m10 > lim] = cz * m10[m10 > lim] + (az - cz) * lim + bz
 
     if m10wasFloat and isinstance(G, (int, float)) == True:
         return mask * sigmoid(G, predictedG0, predictedInvslope, predictedShape)[0]
