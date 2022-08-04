@@ -1,9 +1,9 @@
-from gaiasf.selectionfunctions.surveyTCG import DR3SelectionFunctionTCG
+from gaiasf.selectionfunctions.surveyTCG import DR3SelectionFunctionTCG_hpx7
 
 
 def test_tcg():
 
     try:
-        DR3SelectionFunctionTCG()
+        DR3SelectionFunctionTCG_hpx7()
     except:
         assert False, "Failed"
