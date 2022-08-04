@@ -8,6 +8,12 @@ from scipy.special import expit, logit
 
 from gaiasf import fetch_utils, utils
 
+__all__ = [
+    "SelectionFunctionBase",
+    "DR3RVSSelectionFunction",
+    "EDR3RVSSelectionFunction",
+]
+
 
 def _validate_ds(ds):
     """Validate if xarray.Dataset contains the expected selection function data."""
@@ -68,17 +74,10 @@ class SelectionFunctionBase:
         # TODO
         pass
 
-    def coord2healpix(self, coords):
-        # TODO: implement using coord2healpix
-        pass
-
     @classmethod
     def from_conditions(cls, conditions):
         # potential idea
         # TODO: query for conditions and make Dataset from result
-        pass
-
-    def plot(self, *args, **kwargs):
         pass
 
     def query(self, coords, **kwargs):
@@ -95,7 +94,7 @@ class SelectionFunctionBase:
         """
         # NOTE: make input atleast_1d for .interp keyword consistency.
         ipix = utils.coord2healpix(coords, "icrs", self.nside, nest=True)
-        ipix = np.atleast_1d(ipix)
+        ipix = xr.DataArray(np.atleast_1d(ipix))
         d = {}
         for k in self.factors:
             if k not in kwargs:
@@ -140,6 +139,26 @@ class EDR3RVSSelectionFunction(SelectionFunctionBase, fetch_utils.DownloadMixin)
 
     NOTE: The definition of the RVS sample is not the same as DR3RVSSelectionFunction.
     """
+
+    __bibtex__ = """
+@ARTICLE{2022MNRAS.509.6205E,
+       author = {{Everall}, Andrew and {Boubert}, Douglas},
+        title = "{Completeness of the Gaia verse - V. Astrometry and radial velocity sample selection functions in Gaia EDR3}",
+      journal = {\mnras},
+     keywords = {methods: data analysis, methods: statistical, stars: statistics, Galaxy: kinematics and dynamics, Galaxy: stellar content, Astrophysics - Astrophysics of Galaxies, Astrophysics - Instrumentation and Methods for Astrophysics, Astrophysics - Solar and Stellar Astrophysics},
+         year = 2022,
+        month = feb,
+       volume = {509},
+       number = {4},
+        pages = {6205-6224},
+          doi = {10.1093/mnras/stab3262},
+archivePrefix = {arXiv},
+       eprint = {2111.04127},
+ primaryClass = {astro-ph.GA},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.6205E},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+"""
 
     datafiles = {
         "rvs_cogv.h5": "https://dataverse.harvard.edu/api/access/datafile/5203267"

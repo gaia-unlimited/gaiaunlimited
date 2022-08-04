@@ -13,7 +13,25 @@ __all__ = ["DR2SelectionFunction", "DR3SelectionFunction"]
 class DR2SelectionFunction(fetch_utils.DownloadMixin):
     """DR2 selection function developed by the Gaiaverse team."""
 
-    bibcode = "2020MNRAS.497.4246B"
+    __bibtex__ = """
+@ARTICLE{2020MNRAS.497.4246B,
+       author = {{Boubert}, Douglas and {Everall}, Andrew},
+        title = "{Completeness of the Gaia verse II: what are the odds that a star is missing from Gaia DR2?}",
+      journal = {\mnras},
+     keywords = {methods: data analysis, methods: statistical, stars: statistics, Galaxy: kinematics and dynamics, Galaxy: stellar content, Astrophysics - Astrophysics of Galaxies, Astrophysics - Instrumentation and Methods for Astrophysics, Astrophysics - Solar and Stellar Astrophysics},
+         year = 2020,
+        month = oct,
+       volume = {497},
+       number = {4},
+        pages = {4246-4261},
+          doi = {10.1093/mnras/staa2305},
+archivePrefix = {arXiv},
+       eprint = {2005.08983},
+ primaryClass = {astro-ph.GA},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2020MNRAS.497.4246B},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+"""
     datafiles = {
         "cog_ii_dr2.h5": "https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/PDFOVC/NYV9DM"
     }
@@ -110,7 +128,6 @@ class DR2SelectionFunction(fetch_utils.DownloadMixin):
             return out
 
 
-# TODO: I guess we will replace this?
 class DR3SelectionFunction(DR2SelectionFunction):
     """DR3 selection function developed by the Gaiaverse team.
 
@@ -119,7 +136,25 @@ class DR3SelectionFunction(DR2SelectionFunction):
     order 12 (nside=4096) to order 10 (nside=1024).
     """
 
-    bibcode = ""  # TODO
+    __bibtex__ = """
+@ARTICLE{2022MNRAS.509.6205E,
+       author = {{Everall}, Andrew and {Boubert}, Douglas},
+        title = "{Completeness of the Gaia verse - V. Astrometry and radial velocity sample selection functions in Gaia EDR3}",
+      journal = {\mnras},
+     keywords = {methods: data analysis, methods: statistical, stars: statistics, Galaxy: kinematics and dynamics, Galaxy: stellar content, Astrophysics - Astrophysics of Galaxies, Astrophysics - Instrumentation and Methods for Astrophysics, Astrophysics - Solar and Stellar Astrophysics},
+         year = 2022,
+        month = feb,
+       volume = {509},
+       number = {4},
+        pages = {6205-6224},
+          doi = {10.1093/mnras/stab3262},
+archivePrefix = {arXiv},
+       eprint = {2111.04127},
+ primaryClass = {astro-ph.GA},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.6205E},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+"""
     datafiles = DR2SelectionFunction.datafiles.copy()
     datafiles.update(
         {"n_field_dr3.h5": "https://dataverse.harvard.edu/api/access/datafile/4204267"}
