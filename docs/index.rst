@@ -32,6 +32,8 @@ Features
    install
    scanninglaw
    getting-started
+   dr3-empirical-completeness
+   citation
    api
 
 .. _Gaia: https://www.cosmos.esa.int/web/gaia/home
