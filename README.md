@@ -12,6 +12,10 @@ Gaiasf is a package for querying and constructing selection functions for the Ga
 	- the RVS sample
 	- ...
 
-## Installation
+## Documentation
+
+[![Documentation Status](https://readthedocs.org/projects/gaiasf/badge/?version=latest)](https://gaiasf.readthedocs.io/en/latest/?badge=latest)
+
+The documentation for gaiasf is hosted on [Read the docs](https://gaiasf.readthedocs.io/en/latest).
 
 ## Acknowledgements
