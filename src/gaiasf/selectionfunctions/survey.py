@@ -131,9 +131,10 @@ archivePrefix = {arXiv},
 class DR3SelectionFunction(DR2SelectionFunction):
     """DR3 selection function developed by the Gaiaverse team.
 
-    This selection function assumes the same detection probabilty and simply
-    swaps the number of scans map. The map resolution also changed from HEAL
-    order 12 (nside=4096) to order 10 (nside=1024).
+    This selection function assumes the same detection probability and simply
+    swaps the number of scans map (since DR3 covers a longer mission time).  The
+    map resolution also changed from HEAL order 12 (nside=4096) to order 10
+    (nside=1024).
     """
 
     __bibtex__ = """
