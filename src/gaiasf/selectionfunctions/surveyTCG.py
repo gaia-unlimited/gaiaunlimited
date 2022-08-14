@@ -55,15 +55,6 @@ class DR3SelectionFunctionTCG:
     #    # make m10map
     #    # return cls(m10map)
 
-    # def to_hdf5(self, filename):
-    #    pass
-
-    # @classmethod
-    # def from_file(cls, filename):
-    #    pass
-    #    # TODO
-    #    # return cls(m10map)
-
 
 class DR3SelectionFunctionTCG_hpx7(DR3SelectionFunctionTCG, fetch_utils.DownloadMixin):
     """Initialises the model from the all-sky map precomputed in healpix order 7 (Nside=128)."""
@@ -101,7 +92,7 @@ class DR3SelectionFunctionTCG_from_patch(DR3SelectionFunctionTCG):
         scale = 1.0 / np.cos(np.radians(self.dec))
 
         queryStringGaia = """SELECT ra, dec, source_id,phot_g_mean_mag
-        FROM gaiadr3.gaia_source 
+        FROM gaiadr3.gaia_source
         WHERE ra>%.3f and ra<%.3f
         and dec>%.3f and dec<%.3f
         and astrometric_matched_transits<11
