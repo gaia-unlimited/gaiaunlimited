@@ -24,6 +24,11 @@ Features
 + Query Gaia survey selection functions for the probabilities that sources of given properties are included in the Gaia catalog.
 + Query ready-made Gaia DR3 subsample selection functions for the astrometry and RVS sample.
 
+Acknowledgements
+----------------
+
+This work is part of the GaiaUnlimited project funded by the European Union’s
+Horizon 2020 research and innovation program under grant agreement No 101004110.
 
 .. toctree::
    :maxdepth: 1
