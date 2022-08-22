@@ -1,6 +1,5 @@
-import pickle
-
 import h5py
+import pandas as pd
 import healpy as hp
 import numpy as np
 import xarray as xr
@@ -72,13 +71,13 @@ class SelectionFunctionBase:
         # if not isinstance(other, SelectionFunctionBase):
         #     raise TypeError()
         # TODO
-        pass
+        raise NotImplementedError()
 
     @classmethod
     def from_conditions(cls, conditions):
         # potential idea
         # TODO: query for conditions and make Dataset from result
-        pass
+        raise NotImplementedError()
 
     def query(self, coords, **kwargs):
         """Query the selection function at the given coordinates.
@@ -108,7 +107,7 @@ class SelectionFunctionBase:
         return expit(out)
 
 
-class DR3RVSSelectionFunction(SelectionFunctionBase):
+class DR3RVSSelectionFunction(SelectionFunctionBase, fetch_utils.DownloadMixin):
     """Internal selection function for the RVS sample in DR3.
 
     This function gives the probability
@@ -116,19 +115,20 @@ class DR3RVSSelectionFunction(SelectionFunctionBase):
     as a function of G magnitude and G-RP color.
     """
 
+    datafiles = {
+        "dr3-rvs-nk.h5": "https://dataverse.harvard.edu/api/access/datafile/6424746"
+    }
+
     def __init__(self):
-        datadir = fetch_utils.get_datadir()
-        with open(datadir / "wsdb-dr3-rvs-nk-g0_2-c0_4.pickle", "rb") as f:
-            dr3 = pickle.load(f)
-        df = dr3["df"].copy()
-        df = df.loc[df["i_g"] <= 85]
-        df["p"] = (df["k"] + 1) / (df["n"] + 2)
-        df["logitp"] = logit(df["p"])
-        dset_dr3 = xr.Dataset.from_dataframe(df.set_index(["ipix", "i_g", "i_c"]))
-        gcenters, ccenters = dr3["g_mid"], dr3["c_mid"]
-        dset_dr3 = dset_dr3.assign_coords(i_g=gcenters, i_c=ccenters)
-        dset_dr3 = dset_dr3.rename({"i_g": "g", "i_c": "c"})
-        super().__init__(dset_dr3)
+        with h5py.File(self._get_data("dr3-rvs-nk.h5")) as f:
+            df = pd.DataFrame.from_records(f["data"][()])
+            df["p"] = (df["k"] + 1) / (df["n"] + 2)
+            df["logitp"] = logit(df["p"])
+            dset_dr3 = xr.Dataset.from_dataframe(df.set_index(["ipix", "i_g", "i_c"]))
+            gcenters, ccenters = f["g_mid"][()], f["c_mid"][()]
+            dset_dr3 = dset_dr3.assign_coords(i_g=gcenters, i_c=ccenters)
+            dset_dr3 = dset_dr3.rename({"i_g": "g", "i_c": "c"})
+            super().__init__(dset_dr3)
 
 
 # Selection functions ported from gaiaverse's work ----------------
