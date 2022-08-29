@@ -4,7 +4,7 @@ import numpy as np
 import xarray as xr
 from scipy import stats
 
-from gaiasf import fetch_utils, utils
+from gaiaunlimited import fetch_utils, utils
 
 __all__ = ["DR2SelectionFunction", "DR3SelectionFunction"]
 

@@ -1,6 +1,6 @@
 import numpy as np
 import healpy as hp
-from gaiasf import fetch_utils, utils
+from gaiaunlimited import fetch_utils, utils
 import h5py
 from astroquery.gaia import Gaia
 

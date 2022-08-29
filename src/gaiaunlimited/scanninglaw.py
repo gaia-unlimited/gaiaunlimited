@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 from scipy import spatial
 
-from gaiasf import fetch_utils
+from gaiaunlimited import fetch_utils
 
 __all__ = [
     "make_rotmat",
