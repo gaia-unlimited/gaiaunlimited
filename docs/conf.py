@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "gaiasf"
+project = "Gaiaunlimited"
 copyright = "2022, GaiaUnlimited"
 author = "GaiaUnlimited"
 
