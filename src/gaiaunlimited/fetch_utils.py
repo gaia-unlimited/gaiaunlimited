@@ -20,7 +20,11 @@ class DownloadError(Exception):
 
 def get_datadir():
     """Get gaiasf data directory as Path."""
-    p = Path(os.getenv("GAIASF_DATADIR", "~/.gaiasf")).expanduser().resolve()
+    p = (
+        Path(os.getenv("GAIAUNLIMITED_DATADIR", "~/.gaiaunlimited"))
+        .expanduser()
+        .resolve()
+    )
     return p
 
 
