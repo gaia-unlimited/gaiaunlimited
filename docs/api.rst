@@ -2,28 +2,28 @@ API documentation
 =================
 
 
-.. .. automodule:: gaiasf.scanninglaw
+.. .. automodule:: gaiaunlimited.scanninglaw
 ..      :members:
 
-.. .. automodule:: gaiasf.selectionfunctions.survey
+.. .. automodule:: gaiaunlimited.selectionfunctions.survey
 ..      :members:
 
-.. .. automodule:: gaiasf.selectionfunctions.subsample
+.. .. automodule:: gaiaunlimited.selectionfunctions.subsample
 ..      :members:
 
 
 
 
-.. automodapi:: gaiasf.scanninglaw
+.. automodapi:: gaiaunlimited.scanninglaw
      :no-inheritance-diagram:
 
-.. automodapi:: gaiasf.selectionfunctions
+.. automodapi:: gaiaunlimited.selectionfunctions
      :no-inheritance-diagram:
 
 
-.. automodapi:: gaiasf.utils
+.. automodapi:: gaiaunlimited.utils
      :no-inheritance-diagram:
 
-.. automodapi:: gaiasf.fetch_utils
+.. automodapi:: gaiaunlimited.fetch_utils
      :no-inheritance-diagram:
      :skip: DownloadMixin
