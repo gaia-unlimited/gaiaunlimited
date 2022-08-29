@@ -1,20 +1,18 @@
-.. gaia_scanninglaw documentation master file, created by
-   sphinx-quickstart on Tue May  3 20:15:01 2022.
-   You can adapt this file completely to your liking, but it should at least
+.. You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to gaiasf's documentation!
+Welcome to Gaiaunlimited's documentation!
 ============================================
 
-Gaiasf is a package for querying and constructing selection functions for the
+Gaiaunlimited is a package for querying and constructing selection functions for the
 `Gaia`_ survey. It is developed by the `GaiaUnlimited collaboration <https://gaia-unlimited.org>`_.
 
 .. attention::
 
-   This package is being actively developed in `a public repository on GitHub <http://github.com/gaia-unlimited/gaiasf>`_, and we
+   This package is being actively developed in `a public repository on GitHub <http://github.com/gaia-unlimited/gaiaunlimited>`_, and we
    need your input!
    If you have any trouble with this code, find a typo, or have requests for new
-   content (tutorials or features), please `open an issue on GitHub <https://github.com/gaia-unlimited/gaiasf/issues/new/choose>`_.
+   content (tutorials or features), please `open an issue on GitHub <https://github.com/gaia-unlimited/gaiaunlimited/issues/new/choose>`_.
 
 
 Features
