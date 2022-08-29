@@ -1,7 +1,7 @@
 import numpy as np
 
-from gaiasf.scanninglaw import GaiaScanningLaw
-from gaiasf.utils import get_healpix_centers
+from gaiaunlimited.scanninglaw import GaiaScanningLaw
+from gaiaunlimited.utils import get_healpix_centers
 
 
 def test_scanninglaw():

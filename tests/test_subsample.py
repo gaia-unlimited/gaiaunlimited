@@ -2,12 +2,12 @@ import numpy as np
 import astropy.coordinates as coord
 import astropy.units as u
 
-from gaiasf.selectionfunctions.subsample import (
+from gaiaunlimited.selectionfunctions.subsample import (
     SelectionFunctionBase,
     EDR3RVSSelectionFunction,
     DR3RVSSelectionFunction,
 )
-from gaiasf.utils import get_healpix_centers
+from gaiaunlimited.utils import get_healpix_centers
 
 
 def test_subsample_sfs():

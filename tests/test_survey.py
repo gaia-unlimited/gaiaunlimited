@@ -2,8 +2,8 @@ import pytest
 import numpy as np
 from astropy.coordinates import SkyCoord
 
-from gaiasf.selectionfunctions import DR2SelectionFunction, DR3SelectionFunction
-from gaiasf.utils import get_healpix_centers
+from gaiaunlimited.selectionfunctions import DR2SelectionFunction, DR3SelectionFunction
+from gaiaunlimited.utils import get_healpix_centers
 
 
 def test_dr2sf():
