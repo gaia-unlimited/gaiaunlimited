@@ -1,0 +1,2830 @@
+﻿start,end,"duration [rev]",description,"CCD row",origin
+1078.378158,1078.383245,0.005087,Unknown,6,ObjectLog
+1078.378160,1078.382281,0.004121,Unknown,7,ObjectLog
+1078.378160,1078.382604,0.004444,Unknown,4,ObjectLog
+1078.378162,1078.381859,0.003696,Unknown,5,ObjectLog
+1088.000000,1092.500000,4.500000,VPU-7 anomaly,4,Manual
+1088.000000,1092.500000,4.500000,VPU-7 anomaly,5,Manual
+1088.000000,1092.500000,4.500000,VPU-7 anomaly,6,Manual
+1088.000000,1092.500000,4.500000,VPU-7 anomaly,7,Manual
+1088.122111,1088.125888,0.003777,VPU-7 anomaly,7,ObjectLog
+1105.081305,1105.086419,0.005114,AOCS operations,6,ObjectLog
+1105.082268,1105.086463,0.004195,AOCS operations,7,ObjectLog
+1105.082533,1105.086420,0.003888,AOCS operations,5,ObjectLog
+1105.082876,1105.086422,0.003546,AOCS operations,4,ObjectLog
+1153.152540,1153.156119,0.003579,Unknown,4,ObjectLog
+1185.158445,1185.162622,0.004177,Station-keeping manoeuvre #10.1,6,ObjectLog
+1185.158595,1185.162580,0.003984,Station-keeping manoeuvre #10.1,4,ObjectLog
+1185.159466,1185.162577,0.003110,Station-keeping manoeuvre #10.1,5,ObjectLog
+1185.159807,1185.162621,0.002814,Station-keeping manoeuvre #10.1,7,ObjectLog
+1189.160953,1189.165225,0.004272,Station-keeping manoeuvre #10.2,6,ObjectLog
+1189.161603,1189.165218,0.003615,Station-keeping manoeuvre #10.2,4,ObjectLog
+1189.161823,1189.165216,0.003394,Station-keeping manoeuvre #10.2,5,ObjectLog
+1189.162299,1189.165213,0.002914,Station-keeping manoeuvre #10.2,7,ObjectLog
+1193.017047,1193.035103,0.018056,Scanning-law change,4,AGIS
+1193.017047,1193.035103,0.018056,Scanning-law change,5,AGIS
+1193.017047,1193.035103,0.018056,Scanning-law change,6,AGIS
+1193.017047,1193.035103,0.018056,Scanning-law change,7,AGIS
+1195.755000,1195.767000,0.012000,Micro-meteoroid hit,4,AGIS
+1195.755000,1195.767000,0.012000,Micro-meteoroid hit,5,AGIS
+1195.755000,1195.767000,0.012000,Micro-meteoroid hit,6,AGIS
+1195.755000,1195.767000,0.012000,Micro-meteoroid hit,7,AGIS
+1205.211973,1205.212899,0.000926,Micro-meteoroid hit,4,AGIS
+1205.211973,1205.212899,0.000926,Micro-meteoroid hit,5,AGIS
+1205.211973,1205.212899,0.000926,Micro-meteoroid hit,6,AGIS
+1205.211973,1205.212899,0.000926,Micro-meteoroid hit,7,AGIS
+1220.416398,1220.419209,0.002811,VPU-4 anomaly,4,ObjectLog
+1222.912575,1222.914426,0.001851,Micro-meteoroid hit,4,AGIS
+1222.912575,1222.914426,0.001851,Micro-meteoroid hit,5,AGIS
+1222.912575,1222.914426,0.001851,Micro-meteoroid hit,6,AGIS
+1222.912575,1222.914426,0.001851,Micro-meteoroid hit,7,AGIS
+1241.836439,1241.842365,0.005926,Payload data handling unit update,6,ObjectLog
+1241.837772,1241.842355,0.004582,Payload data handling unit update,4,ObjectLog
+1241.838858,1241.842348,0.003490,Payload data handling unit update,5,ObjectLog
+1241.839190,1241.842345,0.003156,Payload data handling unit update,7,ObjectLog
+1241.843436,1241.889269,0.045833,Payload data handling unit update,4,AGIS
+1241.843436,1241.889269,0.045833,Payload data handling unit update,5,AGIS
+1241.843436,1241.889269,0.045833,Payload data handling unit update,6,AGIS
+1241.843436,1241.889269,0.045833,Payload data handling unit update,7,AGIS
+1246.081695,1246.084010,0.002315,Micro-meteoroid hit,4,AGIS
+1246.081695,1246.084010,0.002315,Micro-meteoroid hit,5,AGIS
+1246.081695,1246.084010,0.002315,Micro-meteoroid hit,6,AGIS
+1246.081695,1246.084010,0.002315,Micro-meteoroid hit,7,AGIS
+1261.357700,1261.363684,0.005984,Station-keeping manoeuvre #11,4,ObjectLog
+1261.357910,1261.363686,0.005776,Station-keeping manoeuvre #11,6,ObjectLog
+1261.358024,1261.363686,0.005662,Station-keeping manoeuvre #11,7,ObjectLog
+1261.358131,1261.363689,0.005557,Station-keeping manoeuvre #11,5,ObjectLog
+1261.364269,1261.537880,0.173611,Station-keeping manoeuvre #11,4,AGIS
+1261.364269,1261.537880,0.173611,Station-keeping manoeuvre #11,5,AGIS
+1261.364269,1261.537880,0.173611,Station-keeping manoeuvre #11,6,AGIS
+1261.364269,1261.537880,0.173611,Station-keeping manoeuvre #11,7,AGIS
+1264.929380,1264.930537,0.001157,Micro-meteoroid hit,4,AGIS
+1264.929380,1264.930537,0.001157,Micro-meteoroid hit,5,AGIS
+1264.929380,1264.930537,0.001157,Micro-meteoroid hit,6,AGIS
+1264.929380,1264.930537,0.001157,Micro-meteoroid hit,7,AGIS
+1278.481610,1278.484886,0.003276,Unknown,5,ObjectLog
+1297.888975,1297.892641,0.003666,Payload data handling unit update,7,ObjectLog
+1297.889265,1297.892630,0.003366,Payload data handling unit update,5,ObjectLog
+1297.889388,1297.892633,0.003245,Payload data handling unit update,4,ObjectLog
+1297.889743,1297.892629,0.002886,Payload data handling unit update,6,ObjectLog
+1297.893435,1297.936490,0.043056,Payload data handling unit update,4,AGIS
+1297.893435,1297.936490,0.043056,Payload data handling unit update,5,AGIS
+1297.893435,1297.936490,0.043056,Payload data handling unit update,6,AGIS
+1297.893435,1297.936490,0.043056,Payload data handling unit update,7,AGIS
+1305.393268,1305.395120,0.001852,Micro-meteoroid hit,4,AGIS
+1305.393268,1305.395120,0.001852,Micro-meteoroid hit,5,AGIS
+1305.393268,1305.395120,0.001852,Micro-meteoroid hit,6,AGIS
+1305.393268,1305.395120,0.001852,Micro-meteoroid hit,7,AGIS
+1316.486074,1316.489848,0.003774,Decontamination 4,7,ObjectLog
+1316.486216,1316.489843,0.003627,Decontamination 4,6,ObjectLog
+1316.486802,1316.489846,0.003044,Decontamination 4,5,ObjectLog
+1316.487013,1316.489848,0.002836,Decontamination 4,4,ObjectLog
+1316.490000,1389.112794,72.622794,Decontamination 4,4,AGIS
+1316.490000,1389.112794,72.622794,Decontamination 4,5,AGIS
+1316.490000,1389.112794,72.622794,Decontamination 4,6,AGIS
+1316.490000,1389.112794,72.622794,Decontamination 4,7,AGIS
+1324.594878,1324.597792,0.002914,Decontamination 4,5,ObjectLog
+1325.522659,1325.526695,0.004037,Decontamination 4,7,ObjectLog
+1325.522713,1325.526653,0.003940,Decontamination 4,4,ObjectLog
+1325.523629,1325.526651,0.003022,Decontamination 4,5,ObjectLog
+1325.523689,1325.526695,0.003006,Decontamination 4,6,ObjectLog
+1328.788664,1328.793310,0.004646,Decontamination 4,5,ObjectLog
+1336.674358,1336.677855,0.003497,Decontamination 4,5,ObjectLog
+1336.674416,1336.677852,0.003436,Decontamination 4,7,ObjectLog
+1336.674475,1336.677857,0.003382,Decontamination 4,4,ObjectLog
+1336.674923,1336.677854,0.002931,Decontamination 4,6,ObjectLog
+1343.868247,1343.871095,0.002848,Decontamination 4,7,ObjectLog
+1362.228701,1362.231628,0.002928,Decontamination 4,5,ObjectLog
+1380.710646,1380.715967,0.005321,Decontamination 4,6,ObjectLog
+1380.712266,1380.715957,0.003692,Decontamination 4,5,ObjectLog
+1380.712581,1380.715955,0.003375,Decontamination 4,4,ObjectLog
+1380.713053,1380.715954,0.002901,Decontamination 4,7,ObjectLog
+1389.109303,1391.804028,2.694725,Decontamination 4,7,ObjectLog
+1389.109465,1389.538201,0.428736,Decontamination 4,6,ObjectLog
+1389.109477,1389.538504,0.429027,Decontamination 4,5,ObjectLog
+1389.110065,1389.538563,0.428498,Decontamination 4,4,ObjectLog
+1389.335075,1389.537691,0.202616,Decontamination 4,7,ObjectLog
+1389.534969,1389.599887,0.064918,Decontamination 4,7,ObjectLog
+1389.535472,1389.620091,0.084619,Decontamination 4,6,ObjectLog
+1389.535774,1389.630750,0.094976,Decontamination 4,5,ObjectLog
+1389.535838,1389.608310,0.072472,Decontamination 4,4,ObjectLog
+1389.597163,1389.611842,0.014679,Decontamination 4,7,ObjectLog
+1389.605579,1389.634317,0.028738,Decontamination 4,4,ObjectLog
+1389.609118,1389.616508,0.007390,Decontamination 4,7,ObjectLog
+1389.613778,1390.560359,0.946581,Decontamination 4,7,ObjectLog
+1389.617367,1390.560536,0.943169,Decontamination 4,6,ObjectLog
+1389.628019,1389.632127,0.004108,Decontamination 4,5,ObjectLog
+1389.629396,1389.644041,0.014645,Decontamination 4,5,ObjectLog
+1389.631586,1389.665733,0.034147,Decontamination 4,4,ObjectLog
+1389.641311,1390.619839,0.978528,Decontamination 4,5,ObjectLog
+1389.663003,1389.667296,0.004293,Decontamination 4,4,ObjectLog
+1389.664564,1390.654921,0.990357,Decontamination 4,4,ObjectLog
+1390.533313,1390.534933,0.001620,Micro-meteoroid hit,4,AGIS
+1390.533313,1390.534933,0.001620,Micro-meteoroid hit,5,AGIS
+1390.533313,1390.534933,0.001620,Micro-meteoroid hit,6,AGIS
+1390.533313,1390.534933,0.001620,Micro-meteoroid hit,7,AGIS
+1390.557649,1391.317661,0.760012,Decontamination 4,7,ObjectLog
+1390.557812,1391.652412,1.094599,Decontamination 4,6,ObjectLog
+1390.617109,1390.621343,0.004234,Decontamination 4,5,ObjectLog
+1390.618612,1391.587757,0.969145,Decontamination 4,5,ObjectLog
+1390.652190,1390.666404,0.014214,Decontamination 4,4,ObjectLog
+1390.663677,1391.660828,0.997151,Decontamination 4,4,ObjectLog
+1391.314997,1391.479019,0.164022,Decontamination 4,7,ObjectLog
+1391.478191,1391.491186,0.012995,Decontamination 4,7,ObjectLog
+1391.489239,1391.499918,0.010679,Decontamination 4,7,ObjectLog
+1391.498216,1391.508317,0.010101,Decontamination 4,7,ObjectLog
+1391.505955,1391.528009,0.022054,Decontamination 4,7,ObjectLog
+1391.526455,1391.554621,0.028166,Decontamination 4,7,ObjectLog
+1391.554596,1391.567001,0.012405,Decontamination 4,7,ObjectLog
+1391.568540,1391.603143,0.034603,Decontamination 4,7,ObjectLog
+1391.585028,1391.605564,0.020536,Decontamination 4,5,ObjectLog
+1391.602838,1391.668446,0.065608,Decontamination 4,5,ObjectLog
+1391.614934,1391.618749,0.003815,Decontamination 4,7,ObjectLog
+1391.616023,1391.651597,0.035574,Decontamination 4,7,ObjectLog
+1391.649688,1391.804028,0.154340,Decontamination 4,6,ObjectLog
+1391.652459,1391.670352,0.017892,Decontamination 4,7,ObjectLog
+1391.658099,1391.667314,0.009215,Decontamination 4,4,ObjectLog
+1391.664589,1391.789091,0.124502,Decontamination 4,4,ObjectLog
+1391.665718,1391.670143,0.004425,Decontamination 4,5,ObjectLog
+1391.667414,1391.794360,0.126946,Decontamination 4,5,ObjectLog
+1391.667623,1391.755508,0.087885,Decontamination 4,7,ObjectLog
+1391.755904,1391.804028,0.048124,Decontamination 4,7,ObjectLog
+1401.746823,1401.752531,0.005708,AOCS operations,6,ObjectLog
+1401.747159,1401.752486,0.005327,AOCS operations,4,ObjectLog
+1401.747731,1401.752531,0.004800,AOCS operations,5,ObjectLog
+1401.749570,1401.752527,0.002956,AOCS operations,7,ObjectLog
+1401.753155,1401.951767,0.198611,AOCS operations,4,AGIS
+1401.753155,1401.951767,0.198611,AOCS operations,5,AGIS
+1401.753155,1401.951767,0.198611,AOCS operations,6,AGIS
+1401.753155,1401.951767,0.198611,AOCS operations,7,AGIS
+1401.991517,1401.994368,0.002851,VPU-5 anomaly,5,ObjectLog
+1403.915550,1403.920142,0.004592,Payload data handling unit update,5,ObjectLog
+1403.916067,1403.920125,0.004058,Payload data handling unit update,7,ObjectLog
+1403.916731,1403.920128,0.003398,Payload data handling unit update,6,ObjectLog
+1403.917111,1403.920133,0.003022,Payload data handling unit update,4,ObjectLog
+1403.963767,1403.967362,0.003595,Payload data handling unit update,7,ObjectLog
+1403.964293,1403.967352,0.003059,Payload data handling unit update,5,ObjectLog
+1403.964469,1403.967351,0.002882,Payload data handling unit update,6,ObjectLog
+1403.964526,1403.967356,0.002830,Payload data handling unit update,4,ObjectLog
+1404.011743,1404.014584,0.002841,Payload data handling unit update,7,ObjectLog
+1404.011753,1404.014584,0.002831,Payload data handling unit update,6,ObjectLog
+1404.011755,1404.014575,0.002820,Payload data handling unit update,5,ObjectLog
+1404.011766,1404.014577,0.002810,Payload data handling unit update,4,ObjectLog
+1404.058679,1404.061806,0.003127,Payload data handling unit update,6,ObjectLog
+1404.058696,1404.061798,0.003103,Payload data handling unit update,4,ObjectLog
+1404.058771,1404.061794,0.003023,Payload data handling unit update,7,ObjectLog
+1404.058826,1404.061797,0.002971,Payload data handling unit update,5,ObjectLog
+1404.104653,1404.109019,0.004365,Payload data handling unit update,4,ObjectLog
+1404.104991,1404.109019,0.004028,Payload data handling unit update,5,ObjectLog
+1404.105913,1404.109018,0.003104,Payload data handling unit update,6,ObjectLog
+1404.106132,1404.109017,0.002885,Payload data handling unit update,7,ObjectLog
+1404.150993,1404.156253,0.005260,Payload data handling unit update,5,ObjectLog
+1404.152588,1404.156238,0.003649,Payload data handling unit update,4,ObjectLog
+1404.152905,1404.156238,0.003333,Payload data handling unit update,6,ObjectLog
+1404.153052,1404.156239,0.003186,Payload data handling unit update,7,ObjectLog
+1404.199422,1404.203459,0.004038,Payload data handling unit update,7,ObjectLog
+1404.199545,1404.203460,0.003915,Payload data handling unit update,6,ObjectLog
+1404.199729,1404.203466,0.003736,Payload data handling unit update,4,ObjectLog
+1404.200451,1404.203447,0.002996,Payload data handling unit update,5,ObjectLog
+1409.047693,1409.050532,0.002839,VPU-6 anomaly,6,ObjectLog
+1411.742526,1411.753174,0.010648,Micro-meteoroid hit,4,AGIS
+1411.742526,1411.753174,0.010648,Micro-meteoroid hit,5,AGIS
+1411.742526,1411.753174,0.010648,Micro-meteoroid hit,6,AGIS
+1411.742526,1411.753174,0.010648,Micro-meteoroid hit,7,AGIS
+1412.000016,1412.002869,0.002853,VPU-7 anomaly,7,ObjectLog
+1414.047112,1414.049988,0.002876,VPU-4 anomaly,4,ObjectLog
+1428.337638,1428.340431,0.002792,VPU-6 anomaly,6,ObjectLog
+1431.875065,1431.878926,0.003861,Payload data handling unit update,5,ObjectLog
+1431.875931,1431.878924,0.002993,Payload data handling unit update,7,ObjectLog
+1432.183544,1432.185164,0.001620,Micro-meteoroid hit,4,AGIS
+1432.183544,1432.185164,0.001620,Micro-meteoroid hit,5,AGIS
+1432.183544,1432.185164,0.001620,Micro-meteoroid hit,6,AGIS
+1432.183544,1432.185164,0.001620,Micro-meteoroid hit,7,AGIS
+1440.620067,1440.625322,0.005256,Unknown,5,ObjectLog
+1443.962500,1443.971000,0.008500,Refocus (following FoV = FoV-2),4,AGIS
+1443.962500,1443.971000,0.008500,Refocus (following FoV = FoV-2),5,AGIS
+1443.962500,1443.971000,0.008500,Refocus (following FoV = FoV-2),6,AGIS
+1443.962500,1443.971000,0.008500,Refocus (following FoV = FoV-2),7,AGIS
+1456.664686,1456.670605,0.005919,Payload data handling unit update,7,ObjectLog
+1456.666094,1456.670593,0.004499,Payload data handling unit update,5,ObjectLog
+1456.667146,1456.670582,0.003436,Payload data handling unit update,4,ObjectLog
+1471.936654,1471.941233,0.004579,AOCS operations,5,ObjectLog
+1471.936781,1471.941188,0.004407,AOCS operations,4,ObjectLog
+1471.936915,1471.941233,0.004318,AOCS operations,6,ObjectLog
+1471.937856,1471.941232,0.003376,AOCS operations,7,ObjectLog
+1471.942043,1472.237877,0.295833,AOCS operations,4,AGIS
+1471.942043,1472.237877,0.295833,AOCS operations,5,AGIS
+1471.942043,1472.237877,0.295833,AOCS operations,6,AGIS
+1471.942043,1472.237877,0.295833,AOCS operations,7,AGIS
+1498.044371,1498.049108,0.004737,Station-keeping manoeuvre #13,4,ObjectLog
+1498.044749,1498.049108,0.004359,Station-keeping manoeuvre #13,6,ObjectLog
+1498.045013,1498.049105,0.004091,Station-keeping manoeuvre #13,5,ObjectLog
+1498.046306,1498.049098,0.002792,Station-keeping manoeuvre #13,7,ObjectLog
+1498.048987,1498.240654,0.191667,Station-keeping manoeuvre #13,4,AGIS
+1498.048987,1498.240654,0.191667,Station-keeping manoeuvre #13,5,AGIS
+1498.048987,1498.240654,0.191667,Station-keeping manoeuvre #13,6,AGIS
+1498.048987,1498.240654,0.191667,Station-keeping manoeuvre #13,7,AGIS
+1503.724284,1503.725209,0.000925,Micro-meteoroid hit,4,AGIS
+1503.724284,1503.725209,0.000925,Micro-meteoroid hit,5,AGIS
+1503.724284,1503.725209,0.000925,Micro-meteoroid hit,6,AGIS
+1503.724284,1503.725209,0.000925,Micro-meteoroid hit,7,AGIS
+1504.402263,1504.406396,0.004134,Unknown,4,ObjectLog
+1508.944765,1508.947905,0.003140,Payload data handling unit update,7,ObjectLog
+1508.944766,1508.947907,0.003141,Payload data handling unit update,6,ObjectLog
+1508.944960,1508.947908,0.002948,Payload data handling unit update,5,ObjectLog
+1508.945070,1508.947910,0.002840,Payload data handling unit update,4,ObjectLog
+1510.489608,1510.490765,0.001157,Micro-meteoroid hit,4,AGIS
+1510.489608,1510.490765,0.001157,Micro-meteoroid hit,5,AGIS
+1510.489608,1510.490765,0.001157,Micro-meteoroid hit,6,AGIS
+1510.489608,1510.490765,0.001157,Micro-meteoroid hit,7,AGIS
+1514.782617,1514.783774,0.001157,Micro-meteoroid hit,4,AGIS
+1514.782617,1514.783774,0.001157,Micro-meteoroid hit,5,AGIS
+1514.782617,1514.783774,0.001157,Micro-meteoroid hit,6,AGIS
+1514.782617,1514.783774,0.001157,Micro-meteoroid hit,7,AGIS
+1525.815996,1525.817154,0.001158,Micro-meteoroid hit,4,AGIS
+1525.815996,1525.817154,0.001158,Micro-meteoroid hit,5,AGIS
+1525.815996,1525.817154,0.001158,Micro-meteoroid hit,6,AGIS
+1525.815996,1525.817154,0.001158,Micro-meteoroid hit,7,AGIS
+1562.643927,1562.646798,0.002871,VPU-6 anomaly,6,ObjectLog
+1566.911061,1566.914008,0.002947,VPU-6 anomaly,6,ObjectLog
+1574.443987,1574.447396,0.003409,VPU-7 anomaly,7,ObjectLog
+1584.208958,1584.210347,0.001389,Micro-meteoroid hit,4,AGIS
+1584.208958,1584.210347,0.001389,Micro-meteoroid hit,5,AGIS
+1584.208958,1584.210347,0.001389,Micro-meteoroid hit,6,AGIS
+1584.208958,1584.210347,0.001389,Micro-meteoroid hit,7,AGIS
+1588.559838,1588.563773,0.003935,Micro-meteoroid hit,4,AGIS
+1588.559838,1588.563773,0.003935,Micro-meteoroid hit,5,AGIS
+1588.559838,1588.563773,0.003935,Micro-meteoroid hit,6,AGIS
+1588.559838,1588.563773,0.003935,Micro-meteoroid hit,7,AGIS
+1598.567241,1598.570352,0.003111,VPU-5 anomaly,5,ObjectLog
+1599.801186,1599.806755,0.005569,Unknown,5,ObjectLog
+1606.500586,1606.504300,0.003714,Station-keeping manoeuvre #14,4,ObjectLog
+1606.500603,1606.504300,0.003697,Station-keeping manoeuvre #14,7,ObjectLog
+1606.500935,1606.504290,0.003356,Station-keeping manoeuvre #14,5,ObjectLog
+1606.501183,1606.504289,0.003106,Station-keeping manoeuvre #14,6,ObjectLog
+1606.504541,1606.698986,0.194444,Station-keeping manoeuvre #14,4,AGIS
+1606.504541,1606.698986,0.194444,Station-keeping manoeuvre #14,5,AGIS
+1606.504541,1606.698986,0.194444,Station-keeping manoeuvre #14,6,AGIS
+1606.504541,1606.698986,0.194444,Station-keeping manoeuvre #14,7,AGIS
+1623.568022,1623.574099,0.006078,AOCS operations,6,ObjectLog
+1623.568969,1623.572520,0.003550,AOCS operations,4,ObjectLog
+1623.569145,1623.572399,0.003255,AOCS operations,5,ObjectLog
+1623.569401,1623.572395,0.002994,AOCS operations,7,ObjectLog
+1623.569669,1623.572558,0.002889,AOCS operations,5,ObjectLog
+1623.569689,1623.573027,0.003338,AOCS operations,7,ObjectLog
+1623.569713,1623.572558,0.002845,AOCS operations,6,ObjectLog
+1623.569772,1623.572585,0.002813,AOCS operations,7,ObjectLog
+1623.569816,1623.573186,0.003369,AOCS operations,4,ObjectLog
+1623.569841,1623.572696,0.002855,AOCS operations,6,ObjectLog
+1623.569851,1623.572661,0.002810,AOCS operations,5,ObjectLog
+1623.569879,1623.572734,0.002856,AOCS operations,7,ObjectLog
+1623.569936,1623.572791,0.002855,AOCS operations,5,ObjectLog
+1623.569970,1623.573010,0.003040,AOCS operations,6,ObjectLog
+1623.570015,1623.573027,0.003011,AOCS operations,7,ObjectLog
+1623.570073,1623.573254,0.003181,AOCS operations,5,ObjectLog
+1623.570304,1623.574061,0.003757,AOCS operations,7,ObjectLog
+1623.570338,1623.573216,0.002878,AOCS operations,6,ObjectLog
+1623.570401,1623.573235,0.002834,AOCS operations,7,ObjectLog
+1623.570469,1623.573352,0.002882,AOCS operations,4,ObjectLog
+1623.570502,1623.573296,0.002794,AOCS operations,6,ObjectLog
+1623.570521,1623.573542,0.003021,AOCS operations,7,ObjectLog
+1623.570556,1623.573583,0.003027,AOCS operations,5,ObjectLog
+1623.570575,1623.573387,0.002812,AOCS operations,6,ObjectLog
+1623.570623,1623.573429,0.002806,AOCS operations,4,ObjectLog
+1623.570702,1623.573503,0.002801,AOCS operations,4,ObjectLog
+1623.570703,1623.573492,0.002789,AOCS operations,6,ObjectLog
+1623.570775,1623.573688,0.002913,AOCS operations,6,ObjectLog
+1623.570785,1623.573837,0.003053,AOCS operations,4,ObjectLog
+1623.570883,1623.573733,0.002850,AOCS operations,5,ObjectLog
+1623.570886,1623.573682,0.002796,AOCS operations,7,ObjectLog
+1623.570948,1624.217060,0.646112,AOCS operations,4,AGIS
+1623.570948,1624.217060,0.646112,AOCS operations,5,AGIS
+1623.570948,1624.217060,0.646112,AOCS operations,6,AGIS
+1623.570948,1624.217060,0.646112,AOCS operations,7,AGIS
+1623.570965,1623.573761,0.002797,AOCS operations,7,ObjectLog
+1623.571009,1623.573825,0.002816,AOCS operations,6,ObjectLog
+1623.571011,1623.574092,0.003081,AOCS operations,5,ObjectLog
+1623.571049,1623.573936,0.002887,AOCS operations,7,ObjectLog
+1623.571105,1623.573883,0.002778,AOCS operations,6,ObjectLog
+1623.571106,1623.573886,0.002780,AOCS operations,4,ObjectLog
+1623.571158,1623.574061,0.002903,AOCS operations,6,ObjectLog
+1623.571168,1623.574099,0.002932,AOCS operations,4,ObjectLog
+1625.078078,1625.084560,0.006482,Micro-meteoroid hit,4,AGIS
+1625.078078,1625.084560,0.006482,Micro-meteoroid hit,5,AGIS
+1625.078078,1625.084560,0.006482,Micro-meteoroid hit,6,AGIS
+1625.078078,1625.084560,0.006482,Micro-meteoroid hit,7,AGIS
+1628.616411,1628.619189,0.002778,Micro-meteoroid hit,4,AGIS
+1628.616411,1628.619189,0.002778,Micro-meteoroid hit,5,AGIS
+1628.616411,1628.619189,0.002778,Micro-meteoroid hit,6,AGIS
+1628.616411,1628.619189,0.002778,Micro-meteoroid hit,7,AGIS
+1632.296692,1632.299578,0.002886,VPU-7 anomaly,7,ObjectLog
+1637.778309,1637.779235,0.000926,Micro-meteoroid hit,4,AGIS
+1637.778309,1637.779235,0.000926,Micro-meteoroid hit,5,AGIS
+1637.778309,1637.779235,0.000926,Micro-meteoroid hit,6,AGIS
+1637.778309,1637.779235,0.000926,Micro-meteoroid hit,7,AGIS
+1649.117041,1649.133707,0.016667,Payload data handling unit anomaly,4,AGIS
+1649.117041,1649.133707,0.016667,Payload data handling unit anomaly,5,AGIS
+1649.117041,1649.133707,0.016667,Payload data handling unit anomaly,6,AGIS
+1649.117041,1649.133707,0.016667,Payload data handling unit anomaly,7,AGIS
+1649.650374,1649.672596,0.022222,Payload data handling unit anomaly,4,AGIS
+1649.650374,1649.672596,0.022222,Payload data handling unit anomaly,5,AGIS
+1649.650374,1649.672596,0.022222,Payload data handling unit anomaly,6,AGIS
+1649.650374,1649.672596,0.022222,Payload data handling unit anomaly,7,AGIS
+1650.165652,1650.183707,0.018056,Payload data handling unit anomaly,4,AGIS
+1650.165652,1650.183707,0.018056,Payload data handling unit anomaly,5,AGIS
+1650.165652,1650.183707,0.018056,Payload data handling unit anomaly,6,AGIS
+1650.165652,1650.183707,0.018056,Payload data handling unit anomaly,7,AGIS
+1650.205930,1650.221207,0.015278,Payload data handling unit anomaly,4,AGIS
+1650.205930,1650.221207,0.015278,Payload data handling unit anomaly,5,AGIS
+1650.205930,1650.221207,0.015278,Payload data handling unit anomaly,6,AGIS
+1650.205930,1650.221207,0.015278,Payload data handling unit anomaly,7,AGIS
+1651.166480,1651.198275,0.031795,Payload data handling unit anomaly,4,ObjectLog
+1651.167091,1651.195090,0.027999,Payload data handling unit anomaly,5,ObjectLog
+1651.167701,1651.191630,0.023929,Payload data handling unit anomaly,7,ObjectLog
+1651.168184,1651.185593,0.017410,Payload data handling unit anomaly,6,ObjectLog
+1651.182868,1651.188403,0.005535,Payload data handling unit anomaly,6,ObjectLog
+1651.185681,1651.192688,0.007007,Payload data handling unit anomaly,6,ObjectLog
+1651.188900,1651.191901,0.003000,Payload data handling unit anomaly,7,ObjectLog
+1651.189169,1651.192181,0.003012,Payload data handling unit anomaly,7,ObjectLog
+1651.189263,1651.835096,0.645833,Payload data handling unit update,4,AGIS
+1651.189263,1651.835096,0.645833,Payload data handling unit update,5,AGIS
+1651.189263,1651.835096,0.645833,Payload data handling unit update,6,AGIS
+1651.189263,1651.835096,0.645833,Payload data handling unit update,7,AGIS
+1651.189458,1651.192855,0.003398,Payload data handling unit update,7,ObjectLog
+1651.189957,1651.192960,0.003003,Payload data handling unit update,6,ObjectLog
+1651.190127,1651.194085,0.003958,Payload data handling unit update,7,ObjectLog
+1651.190237,1651.195235,0.004998,Payload data handling unit update,6,ObjectLog
+1651.191315,1651.194311,0.002996,Payload data handling unit update,4,ObjectLog
+1651.191362,1651.195161,0.003799,Payload data handling unit update,7,ObjectLog
+1651.191581,1651.195582,0.004001,Payload data handling unit update,4,ObjectLog
+1651.192367,1651.195299,0.002932,Payload data handling unit update,5,ObjectLog
+1651.192451,1651.195437,0.002986,Payload data handling unit update,7,ObjectLog
+1651.192522,1651.195457,0.002935,Payload data handling unit update,6,ObjectLog
+1651.192576,1651.195551,0.002975,Payload data handling unit update,5,ObjectLog
+1651.192732,1651.195510,0.002778,Payload data handling unit update,7,ObjectLog
+1651.192804,1651.195662,0.002858,Payload data handling unit update,6,ObjectLog
+1651.192823,1651.195601,0.002778,Payload data handling unit update,5,ObjectLog
+1651.192852,1651.195723,0.002871,Payload data handling unit update,4,ObjectLog
+1651.192862,1651.195640,0.002779,Payload data handling unit update,7,ObjectLog
+1651.192901,1651.195791,0.002890,Payload data handling unit update,5,ObjectLog
+1651.192943,1651.195969,0.003025,Payload data handling unit update,7,ObjectLog
+1651.192945,1651.195733,0.002788,Payload data handling unit update,6,ObjectLog
+1651.193001,1651.196057,0.003056,Payload data handling unit update,4,ObjectLog
+1651.193011,1651.195836,0.002825,Payload data handling unit update,6,ObjectLog
+1651.193078,1651.195961,0.002884,Payload data handling unit update,5,ObjectLog
+1651.193136,1651.196029,0.002893,Payload data handling unit update,6,ObjectLog
+1651.193241,1651.196019,0.002778,Payload data handling unit update,7,ObjectLog
+1651.193299,1651.196127,0.002829,Payload data handling unit update,5,ObjectLog
+1651.193306,1651.196091,0.002785,Payload data handling unit update,6,ObjectLog
+1651.193321,1651.196099,0.002778,Payload data handling unit update,7,ObjectLog
+1651.193332,1651.196267,0.002935,Payload data handling unit update,4,ObjectLog
+1651.193384,1651.196162,0.002778,Payload data handling unit update,7,ObjectLog
+1651.193392,1651.196170,0.002778,Payload data handling unit update,6,ObjectLog
+1651.193410,1651.196238,0.002828,Payload data handling unit update,5,ObjectLog
+1651.193442,1651.196300,0.002859,Payload data handling unit update,7,ObjectLog
+1651.193443,1651.196258,0.002814,Payload data handling unit update,6,ObjectLog
+1651.193512,1651.196378,0.002866,Payload data handling unit update,5,ObjectLog
+1651.193529,1651.196394,0.002865,Payload data handling unit update,6,ObjectLog
+1651.193576,1651.196369,0.002793,Payload data handling unit update,4,ObjectLog
+1651.193598,1651.196390,0.002792,Payload data handling unit update,7,ObjectLog
+1651.193686,1651.196524,0.002838,Payload data handling unit update,5,ObjectLog
+1651.193700,1651.196478,0.002778,Payload data handling unit update,7,ObjectLog
+1651.193702,1651.196555,0.002854,Payload data handling unit update,4,ObjectLog
+1651.193726,1651.196504,0.002778,Payload data handling unit update,6,ObjectLog
+1651.193788,1651.197768,0.003980,Payload data handling unit update,6,ObjectLog
+1651.193802,1651.196580,0.002778,Payload data handling unit update,7,ObjectLog
+1651.193837,1651.196615,0.002778,Payload data handling unit update,4,ObjectLog
+1651.193865,1651.196730,0.002865,Payload data handling unit update,5,ObjectLog
+1651.193886,1651.196664,0.002778,Payload data handling unit update,4,ObjectLog
+1651.193898,1651.196725,0.002826,Payload data handling unit update,7,ObjectLog
+1651.193935,1651.196790,0.002855,Payload data handling unit update,6,ObjectLog
+1651.193956,1651.196765,0.002810,Payload data handling unit update,4,ObjectLog
+1651.194013,1651.196791,0.002778,Payload data handling unit update,5,ObjectLog
+1651.194035,1651.196813,0.002778,Payload data handling unit update,7,ObjectLog
+1651.194065,1651.197256,0.003191,Payload data handling unit update,6,ObjectLog
+1651.194078,1651.196856,0.002778,Payload data handling unit update,5,ObjectLog
+1651.194157,1651.196960,0.002803,Payload data handling unit update,5,ObjectLog
+1651.194162,1651.197025,0.002863,Payload data handling unit update,7,ObjectLog
+1651.194188,1651.196966,0.002778,Payload data handling unit update,4,ObjectLog
+1651.194237,1651.197137,0.002900,Payload data handling unit update,6,ObjectLog
+1651.194264,1651.197042,0.002778,Payload data handling unit update,4,ObjectLog
+1651.194306,1651.197103,0.002797,Payload data handling unit update,7,ObjectLog
+1651.194311,1651.197115,0.002805,Payload data handling unit update,4,ObjectLog
+1651.194330,1651.197133,0.002803,Payload data handling unit update,5,ObjectLog
+1651.194405,1651.197183,0.002778,Payload data handling unit update,4,ObjectLog
+1651.194412,1651.197190,0.002778,Payload data handling unit update,6,ObjectLog
+1651.194413,1651.197191,0.002778,Payload data handling unit update,5,ObjectLog
+1651.194437,1651.197215,0.002778,Payload data handling unit update,7,ObjectLog
+1651.194462,1651.197277,0.002815,Payload data handling unit update,4,ObjectLog
+1651.194465,1651.197256,0.002791,Payload data handling unit update,6,ObjectLog
+1651.194483,1651.197443,0.002960,Payload data handling unit update,5,ObjectLog
+1651.194501,1651.197291,0.002790,Payload data handling unit update,7,ObjectLog
+1651.194555,1651.197517,0.002962,Payload data handling unit update,6,ObjectLog
+1651.194566,1651.197368,0.002802,Payload data handling unit update,7,ObjectLog
+1651.194575,1651.197353,0.002778,Payload data handling unit update,4,ObjectLog
+1651.194637,1651.197415,0.002778,Payload data handling unit update,7,ObjectLog
+1651.194644,1651.197422,0.002778,Payload data handling unit update,4,ObjectLog
+1651.194696,1651.197474,0.002778,Payload data handling unit update,7,ObjectLog
+1651.194709,1651.197487,0.002778,Payload data handling unit update,4,ObjectLog
+1651.194722,1651.197537,0.002815,Payload data handling unit update,5,ObjectLog
+1651.194797,1651.197922,0.003125,Payload data handling unit update,4,ObjectLog
+1651.194813,1651.197673,0.002860,Payload data handling unit update,5,ObjectLog
+1651.194825,1651.197646,0.002822,Payload data handling unit update,7,ObjectLog
+1651.194866,1651.197768,0.002902,Payload data handling unit update,6,ObjectLog
+1651.194928,1651.197750,0.002823,Payload data handling unit update,7,ObjectLog
+1651.195000,1651.197777,0.002778,Payload data handling unit update,5,ObjectLog
+1651.195057,1651.197966,0.002909,Payload data handling unit update,5,ObjectLog
+1651.195081,1651.197969,0.002888,Payload data handling unit update,7,ObjectLog
+1651.195101,1651.197947,0.002846,Payload data handling unit update,6,ObjectLog
+1651.195232,1651.198010,0.002778,Payload data handling unit update,6,ObjectLog
+1651.195240,1651.198034,0.002794,Payload data handling unit update,7,ObjectLog
+1651.195251,1651.198116,0.002865,Payload data handling unit update,4,ObjectLog
+1651.195284,1651.198062,0.002778,Payload data handling unit update,6,ObjectLog
+1651.195290,1651.198073,0.002783,Payload data handling unit update,5,ObjectLog
+1651.195320,1651.198098,0.002778,Payload data handling unit update,7,ObjectLog
+1651.195353,1651.198131,0.002778,Payload data handling unit update,5,ObjectLog
+1651.195376,1651.198159,0.002783,Payload data handling unit update,6,ObjectLog
+1651.195392,1651.198255,0.002863,Payload data handling unit update,7,ObjectLog
+1651.195405,1651.198202,0.002797,Payload data handling unit update,5,ObjectLog
+1651.195457,1651.198255,0.002798,Payload data handling unit update,6,ObjectLog
+1651.195463,1651.198249,0.002785,Payload data handling unit update,4,ObjectLog
+1651.195497,1651.198275,0.002778,Payload data handling unit update,5,ObjectLog
+1652.330097,1652.332966,0.002869,VPU-7 anomaly,7,ObjectLog
+1652.332488,1652.335504,0.003015,VPU-7 anomaly,4,ObjectLog
+1652.332511,1652.335494,0.002983,VPU-7 anomaly,5,ObjectLog
+1652.332536,1652.335504,0.002968,VPU-7 anomaly,6,ObjectLog
+1652.335096,1652.453152,0.118056,VPU-7 anomaly,4,AGIS
+1652.335096,1652.453152,0.118056,VPU-7 anomaly,5,AGIS
+1652.335096,1652.453152,0.118056,VPU-7 anomaly,6,AGIS
+1652.335096,1652.453152,0.118056,VPU-7 anomaly,7,AGIS
+1655.666946,1655.672039,0.005093,Phased-array antenna anomaly,4,ObjectLog
+1655.668041,1655.672028,0.003987,Phased-array antenna anomaly,6,ObjectLog
+1655.668478,1655.672025,0.003547,Phased-array antenna anomaly,7,ObjectLog
+1655.668552,1655.672034,0.003482,Phased-array antenna anomaly,5,ObjectLog
+1655.672596,1655.694818,0.022222,Phased-array antenna anomaly,4,AGIS
+1655.672596,1655.694818,0.022222,Phased-array antenna anomaly,5,AGIS
+1655.672596,1655.694818,0.022222,Phased-array antenna anomaly,6,AGIS
+1655.672596,1655.694818,0.022222,Phased-array antenna anomaly,7,AGIS
+1656.229513,1656.230670,0.001157,Micro-meteoroid hit,4,AGIS
+1656.229513,1656.230670,0.001157,Micro-meteoroid hit,5,AGIS
+1656.229513,1656.230670,0.001157,Micro-meteoroid hit,6,AGIS
+1656.229513,1656.230670,0.001157,Micro-meteoroid hit,7,AGIS
+1672.829605,1672.831457,0.001852,Micro-meteoroid hit,4,AGIS
+1672.829605,1672.831457,0.001852,Micro-meteoroid hit,5,AGIS
+1672.829605,1672.831457,0.001852,Micro-meteoroid hit,6,AGIS
+1672.829605,1672.831457,0.001852,Micro-meteoroid hit,7,AGIS
+1689.297059,1689.298216,0.001157,Micro-meteoroid hit,4,AGIS
+1689.297059,1689.298216,0.001157,Micro-meteoroid hit,5,AGIS
+1689.297059,1689.298216,0.001157,Micro-meteoroid hit,6,AGIS
+1689.297059,1689.298216,0.001157,Micro-meteoroid hit,7,AGIS
+1697.769744,1697.770901,0.001157,Micro-meteoroid hit,4,AGIS
+1697.769744,1697.770901,0.001157,Micro-meteoroid hit,5,AGIS
+1697.769744,1697.770901,0.001157,Micro-meteoroid hit,6,AGIS
+1697.769744,1697.770901,0.001157,Micro-meteoroid hit,7,AGIS
+1733.895530,1733.896456,0.000926,Micro-meteoroid hit,4,AGIS
+1733.895530,1733.896456,0.000926,Micro-meteoroid hit,5,AGIS
+1733.895530,1733.896456,0.000926,Micro-meteoroid hit,6,AGIS
+1733.895530,1733.896456,0.000926,Micro-meteoroid hit,7,AGIS
+1770.008044,1770.013412,0.005368,Station-keeping manoeuvre #15,4,ObjectLog
+1770.008943,1770.013409,0.004466,Station-keeping manoeuvre #15,6,ObjectLog
+1770.009644,1770.013409,0.003765,Station-keeping manoeuvre #15,5,ObjectLog
+1770.010526,1770.013407,0.002881,Station-keeping manoeuvre #15,7,ObjectLog
+1770.014261,1770.214261,0.200000,Station-keeping manoeuvre #15,4,AGIS
+1770.014261,1770.214261,0.200000,Station-keeping manoeuvre #15,5,AGIS
+1770.014261,1770.214261,0.200000,Station-keeping manoeuvre #15,6,AGIS
+1770.014261,1770.214261,0.200000,Station-keeping manoeuvre #15,7,AGIS
+1773.704604,1773.707464,0.002860,VPU-5 anomaly,5,ObjectLog
+1773.706846,1773.709798,0.002952,VPU-5 anomaly,6,ObjectLog
+1773.706934,1773.709802,0.002868,VPU-5 anomaly,4,ObjectLog
+1773.707001,1773.709797,0.002795,VPU-5 anomaly,7,ObjectLog
+1773.710094,1773.835094,0.125000,VPU-5 anomaly,4,AGIS
+1773.710094,1773.835094,0.125000,VPU-5 anomaly,5,AGIS
+1773.710094,1773.835094,0.125000,VPU-5 anomaly,6,AGIS
+1773.710094,1773.835094,0.125000,VPU-5 anomaly,7,AGIS
+1776.936780,1777.242474,0.305694,Micro-meteoroid hit,4,AGIS
+1776.936780,1777.242474,0.305694,Micro-meteoroid hit,5,AGIS
+1776.936780,1777.242474,0.305694,Micro-meteoroid hit,6,AGIS
+1776.936780,1777.242474,0.305694,Micro-meteoroid hit,7,AGIS
+1784.561363,1784.565761,0.004398,Micro-meteoroid hit,4,AGIS
+1784.561363,1784.565761,0.004398,Micro-meteoroid hit,5,AGIS
+1784.561363,1784.565761,0.004398,Micro-meteoroid hit,6,AGIS
+1784.561363,1784.565761,0.004398,Micro-meteoroid hit,7,AGIS
+1788.114261,1788.168428,0.054167,Cebreros data loss,4,AGIS
+1788.114261,1788.168428,0.054167,Cebreros data loss,5,AGIS
+1788.114261,1788.168428,0.054167,Cebreros data loss,6,AGIS
+1788.114261,1788.168428,0.054167,Cebreros data loss,7,AGIS
+1790.575824,1790.581252,0.005428,Cebreros data loss,5,ObjectLog
+1790.576666,1790.581252,0.004586,Cebreros data loss,7,ObjectLog
+1790.576714,1790.581252,0.004538,Cebreros data loss,6,ObjectLog
+1790.623272,1790.628464,0.005192,Cebreros data loss,5,ObjectLog
+1790.624263,1790.628461,0.004198,Cebreros data loss,7,ObjectLog
+1790.624944,1790.628462,0.003518,Cebreros data loss,6,ObjectLog
+1790.625112,1790.628466,0.003354,Cebreros data loss,4,ObjectLog
+1790.672599,1790.675688,0.003089,Cebreros data loss,4,ObjectLog
+1790.672624,1790.675686,0.003062,Cebreros data loss,5,ObjectLog
+1790.672748,1790.675683,0.002935,Cebreros data loss,7,ObjectLog
+1790.672796,1790.675684,0.002888,Cebreros data loss,6,ObjectLog
+1790.719956,1790.722917,0.002961,Cebreros data loss,4,ObjectLog
+1790.719965,1790.722917,0.002953,Cebreros data loss,6,ObjectLog
+1790.720037,1790.722908,0.002871,Cebreros data loss,5,ObjectLog
+1790.720052,1790.722905,0.002854,Cebreros data loss,7,ObjectLog
+1790.766084,1790.770128,0.004044,Cebreros data loss,7,ObjectLog
+1790.766598,1790.770130,0.003532,Cebreros data loss,5,ObjectLog
+1790.766969,1790.770129,0.003160,Cebreros data loss,4,ObjectLog
+1790.767091,1790.770130,0.003039,Cebreros data loss,6,ObjectLog
+1790.812494,1790.817364,0.004870,Cebreros data loss,6,ObjectLog
+1790.813392,1790.817356,0.003964,Cebreros data loss,4,ObjectLog
+1790.813544,1790.817353,0.003809,Cebreros data loss,5,ObjectLog
+1790.859255,1790.864573,0.005317,Cebreros data loss,7,ObjectLog
+1790.860268,1790.864576,0.004308,Cebreros data loss,6,ObjectLog
+1790.860846,1790.864580,0.003735,Cebreros data loss,4,ObjectLog
+1790.861477,1790.864575,0.003098,Cebreros data loss,5,ObjectLog
+1790.908001,1790.911807,0.003806,Cebreros data loss,4,ObjectLog
+1790.908297,1790.911807,0.003510,Cebreros data loss,7,ObjectLog
+1790.908688,1790.911798,0.003110,Cebreros data loss,5,ObjectLog
+1790.908924,1790.911795,0.002871,Cebreros data loss,6,ObjectLog
+1791.441226,1791.444299,0.003072,Cebreros data loss,6,ObjectLog
+1793.184418,1793.187427,0.003009,Micro-meteoroid hit,4,AGIS
+1793.184418,1793.187427,0.003009,Micro-meteoroid hit,5,AGIS
+1793.184418,1793.187427,0.003009,Micro-meteoroid hit,6,AGIS
+1793.184418,1793.187427,0.003009,Micro-meteoroid hit,7,AGIS
+1806.701172,1806.704001,0.002829,VPU-6 anomaly,6,ObjectLog
+1841.427232,1841.430986,0.003754,Cebreros data loss,4,ObjectLog
+1841.429303,1841.432926,0.003623,Cebreros data loss,7,ObjectLog
+1841.434695,1841.438593,0.003898,Cebreros data loss,5,ObjectLog
+1841.632445,1841.643680,0.011235,Cebreros data loss,6,ObjectLog
+1842.276486,1842.300197,0.023712,Cebreros data loss,4,ObjectLog
+1842.472773,1842.487819,0.015046,Cebreros data loss,7,ObjectLog
+1842.665818,1842.676387,0.010569,Cebreros data loss,6,ObjectLog
+1843.206084,1843.211785,0.005702,Cebreros data loss,7,ObjectLog
+1843.206739,1843.211785,0.005046,Cebreros data loss,6,ObjectLog
+1849.124743,1849.147496,0.022753,VPU software update,5,ObjectLog
+1849.126027,1849.147496,0.021469,VPU software update,6,ObjectLog
+1849.126760,1849.143427,0.016667,VPU software update,4,AGIS
+1849.126760,1849.143427,0.016667,VPU software update,5,AGIS
+1849.126760,1849.143427,0.016667,VPU software update,6,AGIS
+1849.126760,1849.143427,0.016667,VPU software update,7,AGIS
+1849.127151,1849.147496,0.020345,VPU software update,4,ObjectLog
+1849.128010,1849.145339,0.017329,VPU software update,7,ObjectLog
+1873.787982,1873.789139,0.001157,Micro-meteoroid hit,4,AGIS
+1873.787982,1873.789139,0.001157,Micro-meteoroid hit,5,AGIS
+1873.787982,1873.789139,0.001157,Micro-meteoroid hit,6,AGIS
+1873.787982,1873.789139,0.001157,Micro-meteoroid hit,7,AGIS
+1886.084926,1886.086315,0.001389,Micro-meteoroid hit,4,AGIS
+1886.084926,1886.086315,0.001389,Micro-meteoroid hit,5,AGIS
+1886.084926,1886.086315,0.001389,Micro-meteoroid hit,6,AGIS
+1886.084926,1886.086315,0.001389,Micro-meteoroid hit,7,AGIS
+1889.585204,1889.588908,0.003704,Micro-meteoroid hit,4,AGIS
+1889.585204,1889.588908,0.003704,Micro-meteoroid hit,5,AGIS
+1889.585204,1889.588908,0.003704,Micro-meteoroid hit,6,AGIS
+1889.585204,1889.588908,0.003704,Micro-meteoroid hit,7,AGIS
+1919.013847,1919.016885,0.003038,VPU-5 anomaly,5,ObjectLog
+1919.016371,1919.019393,0.003021,VPU-5 anomaly,6,ObjectLog
+1919.016440,1919.019385,0.002945,VPU-5 anomaly,4,ObjectLog
+1919.016570,1919.019380,0.002810,VPU-5 anomaly,7,ObjectLog
+1919.019815,1919.125370,0.105556,VPU-5 anomaly,4,AGIS
+1919.019815,1919.125370,0.105556,VPU-5 anomaly,5,AGIS
+1919.019815,1919.125370,0.105556,VPU-5 anomaly,6,AGIS
+1919.019815,1919.125370,0.105556,VPU-5 anomaly,7,AGIS
+1943.449018,1943.451805,0.002786,VPU-4 anomaly,4,ObjectLog
+1943.451917,1943.455179,0.003263,VPU-4 anomaly,6,ObjectLog
+1943.451962,1943.455170,0.003207,VPU-4 anomaly,5,ObjectLog
+1943.452349,1943.455166,0.002817,VPU-4 anomaly,7,ObjectLog
+1943.454370,1943.553583,0.099213,VPU-4 anomaly,4,AGIS
+1943.454370,1943.553583,0.099213,VPU-4 anomaly,5,AGIS
+1943.454370,1943.553583,0.099213,VPU-4 anomaly,6,AGIS
+1943.454370,1943.553583,0.099213,VPU-4 anomaly,7,AGIS
+1951.335825,1951.338685,0.002860,VPU-5 anomaly,5,ObjectLog
+1951.339216,1951.342355,0.003139,VPU-5 anomaly,7,ObjectLog
+1951.339395,1951.342355,0.002961,VPU-5 anomaly,6,ObjectLog
+1951.339477,1951.342348,0.002871,VPU-5 anomaly,4,ObjectLog
+1951.339694,1951.599601,0.259907,VPU-5 anomaly,4,AGIS
+1951.339694,1951.599601,0.259907,VPU-5 anomaly,5,AGIS
+1951.339694,1951.599601,0.259907,VPU-5 anomaly,6,AGIS
+1951.339694,1951.599601,0.259907,VPU-5 anomaly,7,AGIS
+1958.009013,1958.031717,0.022703,Unknown,7,ObjectLog
+1958.009021,1958.031316,0.022296,Unknown,4,ObjectLog
+1958.009185,1958.031717,0.022531,Unknown,6,ObjectLog
+1958.009266,1958.031470,0.022204,Unknown,5,ObjectLog
+1962.364805,1962.367948,0.003143,VPU-5 anomaly,5,ObjectLog
+1962.367341,1962.370596,0.003255,VPU-5 anomaly,7,ObjectLog
+1962.367403,1962.370596,0.003194,VPU-5 anomaly,6,ObjectLog
+1962.367504,1962.370589,0.003085,VPU-5 anomaly,4,ObjectLog
+1962.371203,1962.478147,0.106944,VPU-5 anomaly,4,AGIS
+1962.371203,1962.478147,0.106944,VPU-5 anomaly,5,AGIS
+1962.371203,1962.478147,0.106944,VPU-5 anomaly,6,AGIS
+1962.371203,1962.478147,0.106944,VPU-5 anomaly,7,AGIS
+1980.908788,1980.915637,0.006849,Malargue data loss,5,ObjectLog
+1980.909377,1980.915747,0.006370,Malargue data loss,7,ObjectLog
+1980.909715,1980.914760,0.005045,Malargue data loss,4,ObjectLog
+1980.910127,1980.914881,0.004754,Malargue data loss,6,ObjectLog
+1995.187297,1995.194118,0.006821,New Norcia data loss,6,ObjectLog
+1995.187542,1995.193337,0.005795,New Norcia data loss,4,ObjectLog
+1995.187906,1995.194118,0.006212,New Norcia data loss,7,ObjectLog
+1995.188110,1995.193981,0.005871,New Norcia data loss,5,ObjectLog
+2003.149684,2003.159435,0.009751,New Norcia data loss,5,ObjectLog
+2003.150047,2003.159435,0.009388,New Norcia data loss,7,ObjectLog
+2003.150875,2003.158141,0.007265,New Norcia data loss,4,ObjectLog
+2003.151298,2003.158358,0.007060,New Norcia data loss,6,ObjectLog
+2003.160075,2003.165175,0.005100,New Norcia data loss,6,ObjectLog
+2021.304230,2021.307470,0.003240,Micro-meteoroid hit,4,AGIS
+2021.304230,2021.307470,0.003240,Micro-meteoroid hit,5,AGIS
+2021.304230,2021.307470,0.003240,Micro-meteoroid hit,6,AGIS
+2021.304230,2021.307470,0.003240,Micro-meteoroid hit,7,AGIS
+2066.763627,2066.765711,0.002084,Micro-meteoroid hit,4,AGIS
+2066.763627,2066.765711,0.002084,Micro-meteoroid hit,5,AGIS
+2066.763627,2066.765711,0.002084,Micro-meteoroid hit,6,AGIS
+2066.763627,2066.765711,0.002084,Micro-meteoroid hit,7,AGIS
+2079.185227,2079.188122,0.002895,VPU-5 anomaly,5,ObjectLog
+2093.999548,2094.002326,0.002778,Payload data handling unit anomaly,4,ObjectLog
+2093.999669,2094.002447,0.002778,Payload data handling unit anomaly,4,ObjectLog
+2093.999788,2094.002566,0.002778,Payload data handling unit anomaly,4,ObjectLog
+2094.000058,2094.002836,0.002778,Payload data handling unit anomaly,4,ObjectLog
+2094.000170,2094.002986,0.002816,Payload data handling unit anomaly,4,ObjectLog
+2094.004534,2095.568423,1.563889,Payload data handling unit anomaly,4,AGIS
+2094.004534,2095.568423,1.563889,Payload data handling unit anomaly,5,AGIS
+2094.004534,2095.568423,1.563889,Payload data handling unit anomaly,6,AGIS
+2094.004534,2095.568423,1.563889,Payload data handling unit anomaly,7,AGIS
+2099.220521,2099.223651,0.003130,Station-keeping manoeuvre #16,7,ObjectLog
+2099.220777,2099.223642,0.002865,Station-keeping manoeuvre #16,5,ObjectLog
+2099.220803,2099.223641,0.002838,Station-keeping manoeuvre #16,6,ObjectLog
+2099.220816,2099.223644,0.002828,Station-keeping manoeuvre #16,4,ObjectLog
+2099.223979,2099.412867,0.188889,Station-keeping manoeuvre #16,4,AGIS
+2099.223979,2099.412867,0.188889,Station-keeping manoeuvre #16,5,AGIS
+2099.223979,2099.412867,0.188889,Station-keeping manoeuvre #16,6,AGIS
+2099.223979,2099.412867,0.188889,Station-keeping manoeuvre #16,7,AGIS
+2102.500000,2130.500000,28.000000,VPU software test,5,Manual
+2103.598904,2103.713164,0.114260,VPU software update,4,AGIS
+2103.598904,2103.713164,0.114260,VPU software update,5,AGIS
+2103.598904,2103.713164,0.114260,VPU software update,6,AGIS
+2103.598904,2103.713164,0.114260,VPU software update,7,AGIS
+2111.236940,2111.240074,0.003134,AOCS operations,5,ObjectLog
+2111.237202,2111.240030,0.002827,AOCS operations,6,ObjectLog
+2111.237239,2111.240033,0.002794,AOCS operations,4,ObjectLog
+2111.237275,2111.240074,0.002799,AOCS operations,7,ObjectLog
+2111.240645,2111.457312,0.216667,AOCS operations,4,AGIS
+2111.240645,2111.457312,0.216667,AOCS operations,5,AGIS
+2111.240645,2111.457312,0.216667,AOCS operations,6,AGIS
+2111.240645,2111.457312,0.216667,AOCS operations,7,AGIS
+2123.191219,2123.193534,0.002315,Micro-meteoroid hit,4,AGIS
+2123.191219,2123.193534,0.002315,Micro-meteoroid hit,5,AGIS
+2123.191219,2123.193534,0.002315,Micro-meteoroid hit,6,AGIS
+2123.191219,2123.193534,0.002315,Micro-meteoroid hit,7,AGIS
+2129.730663,2129.733626,0.002963,Micro-meteoroid hit,4,AGIS
+2129.730663,2129.733626,0.002963,Micro-meteoroid hit,5,AGIS
+2129.730663,2129.733626,0.002963,Micro-meteoroid hit,6,AGIS
+2129.730663,2129.733626,0.002963,Micro-meteoroid hit,7,AGIS
+2137.194085,2137.197204,0.003119,VPU-4 anomaly,4,ObjectLog
+2139.411437,2139.414223,0.002786,VPU-4 anomaly,4,ObjectLog
+2139.413914,2139.416846,0.002932,VPU-4 anomaly,6,ObjectLog
+2139.413982,2139.416834,0.002852,VPU-4 anomaly,7,ObjectLog
+2139.414059,2139.416837,0.002778,VPU-4 anomaly,5,ObjectLog
+2139.417034,2139.523978,0.106944,VPU-4 anomaly,4,AGIS
+2139.417034,2139.523978,0.106944,VPU-4 anomaly,5,AGIS
+2139.417034,2139.523978,0.106944,VPU-4 anomaly,6,AGIS
+2139.417034,2139.523978,0.106944,VPU-4 anomaly,7,AGIS
+2142.282797,2142.285602,0.002805,VPU-7 anomaly,7,ObjectLog
+2142.285755,2142.288691,0.002935,VPU-7 anomaly,4,ObjectLog
+2142.285760,2142.288685,0.002925,VPU-7 anomaly,6,ObjectLog
+2142.285854,2142.288689,0.002834,VPU-7 anomaly,5,ObjectLog
+2142.289256,2142.394811,0.105556,VPU-7 anomaly,4,AGIS
+2142.289256,2142.394811,0.105556,VPU-7 anomaly,5,AGIS
+2142.289256,2142.394811,0.105556,VPU-7 anomaly,6,AGIS
+2142.289256,2142.394811,0.105556,VPU-7 anomaly,7,AGIS
+2147.080268,2147.083067,0.002799,VPU-6 anomaly,6,ObjectLog
+2147.971200,2147.994811,0.023611,Unknown,4,AGIS
+2147.971200,2147.994811,0.023611,Unknown,5,AGIS
+2147.971200,2147.994811,0.023611,Unknown,6,AGIS
+2147.971200,2147.994811,0.023611,Unknown,7,AGIS
+2150.425071,2150.427884,0.002812,VPU-4 anomaly,4,ObjectLog
+2150.428043,2150.431140,0.003097,VPU-4 anomaly,7,ObjectLog
+2150.428246,2150.431142,0.002896,VPU-4 anomaly,5,ObjectLog
+2150.428277,2150.431141,0.002864,VPU-4 anomaly,6,ObjectLog
+2150.432311,2150.535089,0.102778,VPU-4 anomaly,4,AGIS
+2150.432311,2150.535089,0.102778,VPU-4 anomaly,5,AGIS
+2150.432311,2150.535089,0.102778,VPU-4 anomaly,6,AGIS
+2150.432311,2150.535089,0.102778,VPU-4 anomaly,7,AGIS
+2154.114313,2154.117092,0.002779,VPU-7 anomaly,7,ObjectLog
+2154.117749,2154.120827,0.003079,VPU-7 anomaly,4,ObjectLog
+2154.117869,2154.120827,0.002959,VPU-7 anomaly,6,ObjectLog
+2154.117947,2154.120818,0.002871,VPU-7 anomaly,5,ObjectLog
+2154.117978,2154.225293,0.107315,VPU-7 anomaly,4,AGIS
+2154.117978,2154.225293,0.107315,VPU-7 anomaly,5,AGIS
+2154.117978,2154.225293,0.107315,VPU-7 anomaly,6,AGIS
+2154.117978,2154.225293,0.107315,VPU-7 anomaly,7,AGIS
+2154.421977,2154.424823,0.002846,VPU-6 anomaly,6,ObjectLog
+2165.159839,2165.181517,0.021678,Malargue data loss,5,ObjectLog
+2165.159989,2165.181563,0.021574,Malargue data loss,6,ObjectLog
+2165.160003,2165.181427,0.021423,Malargue data loss,4,ObjectLog
+2165.160089,2165.178144,0.018056,Malargue data loss,4,AGIS
+2165.160089,2165.178144,0.018056,Malargue data loss,5,AGIS
+2165.160089,2165.178144,0.018056,Malargue data loss,6,AGIS
+2165.160089,2165.178144,0.018056,Malargue data loss,7,AGIS
+2165.160157,2165.181529,0.021371,Malargue data loss,7,ObjectLog
+2167.315557,2167.318421,0.002864,VPU-6 anomaly,6,ObjectLog
+2172.834150,2172.883126,0.048976,VPU software update,7,ObjectLog
+2172.834160,2172.845628,0.011468,VPU software update,4,ObjectLog
+2172.834312,2172.845696,0.011384,VPU software update,5,ObjectLog
+2172.835089,2173.064255,0.229167,VPU software update,4,AGIS
+2172.835089,2173.064255,0.229167,VPU software update,5,AGIS
+2172.835089,2173.064255,0.229167,VPU software update,6,AGIS
+2172.835089,2173.064255,0.229167,VPU software update,7,AGIS
+2172.835128,2172.846036,0.010907,VPU software update,6,ObjectLog
+2172.842902,2172.846165,0.003263,VPU software update,4,ObjectLog
+2172.842976,2172.846226,0.003250,VPU software update,5,ObjectLog
+2172.842988,2172.845773,0.002785,VPU software update,7,ObjectLog
+2172.843045,2172.845988,0.002943,VPU software update,7,ObjectLog
+2172.843276,2172.846641,0.003365,VPU software update,7,ObjectLog
+2172.843307,2172.846335,0.003027,VPU software update,6,ObjectLog
+2172.843436,2172.846681,0.003245,VPU software update,4,ObjectLog
+2172.843511,2172.846439,0.002929,VPU software update,5,ObjectLog
+2172.843613,2172.847004,0.003391,VPU software update,6,ObjectLog
+2172.843739,2172.846714,0.002975,VPU software update,5,ObjectLog
+2172.843918,2172.847018,0.003099,VPU software update,7,ObjectLog
+2172.843951,2172.846728,0.002778,VPU software update,4,ObjectLog
+2172.843989,2172.846771,0.002781,VPU software update,5,ObjectLog
+2172.844005,2172.846813,0.002808,VPU software update,4,ObjectLog
+2172.844044,2172.846822,0.002778,VPU software update,5,ObjectLog
+2172.844085,2172.846863,0.002778,VPU software update,4,ObjectLog
+2172.844121,2172.847138,0.003017,VPU software update,5,ObjectLog
+2172.844180,2172.847228,0.003048,VPU software update,4,ObjectLog
+2172.844274,2172.847365,0.003091,VPU software update,6,ObjectLog
+2172.844286,2172.847277,0.002991,VPU software update,7,ObjectLog
+2172.844408,2172.848224,0.003816,VPU software update,5,ObjectLog
+2172.844504,2172.847538,0.003034,VPU software update,4,ObjectLog
+2172.844557,2172.847376,0.002820,VPU software update,7,ObjectLog
+2172.844640,2172.849135,0.004495,VPU software update,6,ObjectLog
+2172.844675,2172.847467,0.002792,VPU software update,7,ObjectLog
+2172.844743,2172.847564,0.002821,VPU software update,7,ObjectLog
+2172.844817,2172.847993,0.003176,VPU software update,4,ObjectLog
+2172.844851,2172.848059,0.003208,VPU software update,7,ObjectLog
+2172.845271,2172.848558,0.003288,VPU software update,4,ObjectLog
+2172.845331,2172.848108,0.002778,VPU software update,7,ObjectLog
+2172.845380,2172.848318,0.002938,VPU software update,7,ObjectLog
+2172.845499,2172.848577,0.003077,VPU software update,5,ObjectLog
+2172.845600,2172.848840,0.003240,VPU software update,7,ObjectLog
+2172.845841,2172.848700,0.002859,VPU software update,4,ObjectLog
+2172.845851,2172.848824,0.002974,VPU software update,5,ObjectLog
+2172.845974,2172.849071,0.003097,VPU software update,4,ObjectLog
+2172.846115,2172.849673,0.003558,VPU software update,5,ObjectLog
+2172.846133,2172.848927,0.002794,VPU software update,7,ObjectLog
+2172.846233,2172.849241,0.003008,VPU software update,7,ObjectLog
+2172.846366,2172.849714,0.003348,VPU software update,4,ObjectLog
+2172.846405,2172.849976,0.003571,VPU software update,6,ObjectLog
+2172.846518,2172.849308,0.002790,VPU software update,7,ObjectLog
+2172.846581,2172.849447,0.002866,VPU software update,7,ObjectLog
+2172.846732,2172.850400,0.003669,VPU software update,7,ObjectLog
+2172.846957,2172.851417,0.004459,VPU software update,5,ObjectLog
+2172.846994,2172.849789,0.002796,VPU software update,4,ObjectLog
+2172.847071,2172.849953,0.002882,VPU software update,4,ObjectLog
+2172.847243,2172.850241,0.002998,VPU software update,4,ObjectLog
+2172.847261,2172.850227,0.002966,VPU software update,6,ObjectLog
+2172.847504,2172.850387,0.002883,VPU software update,6,ObjectLog
+2172.847516,2172.850705,0.003190,VPU software update,4,ObjectLog
+2172.847668,2172.850446,0.002778,VPU software update,6,ObjectLog
+2172.847678,2172.850862,0.003184,VPU software update,7,ObjectLog
+2172.847715,2172.850979,0.003264,VPU software update,6,ObjectLog
+2172.847977,2172.851189,0.003212,VPU software update,4,ObjectLog
+2172.848133,2172.851518,0.003385,VPU software update,7,ObjectLog
+2172.848249,2172.851074,0.002825,VPU software update,6,ObjectLog
+2172.848390,2172.851184,0.002794,VPU software update,6,ObjectLog
+2172.848457,2172.851681,0.003224,VPU software update,6,ObjectLog
+2172.848470,2172.851357,0.002887,VPU software update,4,ObjectLog
+2172.848651,2172.852069,0.003418,VPU software update,4,ObjectLog
+2172.848711,2172.851533,0.002822,VPU software update,5,ObjectLog
+2172.848803,2172.851644,0.002841,VPU software update,5,ObjectLog
+2172.848834,2172.851613,0.002779,VPU software update,7,ObjectLog
+2172.848893,2172.852163,0.003270,VPU software update,7,ObjectLog
+2172.848938,2172.851918,0.002980,VPU software update,5,ObjectLog
+2172.848971,2172.851803,0.002832,VPU software update,6,ObjectLog
+2172.849077,2172.851855,0.002778,VPU software update,6,ObjectLog
+2172.849124,2172.853149,0.004025,VPU software update,6,ObjectLog
+2172.849194,2172.852603,0.003409,VPU software update,5,ObjectLog
+2172.849344,2172.852160,0.002816,VPU software update,4,ObjectLog
+2172.849434,2172.852430,0.002996,VPU software update,4,ObjectLog
+2172.849438,2172.852445,0.003008,VPU software update,7,ObjectLog
+2172.849699,2172.852514,0.002815,VPU software update,4,ObjectLog
+2172.849719,2172.853794,0.004075,VPU software update,7,ObjectLog
+2172.849783,2172.853757,0.003973,VPU software update,4,ObjectLog
+2172.849898,2172.852750,0.002852,VPU software update,5,ObjectLog
+2172.850021,2172.853619,0.003598,VPU software update,5,ObjectLog
+2172.850443,2172.853253,0.002811,VPU software update,6,ObjectLog
+2172.850542,2172.853574,0.003032,VPU software update,6,ObjectLog
+2172.850853,2172.854026,0.003173,VPU software update,6,ObjectLog
+2172.850917,2172.853827,0.002910,VPU software update,5,ObjectLog
+2172.851030,2172.854358,0.003328,VPU software update,4,ObjectLog
+2172.851090,2172.854560,0.003470,VPU software update,7,ObjectLog
+2172.851112,2172.854067,0.002956,VPU software update,5,ObjectLog
+2172.851306,2172.854468,0.003162,VPU software update,6,ObjectLog
+2172.851350,2172.854259,0.002909,VPU software update,5,ObjectLog
+2172.851541,2172.854465,0.002925,VPU software update,5,ObjectLog
+2172.851642,2172.854698,0.003055,VPU software update,4,ObjectLog
+2172.851743,2172.854811,0.003068,VPU software update,6,ObjectLog
+2172.851755,2172.854677,0.002922,VPU software update,5,ObjectLog
+2172.851840,2172.855648,0.003808,VPU software update,7,ObjectLog
+2172.851946,2172.855713,0.003767,VPU software update,5,ObjectLog
+2172.851974,2172.854809,0.002835,VPU software update,4,ObjectLog
+2172.852084,2172.855515,0.003431,VPU software update,4,ObjectLog
+2172.852102,2172.855775,0.003673,VPU software update,6,ObjectLog
+2172.852796,2172.856122,0.003326,VPU software update,4,ObjectLog
+2172.852935,2172.856104,0.003169,VPU software update,7,ObjectLog
+2172.852986,2172.855929,0.002943,VPU software update,5,ObjectLog
+2172.853048,2172.855881,0.002833,VPU software update,6,ObjectLog
+2172.853186,2172.856218,0.003032,VPU software update,6,ObjectLog
+2172.853199,2172.855976,0.002778,VPU software update,5,ObjectLog
+2172.853290,2172.856268,0.002979,VPU software update,5,ObjectLog
+2172.853378,2172.856419,0.003042,VPU software update,7,ObjectLog
+2172.853409,2172.856800,0.003391,VPU software update,4,ObjectLog
+2172.853512,2172.856289,0.002778,VPU software update,6,ObjectLog
+2172.853582,2172.856892,0.003311,VPU software update,6,ObjectLog
+2172.853588,2172.856406,0.002818,VPU software update,5,ObjectLog
+2172.853675,2172.856669,0.002994,VPU software update,5,ObjectLog
+2172.853699,2172.856477,0.002778,VPU software update,7,ObjectLog
+2172.853751,2172.856539,0.002788,VPU software update,7,ObjectLog
+2172.853834,2172.856624,0.002789,VPU software update,7,ObjectLog
+2172.853902,2172.857275,0.003373,VPU software update,7,ObjectLog
+2172.853947,2172.857044,0.003097,VPU software update,5,ObjectLog
+2172.854081,2172.856874,0.002794,VPU software update,4,ObjectLog
+2172.854147,2172.857272,0.003125,VPU software update,4,ObjectLog
+2172.854197,2172.857170,0.002972,VPU software update,6,ObjectLog
+2172.854314,2172.857133,0.002819,VPU software update,5,ObjectLog
+2172.854407,2172.857222,0.002815,VPU software update,5,ObjectLog
+2172.854445,2172.857464,0.003020,VPU software update,6,ObjectLog
+2172.854513,2172.857308,0.002796,VPU software update,5,ObjectLog
+2172.854552,2172.857440,0.002887,VPU software update,4,ObjectLog
+2172.854562,2172.857429,0.002867,VPU software update,7,ObjectLog
+2172.854591,2172.858983,0.004393,VPU software update,5,ObjectLog
+2172.854725,2172.857726,0.003001,VPU software update,7,ObjectLog
+2172.854733,2172.857515,0.002782,VPU software update,4,ObjectLog
+2172.854736,2172.858074,0.003338,VPU software update,6,ObjectLog
+2172.854806,2172.857813,0.003007,VPU software update,4,ObjectLog
+2172.855017,2172.857795,0.002778,VPU software update,7,ObjectLog
+2172.855071,2172.858208,0.003137,VPU software update,7,ObjectLog
+2172.855115,2172.858729,0.003614,VPU software update,4,ObjectLog
+2172.855357,2172.858400,0.003043,VPU software update,6,ObjectLog
+2172.855482,2172.858326,0.002843,VPU software update,7,ObjectLog
+2172.855605,2172.858382,0.002778,VPU software update,7,ObjectLog
+2172.855655,2172.858723,0.003068,VPU software update,7,ObjectLog
+2172.855674,2172.858636,0.002962,VPU software update,6,ObjectLog
+2172.855905,2172.858967,0.003062,VPU software update,6,ObjectLog
+2172.856005,2172.858890,0.002885,VPU software update,4,ObjectLog
+2172.856043,2172.858930,0.002887,VPU software update,7,ObjectLog
+2172.856189,2172.859008,0.002820,VPU software update,4,ObjectLog
+2172.856217,2172.859063,0.002846,VPU software update,7,ObjectLog
+2172.856250,2172.859074,0.002823,VPU software update,6,ObjectLog
+2172.856254,2172.859048,0.002794,VPU software update,5,ObjectLog
+2172.856320,2172.859923,0.003603,VPU software update,5,ObjectLog
+2172.856349,2172.859196,0.002848,VPU software update,4,ObjectLog
+2172.856362,2172.859303,0.002942,VPU software update,6,ObjectLog
+2172.856366,2172.859410,0.003044,VPU software update,7,ObjectLog
+2172.856466,2172.859378,0.002912,VPU software update,4,ObjectLog
+2172.856597,2172.859405,0.002808,VPU software update,6,ObjectLog
+2172.856647,2172.859714,0.003067,VPU software update,4,ObjectLog
+2172.856681,2172.859471,0.002791,VPU software update,7,ObjectLog
+2172.856681,2172.859460,0.002779,VPU software update,6,ObjectLog
+2172.856736,2172.859582,0.002847,VPU software update,6,ObjectLog
+2172.856749,2172.859527,0.002778,VPU software update,7,ObjectLog
+2172.856806,2172.859659,0.002853,VPU software update,7,ObjectLog
+2172.856853,2172.859933,0.003081,VPU software update,6,ObjectLog
+2172.856935,2172.859880,0.002945,VPU software update,7,ObjectLog
+2172.856988,2172.860189,0.003201,VPU software update,4,ObjectLog
+2172.857160,2172.860216,0.003056,VPU software update,7,ObjectLog
+2172.857220,2172.861604,0.004384,VPU software update,6,ObjectLog
+2172.857262,2172.860122,0.002860,VPU software update,5,ObjectLog
+2172.857403,2172.860846,0.003443,VPU software update,5,ObjectLog
+2172.857471,2172.860272,0.002801,VPU software update,4,ObjectLog
+2172.857487,2172.861209,0.003723,VPU software update,7,ObjectLog
+2172.857572,2172.860635,0.003063,VPU software update,4,ObjectLog
+2172.857913,2172.860981,0.003069,VPU software update,4,ObjectLog
+2172.858122,2172.863096,0.004975,VPU software update,5,ObjectLog
+2172.858255,2172.861450,0.003195,VPU software update,4,ObjectLog
+2172.858479,2172.868115,0.009636,VPU software update,7,ObjectLog
+2172.858720,2172.865947,0.007227,VPU software update,4,ObjectLog
+2172.858878,2172.861966,0.003088,VPU software update,6,ObjectLog
+2172.859237,2172.862179,0.002942,VPU software update,6,ObjectLog
+2172.859469,2172.862248,0.002780,VPU software update,6,ObjectLog
+2172.859517,2172.862408,0.002891,VPU software update,6,ObjectLog
+2172.859676,2172.868377,0.008701,VPU software update,6,ObjectLog
+2172.860365,2172.870031,0.009666,VPU software update,5,ObjectLog
+2172.863229,2172.871878,0.008649,VPU software update,4,ObjectLog
+2172.865391,2172.872013,0.006623,VPU software update,7,ObjectLog
+2172.865657,2172.870070,0.004413,VPU software update,6,ObjectLog
+2172.867311,2172.875308,0.007997,VPU software update,5,ObjectLog
+2172.867361,2172.871423,0.004062,VPU software update,6,ObjectLog
+2172.868697,2172.883126,0.014429,VPU software update,6,ObjectLog
+2172.869162,2172.874371,0.005210,VPU software update,4,ObjectLog
+2172.869283,2172.882222,0.012938,VPU software update,7,ObjectLog
+2172.871674,2172.881826,0.010152,VPU software update,4,ObjectLog
+2172.872583,2172.875393,0.002810,VPU software update,5,ObjectLog
+2172.872661,2172.881338,0.008676,VPU software update,5,ObjectLog
+2172.883773,2172.886613,0.002840,VPU software update,5,ObjectLog
+2172.883911,2172.901386,0.017474,VPU software update,5,ObjectLog
+2172.884103,2172.901386,0.017282,VPU software update,4,ObjectLog
+2172.884190,2172.901386,0.017195,VPU software update,7,ObjectLog
+2172.884594,2172.898470,0.013876,VPU software update,6,ObjectLog
+2172.893504,2172.897091,0.003587,VPU software update,5,ObjectLog
+2172.893512,2172.897151,0.003638,VPU software update,6,ObjectLog
+2172.894334,2172.897410,0.003075,VPU software update,4,ObjectLog
+2172.894364,2172.897228,0.002864,VPU software update,5,ObjectLog
+2172.894365,2172.897547,0.003182,VPU software update,7,ObjectLog
+2172.894450,2172.897236,0.002786,VPU software update,6,ObjectLog
+2172.894517,2172.897295,0.002778,VPU software update,5,ObjectLog
+2172.894523,2172.897386,0.002863,VPU software update,6,ObjectLog
+2172.894604,2172.897382,0.002778,VPU software update,5,ObjectLog
+2172.894655,2172.898341,0.003686,VPU software update,6,ObjectLog
+2172.894665,2172.897462,0.002797,VPU software update,5,ObjectLog
+2172.894682,2172.897628,0.002946,VPU software update,4,ObjectLog
+2172.894732,2172.897547,0.002815,VPU software update,5,ObjectLog
+2172.894819,2172.897773,0.002954,VPU software update,7,ObjectLog
+2172.894840,2172.897815,0.002975,VPU software update,5,ObjectLog
+2172.894900,2172.897707,0.002806,VPU software update,4,ObjectLog
+2172.894977,2172.897848,0.002871,VPU software update,4,ObjectLog
+2172.895080,2172.897919,0.002839,VPU software update,7,ObjectLog
+2172.895125,2172.897944,0.002819,VPU software update,4,ObjectLog
+2172.895158,2172.898171,0.003013,VPU software update,5,ObjectLog
+2172.895211,2172.898235,0.003024,VPU software update,7,ObjectLog
+2172.895215,2172.897992,0.002778,VPU software update,4,ObjectLog
+2172.895269,2172.898267,0.002998,VPU software update,4,ObjectLog
+2172.895449,2172.898227,0.002778,VPU software update,5,ObjectLog
+2172.895499,2172.898420,0.002921,VPU software update,5,ObjectLog
+2172.895509,2172.898586,0.003077,VPU software update,7,ObjectLog
+2172.895543,2172.898549,0.003006,VPU software update,4,ObjectLog
+2172.895624,2172.898470,0.002846,VPU software update,6,ObjectLog
+2172.895708,2172.898541,0.002833,VPU software update,5,ObjectLog
+2172.895786,2172.898960,0.003174,VPU software update,6,ObjectLog
+2172.895821,2172.898741,0.002920,VPU software update,5,ObjectLog
+2172.895828,2172.898636,0.002808,VPU software update,4,ObjectLog
+2172.895891,2172.898669,0.002778,VPU software update,7,ObjectLog
+2172.895910,2172.898795,0.002885,VPU software update,4,ObjectLog
+2172.895951,2172.898751,0.002800,VPU software update,7,ObjectLog
+2172.896037,2172.899222,0.003185,VPU software update,7,ObjectLog
+2172.896079,2172.898857,0.002778,VPU software update,5,ObjectLog
+2172.896085,2172.899074,0.002989,VPU software update,4,ObjectLog
+2172.896145,2172.899027,0.002883,VPU software update,5,ObjectLog
+2172.896242,2172.899194,0.002952,VPU software update,6,ObjectLog
+2172.896299,2172.899080,0.002782,VPU software update,5,ObjectLog
+2172.896343,2172.899265,0.002922,VPU software update,4,ObjectLog
+2172.896363,2172.899257,0.002894,VPU software update,5,ObjectLog
+2172.896470,2172.899369,0.002899,VPU software update,6,ObjectLog
+2172.896518,2172.899772,0.003254,VPU software update,7,ObjectLog
+2172.896538,2172.899566,0.003028,VPU software update,4,ObjectLog
+2172.896594,2172.899414,0.002820,VPU software update,5,ObjectLog
+2172.896655,2172.899623,0.002969,VPU software update,6,ObjectLog
+2172.896706,2172.899491,0.002785,VPU software update,5,ObjectLog
+2172.896831,2172.899810,0.002979,VPU software update,5,ObjectLog
+2172.896837,2172.899706,0.002868,VPU software update,4,ObjectLog
+2172.896940,2172.899842,0.002902,VPU software update,6,ObjectLog
+2172.897010,2172.900179,0.003169,VPU software update,4,ObjectLog
+2172.897059,2172.899837,0.002778,VPU software update,7,ObjectLog
+2172.897113,2172.899947,0.002834,VPU software update,6,ObjectLog
+2172.897121,2172.900209,0.003088,VPU software update,5,ObjectLog
+2172.897146,2172.900029,0.002883,VPU software update,7,ObjectLog
+2172.897228,2172.900288,0.003060,VPU software update,6,ObjectLog
+2172.897315,2172.900122,0.002806,VPU software update,7,ObjectLog
+2172.897398,2172.900657,0.003259,VPU software update,7,ObjectLog
+2172.897485,2172.900341,0.002856,VPU software update,5,ObjectLog
+2172.897510,2172.900408,0.002898,VPU software update,4,ObjectLog
+2172.897615,2172.900494,0.002879,VPU software update,6,ObjectLog
+2172.897619,2172.900399,0.002780,VPU software update,5,ObjectLog
+2172.897678,2172.900456,0.002778,VPU software update,5,ObjectLog
+2172.897693,2172.900634,0.002941,VPU software update,4,ObjectLog
+2172.897741,2172.901012,0.003272,VPU software update,5,ObjectLog
+2172.897778,2172.900707,0.002929,VPU software update,6,ObjectLog
+2172.897931,2172.900735,0.002803,VPU software update,7,ObjectLog
+2172.897945,2172.901378,0.003433,VPU software update,4,ObjectLog
+2172.897997,2172.901272,0.003276,VPU software update,6,ObjectLog
+2172.898019,2172.900891,0.002872,VPU software update,7,ObjectLog
+2172.898186,2172.901236,0.003050,VPU software update,7,ObjectLog
+2172.898340,2172.901260,0.002920,VPU software update,5,ObjectLog
+2172.898528,2172.901386,0.002857,VPU software update,7,ObjectLog
+2172.898531,2172.901386,0.002855,VPU software update,5,ObjectLog
+2172.898556,2172.901363,0.002807,VPU software update,6,ObjectLog
+2172.930494,2172.977123,0.046630,VPU software update,7,ObjectLog
+2172.930503,2172.965683,0.035180,VPU software update,6,ObjectLog
+2172.930512,2172.959189,0.028676,VPU software update,5,ObjectLog
+2172.930618,2172.946844,0.016226,VPU software update,4,ObjectLog
+2172.933412,2172.938675,0.005263,VPU software update,6,ObjectLog
+2172.935947,2172.950735,0.014788,VPU software update,6,ObjectLog
+2172.944118,2172.950857,0.006739,VPU software update,4,ObjectLog
+2172.947910,2172.950688,0.002778,VPU software update,7,ObjectLog
+2172.947961,2172.950847,0.002886,VPU software update,7,ObjectLog
+2172.948011,2172.950869,0.002857,VPU software update,6,ObjectLog
+2172.948120,2172.958039,0.009919,VPU software update,7,ObjectLog
+2172.948128,2172.957355,0.009227,VPU software update,4,ObjectLog
+2172.948159,2172.957317,0.009158,VPU software update,6,ObjectLog
+2172.954622,2172.958068,0.003446,VPU software update,6,ObjectLog
+2172.954640,2172.959214,0.004573,VPU software update,4,ObjectLog
+2172.955319,2172.959213,0.003894,VPU software update,7,ObjectLog
+2172.955359,2172.960618,0.005259,VPU software update,6,ObjectLog
+2172.956475,2172.959306,0.002830,VPU software update,5,ObjectLog
+2172.956506,2172.960686,0.004179,VPU software update,4,ObjectLog
+2172.956538,2172.960707,0.004169,VPU software update,7,ObjectLog
+2172.956626,2172.960058,0.003432,VPU software update,5,ObjectLog
+2172.957333,2172.960635,0.003302,VPU software update,5,ObjectLog
+2172.957889,2172.962932,0.005043,VPU software update,6,ObjectLog
+2172.957955,2172.960733,0.002778,VPU software update,4,ObjectLog
+2172.957967,2172.960755,0.002788,VPU software update,5,ObjectLog
+2172.957986,2172.963369,0.005383,VPU software update,7,ObjectLog
+2172.958034,2172.962898,0.004865,VPU software update,5,ObjectLog
+2172.958038,2172.962882,0.004844,VPU software update,4,ObjectLog
+2172.960177,2172.963119,0.002942,VPU software update,4,ObjectLog
+2172.960180,2172.963093,0.002913,VPU software update,5,ObjectLog
+2172.960215,2172.963257,0.003042,VPU software update,6,ObjectLog
+2172.960370,2172.963150,0.002780,VPU software update,5,ObjectLog
+2172.960420,2172.964053,0.003632,VPU software update,5,ObjectLog
+2172.960435,2172.963563,0.003128,VPU software update,4,ObjectLog
+2172.960528,2172.963580,0.003052,VPU software update,6,ObjectLog
+2172.960657,2172.964107,0.003449,VPU software update,7,ObjectLog
+2172.960840,2172.963757,0.002917,VPU software update,4,ObjectLog
+2172.960853,2172.963696,0.002844,VPU software update,6,ObjectLog
+2172.960974,2172.963966,0.002993,VPU software update,6,ObjectLog
+2172.961039,2172.964030,0.002992,VPU software update,4,ObjectLog
+2172.961252,2172.964176,0.002924,VPU software update,6,ObjectLog
+2172.961307,2172.964367,0.003060,VPU software update,4,ObjectLog
+2172.961322,2172.964167,0.002845,VPU software update,5,ObjectLog
+2172.961378,2172.964232,0.002854,VPU software update,7,ObjectLog
+2172.961441,2172.964236,0.002795,VPU software update,5,ObjectLog
+2172.961461,2172.964419,0.002958,VPU software update,6,ObjectLog
+2172.961512,2172.964444,0.002932,VPU software update,7,ObjectLog
+2172.961529,2172.964353,0.002824,VPU software update,5,ObjectLog
+2172.961628,2172.964515,0.002888,VPU software update,5,ObjectLog
+2172.961651,2172.964510,0.002859,VPU software update,4,ObjectLog
+2172.961691,2172.964696,0.003005,VPU software update,6,ObjectLog
+2172.961714,2172.964594,0.002879,VPU software update,7,ObjectLog
+2172.961785,2172.964593,0.002808,VPU software update,5,ObjectLog
+2172.961816,2172.964661,0.002845,VPU software update,4,ObjectLog
+2172.961885,2172.964717,0.002833,VPU software update,5,ObjectLog
+2172.961921,2172.964702,0.002780,VPU software update,7,ObjectLog
+2172.961936,2172.965070,0.003134,VPU software update,4,ObjectLog
+2172.961971,2172.964874,0.002903,VPU software update,7,ObjectLog
+2172.961972,2172.964960,0.002988,VPU software update,6,ObjectLog
+2172.961995,2172.964888,0.002892,VPU software update,5,ObjectLog
+2172.962147,2172.965361,0.003214,VPU software update,7,ObjectLog
+2172.962157,2172.965062,0.002905,VPU software update,5,ObjectLog
+2172.962237,2172.965015,0.002778,VPU software update,6,ObjectLog
+2172.962286,2172.965113,0.002827,VPU software update,6,ObjectLog
+2172.962353,2172.965196,0.002843,VPU software update,5,ObjectLog
+2172.962370,2172.965426,0.003056,VPU software update,4,ObjectLog
+2172.962382,2172.965160,0.002778,VPU software update,6,ObjectLog
+2172.962436,2172.965226,0.002790,VPU software update,6,ObjectLog
+2172.962472,2172.965423,0.002951,VPU software update,5,ObjectLog
+2172.962502,2172.965491,0.002989,VPU software update,6,ObjectLog
+2172.962655,2172.965578,0.002923,VPU software update,7,ObjectLog
+2172.962702,2172.966137,0.003435,VPU software update,5,ObjectLog
+2172.962735,2172.965513,0.002778,VPU software update,4,ObjectLog
+2172.962801,2172.965683,0.002883,VPU software update,6,ObjectLog
+2172.962808,2172.965614,0.002806,VPU software update,4,ObjectLog
+2172.962857,2172.966009,0.003152,VPU software update,7,ObjectLog
+2172.962890,2172.965704,0.002814,VPU software update,4,ObjectLog
+2172.962963,2172.966131,0.003168,VPU software update,6,ObjectLog
+2172.962975,2172.965889,0.002914,VPU software update,4,ObjectLog
+2172.963169,2172.965947,0.002778,VPU software update,4,ObjectLog
+2172.963251,2172.966164,0.002913,VPU software update,4,ObjectLog
+2172.963281,2172.966220,0.002939,VPU software update,7,ObjectLog
+2172.963406,2172.966304,0.002898,VPU software update,6,ObjectLog
+2172.963446,2172.966534,0.003089,VPU software update,5,ObjectLog
+2172.963451,2172.966430,0.002979,VPU software update,4,ObjectLog
+2172.963511,2172.966492,0.002982,VPU software update,7,ObjectLog
+2172.963574,2172.966353,0.002780,VPU software update,6,ObjectLog
+2172.963654,2172.966604,0.002950,VPU software update,6,ObjectLog
+2172.963709,2172.966550,0.002841,VPU software update,4,ObjectLog
+2172.963776,2172.966621,0.002846,VPU software update,7,ObjectLog
+2172.963807,2172.966585,0.002778,VPU software update,5,ObjectLog
+2172.963836,2172.967243,0.003407,VPU software update,4,ObjectLog
+2172.963880,2172.967119,0.003240,VPU software update,5,ObjectLog
+2172.963898,2172.967122,0.003225,VPU software update,7,ObjectLog
+2172.963917,2172.966715,0.002798,VPU software update,6,ObjectLog
+2172.963990,2172.966969,0.002979,VPU software update,6,ObjectLog
+2172.964249,2172.967419,0.003170,VPU software update,6,ObjectLog
+2172.964394,2172.967240,0.002846,VPU software update,5,ObjectLog
+2172.964403,2172.967371,0.002968,VPU software update,7,ObjectLog
+2172.964518,2172.967403,0.002885,VPU software update,4,ObjectLog
+2172.964525,2172.967613,0.003088,VPU software update,5,ObjectLog
+2172.964682,2172.967460,0.002778,VPU software update,4,ObjectLog
+2172.964692,2172.967564,0.002872,VPU software update,7,ObjectLog
+2172.964704,2172.967498,0.002793,VPU software update,6,ObjectLog
+2172.964752,2172.967595,0.002843,VPU software update,4,ObjectLog
+2172.964832,2172.967841,0.003009,VPU software update,6,ObjectLog
+2172.964837,2172.967638,0.002801,VPU software update,7,ObjectLog
+2172.964869,2172.967904,0.003034,VPU software update,4,ObjectLog
+2172.964890,2172.967809,0.002919,VPU software update,5,ObjectLog
+2172.964914,2172.968131,0.003218,VPU software update,7,ObjectLog
+2172.965111,2172.967938,0.002827,VPU software update,6,ObjectLog
+2172.965123,2172.967942,0.002819,VPU software update,5,ObjectLog
+2172.965176,2172.968012,0.002836,VPU software update,4,ObjectLog
+2172.965214,2172.968647,0.003434,VPU software update,6,ObjectLog
+2172.965242,2172.968349,0.003107,VPU software update,5,ObjectLog
+2172.965289,2172.968229,0.002940,VPU software update,4,ObjectLog
+2172.965332,2172.968262,0.002930,VPU software update,6,ObjectLog
+2172.965413,2172.968398,0.002985,VPU software update,7,ObjectLog
+2172.965501,2172.968278,0.002778,VPU software update,4,ObjectLog
+2172.965547,2172.968647,0.003100,VPU software update,6,ObjectLog
+2172.965550,2172.968328,0.002778,VPU software update,4,ObjectLog
+2172.965607,2172.968590,0.002983,VPU software update,4,ObjectLog
+2172.965624,2172.968495,0.002871,VPU software update,5,ObjectLog
+2172.965670,2172.968630,0.002960,VPU software update,7,ObjectLog
+2172.965791,2172.969109,0.003318,VPU software update,5,ObjectLog
+2172.965872,2172.968725,0.002853,VPU software update,4,ObjectLog
+2172.965918,2172.968696,0.002778,VPU software update,6,ObjectLog
+2172.965918,2172.968985,0.003066,VPU software update,7,ObjectLog
+2172.965970,2172.968776,0.002806,VPU software update,6,ObjectLog
+2172.965996,2172.968773,0.002778,VPU software update,4,ObjectLog
+2172.966047,2172.969227,0.003180,VPU software update,4,ObjectLog
+2172.966051,2172.968828,0.002778,VPU software update,6,ObjectLog
+2172.966121,2172.969514,0.003393,VPU software update,6,ObjectLog
+2172.966256,2172.969163,0.002908,VPU software update,7,ObjectLog
+2172.966424,2172.969441,0.003018,VPU software update,5,ObjectLog
+2172.966435,2172.969516,0.003081,VPU software update,7,ObjectLog
+2172.966499,2172.969414,0.002915,VPU software update,4,ObjectLog
+2172.966684,2172.970294,0.003610,VPU software update,4,ObjectLog
+2172.966716,2172.969641,0.002925,VPU software update,5,ObjectLog
+2172.966786,2172.969826,0.003040,VPU software update,6,ObjectLog
+2172.966786,2172.970072,0.003286,VPU software update,7,ObjectLog
+2172.966921,2172.969901,0.002980,VPU software update,5,ObjectLog
+2172.967095,2172.970537,0.003442,VPU software update,6,ObjectLog
+2172.967205,2172.970115,0.002910,VPU software update,5,ObjectLog
+2172.967399,2172.970483,0.003084,VPU software update,7,ObjectLog
+2172.967402,2172.970285,0.002883,VPU software update,5,ObjectLog
+2172.967556,2172.970683,0.003128,VPU software update,5,ObjectLog
+2172.967565,2172.970367,0.002802,VPU software update,4,ObjectLog
+2172.967636,2172.970450,0.002814,VPU software update,4,ObjectLog
+2172.967737,2172.970612,0.002875,VPU software update,4,ObjectLog
+2172.967754,2172.970748,0.002993,VPU software update,7,ObjectLog
+2172.967830,2172.971137,0.003307,VPU software update,6,ObjectLog
+2172.967881,2172.975906,0.008025,VPU software update,4,ObjectLog
+2172.967957,2172.971029,0.003072,VPU software update,5,ObjectLog
+2172.968019,2172.970797,0.002778,VPU software update,7,ObjectLog
+2172.968066,2172.970966,0.002900,VPU software update,7,ObjectLog
+2172.968256,2172.971052,0.002796,VPU software update,7,ObjectLog
+2172.968305,2172.971102,0.002797,VPU software update,5,ObjectLog
+2172.968329,2172.974197,0.005868,VPU software update,7,ObjectLog
+2172.968372,2172.971186,0.002813,VPU software update,5,ObjectLog
+2172.968414,2172.971192,0.002778,VPU software update,6,ObjectLog
+2172.968480,2172.976642,0.008162,VPU software update,5,ObjectLog
+2172.968498,2172.972082,0.003583,VPU software update,6,ObjectLog
+2172.969350,2172.975507,0.006157,VPU software update,6,ObjectLog
+2172.971466,2172.976731,0.005265,VPU software update,7,ObjectLog
+2172.977027,2172.984672,0.007645,VPU software update,6,ObjectLog
+2172.977791,2172.984203,0.006412,VPU software update,4,ObjectLog
+2172.978129,2172.984483,0.006354,VPU software update,5,ObjectLog
+2172.978699,2172.984226,0.005527,VPU software update,7,ObjectLog
+2172.981493,2172.984409,0.002915,VPU software update,4,ObjectLog
+2172.981496,2172.984587,0.003091,VPU software update,7,ObjectLog
+2172.981684,2172.984610,0.002926,VPU software update,4,ObjectLog
+2172.981786,2172.989535,0.007749,VPU software update,5,ObjectLog
+2172.981862,2172.984656,0.002794,VPU software update,7,ObjectLog
+2172.981899,2172.989453,0.007555,VPU software update,4,ObjectLog
+2172.981926,2172.989886,0.007960,VPU software update,7,ObjectLog
+2172.981944,2172.989933,0.007989,VPU software update,6,ObjectLog
+2172.986724,2172.990093,0.003369,VPU software update,4,ObjectLog
+2172.986828,2172.990571,0.003743,VPU software update,5,ObjectLog
+2172.987157,2172.990386,0.003229,VPU software update,7,ObjectLog
+2172.987247,2172.990413,0.003166,VPU software update,6,ObjectLog
+2172.987366,2172.990177,0.002810,VPU software update,4,ObjectLog
+2172.987456,2172.990767,0.003311,VPU software update,4,ObjectLog
+2172.987672,2172.990483,0.002811,VPU software update,7,ObjectLog
+2172.987699,2172.990918,0.003219,VPU software update,6,ObjectLog
+2172.987771,2172.990575,0.002804,VPU software update,7,ObjectLog
+2172.987857,2172.990638,0.002781,VPU software update,7,ObjectLog
+2172.987867,2172.990929,0.003062,VPU software update,5,ObjectLog
+2172.987931,2172.991276,0.003345,VPU software update,7,ObjectLog
+2172.988047,2172.990887,0.002840,VPU software update,4,ObjectLog
+2172.988157,2172.991141,0.002984,VPU software update,4,ObjectLog
+2172.988189,2172.991094,0.002905,VPU software update,6,ObjectLog
+2172.988198,2172.991113,0.002916,VPU software update,5,ObjectLog
+2172.988383,2172.991389,0.003007,VPU software update,6,ObjectLog
+2172.988386,2172.991409,0.003022,VPU software update,5,ObjectLog
+2172.988412,2172.991190,0.002778,VPU software update,4,ObjectLog
+2172.988479,2172.991293,0.002814,VPU software update,4,ObjectLog
+2172.988548,2172.991677,0.003129,VPU software update,7,ObjectLog
+2172.988570,2172.991442,0.002873,VPU software update,4,ObjectLog
+2172.988682,2172.991545,0.002863,VPU software update,6,ObjectLog
+2172.988706,2172.992114,0.003408,VPU software update,5,ObjectLog
+2172.988727,2172.991563,0.002836,VPU software update,4,ObjectLog
+2172.988814,2172.992042,0.003228,VPU software update,6,ObjectLog
+2172.988831,2172.992086,0.003255,VPU software update,4,ObjectLog
+2172.988985,2172.992468,0.003483,VPU software update,7,ObjectLog
+2172.989315,2172.992280,0.002965,VPU software update,6,ObjectLog
+2172.989355,2172.992309,0.002953,VPU software update,4,ObjectLog
+2172.989382,2172.992160,0.002778,VPU software update,5,ObjectLog
+2172.989441,2172.992817,0.003376,VPU software update,5,ObjectLog
+2172.989564,2172.992356,0.002793,VPU software update,6,ObjectLog
+2172.989585,2172.992565,0.002980,VPU software update,4,ObjectLog
+2172.989626,2172.992484,0.002858,VPU software update,6,ObjectLog
+2172.989767,2172.992545,0.002778,VPU software update,6,ObjectLog
+2172.989816,2172.993423,0.003607,VPU software update,6,ObjectLog
+2172.989829,2172.992965,0.003136,VPU software update,7,ObjectLog
+2172.989850,2172.992683,0.002833,VPU software update,4,ObjectLog
+2172.989979,2172.992835,0.002856,VPU software update,4,ObjectLog
+2172.990087,2172.993060,0.002972,VPU software update,5,ObjectLog
+2172.990105,2172.992921,0.002816,VPU software update,4,ObjectLog
+2172.990199,2172.993089,0.002890,VPU software update,4,ObjectLog
+2172.990253,2172.993395,0.003141,VPU software update,7,ObjectLog
+2172.990351,2172.994049,0.003698,VPU software update,5,ObjectLog
+2172.990359,2172.993305,0.002946,VPU software update,4,ObjectLog
+2172.990585,2172.993989,0.003403,VPU software update,4,ObjectLog
+2172.990675,2172.994105,0.003430,VPU software update,7,ObjectLog
+2172.990693,2172.994220,0.003526,VPU software update,6,ObjectLog
+2172.990892,2172.993741,0.002850,VPU software update,6,ObjectLog
+2172.991010,2172.993857,0.002847,VPU software update,6,ObjectLog
+2172.991135,2172.994220,0.003085,VPU software update,6,ObjectLog
+2172.991271,2172.994710,0.003438,VPU software update,4,ObjectLog
+2172.991342,2172.994614,0.003271,VPU software update,5,ObjectLog
+2172.991416,2172.994510,0.003093,VPU software update,7,ObjectLog
+2172.991501,2173.001375,0.009874,VPU software update,6,ObjectLog
+2172.991604,2172.994809,0.003204,VPU software update,6,ObjectLog
+2172.991782,2172.994714,0.002932,VPU software update,7,ObjectLog
+2172.991886,2172.995807,0.003921,VPU software update,5,ObjectLog
+2172.991981,2172.995298,0.003317,VPU software update,4,ObjectLog
+2172.991999,2172.994951,0.002952,VPU software update,7,ObjectLog
+2172.992086,2172.994967,0.002881,VPU software update,6,ObjectLog
+2172.992241,2172.995959,0.003718,VPU software update,7,ObjectLog
+2172.992242,2172.995137,0.002895,VPU software update,6,ObjectLog
+2172.992424,2172.995276,0.002852,VPU software update,6,ObjectLog
+2172.992547,2172.996317,0.003770,VPU software update,6,ObjectLog
+2172.992576,2172.995446,0.002870,VPU software update,4,ObjectLog
+2172.992717,2172.995530,0.002813,VPU software update,4,ObjectLog
+2172.992804,2172.995795,0.002990,VPU software update,4,ObjectLog
+2172.993081,2172.996239,0.003158,VPU software update,5,ObjectLog
+2172.993091,2172.995922,0.002831,VPU software update,4,ObjectLog
+2172.993206,2172.996223,0.003017,VPU software update,4,ObjectLog
+2172.993258,2172.996538,0.003280,VPU software update,7,ObjectLog
+2172.993497,2172.996339,0.002842,VPU software update,4,ObjectLog
+2172.993528,2172.997417,0.003889,VPU software update,5,ObjectLog
+2172.993594,2172.996847,0.003253,VPU software update,6,ObjectLog
+2172.993617,2172.996536,0.002920,VPU software update,4,ObjectLog
+2172.993824,2172.996805,0.002981,VPU software update,7,ObjectLog
+2172.993847,2172.997279,0.003432,VPU software update,4,ObjectLog
+2172.994077,2172.997197,0.003120,VPU software update,7,ObjectLog
+2172.994144,2172.997257,0.003113,VPU software update,6,ObjectLog
+2172.994480,2172.997280,0.002800,VPU software update,7,ObjectLog
+2172.994555,2172.997728,0.003173,VPU software update,7,ObjectLog
+2172.994560,2172.997390,0.002830,VPU software update,4,ObjectLog
+2172.994568,2172.997561,0.002993,VPU software update,6,ObjectLog
+2172.994686,2172.998935,0.004249,VPU software update,5,ObjectLog
+2172.994704,2172.997771,0.003067,VPU software update,4,ObjectLog
+2172.994873,2172.997779,0.002906,VPU software update,6,ObjectLog
+2172.994997,2172.998609,0.003611,VPU software update,7,ObjectLog
+2172.995046,2172.998135,0.003090,VPU software update,4,ObjectLog
+2172.995082,2172.998012,0.002930,VPU software update,6,ObjectLog
+2172.995294,2172.998454,0.003160,VPU software update,6,ObjectLog
+2172.995426,2172.998438,0.003012,VPU software update,4,ObjectLog
+2172.995715,2172.998493,0.002778,VPU software update,4,ObjectLog
+2172.995745,2172.998724,0.002979,VPU software update,6,ObjectLog
+2172.995778,2172.999073,0.003294,VPU software update,4,ObjectLog
+2172.995879,2172.998673,0.002794,VPU software update,7,ObjectLog
+2172.995945,2172.999093,0.003148,VPU software update,7,ObjectLog
+2172.996015,2172.998805,0.002789,VPU software update,6,ObjectLog
+2172.996122,2172.998900,0.002778,VPU software update,6,ObjectLog
+2172.996179,2172.999151,0.002973,VPU software update,6,ObjectLog
+2172.996218,2172.999026,0.002808,VPU software update,5,ObjectLog
+2172.996301,2172.999459,0.003158,VPU software update,5,ObjectLog
+2172.996352,2172.999720,0.003367,VPU software update,4,ObjectLog
+2172.996368,2172.999198,0.002830,VPU software update,7,ObjectLog
+2172.996434,2173.000292,0.003858,VPU software update,6,ObjectLog
+2172.996469,2173.000695,0.004226,VPU software update,7,ObjectLog
+2172.996729,2172.999644,0.002915,VPU software update,5,ObjectLog
+2172.996923,2172.999750,0.002827,VPU software update,5,ObjectLog
+2172.996993,2173.000593,0.003601,VPU software update,4,ObjectLog
+2172.997021,2172.999819,0.002798,VPU software update,5,ObjectLog
+2172.997090,2173.000087,0.002997,VPU software update,5,ObjectLog
+2172.997361,2173.000233,0.002872,VPU software update,5,ObjectLog
+2172.997521,2173.000313,0.002792,VPU software update,5,ObjectLog
+2172.997583,2173.001250,0.003667,VPU software update,6,ObjectLog
+2172.997590,2173.000477,0.002887,VPU software update,5,ObjectLog
+2172.997749,2173.001133,0.003384,VPU software update,5,ObjectLog
+2172.997868,2173.001362,0.003494,VPU software update,4,ObjectLog
+2172.997982,2173.000851,0.002868,VPU software update,7,ObjectLog
+2172.998124,2173.001354,0.003230,VPU software update,7,ObjectLog
+2172.998425,2173.001281,0.002856,VPU software update,5,ObjectLog
+2172.998544,2173.001363,0.002819,VPU software update,6,ObjectLog
+2172.998566,2173.001385,0.002819,VPU software update,5,ObjectLog
+2173.029670,2173.038910,0.009240,VPU software update,4,ObjectLog
+2173.030036,2173.045608,0.015571,VPU software update,5,ObjectLog
+2173.030158,2173.037927,0.007770,VPU software update,7,ObjectLog
+2173.030202,2173.038826,0.008624,VPU software update,6,ObjectLog
+2173.035204,2173.048851,0.013647,VPU software update,7,ObjectLog
+2173.036106,2173.041294,0.005188,VPU software update,6,ObjectLog
+2173.036182,2173.049973,0.013791,VPU software update,4,ObjectLog
+2173.038569,2173.043529,0.004959,VPU software update,6,ObjectLog
+2173.040806,2173.043945,0.003138,VPU software update,6,ObjectLog
+2173.041214,2173.057216,0.016003,VPU software update,6,ObjectLog
+2173.042876,2173.068990,0.026113,VPU software update,5,ObjectLog
+2173.046125,2173.050342,0.004217,VPU software update,7,ObjectLog
+2173.047243,2173.051036,0.003792,VPU software update,4,ObjectLog
+2173.047623,2173.069095,0.021472,VPU software update,7,ObjectLog
+2173.048313,2173.054585,0.006272,VPU software update,4,ObjectLog
+2173.051854,2173.056201,0.004348,VPU software update,4,ObjectLog
+2173.053470,2173.069343,0.015873,VPU software update,4,ObjectLog
+2173.054485,2173.069416,0.014931,VPU software update,6,ObjectLog
+2178.242832,2178.265162,0.022330,AOCS loss of convergence,5,ObjectLog
+2178.242869,2178.265213,0.022344,AOCS loss of convergence,7,ObjectLog
+2178.243041,2178.265184,0.022142,AOCS loss of convergence,6,ObjectLog
+2178.243053,2178.264994,0.021941,AOCS loss of convergence,4,ObjectLog
+2178.243765,2178.267376,0.023611,AOCS loss of convergence,4,AGIS
+2178.243765,2178.267376,0.023611,AOCS loss of convergence,5,AGIS
+2178.243765,2178.267376,0.023611,AOCS loss of convergence,6,AGIS
+2178.243765,2178.267376,0.023611,AOCS loss of convergence,7,AGIS
+2179.125000,2191.000000,11.875000,VPU software update plus commissioning,4,AGIS
+2179.125000,2191.000000,11.875000,VPU software update plus commissioning,5,AGIS
+2179.125000,2191.000000,11.875000,VPU software update plus commissioning,6,AGIS
+2179.125000,2191.000000,11.875000,VPU software update plus commissioning,7,AGIS
+2179.544161,2179.547908,0.003747,VPU software update plus commissioning,7,ObjectLog
+2179.547433,2179.550540,0.003108,VPU software update plus commissioning,4,ObjectLog
+2179.549173,2179.553538,0.004365,VPU software update plus commissioning,7,ObjectLog
+2179.549917,2179.553538,0.003621,VPU software update plus commissioning,5,ObjectLog
+2179.551910,2179.555735,0.003825,VPU software update plus commissioning,6,ObjectLog
+2179.553113,2179.556996,0.003882,VPU software update plus commissioning,5,ObjectLog
+2179.553209,2179.556996,0.003787,VPU software update plus commissioning,6,ObjectLog
+2179.554993,2179.558626,0.003633,VPU software update plus commissioning,6,ObjectLog
+2179.565763,2179.568987,0.003224,VPU software update plus commissioning,4,ObjectLog
+2179.579807,2179.586918,0.007111,VPU software update plus commissioning,6,ObjectLog
+2179.585771,2179.590144,0.004373,VPU software update plus commissioning,4,ObjectLog
+2179.586402,2179.590144,0.003742,VPU software update plus commissioning,7,ObjectLog
+2179.588018,2179.591543,0.003525,VPU software update plus commissioning,6,ObjectLog
+2179.590083,2179.594302,0.004219,VPU software update plus commissioning,4,ObjectLog
+2179.590856,2179.594302,0.003446,VPU software update plus commissioning,6,ObjectLog
+2179.593772,2179.597737,0.003966,VPU software update plus commissioning,7,ObjectLog
+2179.593817,2179.597197,0.003380,VPU software update plus commissioning,4,ObjectLog
+2179.596879,2179.601901,0.005023,VPU software update plus commissioning,7,ObjectLog
+2179.597813,2179.601695,0.003881,VPU software update plus commissioning,6,ObjectLog
+2179.597961,2179.601901,0.003941,VPU software update plus commissioning,7,ObjectLog
+2179.599424,2179.603354,0.003930,VPU software update plus commissioning,5,ObjectLog
+2179.599708,2179.603354,0.003647,VPU software update plus commissioning,6,ObjectLog
+2179.607785,2179.615897,0.008112,VPU software update plus commissioning,4,ObjectLog
+2179.616071,2179.621327,0.005256,VPU software update plus commissioning,7,ObjectLog
+2179.619150,2179.624680,0.005530,VPU software update plus commissioning,7,ObjectLog
+2179.622766,2179.627854,0.005088,VPU software update plus commissioning,5,ObjectLog
+2179.627520,2179.634209,0.006689,VPU software update plus commissioning,6,ObjectLog
+2179.634647,2179.701387,0.066740,VPU software update plus commissioning,6,ObjectLog
+2179.634853,2179.649025,0.014172,VPU software update plus commissioning,4,ObjectLog
+2179.635412,2179.644098,0.008686,VPU software update plus commissioning,5,ObjectLog
+2179.635600,2179.642109,0.006509,VPU software update plus commissioning,7,ObjectLog
+2179.639386,2179.644161,0.004775,VPU software update plus commissioning,7,ObjectLog
+2179.641369,2179.645278,0.003909,VPU software update plus commissioning,5,ObjectLog
+2179.641434,2179.647482,0.006048,VPU software update plus commissioning,7,ObjectLog
+2179.642548,2179.652701,0.010153,VPU software update plus commissioning,5,ObjectLog
+2179.642699,2179.645700,0.003001,VPU software update plus commissioning,6,ObjectLog
+2179.642971,2179.646802,0.003831,VPU software update plus commissioning,6,ObjectLog
+2179.644082,2179.647828,0.003746,VPU software update plus commissioning,6,ObjectLog
+2179.644755,2179.648173,0.003419,VPU software update plus commissioning,7,ObjectLog
+2179.645097,2179.649693,0.004596,VPU software update plus commissioning,6,ObjectLog
+2179.645446,2179.654150,0.008705,VPU software update plus commissioning,7,ObjectLog
+2179.646297,2179.649390,0.003093,VPU software update plus commissioning,4,ObjectLog
+2179.646670,2179.650642,0.003972,VPU software update plus commissioning,4,ObjectLog
+2179.646963,2179.650291,0.003328,VPU software update plus commissioning,6,ObjectLog
+2179.647566,2179.651911,0.004345,VPU software update plus commissioning,6,ObjectLog
+2179.647920,2179.652241,0.004321,VPU software update plus commissioning,4,ObjectLog
+2179.649181,2179.651987,0.002807,VPU software update plus commissioning,6,ObjectLog
+2179.649265,2179.652186,0.002920,VPU software update plus commissioning,6,ObjectLog
+2179.649460,2179.653707,0.004247,VPU software update plus commissioning,6,ObjectLog
+2179.649518,2179.653794,0.004276,VPU software update plus commissioning,4,ObjectLog
+2179.649981,2179.654179,0.004198,VPU software update plus commissioning,5,ObjectLog
+2179.651006,2179.654204,0.003198,VPU software update plus commissioning,6,ObjectLog
+2179.651073,2179.653854,0.002781,VPU software update plus commissioning,4,ObjectLog
+2179.651124,2179.659510,0.008387,VPU software update plus commissioning,4,ObjectLog
+2179.651425,2179.654957,0.003532,VPU software update plus commissioning,7,ObjectLog
+2179.651451,2179.658081,0.006630,VPU software update plus commissioning,5,ObjectLog
+2179.651487,2179.657095,0.005608,VPU software update plus commissioning,6,ObjectLog
+2179.652225,2179.657496,0.005271,VPU software update plus commissioning,7,ObjectLog
+2179.654370,2179.657960,0.003590,VPU software update plus commissioning,6,ObjectLog
+2179.654765,2179.659307,0.004541,VPU software update plus commissioning,7,ObjectLog
+2179.655232,2179.659936,0.004704,VPU software update plus commissioning,6,ObjectLog
+2179.655351,2179.663525,0.008173,VPU software update plus commissioning,5,ObjectLog
+2179.656584,2179.660000,0.003416,VPU software update plus commissioning,7,ObjectLog
+2179.656782,2179.662637,0.005855,VPU software update plus commissioning,4,ObjectLog
+2179.657207,2179.660598,0.003391,VPU software update plus commissioning,6,ObjectLog
+2179.657278,2179.660984,0.003706,VPU software update plus commissioning,7,ObjectLog
+2179.657900,2179.661478,0.003578,VPU software update plus commissioning,6,ObjectLog
+2179.658255,2179.661202,0.002947,VPU software update plus commissioning,7,ObjectLog
+2179.658480,2179.662785,0.004305,VPU software update plus commissioning,7,ObjectLog
+2179.658754,2179.662792,0.004038,VPU software update plus commissioning,6,ObjectLog
+2179.659912,2179.662782,0.002870,VPU software update plus commissioning,4,ObjectLog
+2179.660055,2179.664477,0.004422,VPU software update plus commissioning,4,ObjectLog
+2179.660058,2179.663059,0.003001,VPU software update plus commissioning,7,ObjectLog
+2179.660078,2179.663005,0.002927,VPU software update plus commissioning,6,ObjectLog
+2179.660292,2179.663444,0.003151,VPU software update plus commissioning,6,ObjectLog
+2179.660341,2179.663635,0.003294,VPU software update plus commissioning,7,ObjectLog
+2179.660716,2179.664760,0.004044,VPU software update plus commissioning,6,ObjectLog
+2179.660809,2179.663873,0.003064,VPU software update plus commissioning,5,ObjectLog
+2179.660909,2179.664207,0.003297,VPU software update plus commissioning,7,ObjectLog
+2179.661145,2179.664465,0.003320,VPU software update plus commissioning,5,ObjectLog
+2179.661484,2179.664532,0.003048,VPU software update plus commissioning,7,ObjectLog
+2179.661740,2179.664524,0.002784,VPU software update plus commissioning,5,ObjectLog
+2179.661746,2179.665971,0.004224,VPU software update plus commissioning,4,ObjectLog
+2179.661796,2179.665291,0.003495,VPU software update plus commissioning,5,ObjectLog
+2179.661811,2179.665042,0.003231,VPU software update plus commissioning,7,ObjectLog
+2179.662049,2179.665064,0.003016,VPU software update plus commissioning,6,ObjectLog
+2179.662313,2179.665829,0.003516,VPU software update plus commissioning,7,ObjectLog
+2179.662383,2179.665347,0.002964,VPU software update plus commissioning,6,ObjectLog
+2179.662559,2179.665341,0.002781,VPU software update plus commissioning,5,ObjectLog
+2179.662609,2179.665612,0.003003,VPU software update plus commissioning,5,ObjectLog
+2179.662635,2179.665759,0.003124,VPU software update plus commissioning,6,ObjectLog
+2179.662896,2179.665795,0.002899,VPU software update plus commissioning,5,ObjectLog
+2179.663034,2179.680434,0.017399,VPU software update plus commissioning,6,ObjectLog
+2179.663093,2179.665969,0.002876,VPU software update plus commissioning,5,ObjectLog
+2179.663115,2179.666329,0.003214,VPU software update plus commissioning,7,ObjectLog
+2179.663241,2179.666155,0.002914,VPU software update plus commissioning,4,ObjectLog
+2179.663245,2179.666377,0.003132,VPU software update plus commissioning,5,ObjectLog
+2179.663429,2179.666958,0.003529,VPU software update plus commissioning,4,ObjectLog
+2179.663586,2179.666583,0.002996,VPU software update plus commissioning,6,ObjectLog
+2179.663604,2179.667094,0.003490,VPU software update plus commissioning,7,ObjectLog
+2179.663650,2179.667109,0.003459,VPU software update plus commissioning,5,ObjectLog
+2179.663856,2179.666914,0.003059,VPU software update plus commissioning,6,ObjectLog
+2179.664191,2179.667208,0.003018,VPU software update plus commissioning,6,ObjectLog
+2179.664238,2179.668514,0.004276,VPU software update plus commissioning,4,ObjectLog
+2179.664389,2179.667851,0.003462,VPU software update plus commissioning,7,ObjectLog
+2179.664406,2179.667761,0.003355,VPU software update plus commissioning,5,ObjectLog
+2179.664488,2179.667521,0.003033,VPU software update plus commissioning,6,ObjectLog
+2179.664797,2179.668103,0.003307,VPU software update plus commissioning,6,ObjectLog
+2179.665032,2179.668118,0.003085,VPU software update plus commissioning,5,ObjectLog
+2179.665124,2179.668423,0.003300,VPU software update plus commissioning,7,ObjectLog
+2179.665395,2179.668936,0.003541,VPU software update plus commissioning,6,ObjectLog
+2179.665400,2179.668810,0.003410,VPU software update plus commissioning,5,ObjectLog
+2179.665692,2179.669223,0.003531,VPU software update plus commissioning,7,ObjectLog
+2179.665789,2179.668828,0.003038,VPU software update plus commissioning,4,ObjectLog
+2179.666080,2179.668889,0.002809,VPU software update plus commissioning,5,ObjectLog
+2179.666105,2179.669177,0.003072,VPU software update plus commissioning,4,ObjectLog
+2179.666160,2179.670880,0.004720,VPU software update plus commissioning,5,ObjectLog
+2179.666234,2179.670131,0.003897,VPU software update plus commissioning,6,ObjectLog
+2179.666452,2179.669991,0.003539,VPU software update plus commissioning,4,ObjectLog
+2179.666504,2179.669438,0.002934,VPU software update plus commissioning,7,ObjectLog
+2179.666710,2179.670220,0.003510,VPU software update plus commissioning,7,ObjectLog
+2179.667276,2179.670461,0.003184,VPU software update plus commissioning,4,ObjectLog
+2179.667407,2179.671350,0.003943,VPU software update plus commissioning,6,ObjectLog
+2179.667502,2179.671057,0.003555,VPU software update plus commissioning,7,ObjectLog
+2179.667736,2179.670826,0.003090,VPU software update plus commissioning,4,ObjectLog
+2179.668097,2179.671563,0.003465,VPU software update plus commissioning,4,ObjectLog
+2179.668153,2179.671985,0.003831,VPU software update plus commissioning,5,ObjectLog
+2179.668354,2179.671628,0.003274,VPU software update plus commissioning,7,ObjectLog
+2179.668632,2179.672029,0.003397,VPU software update plus commissioning,6,ObjectLog
+2179.668857,2179.672791,0.003934,VPU software update plus commissioning,4,ObjectLog
+2179.668912,2179.671790,0.002878,VPU software update plus commissioning,7,ObjectLog
+2179.669072,2179.672439,0.003367,VPU software update plus commissioning,7,ObjectLog
+2179.669255,2179.672268,0.003013,VPU software update plus commissioning,5,ObjectLog
+2179.669300,2179.672183,0.002883,VPU software update plus commissioning,6,ObjectLog
+2179.669453,2179.672246,0.002793,VPU software update plus commissioning,6,ObjectLog
+2179.669538,2179.672745,0.003207,VPU software update plus commissioning,5,ObjectLog
+2179.669543,2179.672675,0.003132,VPU software update plus commissioning,6,ObjectLog
+2179.669717,2179.673197,0.003480,VPU software update plus commissioning,7,ObjectLog
+2179.669947,2179.672802,0.002855,VPU software update plus commissioning,6,ObjectLog
+2179.670029,2179.673111,0.003082,VPU software update plus commissioning,5,ObjectLog
+2179.670063,2179.673616,0.003552,VPU software update plus commissioning,4,ObjectLog
+2179.670074,2179.673511,0.003437,VPU software update plus commissioning,6,ObjectLog
+2179.670392,2179.673424,0.003032,VPU software update plus commissioning,5,ObjectLog
+2179.670474,2179.673863,0.003389,VPU software update plus commissioning,7,ObjectLog
+2179.670705,2179.673957,0.003252,VPU software update plus commissioning,5,ObjectLog
+2179.670799,2179.674143,0.003345,VPU software update plus commissioning,6,ObjectLog
+2179.670912,2179.673936,0.003024,VPU software update plus commissioning,4,ObjectLog
+2179.671138,2179.674094,0.002956,VPU software update plus commissioning,7,ObjectLog
+2179.671208,2179.674136,0.002928,VPU software update plus commissioning,4,ObjectLog
+2179.671229,2179.674153,0.002923,VPU software update plus commissioning,5,ObjectLog
+2179.671367,2179.674390,0.003023,VPU software update plus commissioning,7,ObjectLog
+2179.671407,2179.674189,0.002782,VPU software update plus commissioning,4,ObjectLog
+2179.671412,2179.674266,0.002854,VPU software update plus commissioning,6,ObjectLog
+2179.671435,2179.674505,0.003069,VPU software update plus commissioning,5,ObjectLog
+2179.671463,2179.674240,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.671524,2179.674370,0.002847,VPU software update plus commissioning,4,ObjectLog
+2179.671537,2179.674427,0.002890,VPU software update plus commissioning,6,ObjectLog
+2179.671639,2179.674612,0.002973,VPU software update plus commissioning,4,ObjectLog
+2179.671664,2179.674643,0.002979,VPU software update plus commissioning,7,ObjectLog
+2179.671713,2179.676144,0.004431,VPU software update plus commissioning,6,ObjectLog
+2179.671808,2179.674876,0.003069,VPU software update plus commissioning,5,ObjectLog
+2179.671881,2179.675096,0.003215,VPU software update plus commissioning,4,ObjectLog
+2179.671958,2179.674992,0.003033,VPU software update plus commissioning,7,ObjectLog
+2179.672146,2179.675056,0.002911,VPU software update plus commissioning,5,ObjectLog
+2179.672261,2179.675154,0.002893,VPU software update plus commissioning,7,ObjectLog
+2179.672341,2179.676195,0.003854,VPU software update plus commissioning,5,ObjectLog
+2179.672365,2179.677315,0.004950,VPU software update plus commissioning,4,ObjectLog
+2179.672451,2179.675342,0.002891,VPU software update plus commissioning,7,ObjectLog
+2179.672642,2179.676217,0.003575,VPU software update plus commissioning,7,ObjectLog
+2179.673421,2179.676952,0.003531,VPU software update plus commissioning,6,ObjectLog
+2179.673467,2179.676364,0.002897,VPU software update plus commissioning,5,ObjectLog
+2179.673489,2179.677259,0.003770,VPU software update plus commissioning,7,ObjectLog
+2179.673658,2179.676456,0.002799,VPU software update plus commissioning,5,ObjectLog
+2179.673750,2179.676610,0.002860,VPU software update plus commissioning,5,ObjectLog
+2179.673900,2179.676776,0.002875,VPU software update plus commissioning,5,ObjectLog
+2179.674047,2179.677050,0.003003,VPU software update plus commissioning,5,ObjectLog
+2179.674221,2179.677196,0.002975,VPU software update plus commissioning,6,ObjectLog
+2179.674325,2179.677334,0.003009,VPU software update plus commissioning,5,ObjectLog
+2179.674484,2179.677366,0.002882,VPU software update plus commissioning,6,ObjectLog
+2179.674536,2179.678372,0.003836,VPU software update plus commissioning,7,ObjectLog
+2179.674588,2179.677795,0.003207,VPU software update plus commissioning,4,ObjectLog
+2179.674634,2179.677815,0.003181,VPU software update plus commissioning,5,ObjectLog
+2179.674647,2179.678059,0.003413,VPU software update plus commissioning,6,ObjectLog
+2179.675084,2179.678103,0.003018,VPU software update plus commissioning,5,ObjectLog
+2179.675099,2179.679335,0.004236,VPU software update plus commissioning,4,ObjectLog
+2179.675346,2179.679000,0.003654,VPU software update plus commissioning,6,ObjectLog
+2179.675376,2179.678330,0.002954,VPU software update plus commissioning,5,ObjectLog
+2179.675615,2179.678453,0.002838,VPU software update plus commissioning,5,ObjectLog
+2179.675670,2179.678624,0.002955,VPU software update plus commissioning,7,ObjectLog
+2179.675729,2179.678749,0.003020,VPU software update plus commissioning,5,ObjectLog
+2179.675914,2179.678808,0.002894,VPU software update plus commissioning,7,ObjectLog
+2179.676019,2179.678866,0.002847,VPU software update plus commissioning,5,ObjectLog
+2179.676104,2179.679064,0.002959,VPU software update plus commissioning,7,ObjectLog
+2179.676138,2179.679376,0.003237,VPU software update plus commissioning,5,ObjectLog
+2179.676272,2179.679050,0.002779,VPU software update plus commissioning,6,ObjectLog
+2179.676331,2179.679134,0.002803,VPU software update plus commissioning,6,ObjectLog
+2179.676337,2179.679262,0.002925,VPU software update plus commissioning,7,ObjectLog
+2179.676414,2179.680434,0.004020,VPU software update plus commissioning,6,ObjectLog
+2179.676554,2179.680569,0.004015,VPU software update plus commissioning,7,ObjectLog
+2179.676624,2179.679413,0.002790,VPU software update plus commissioning,4,ObjectLog
+2179.676651,2179.679656,0.003006,VPU software update plus commissioning,5,ObjectLog
+2179.676715,2179.679826,0.003111,VPU software update plus commissioning,4,ObjectLog
+2179.676946,2179.680241,0.003295,VPU software update plus commissioning,5,ObjectLog
+2179.677101,2179.680007,0.002906,VPU software update plus commissioning,4,ObjectLog
+2179.677281,2179.681105,0.003824,VPU software update plus commissioning,4,ObjectLog
+2179.677516,2179.680777,0.003261,VPU software update plus commissioning,5,ObjectLog
+2179.677711,2179.680802,0.003092,VPU software update plus commissioning,6,ObjectLog
+2179.677846,2179.680814,0.002968,VPU software update plus commissioning,7,ObjectLog
+2179.678052,2179.680989,0.002937,VPU software update plus commissioning,5,ObjectLog
+2179.678072,2179.681079,0.003006,VPU software update plus commissioning,6,ObjectLog
+2179.678085,2179.681062,0.002978,VPU software update plus commissioning,7,ObjectLog
+2179.678260,2179.681798,0.003538,VPU software update plus commissioning,5,ObjectLog
+2179.678336,2179.681827,0.003491,VPU software update plus commissioning,7,ObjectLog
+2179.678359,2179.681466,0.003107,VPU software update plus commissioning,6,ObjectLog
+2179.678382,2179.681503,0.003122,VPU software update plus commissioning,4,ObjectLog
+2179.678756,2179.681659,0.002903,VPU software update plus commissioning,6,ObjectLog
+2179.678789,2179.682063,0.003274,VPU software update plus commissioning,4,ObjectLog
+2179.678932,2179.683132,0.004200,VPU software update plus commissioning,6,ObjectLog
+2179.679073,2179.682585,0.003512,VPU software update plus commissioning,5,ObjectLog
+2179.679137,2179.681950,0.002813,VPU software update plus commissioning,7,ObjectLog
+2179.679219,2179.682290,0.003071,VPU software update plus commissioning,7,ObjectLog
+2179.679345,2179.683087,0.003742,VPU software update plus commissioning,4,ObjectLog
+2179.679605,2179.682403,0.002798,VPU software update plus commissioning,7,ObjectLog
+2179.679672,2179.682567,0.002895,VPU software update plus commissioning,7,ObjectLog
+2179.679852,2179.682985,0.003134,VPU software update plus commissioning,7,ObjectLog
+2179.679889,2179.683039,0.003150,VPU software update plus commissioning,5,ObjectLog
+2179.680269,2179.683188,0.002919,VPU software update plus commissioning,7,ObjectLog
+2179.680350,2179.683226,0.002876,VPU software update plus commissioning,5,ObjectLog
+2179.680358,2179.683774,0.003416,VPU software update plus commissioning,4,ObjectLog
+2179.680416,2179.683573,0.003156,VPU software update plus commissioning,6,ObjectLog
+2179.680461,2179.683930,0.003469,VPU software update plus commissioning,7,ObjectLog
+2179.680497,2179.683303,0.002806,VPU software update plus commissioning,5,ObjectLog
+2179.680580,2179.683790,0.003210,VPU software update plus commissioning,5,ObjectLog
+2179.680841,2179.684182,0.003341,VPU software update plus commissioning,6,ObjectLog
+2179.681084,2179.684222,0.003138,VPU software update plus commissioning,4,ObjectLog
+2179.681094,2179.684768,0.003674,VPU software update plus commissioning,5,ObjectLog
+2179.681251,2179.684433,0.003182,VPU software update plus commissioning,7,ObjectLog
+2179.681452,2179.684993,0.003541,VPU software update plus commissioning,6,ObjectLog
+2179.681491,2179.684951,0.003460,VPU software update plus commissioning,4,ObjectLog
+2179.681705,2179.685368,0.003662,VPU software update plus commissioning,7,ObjectLog
+2179.682042,2179.685340,0.003298,VPU software update plus commissioning,5,ObjectLog
+2179.682233,2179.685345,0.003112,VPU software update plus commissioning,4,ObjectLog
+2179.682271,2179.685075,0.002804,VPU software update plus commissioning,6,ObjectLog
+2179.682363,2179.685482,0.003119,VPU software update plus commissioning,6,ObjectLog
+2179.682614,2179.685568,0.002954,VPU software update plus commissioning,5,ObjectLog
+2179.682631,2179.685513,0.002882,VPU software update plus commissioning,4,ObjectLog
+2179.682647,2179.685531,0.002884,VPU software update plus commissioning,7,ObjectLog
+2179.682757,2179.685539,0.002782,VPU software update plus commissioning,6,ObjectLog
+2179.682802,2179.687048,0.004247,VPU software update plus commissioning,7,ObjectLog
+2179.682826,2179.686090,0.003264,VPU software update plus commissioning,4,ObjectLog
+2179.682827,2179.686529,0.003702,VPU software update plus commissioning,6,ObjectLog
+2179.682845,2179.685626,0.002781,VPU software update plus commissioning,5,ObjectLog
+2179.682904,2179.685752,0.002848,VPU software update plus commissioning,5,ObjectLog
+2179.683027,2179.686815,0.003788,VPU software update plus commissioning,5,ObjectLog
+2179.683371,2179.686199,0.002829,VPU software update plus commissioning,4,ObjectLog
+2179.683479,2179.686564,0.003085,VPU software update plus commissioning,4,ObjectLog
+2179.683799,2179.686591,0.002792,VPU software update plus commissioning,6,ObjectLog
+2179.683888,2179.686798,0.002910,VPU software update plus commissioning,4,ObjectLog
+2179.683890,2179.686922,0.003032,VPU software update plus commissioning,6,ObjectLog
+2179.684070,2179.687546,0.003476,VPU software update plus commissioning,4,ObjectLog
+2179.684088,2179.686866,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.684140,2179.687070,0.002930,VPU software update plus commissioning,5,ObjectLog
+2179.684210,2179.686999,0.002789,VPU software update plus commissioning,6,ObjectLog
+2179.684269,2179.687445,0.003176,VPU software update plus commissioning,6,ObjectLog
+2179.684332,2179.688417,0.004085,VPU software update plus commissioning,7,ObjectLog
+2179.684382,2179.687222,0.002840,VPU software update plus commissioning,5,ObjectLog
+2179.684510,2179.687682,0.003172,VPU software update plus commissioning,5,ObjectLog
+2179.684713,2179.688239,0.003526,VPU software update plus commissioning,6,ObjectLog
+2179.684815,2179.688060,0.003246,VPU software update plus commissioning,4,ObjectLog
+2179.684961,2179.688030,0.003069,VPU software update plus commissioning,5,ObjectLog
+2179.685301,2179.688249,0.002948,VPU software update plus commissioning,5,ObjectLog
+2179.685335,2179.688174,0.002840,VPU software update plus commissioning,4,ObjectLog
+2179.685494,2179.688484,0.002990,VPU software update plus commissioning,4,ObjectLog
+2179.685525,2179.688680,0.003155,VPU software update plus commissioning,5,ObjectLog
+2179.685534,2179.688889,0.003355,VPU software update plus commissioning,6,ObjectLog
+2179.685699,2179.688481,0.002781,VPU software update plus commissioning,7,ObjectLog
+2179.685768,2179.688558,0.002790,VPU software update plus commissioning,4,ObjectLog
+2179.685772,2179.689100,0.003328,VPU software update plus commissioning,7,ObjectLog
+2179.685832,2179.688796,0.002964,VPU software update plus commissioning,4,ObjectLog
+2179.685960,2179.688794,0.002834,VPU software update plus commissioning,5,ObjectLog
+2179.686068,2179.689410,0.003343,VPU software update plus commissioning,4,ObjectLog
+2179.686081,2179.688860,0.002779,VPU software update plus commissioning,5,ObjectLog
+2179.686137,2179.689042,0.002905,VPU software update plus commissioning,5,ObjectLog
+2179.686160,2179.688953,0.002793,VPU software update plus commissioning,6,ObjectLog
+2179.686237,2179.689242,0.003005,VPU software update plus commissioning,6,ObjectLog
+2179.686326,2179.691034,0.004708,VPU software update plus commissioning,5,ObjectLog
+2179.686398,2179.689193,0.002795,VPU software update plus commissioning,7,ObjectLog
+2179.686466,2179.690147,0.003680,VPU software update plus commissioning,7,ObjectLog
+2179.686522,2179.689441,0.002919,VPU software update plus commissioning,6,ObjectLog
+2179.686712,2179.689782,0.003071,VPU software update plus commissioning,4,ObjectLog
+2179.686721,2179.689916,0.003195,VPU software update plus commissioning,6,ObjectLog
+2179.687060,2179.689946,0.002886,VPU software update plus commissioning,4,ObjectLog
+2179.687195,2179.690405,0.003210,VPU software update plus commissioning,6,ObjectLog
+2179.687240,2179.690216,0.002976,VPU software update plus commissioning,4,ObjectLog
+2179.687473,2179.690283,0.002809,VPU software update plus commissioning,7,ObjectLog
+2179.687503,2179.690441,0.002939,VPU software update plus commissioning,4,ObjectLog
+2179.687582,2179.690493,0.002911,VPU software update plus commissioning,7,ObjectLog
+2179.687690,2179.690634,0.002945,VPU software update plus commissioning,6,ObjectLog
+2179.687741,2179.690925,0.003184,VPU software update plus commissioning,4,ObjectLog
+2179.687769,2179.690831,0.003062,VPU software update plus commissioning,7,ObjectLog
+2179.687915,2179.690941,0.003026,VPU software update plus commissioning,6,ObjectLog
+2179.688123,2179.690959,0.002836,VPU software update plus commissioning,7,ObjectLog
+2179.688204,2179.691601,0.003397,VPU software update plus commissioning,4,ObjectLog
+2179.688214,2179.691531,0.003317,VPU software update plus commissioning,6,ObjectLog
+2179.688232,2179.691155,0.002923,VPU software update plus commissioning,7,ObjectLog
+2179.688322,2179.691159,0.002838,VPU software update plus commissioning,6,ObjectLog
+2179.688349,2179.691275,0.002926,VPU software update plus commissioning,5,ObjectLog
+2179.688429,2179.691531,0.003101,VPU software update plus commissioning,6,ObjectLog
+2179.688435,2179.691289,0.002853,VPU software update plus commissioning,7,ObjectLog
+2179.688558,2179.691364,0.002806,VPU software update plus commissioning,5,ObjectLog
+2179.688571,2179.691494,0.002923,VPU software update plus commissioning,7,ObjectLog
+2179.688643,2179.691987,0.003344,VPU software update plus commissioning,5,ObjectLog
+2179.688776,2179.691811,0.003035,VPU software update plus commissioning,7,ObjectLog
+2179.688800,2179.692653,0.003853,VPU software update plus commissioning,6,ObjectLog
+2179.688888,2179.692243,0.003356,VPU software update plus commissioning,4,ObjectLog
+2179.689099,2179.691970,0.002871,VPU software update plus commissioning,7,ObjectLog
+2179.689244,2179.692561,0.003317,VPU software update plus commissioning,7,ObjectLog
+2179.689282,2179.692075,0.002793,VPU software update plus commissioning,5,ObjectLog
+2179.689351,2179.692215,0.002865,VPU software update plus commissioning,5,ObjectLog
+2179.689515,2179.692486,0.002971,VPU software update plus commissioning,5,ObjectLog
+2179.689521,2179.692343,0.002822,VPU software update plus commissioning,4,ObjectLog
+2179.689627,2179.692414,0.002787,VPU software update plus commissioning,4,ObjectLog
+2179.689685,2179.693403,0.003718,VPU software update plus commissioning,4,ObjectLog
+2179.689759,2179.692925,0.003165,VPU software update plus commissioning,5,ObjectLog
+2179.689858,2179.692662,0.002803,VPU software update plus commissioning,7,ObjectLog
+2179.689939,2179.693683,0.003743,VPU software update plus commissioning,6,ObjectLog
+2179.690016,2179.693105,0.003088,VPU software update plus commissioning,7,ObjectLog
+2179.690205,2179.693942,0.003737,VPU software update plus commissioning,5,ObjectLog
+2179.690389,2179.693449,0.003059,VPU software update plus commissioning,7,ObjectLog
+2179.690675,2179.694046,0.003371,VPU software update plus commissioning,4,ObjectLog
+2179.690742,2179.694338,0.003596,VPU software update plus commissioning,7,ObjectLog
+2179.690956,2179.694275,0.003319,VPU software update plus commissioning,6,ObjectLog
+2179.691214,2179.694428,0.003214,VPU software update plus commissioning,5,ObjectLog
+2179.691316,2179.694974,0.003659,VPU software update plus commissioning,4,ObjectLog
+2179.691552,2179.694330,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.691613,2179.695817,0.004205,VPU software update plus commissioning,6,ObjectLog
+2179.691614,2179.694518,0.002904,VPU software update plus commissioning,7,ObjectLog
+2179.691706,2179.694836,0.003130,VPU software update plus commissioning,5,ObjectLog
+2179.691804,2179.695055,0.003251,VPU software update plus commissioning,7,ObjectLog
+2179.692111,2179.695224,0.003113,VPU software update plus commissioning,5,ObjectLog
+2179.692247,2179.695164,0.002918,VPU software update plus commissioning,4,ObjectLog
+2179.692334,2179.695308,0.002974,VPU software update plus commissioning,7,ObjectLog
+2179.692435,2179.695416,0.002982,VPU software update plus commissioning,4,ObjectLog
+2179.692494,2179.695272,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.692544,2179.696636,0.004093,VPU software update plus commissioning,5,ObjectLog
+2179.692590,2179.695368,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.692638,2179.696267,0.003630,VPU software update plus commissioning,7,ObjectLog
+2179.692708,2179.695935,0.003227,VPU software update plus commissioning,4,ObjectLog
+2179.693118,2179.696158,0.003040,VPU software update plus commissioning,6,ObjectLog
+2179.693210,2179.696694,0.003484,VPU software update plus commissioning,4,ObjectLog
+2179.693431,2179.697246,0.003815,VPU software update plus commissioning,6,ObjectLog
+2179.693542,2179.697300,0.003758,VPU software update plus commissioning,7,ObjectLog
+2179.693923,2179.696913,0.002990,VPU software update plus commissioning,5,ObjectLog
+2179.693966,2179.697357,0.003390,VPU software update plus commissioning,4,ObjectLog
+2179.694183,2179.697574,0.003390,VPU software update plus commissioning,5,ObjectLog
+2179.694523,2179.697300,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.694578,2179.697647,0.003069,VPU software update plus commissioning,6,ObjectLog
+2179.694594,2179.697420,0.002826,VPU software update plus commissioning,7,ObjectLog
+2179.694630,2179.698163,0.003532,VPU software update plus commissioning,4,ObjectLog
+2179.694692,2179.698544,0.003851,VPU software update plus commissioning,7,ObjectLog
+2179.694847,2179.698345,0.003498,VPU software update plus commissioning,5,ObjectLog
+2179.694942,2179.697987,0.003045,VPU software update plus commissioning,6,ObjectLog
+2179.695262,2179.698298,0.003036,VPU software update plus commissioning,6,ObjectLog
+2179.695453,2179.698625,0.003172,VPU software update plus commissioning,4,ObjectLog
+2179.695605,2179.699009,0.003404,VPU software update plus commissioning,6,ObjectLog
+2179.695619,2179.698483,0.002863,VPU software update plus commissioning,5,ObjectLog
+2179.695777,2179.698610,0.002833,VPU software update plus commissioning,5,ObjectLog
+2179.695847,2179.698940,0.003093,VPU software update plus commissioning,7,ObjectLog
+2179.695918,2179.698776,0.002858,VPU software update plus commissioning,5,ObjectLog
+2179.695933,2179.698807,0.002874,VPU software update plus commissioning,4,ObjectLog
+2179.696046,2179.699144,0.003098,VPU software update plus commissioning,5,ObjectLog
+2179.696082,2179.698898,0.002816,VPU software update plus commissioning,4,ObjectLog
+2179.696193,2179.698978,0.002786,VPU software update plus commissioning,4,ObjectLog
+2179.696212,2179.699044,0.002832,VPU software update plus commissioning,7,ObjectLog
+2179.696270,2179.699771,0.003501,VPU software update plus commissioning,4,ObjectLog
+2179.696304,2179.699304,0.003000,VPU software update plus commissioning,6,ObjectLog
+2179.696320,2179.699155,0.002835,VPU software update plus commissioning,7,ObjectLog
+2179.696415,2179.699224,0.002809,VPU software update plus commissioning,5,ObjectLog
+2179.696449,2179.701354,0.004906,VPU software update plus commissioning,7,ObjectLog
+2179.696550,2179.699972,0.003422,VPU software update plus commissioning,5,ObjectLog
+2179.696592,2179.700363,0.003771,VPU software update plus commissioning,6,ObjectLog
+2179.697048,2179.699826,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.697097,2179.700011,0.002914,VPU software update plus commissioning,4,ObjectLog
+2179.697255,2179.700150,0.002895,VPU software update plus commissioning,5,ObjectLog
+2179.697317,2179.700327,0.003010,VPU software update plus commissioning,4,ObjectLog
+2179.697475,2179.700715,0.003240,VPU software update plus commissioning,5,ObjectLog
+2179.697597,2179.700375,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.697634,2179.700543,0.002909,VPU software update plus commissioning,6,ObjectLog
+2179.697649,2179.700986,0.003337,VPU software update plus commissioning,4,ObjectLog
+2179.697830,2179.700927,0.003096,VPU software update plus commissioning,6,ObjectLog
+2179.697985,2179.700889,0.002904,VPU software update plus commissioning,5,ObjectLog
+2179.698160,2179.701387,0.003227,VPU software update plus commissioning,5,ObjectLog
+2179.698203,2179.701042,0.002839,VPU software update plus commissioning,6,ObjectLog
+2179.698265,2179.701383,0.003117,VPU software update plus commissioning,4,ObjectLog
+2179.698317,2179.701387,0.003070,VPU software update plus commissioning,6,ObjectLog
+2179.699107,2179.701885,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.700067,2179.702845,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.700817,2179.703595,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.700945,2179.703723,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.702429,2179.705207,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.704261,2179.707039,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.704477,2179.707255,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.704677,2179.707480,0.002803,VPU software update plus commissioning,4,ObjectLog
+2179.704702,2179.707480,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.704861,2179.707639,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.704960,2179.707738,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.705502,2179.708280,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.706150,2179.708928,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.706329,2179.709106,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.706544,2179.709322,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.706794,2179.709572,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.707870,2179.710648,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.708374,2179.711152,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.710112,2179.712919,0.002807,VPU software update plus commissioning,4,ObjectLog
+2179.711370,2179.714147,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.711680,2179.714486,0.002806,VPU software update plus commissioning,4,ObjectLog
+2179.711708,2179.714486,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.712364,2179.715142,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.712571,2179.715349,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.712717,2179.715495,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.713226,2179.716036,0.002809,VPU software update plus commissioning,7,ObjectLog
+2179.713258,2179.716036,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.714615,2179.717415,0.002800,VPU software update plus commissioning,5,ObjectLog
+2179.714638,2179.717415,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.714960,2179.717738,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.715128,2179.717905,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.715575,2179.718353,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.715827,2179.718605,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.716447,2179.719225,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.717567,2179.720360,0.002793,VPU software update plus commissioning,7,ObjectLog
+2179.717582,2179.720360,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.717892,2179.720670,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.719707,2179.722485,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.720742,2179.723525,0.002782,VPU software update plus commissioning,6,ObjectLog
+2179.720747,2179.723525,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.720969,2179.723784,0.002815,VPU software update plus commissioning,6,ObjectLog
+2179.721225,2179.724003,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.721382,2179.724160,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.721846,2179.724624,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.722517,2179.725294,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.722607,2179.725417,0.002810,VPU software update plus commissioning,5,ObjectLog
+2179.722639,2179.725417,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.722832,2179.725609,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.723075,2179.725853,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.723806,2179.726583,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.724147,2179.726925,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.725813,2179.728591,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.726344,2179.729122,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.726560,2179.729371,0.002811,VPU software update plus commissioning,4,ObjectLog
+2179.726862,2179.729640,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.726939,2179.729717,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.727219,2179.729996,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.727928,2179.730706,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.728077,2179.730855,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.728607,2179.731385,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.729697,2179.732475,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.729852,2179.732630,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.730222,2179.733000,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.730690,2179.733468,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.731419,2179.734197,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.731706,2179.734484,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.731846,2179.734624,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.732084,2179.734862,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.732726,2179.735504,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.732970,2179.735748,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.733624,2179.736409,0.002784,VPU software update plus commissioning,5,ObjectLog
+2179.733631,2179.736409,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.734302,2179.737080,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.735619,2179.738397,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.735799,2179.738577,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.736298,2179.739075,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.736506,2179.739284,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.736705,2179.739483,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.737643,2179.740503,0.002860,VPU software update plus commissioning,7,ObjectLog
+2179.738196,2179.740974,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.738329,2179.741140,0.002812,VPU software update plus commissioning,6,ObjectLog
+2179.738362,2179.741140,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.738608,2179.741386,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.739684,2179.742498,0.002814,VPU software update plus commissioning,7,ObjectLog
+2179.740228,2179.743005,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.740771,2179.743548,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.741125,2179.743902,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.742203,2179.744981,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.742253,2179.745030,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.742971,2179.745748,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.743610,2179.746387,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.743934,2179.746732,0.002798,VPU software update plus commissioning,4,ObjectLog
+2179.744762,2179.747540,0.002778,VPU software update plus commissioning,5,ObjectLog
+2179.746011,2179.748789,0.002778,VPU software update plus commissioning,6,ObjectLog
+2179.746467,2179.749294,0.002826,VPU software update plus commissioning,5,ObjectLog
+2179.746492,2179.749294,0.002802,VPU software update plus commissioning,6,ObjectLog
+2179.746516,2179.749294,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.746664,2179.749442,0.002778,VPU software update plus commissioning,7,ObjectLog
+2179.747804,2179.750582,0.002778,VPU software update plus commissioning,4,ObjectLog
+2179.748049,2179.750858,0.002809,VPU software update plus commissioning,4,ObjectLog
+2179.748177,2179.750954,0.002778,VPU software update plus commissioning,7,ObjectLog
+2183.000000,2227.000000,44.000000,VPU software test,4,Manual
+2183.000000,2227.000000,44.000000,VPU software test,5,Manual
+2183.000000,2227.000000,44.000000,VPU software test,6,Manual
+2183.000000,2227.000000,44.000000,VPU software test,7,Manual
+2192.251208,2192.254755,0.003547,Payload data handling unit anomaly,5,ObjectLog
+2192.251572,2192.254755,0.003183,Payload data handling unit anomaly,6,ObjectLog
+2192.251755,2195.218422,2.966667,Payload data handling unit anomaly,4,AGIS
+2192.251755,2195.218422,2.966667,Payload data handling unit anomaly,5,AGIS
+2192.251755,2195.218422,2.966667,Payload data handling unit anomaly,6,AGIS
+2192.251755,2195.218422,2.966667,Payload data handling unit anomaly,7,AGIS
+2192.251789,2192.254743,0.002955,Payload data handling unit anomaly,7,ObjectLog
+2192.251859,2192.254751,0.002892,Payload data handling unit anomaly,4,ObjectLog
+2210.765708,2210.768255,0.002547,Micro-meteoroid hit,4,AGIS
+2210.765708,2210.768255,0.002547,Micro-meteoroid hit,5,AGIS
+2210.765708,2210.768255,0.002547,Micro-meteoroid hit,6,AGIS
+2210.765708,2210.768255,0.002547,Micro-meteoroid hit,7,AGIS
+2228.405292,2228.406449,0.001157,Micro-meteoroid hit,4,AGIS
+2228.405292,2228.406449,0.001157,Micro-meteoroid hit,5,AGIS
+2228.405292,2228.406449,0.001157,Micro-meteoroid hit,6,AGIS
+2228.405292,2228.406449,0.001157,Micro-meteoroid hit,7,AGIS
+2233.850326,2233.882887,0.032561,VPU software test,4,ObjectLog
+2233.850366,2233.878143,0.027778,VPU software test,4,AGIS
+2233.850366,2233.878143,0.027778,VPU software test,5,AGIS
+2233.850366,2233.878143,0.027778,VPU software test,6,AGIS
+2233.850366,2233.878143,0.027778,VPU software test,7,AGIS
+2233.850519,2233.880949,0.030430,VPU software test,6,ObjectLog
+2233.850751,2233.866037,0.015286,VPU software test,7,ObjectLog
+2233.850862,2233.858546,0.007683,VPU software test,5,ObjectLog
+2233.859684,2233.876363,0.016679,VPU software test,5,ObjectLog
+2233.861252,2233.866149,0.004896,VPU software test,4,ObjectLog
+2233.864962,2233.876544,0.011582,VPU software test,4,ObjectLog
+2233.876206,2233.882887,0.006681,VPU software test,5,ObjectLog
+2233.885323,2233.909107,0.023783,VPU software test,6,ObjectLog
+2233.888133,2233.908874,0.020740,VPU software test,5,ObjectLog
+2233.898977,2233.921199,0.022222,VPU software test,4,AGIS
+2233.898977,2233.921199,0.022222,VPU software test,5,AGIS
+2233.898977,2233.921199,0.022222,VPU software test,6,AGIS
+2233.898977,2233.921199,0.022222,VPU software test,7,AGIS
+2233.915430,2233.928425,0.012995,VPU software test,6,ObjectLog
+2233.932219,2233.961209,0.028990,VPU software test,4,ObjectLog
+2233.932934,2233.961209,0.028274,VPU software test,6,ObjectLog
+2233.935195,2233.948902,0.013708,VPU software test,5,ObjectLog
+2233.935267,2233.940598,0.005331,VPU software test,7,ObjectLog
+2233.937870,2233.949513,0.011643,VPU software test,7,ObjectLog
+2233.938060,2233.949562,0.011502,VPU software test,4,ObjectLog
+2233.942350,2233.961209,0.018859,VPU software test,6,ObjectLog
+2233.961372,2233.975462,0.014090,VPU software test,4,ObjectLog
+2233.967032,2234.010088,0.043056,VPU software test,4,AGIS
+2233.967032,2234.010088,0.043056,VPU software test,5,AGIS
+2233.967032,2234.010088,0.043056,VPU software test,6,AGIS
+2233.967032,2234.010088,0.043056,VPU software test,7,AGIS
+2233.972227,2233.975462,0.003235,VPU software test,7,ObjectLog
+2233.972736,2233.984059,0.011323,VPU software test,7,ObjectLog
+2233.981330,2233.985940,0.004610,VPU software test,7,ObjectLog
+2233.996068,2234.009668,0.013600,VPU software test,7,ObjectLog
+2235.598924,2235.607139,0.008214,VPU software test,4,ObjectLog
+2235.599115,2235.607139,0.008023,VPU software test,6,ObjectLog
+2235.601805,2235.606355,0.004550,VPU software test,7,ObjectLog
+2235.605938,2235.616855,0.010917,VPU software test,6,ObjectLog
+2235.606046,2235.610410,0.004365,VPU software test,4,ObjectLog
+2235.606267,2235.610538,0.004271,VPU software test,5,ObjectLog
+2235.609134,2235.614357,0.005223,VPU software test,4,ObjectLog
+2235.609479,2235.614357,0.004878,VPU software test,7,ObjectLog
+2235.610190,2235.614357,0.004167,VPU software test,6,ObjectLog
+2235.614316,2235.618308,0.003992,VPU software test,4,ObjectLog
+2235.659367,2235.664932,0.005564,VPU software test,5,ObjectLog
+2235.659383,2235.664713,0.005330,VPU software test,6,ObjectLog
+2235.659759,2235.664713,0.004954,VPU software test,4,ObjectLog
+2235.664254,2235.676754,0.012500,VPU software test,4,AGIS
+2235.664254,2235.676754,0.012500,VPU software test,5,AGIS
+2235.664254,2235.676754,0.012500,VPU software test,6,AGIS
+2235.664254,2235.676754,0.012500,VPU software test,7,AGIS
+2235.664819,2235.678221,0.013401,VPU software test,5,ObjectLog
+2235.667138,2235.671051,0.003913,VPU software test,6,ObjectLog
+2235.668422,2235.673202,0.004780,VPU software test,7,ObjectLog
+2235.669020,2235.672774,0.003754,VPU software test,5,ObjectLog
+2235.669212,2235.673202,0.003991,VPU software test,4,ObjectLog
+2235.669286,2235.673110,0.003824,VPU software test,6,ObjectLog
+2235.670826,2235.678221,0.007395,VPU software test,7,ObjectLog
+2235.671067,2235.675029,0.003962,VPU software test,5,ObjectLog
+2235.671401,2235.677974,0.006573,VPU software test,6,ObjectLog
+2235.671498,2235.675506,0.004008,VPU software test,4,ObjectLog
+2235.673973,2235.678197,0.004225,VPU software test,4,ObjectLog
+2235.676094,2235.690739,0.014645,VPU software test,5,ObjectLog
+2235.676910,2235.682084,0.005174,VPU software test,7,ObjectLog
+2235.678068,2235.682084,0.004016,VPU software test,6,ObjectLog
+2235.679481,2235.690739,0.011258,VPU software test,4,ObjectLog
+2235.680581,2235.686790,0.006208,VPU software test,5,ObjectLog
+2235.682723,2235.690739,0.008015,VPU software test,4,ObjectLog
+2235.682761,2235.690739,0.007978,VPU software test,7,ObjectLog
+2235.684200,2235.689091,0.004891,VPU software test,6,ObjectLog
+2235.684532,2235.689164,0.004631,VPU software test,4,ObjectLog
+2235.685737,2235.690739,0.005001,VPU software test,7,ObjectLog
+2235.685862,2235.690329,0.004467,VPU software test,5,ObjectLog
+2235.690170,2235.695164,0.004994,VPU software test,4,ObjectLog
+2235.693214,2235.698651,0.005437,VPU software test,6,ObjectLog
+2235.697672,2235.703318,0.005645,VPU software test,7,ObjectLog
+2235.700799,2235.722901,0.022102,VPU software test,4,ObjectLog
+2235.705098,2235.714887,0.009789,VPU software test,5,ObjectLog
+2235.706701,2235.715199,0.008498,VPU software test,6,ObjectLog
+2235.709794,2235.715074,0.005280,VPU software test,7,ObjectLog
+2235.715658,2235.721593,0.005935,VPU software test,5,ObjectLog
+2235.715937,2235.721800,0.005864,VPU software test,7,ObjectLog
+2235.724711,2235.731123,0.006412,VPU software test,4,ObjectLog
+2235.725291,2235.730410,0.005119,VPU software test,6,ObjectLog
+2235.729404,2235.740515,0.011111,VPU software test,7,ObjectLog
+2235.729743,2235.736161,0.006418,VPU software test,5,ObjectLog
+2235.731278,2235.737695,0.006417,VPU software test,6,ObjectLog
+2235.741653,2235.754364,0.012711,VPU software test,7,ObjectLog
+2235.743167,2235.747028,0.003861,VPU software test,7,ObjectLog
+2235.744300,2235.754364,0.010064,VPU software test,7,ObjectLog
+2235.744307,2235.754364,0.010058,VPU software test,5,ObjectLog
+2235.744615,2235.748061,0.003446,VPU software test,7,ObjectLog
+2235.755242,2235.759289,0.004047,VPU software test,5,ObjectLog
+2235.756564,2235.767545,0.010981,VPU software test,5,ObjectLog
+2235.756769,2235.767545,0.010776,VPU software test,6,ObjectLog
+2235.757398,2235.762556,0.005158,VPU software test,5,ObjectLog
+2235.757485,2235.767545,0.010060,VPU software test,4,ObjectLog
+2235.759865,2235.762848,0.002983,VPU software test,5,ObjectLog
+2235.760141,2235.763125,0.002984,VPU software test,5,ObjectLog
+2235.760406,2235.765292,0.004886,VPU software test,5,ObjectLog
+2235.767693,2235.774820,0.007127,VPU software test,6,ObjectLog
+2235.768410,2235.774820,0.006410,VPU software test,4,ObjectLog
+2235.773449,2235.783511,0.010062,VPU software test,5,ObjectLog
+2235.774394,2235.783511,0.009117,VPU software test,5,ObjectLog
+2235.775694,2235.779954,0.004261,VPU software test,4,ObjectLog
+2235.777225,2235.781451,0.004226,VPU software test,4,ObjectLog
+2235.785219,2235.788626,0.003407,VPU software test,7,ObjectLog
+2235.785908,2235.791189,0.005281,VPU software test,7,ObjectLog
+2235.789332,2235.812699,0.023367,VPU software test,6,ObjectLog
+2235.792012,2235.801793,0.009781,VPU software test,4,ObjectLog
+2235.794492,2235.808536,0.014044,VPU software test,7,ObjectLog
+2235.798253,2235.810900,0.012647,VPU software test,5,ObjectLog
+2235.801933,2235.807623,0.005690,VPU software test,6,ObjectLog
+2235.804865,2235.810844,0.005979,VPU software test,4,ObjectLog
+2235.810083,2235.815918,0.005835,VPU software test,7,ObjectLog
+2235.810626,2235.815846,0.005220,VPU software test,4,ObjectLog
+2235.810657,2235.815646,0.004989,VPU software test,5,ObjectLog
+2235.810848,2235.815918,0.005070,VPU software test,6,ObjectLog
+2235.817379,2235.821756,0.004377,VPU software test,7,ObjectLog
+2235.819042,2235.827019,0.007977,VPU software test,7,ObjectLog
+2235.822267,2235.827019,0.004752,VPU software test,4,ObjectLog
+2235.822675,2235.826994,0.004319,VPU software test,6,ObjectLog
+2235.822779,2235.827019,0.004240,VPU software test,5,ObjectLog
+2235.825880,2235.833368,0.007488,VPU software test,6,ObjectLog
+2235.828693,2235.833368,0.004674,VPU software test,5,ObjectLog
+2235.829484,2235.833326,0.003842,VPU software test,6,ObjectLog
+2235.831025,2235.837781,0.006756,VPU software test,4,ObjectLog
+2235.832156,2235.837781,0.005624,VPU software test,7,ObjectLog
+2235.833204,2235.836906,0.003702,VPU software test,5,ObjectLog
+2235.833283,2235.836946,0.003664,VPU software test,6,ObjectLog
+2235.837593,2235.842419,0.004826,VPU software test,6,ObjectLog
+2235.837958,2235.841454,0.003496,VPU software test,7,ObjectLog
+2235.838158,2235.841679,0.003521,VPU software test,5,ObjectLog
+2235.838185,2235.841680,0.003495,VPU software test,4,ObjectLog
+2235.840478,2235.846758,0.006280,VPU software test,4,ObjectLog
+2235.841857,2235.846753,0.004896,VPU software test,7,ObjectLog
+2235.842599,2235.846642,0.004043,VPU software test,4,ObjectLog
+2235.842782,2235.846753,0.003971,VPU software test,5,ObjectLog
+2235.845711,2235.851578,0.005867,VPU software test,4,ObjectLog
+2235.846369,2235.850712,0.004343,VPU software test,7,ObjectLog
+2235.846521,2235.850706,0.004184,VPU software test,5,ObjectLog
+2235.846584,2235.850712,0.004128,VPU software test,6,ObjectLog
+2246.645182,2246.648374,0.003192,Station-keeping manoeuvre #17,6,ObjectLog
+2246.645191,2246.648362,0.003171,Station-keeping manoeuvre #17,7,ObjectLog
+2246.645466,2246.648366,0.002900,Station-keeping manoeuvre #17,4,ObjectLog
+2246.645537,2246.648365,0.002828,Station-keeping manoeuvre #17,5,ObjectLog
+2246.648977,2246.842032,0.193056,Station-keeping manoeuvre #17,4,AGIS
+2246.648977,2246.842032,0.193056,Station-keeping manoeuvre #17,5,AGIS
+2246.648977,2246.842032,0.193056,Station-keeping manoeuvre #17,6,AGIS
+2246.648977,2246.842032,0.193056,Station-keeping manoeuvre #17,7,AGIS
+2266.608732,2266.613195,0.004464,Payload data handling unit update,6,ObjectLog
+2266.609061,2266.613186,0.004125,Payload data handling unit update,5,ObjectLog
+2266.609306,2266.613188,0.003882,Payload data handling unit update,4,ObjectLog
+2266.609321,2266.613183,0.003861,Payload data handling unit update,7,ObjectLog
+2269.000000,2272.500000,3.500000,VPU software test,5,Manual
+2278.937559,2278.939180,0.001621,Micro-meteoroid hit,4,AGIS
+2278.937559,2278.939180,0.001621,Micro-meteoroid hit,5,AGIS
+2278.937559,2278.939180,0.001621,Micro-meteoroid hit,6,AGIS
+2278.937559,2278.939180,0.001621,Micro-meteoroid hit,7,AGIS
+2286.149180,2286.150337,0.001157,Micro-meteoroid hit,4,AGIS
+2286.149180,2286.150337,0.001157,Micro-meteoroid hit,5,AGIS
+2286.149180,2286.150337,0.001157,Micro-meteoroid hit,6,AGIS
+2286.149180,2286.150337,0.001157,Micro-meteoroid hit,7,AGIS
+2299.132698,2299.136170,0.003472,Micro-meteoroid hit,4,AGIS
+2299.132698,2299.136170,0.003472,Micro-meteoroid hit,5,AGIS
+2299.132698,2299.136170,0.003472,Micro-meteoroid hit,6,AGIS
+2299.132698,2299.136170,0.003472,Micro-meteoroid hit,7,AGIS
+2305.463068,2305.474411,0.011343,Micro-meteoroid hit,4,AGIS
+2305.463068,2305.474411,0.011343,Micro-meteoroid hit,5,AGIS
+2305.463068,2305.474411,0.011343,Micro-meteoroid hit,6,AGIS
+2305.463068,2305.474411,0.011343,Micro-meteoroid hit,7,AGIS
+2324.900000,2401.558829,76.658829,Decontamination 5 (including basic-angle test),4,AGIS
+2324.900000,2401.558829,76.658829,Decontamination 5 (including basic-angle test),5,AGIS
+2324.900000,2401.558829,76.658829,Decontamination 5 (including basic-angle test),6,AGIS
+2324.900000,2401.558829,76.658829,Decontamination 5 (including basic-angle test),7,AGIS
+2325.690738,2330.614621,4.923883,Decontamination 5 (including basic-angle test),6,ObjectLog
+2325.690749,2326.494346,0.803598,Decontamination 5 (including basic-angle test),4,ObjectLog
+2325.691104,2330.614613,4.923509,Decontamination 5 (including basic-angle test),5,ObjectLog
+2325.691611,2326.560505,0.868895,Decontamination 5 (including basic-angle test),7,ObjectLog
+2326.491615,2327.513264,1.021648,Decontamination 5 (including basic-angle test),4,ObjectLog
+2326.557780,2327.547090,0.989309,Decontamination 5 (including basic-angle test),7,ObjectLog
+2327.510538,2328.493950,0.983412,Decontamination 5 (including basic-angle test),4,ObjectLog
+2327.525805,2330.513762,2.987957,Decontamination 5 (including basic-angle test),6,ObjectLog
+2327.544360,2329.535549,1.991189,Decontamination 5 (including basic-angle test),7,ObjectLog
+2328.491230,2329.507236,1.016006,Decontamination 5 (including basic-angle test),4,ObjectLog
+2329.504506,2330.614613,1.110107,Decontamination 5 (including basic-angle test),4,ObjectLog
+2329.532818,2330.506587,0.973769,Decontamination 5 (including basic-angle test),7,ObjectLog
+2330.503856,2330.527779,0.023923,Decontamination 5 (including basic-angle test),7,ObjectLog
+2330.511031,2330.614612,0.103580,Decontamination 5 (including basic-angle test),6,ObjectLog
+2330.525049,2330.614604,0.089555,Decontamination 5 (including basic-angle test),7,ObjectLog
+2354.540277,2354.545641,0.005364,AOCS calibrations,6,ObjectLog
+2354.540460,2354.545624,0.005164,AOCS calibrations,5,ObjectLog
+2354.540766,2354.545630,0.004863,AOCS calibrations,7,ObjectLog
+2354.541333,2354.545634,0.004300,AOCS calibrations,4,ObjectLog
+2386.610119,2386.645717,0.035598,Unknown,4,ObjectLog
+2386.610165,2386.645993,0.035828,Unknown,6,ObjectLog
+2386.610213,2386.645572,0.035359,Unknown,7,ObjectLog
+2386.610262,2386.645795,0.035533,Unknown,5,ObjectLog
+2393.705815,2393.727783,0.021967,Unknown,5,ObjectLog
+2393.709012,2393.719284,0.010272,Unknown,7,ObjectLog
+2393.762123,2393.768862,0.006739,Unknown,5,ObjectLog
+2393.767706,2393.774677,0.006971,Unknown,6,ObjectLog
+2393.769946,2393.774677,0.004731,Unknown,5,ObjectLog
+2393.787539,2393.796788,0.009250,Unknown,7,ObjectLog
+2405.967030,2408.643419,2.676389,Malargue communication delay,4,AGIS
+2405.967030,2408.643419,2.676389,Malargue communication delay,5,AGIS
+2405.967030,2408.643419,2.676389,Malargue communication delay,6,AGIS
+2405.967030,2408.643419,2.676389,Malargue communication delay,7,AGIS
+2405.974482,2406.001389,0.026907,Malargue communication delay,7,ObjectLog
+2405.975331,2405.996377,0.021046,Malargue communication delay,5,ObjectLog
+2405.975483,2405.997125,0.021642,Malargue communication delay,4,ObjectLog
+2405.976084,2405.997109,0.021025,Malargue communication delay,6,ObjectLog
+2405.993684,2405.999624,0.005940,Malargue communication delay,5,ObjectLog
+2405.994396,2405.998302,0.003906,Malargue communication delay,6,ObjectLog
+2405.994428,2405.998205,0.003777,Malargue communication delay,4,ObjectLog
+2405.994965,2406.000812,0.005848,Malargue communication delay,7,ObjectLog
+2405.995475,2406.001359,0.005884,Malargue communication delay,4,ObjectLog
+2405.995573,2405.998767,0.003195,Malargue communication delay,6,ObjectLog
+2405.996042,2406.001380,0.005338,Malargue communication delay,6,ObjectLog
+2405.996904,2406.001389,0.004484,Malargue communication delay,5,ObjectLog
+2405.998087,2406.001387,0.003299,Malargue communication delay,7,ObjectLog
+2408.932527,2409.001388,0.068861,VPU-6 anomaly,7,ObjectLog
+2408.932541,2408.982719,0.050179,VPU-6 anomaly,5,ObjectLog
+2408.933549,2408.979064,0.045515,VPU-6 anomaly,4,ObjectLog
+2408.935085,2409.968419,1.033333,VPU-6 anomaly,4,AGIS
+2408.935085,2409.968419,1.033333,VPU-6 anomaly,5,AGIS
+2408.935085,2409.968419,1.033333,VPU-6 anomaly,6,AGIS
+2408.935085,2409.968419,1.033333,VPU-6 anomaly,7,AGIS
+2408.975969,2408.979674,0.003705,VPU-6 anomaly,7,ObjectLog
+2408.976344,2408.982117,0.005773,VPU-6 anomaly,4,ObjectLog
+2408.976944,2408.981333,0.004389,VPU-6 anomaly,7,ObjectLog
+2408.978602,2408.984273,0.005672,VPU-6 anomaly,7,ObjectLog
+2408.979417,2408.984302,0.004885,VPU-6 anomaly,4,ObjectLog
+2408.979992,2408.991739,0.011747,VPU-6 anomaly,5,ObjectLog
+2408.981553,2408.986533,0.004980,VPU-6 anomaly,7,ObjectLog
+2408.981583,2408.992015,0.010432,VPU-6 anomaly,4,ObjectLog
+2408.983818,2408.986995,0.003177,VPU-6 anomaly,7,ObjectLog
+2408.984265,2408.992543,0.008278,VPU-6 anomaly,7,ObjectLog
+2408.989018,2408.993403,0.004386,VPU-6 anomaly,5,ObjectLog
+2408.989291,2408.994309,0.005018,VPU-6 anomaly,4,ObjectLog
+2408.989818,2408.993163,0.003345,VPU-6 anomaly,7,ObjectLog
+2408.990433,2408.996063,0.005630,VPU-6 anomaly,7,ObjectLog
+2408.990677,2409.001384,0.010707,VPU-6 anomaly,5,ObjectLog
+2408.991598,2408.994729,0.003131,VPU-6 anomaly,4,ObjectLog
+2408.992024,2408.996600,0.004575,VPU-6 anomaly,4,ObjectLog
+2408.993353,2408.998680,0.005327,VPU-6 anomaly,7,ObjectLog
+2408.993870,2408.998414,0.004544,VPU-6 anomaly,4,ObjectLog
+2408.995695,2408.999618,0.003923,VPU-6 anomaly,4,ObjectLog
+2408.995967,2409.000156,0.004189,VPU-6 anomaly,7,ObjectLog
+2408.996892,2409.000129,0.003237,VPU-6 anomaly,4,ObjectLog
+2408.997403,2409.001375,0.003972,VPU-6 anomaly,4,ObjectLog
+2408.997436,2409.000231,0.002795,VPU-6 anomaly,7,ObjectLog
+2408.997500,2409.001388,0.003887,VPU-6 anomaly,7,ObjectLog
+2452.013298,2452.014687,0.001389,Micro-meteoroid hit,4,AGIS
+2452.013298,2452.014687,0.001389,Micro-meteoroid hit,5,AGIS
+2452.013298,2452.014687,0.001389,Micro-meteoroid hit,6,AGIS
+2452.013298,2452.014687,0.001389,Micro-meteoroid hit,7,AGIS
+2462.892186,2462.897511,0.005325,Micro-meteoroid hit,4,AGIS
+2462.892186,2462.897511,0.005325,Micro-meteoroid hit,5,AGIS
+2462.892186,2462.897511,0.005325,Micro-meteoroid hit,6,AGIS
+2462.892186,2462.897511,0.005325,Micro-meteoroid hit,7,AGIS
+2485.676075,2485.677464,0.001389,Micro-meteoroid hit,4,AGIS
+2485.676075,2485.677464,0.001389,Micro-meteoroid hit,5,AGIS
+2485.676075,2485.677464,0.001389,Micro-meteoroid hit,6,AGIS
+2485.676075,2485.677464,0.001389,Micro-meteoroid hit,7,AGIS
+2492.287597,2492.290902,0.003305,Unknown,7,ObjectLog
+2496.181214,2496.183066,0.001852,Micro-meteoroid hit,4,AGIS
+2496.181214,2496.183066,0.001852,Micro-meteoroid hit,5,AGIS
+2496.181214,2496.183066,0.001852,Micro-meteoroid hit,6,AGIS
+2496.181214,2496.183066,0.001852,Micro-meteoroid hit,7,AGIS
+2499.488705,2499.492957,0.004253,Station-keeping manoeuvre #18,7,ObjectLog
+2499.488926,2499.492950,0.004024,Station-keeping manoeuvre #18,4,ObjectLog
+2499.489152,2499.492947,0.003795,Station-keeping manoeuvre #18,6,ObjectLog
+2499.489937,2499.492948,0.003011,Station-keeping manoeuvre #18,5,ObjectLog
+2499.493417,2499.680917,0.187500,Station-keeping manoeuvre #18,4,AGIS
+2499.493417,2499.680917,0.187500,Station-keeping manoeuvre #18,5,AGIS
+2499.493417,2499.680917,0.187500,Station-keeping manoeuvre #18,6,AGIS
+2499.493417,2499.680917,0.187500,Station-keeping manoeuvre #18,7,AGIS
+2558.371838,2558.378610,0.006771,New Norcia data loss,5,ObjectLog
+2558.372015,2558.378610,0.006594,New Norcia data loss,6,ObjectLog
+2558.372439,2558.378418,0.005979,New Norcia data loss,7,ObjectLog
+2558.372535,2558.377656,0.005121,New Norcia data loss,4,ObjectLog
+2558.375916,2558.379715,0.003799,New Norcia data loss,5,ObjectLog
+2559.062101,2559.069466,0.007365,New Norcia data loss,6,ObjectLog
+2559.062496,2559.070184,0.007688,New Norcia data loss,4,ObjectLog
+2559.062509,2559.070298,0.007789,New Norcia data loss,5,ObjectLog
+2559.062637,2559.072024,0.009387,New Norcia data loss,7,ObjectLog
+2559.068007,2559.071854,0.003847,New Norcia data loss,6,ObjectLog
+2568.042463,2568.046166,0.003703,Micro-meteoroid hit,4,AGIS
+2568.042463,2568.046166,0.003703,Micro-meteoroid hit,5,AGIS
+2568.042463,2568.046166,0.003703,Micro-meteoroid hit,6,AGIS
+2568.042463,2568.046166,0.003703,Micro-meteoroid hit,7,AGIS
+2570.486815,2570.487972,0.001157,Micro-meteoroid hit,4,AGIS
+2570.486815,2570.487972,0.001157,Micro-meteoroid hit,5,AGIS
+2570.486815,2570.487972,0.001157,Micro-meteoroid hit,6,AGIS
+2570.486815,2570.487972,0.001157,Micro-meteoroid hit,7,AGIS
+2574.640000,2574.828139,0.188139,Refocus (preceding FoV = FoV-1),4,AGIS
+2574.640000,2574.828139,0.188139,Refocus (preceding FoV = FoV-1),5,AGIS
+2574.640000,2574.828139,0.188139,Refocus (preceding FoV = FoV-1),6,AGIS
+2574.640000,2574.828139,0.188139,Refocus (preceding FoV = FoV-1),7,AGIS
+2591.974391,2591.978626,0.004235,Malargue data loss,6,ObjectLog
+2591.979248,2591.987119,0.007871,Malargue data loss,5,ObjectLog
+2591.980471,2591.987119,0.006648,Malargue data loss,7,ObjectLog
+2591.985334,2591.992492,0.007157,Malargue data loss,7,ObjectLog
+2592.096965,2592.106213,0.009248,Malargue data loss,4,ObjectLog
+2592.134363,2592.140566,0.006203,Malargue data loss,6,ObjectLog
+2592.143813,2592.148690,0.004877,Malargue data loss,4,ObjectLog
+2592.193652,2592.214367,0.020715,Malargue data loss,4,ObjectLog
+2592.203926,2592.214367,0.010441,Malargue data loss,5,ObjectLog
+2592.238985,2592.252690,0.013704,Malargue data loss,7,ObjectLog
+2592.263148,2592.353754,0.090606,Malargue data loss,7,ObjectLog
+2592.263230,2592.276909,0.013679,Malargue data loss,4,ObjectLog
+2592.268156,2592.309771,0.041615,Malargue data loss,6,ObjectLog
+2592.270449,2592.307986,0.037536,Malargue data loss,5,ObjectLog
+2592.288652,2592.292891,0.004238,Malargue data loss,7,ObjectLog
+2592.288700,2592.308423,0.019723,Malargue data loss,4,ObjectLog
+2592.290167,2592.303395,0.013228,Malargue data loss,7,ObjectLog
+2592.297913,2592.303787,0.005875,Malargue data loss,6,ObjectLog
+2592.300691,2592.308348,0.007657,Malargue data loss,7,ObjectLog
+2592.301057,2592.309771,0.008714,Malargue data loss,6,ObjectLog
+2592.305283,2592.309566,0.004283,Malargue data loss,5,ObjectLog
+2592.305619,2592.308431,0.002811,Malargue data loss,7,ObjectLog
+2592.305702,2592.310176,0.004474,Malargue data loss,7,ObjectLog
+2592.305723,2592.309823,0.004100,Malargue data loss,4,ObjectLog
+2592.306836,2592.312611,0.005775,Malargue data loss,5,ObjectLog
+2592.307070,2592.310986,0.003916,Malargue data loss,6,ObjectLog
+2592.307092,2592.320107,0.013015,Malargue data loss,4,ObjectLog
+2592.309887,2592.320563,0.010676,Malargue data loss,5,ObjectLog
+2592.311045,2592.328037,0.016992,Malargue data loss,7,ObjectLog
+2592.315501,2592.320184,0.004682,Malargue data loss,6,ObjectLog
+2592.317386,2592.320620,0.003234,Malargue data loss,4,ObjectLog
+2592.317461,2592.328037,0.010576,Malargue data loss,6,ObjectLog
+2592.317471,2592.321091,0.003620,Malargue data loss,7,ObjectLog
+2592.325141,2592.337045,0.011904,Malargue data loss,4,ObjectLog
+2592.332379,2592.336998,0.004619,Malargue data loss,5,ObjectLog
+2592.334271,2592.337152,0.002881,Malargue data loss,5,ObjectLog
+2592.334329,2592.338834,0.004506,Malargue data loss,4,ObjectLog
+2592.334434,2592.339051,0.004617,Malargue data loss,5,ObjectLog
+2592.336322,2592.346087,0.009765,Malargue data loss,5,ObjectLog
+2592.343341,2592.353394,0.010053,Malargue data loss,4,ObjectLog
+2592.360944,2592.367362,0.006418,Malargue data loss,4,ObjectLog
+2592.398221,2592.406159,0.007938,Malargue data loss,6,ObjectLog
+2592.398415,2592.403534,0.005119,Malargue data loss,4,ObjectLog
+2592.405360,2592.411753,0.006393,Malargue data loss,4,ObjectLog
+2596.019424,2596.029675,0.010251,Malargue data loss,7,ObjectLog
+2632.040610,2632.045703,0.005093,Micro-meteoroid hit,4,AGIS
+2632.040610,2632.045703,0.005093,Micro-meteoroid hit,5,AGIS
+2632.040610,2632.045703,0.005093,Micro-meteoroid hit,6,AGIS
+2632.040610,2632.045703,0.005093,Micro-meteoroid hit,7,AGIS
+2640.505425,2640.552138,0.046713,Malargue data loss,4,AGIS
+2640.505425,2640.552138,0.046713,Malargue data loss,5,AGIS
+2640.505425,2640.552138,0.046713,Malargue data loss,6,AGIS
+2640.505425,2640.552138,0.046713,Malargue data loss,7,AGIS
+2641.602554,2641.605517,0.002963,Micro-meteoroid hit,4,AGIS
+2641.602554,2641.605517,0.002963,Micro-meteoroid hit,5,AGIS
+2641.602554,2641.605517,0.002963,Micro-meteoroid hit,6,AGIS
+2641.602554,2641.605517,0.002963,Micro-meteoroid hit,7,AGIS
+2644.798156,2644.803017,0.004861,Micro-meteoroid hit,4,AGIS
+2644.798156,2644.803017,0.004861,Micro-meteoroid hit,5,AGIS
+2644.798156,2644.803017,0.004861,Micro-meteoroid hit,6,AGIS
+2644.798156,2644.803017,0.004861,Micro-meteoroid hit,7,AGIS
+2651.925045,2651.931244,0.006199,Micro-meteoroid hit,5,ObjectLog
+2651.926210,2651.931236,0.005027,Micro-meteoroid hit,4,ObjectLog
+2651.926430,2651.931232,0.004802,Micro-meteoroid hit,7,ObjectLog
+2651.927530,2651.931227,0.003697,Micro-meteoroid hit,6,ObjectLog
+2651.929526,2651.962860,0.033333,Micro-meteoroid hit,4,AGIS
+2651.929526,2651.962860,0.033333,Micro-meteoroid hit,5,AGIS
+2651.929526,2651.962860,0.033333,Micro-meteoroid hit,6,AGIS
+2651.929526,2651.962860,0.033333,Micro-meteoroid hit,7,AGIS
+2671.735100,2671.736258,0.001158,Micro-meteoroid hit,4,AGIS
+2671.735100,2671.736258,0.001158,Micro-meteoroid hit,5,AGIS
+2671.735100,2671.736258,0.001158,Micro-meteoroid hit,6,AGIS
+2671.735100,2671.736258,0.001158,Micro-meteoroid hit,7,AGIS
+2675.785748,2675.790378,0.004630,Micro-meteoroid hit,4,AGIS
+2675.785748,2675.790378,0.004630,Micro-meteoroid hit,5,AGIS
+2675.785748,2675.790378,0.004630,Micro-meteoroid hit,6,AGIS
+2675.785748,2675.790378,0.004630,Micro-meteoroid hit,7,AGIS
+2676.903017,2676.906258,0.003241,Micro-meteoroid hit,4,AGIS
+2676.903017,2676.906258,0.003241,Micro-meteoroid hit,5,AGIS
+2676.903017,2676.906258,0.003241,Micro-meteoroid hit,6,AGIS
+2676.903017,2676.906258,0.003241,Micro-meteoroid hit,7,AGIS
+2751.336315,2751.339531,0.003216,Station-keeping manoeuvre #19,5,ObjectLog
+2751.336494,2751.339518,0.003024,Station-keeping manoeuvre #19,7,ObjectLog
+2751.336563,2751.339521,0.002958,Station-keeping manoeuvre #19,6,ObjectLog
+2751.336668,2751.339524,0.002856,Station-keeping manoeuvre #19,4,ObjectLog
+2751.340636,2751.530914,0.190278,Station-keeping manoeuvre #19,4,AGIS
+2751.340636,2751.530914,0.190278,Station-keeping manoeuvre #19,5,AGIS
+2751.340636,2751.530914,0.190278,Station-keeping manoeuvre #19,6,AGIS
+2751.340636,2751.530914,0.190278,Station-keeping manoeuvre #19,7,AGIS
+2760.365655,2760.370747,0.005092,Micro-meteoroid hit,4,AGIS
+2760.365655,2760.370747,0.005092,Micro-meteoroid hit,5,AGIS
+2760.365655,2760.370747,0.005092,Micro-meteoroid hit,6,AGIS
+2760.365655,2760.370747,0.005092,Micro-meteoroid hit,7,AGIS
+2769.272999,2769.276855,0.003856,Unknown,7,ObjectLog
+2781.499507,2781.505719,0.006212,Unknown,5,ObjectLog
+2781.499720,2781.506223,0.006503,Unknown,7,ObjectLog
+2781.499936,2781.505796,0.005860,Unknown,4,ObjectLog
+2781.499950,2781.506132,0.006182,Unknown,6,ObjectLog
+2782.529775,2782.537413,0.007638,Micro-meteoroid hit,4,AGIS
+2782.529775,2782.537413,0.007638,Micro-meteoroid hit,5,AGIS
+2782.529775,2782.537413,0.007638,Micro-meteoroid hit,6,AGIS
+2782.529775,2782.537413,0.007638,Micro-meteoroid hit,7,AGIS
+2804.342039,2804.345500,0.003462,New Norcia data loss,7,ObjectLog
+2804.343426,2804.346971,0.003545,New Norcia data loss,4,ObjectLog
+2804.345125,2804.349045,0.003920,New Norcia data loss,6,ObjectLog
+2804.346794,2804.349752,0.002957,New Norcia data loss,7,ObjectLog
+2804.348164,2804.351472,0.003308,New Norcia data loss,7,ObjectLog
+2804.349942,2804.353292,0.003350,New Norcia data loss,7,ObjectLog
+2804.351453,2804.354545,0.003092,New Norcia data loss,6,ObjectLog
+2804.352423,2804.356088,0.003665,New Norcia data loss,7,ObjectLog
+2804.355548,2804.359224,0.003676,New Norcia data loss,6,ObjectLog
+2804.356147,2804.359184,0.003037,New Norcia data loss,7,ObjectLog
+2804.357583,2804.361228,0.003645,New Norcia data loss,7,ObjectLog
+2810.802691,2810.804311,0.001620,Micro-meteoroid hit,4,AGIS
+2810.802691,2810.804311,0.001620,Micro-meteoroid hit,5,AGIS
+2810.802691,2810.804311,0.001620,Micro-meteoroid hit,6,AGIS
+2810.802691,2810.804311,0.001620,Micro-meteoroid hit,7,AGIS
+2866.178847,2866.183709,0.004862,Micro-meteoroid hit,4,AGIS
+2866.178847,2866.183709,0.004862,Micro-meteoroid hit,5,AGIS
+2866.178847,2866.183709,0.004862,Micro-meteoroid hit,6,AGIS
+2866.178847,2866.183709,0.004862,Micro-meteoroid hit,7,AGIS
+2881.161718,2881.163107,0.001389,Micro-meteoroid hit,4,AGIS
+2881.161718,2881.163107,0.001389,Micro-meteoroid hit,5,AGIS
+2881.161718,2881.163107,0.001389,Micro-meteoroid hit,6,AGIS
+2881.161718,2881.163107,0.001389,Micro-meteoroid hit,7,AGIS
+2897.500375,2897.501532,0.001157,Micro-meteoroid hit,4,AGIS
+2897.500375,2897.501532,0.001157,Micro-meteoroid hit,5,AGIS
+2897.500375,2897.501532,0.001157,Micro-meteoroid hit,6,AGIS
+2897.500375,2897.501532,0.001157,Micro-meteoroid hit,7,AGIS
+2958.929541,2958.933707,0.004166,Micro-meteoroid hit,4,AGIS
+2958.929541,2958.933707,0.004166,Micro-meteoroid hit,5,AGIS
+2958.929541,2958.933707,0.004166,Micro-meteoroid hit,6,AGIS
+2958.929541,2958.933707,0.004166,Micro-meteoroid hit,7,AGIS
+2959.096207,2959.098059,0.001852,Micro-meteoroid hit,4,AGIS
+2959.096207,2959.098059,0.001852,Micro-meteoroid hit,5,AGIS
+2959.096207,2959.098059,0.001852,Micro-meteoroid hit,6,AGIS
+2959.096207,2959.098059,0.001852,Micro-meteoroid hit,7,AGIS
+2966.449448,2966.451068,0.001620,Micro-meteoroid hit,4,AGIS
+2966.449448,2966.451068,0.001620,Micro-meteoroid hit,5,AGIS
+2966.449448,2966.451068,0.001620,Micro-meteoroid hit,6,AGIS
+2966.449448,2966.451068,0.001620,Micro-meteoroid hit,7,AGIS
+2978.401531,2978.403151,0.001620,Micro-meteoroid hit,4,AGIS
+2978.401531,2978.403151,0.001620,Micro-meteoroid hit,5,AGIS
+2978.401531,2978.403151,0.001620,Micro-meteoroid hit,6,AGIS
+2978.401531,2978.403151,0.001620,Micro-meteoroid hit,7,AGIS
+2981.825374,2981.826994,0.001620,Micro-meteoroid hit,4,AGIS
+2981.825374,2981.826994,0.001620,Micro-meteoroid hit,5,AGIS
+2981.825374,2981.826994,0.001620,Micro-meteoroid hit,6,AGIS
+2981.825374,2981.826994,0.001620,Micro-meteoroid hit,7,AGIS
+2995.325836,2995.327225,0.001389,Micro-meteoroid hit,4,AGIS
+2995.325836,2995.327225,0.001389,Micro-meteoroid hit,5,AGIS
+2995.325836,2995.327225,0.001389,Micro-meteoroid hit,6,AGIS
+2995.325836,2995.327225,0.001389,Micro-meteoroid hit,7,AGIS
+3005.977457,3005.983707,0.006250,Micro-meteoroid hit,4,AGIS
+3005.977457,3005.983707,0.006250,Micro-meteoroid hit,5,AGIS
+3005.977457,3005.983707,0.006250,Micro-meteoroid hit,6,AGIS
+3005.977457,3005.983707,0.006250,Micro-meteoroid hit,7,AGIS
+3045.106100,3045.131501,0.025401,Payload data handling unit anomaly,7,ObjectLog
+3045.125533,3045.131495,0.005962,Payload data handling unit anomaly,4,ObjectLog
+3045.126838,3045.131492,0.004654,Payload data handling unit anomaly,5,ObjectLog
+3045.127447,3045.131492,0.004045,Payload data handling unit anomaly,6,ObjectLog
+3045.130910,3048.183687,3.052778,Payload data handling unit anomaly,4,AGIS
+3045.130910,3048.183687,3.052778,Payload data handling unit anomaly,5,AGIS
+3045.130910,3048.183687,3.052778,Payload data handling unit anomaly,6,AGIS
+3045.130910,3048.183687,3.052778,Payload data handling unit anomaly,7,AGIS
+3074.487178,3074.488798,0.001620,Micro-meteoroid hit,4,AGIS
+3074.487178,3074.488798,0.001620,Micro-meteoroid hit,5,AGIS
+3074.487178,3074.488798,0.001620,Micro-meteoroid hit,6,AGIS
+3074.487178,3074.488798,0.001620,Micro-meteoroid hit,7,AGIS
+3087.795279,3087.796900,0.001621,Micro-meteoroid hit,4,AGIS
+3087.795279,3087.796900,0.001621,Micro-meteoroid hit,5,AGIS
+3087.795279,3087.796900,0.001621,Micro-meteoroid hit,6,AGIS
+3087.795279,3087.796900,0.001621,Micro-meteoroid hit,7,AGIS
+3109.043890,3109.044816,0.000926,Micro-meteoroid hit,4,AGIS
+3109.043890,3109.044816,0.000926,Micro-meteoroid hit,5,AGIS
+3109.043890,3109.044816,0.000926,Micro-meteoroid hit,6,AGIS
+3109.043890,3109.044816,0.000926,Micro-meteoroid hit,7,AGIS
+3142.873982,3142.878843,0.004861,Micro-meteoroid hit,4,AGIS
+3142.873982,3142.878843,0.004861,Micro-meteoroid hit,5,AGIS
+3142.873982,3142.878843,0.004861,Micro-meteoroid hit,6,AGIS
+3142.873982,3142.878843,0.004861,Micro-meteoroid hit,7,AGIS
+3161.790880,3161.796899,0.006019,Micro-meteoroid hit,4,AGIS
+3161.790880,3161.796899,0.006019,Micro-meteoroid hit,5,AGIS
+3161.790880,3161.796899,0.006019,Micro-meteoroid hit,6,AGIS
+3161.790880,3161.796899,0.006019,Micro-meteoroid hit,7,AGIS
+3193.460324,3193.464954,0.004630,Micro-meteoroid hit,4,AGIS
+3193.460324,3193.464954,0.004630,Micro-meteoroid hit,5,AGIS
+3193.460324,3193.464954,0.004630,Micro-meteoroid hit,6,AGIS
+3193.460324,3193.464954,0.004630,Micro-meteoroid hit,7,AGIS
+3205.134410,3205.153157,0.018747,Malargue data loss,7,ObjectLog
+3205.134686,3205.152308,0.017623,Malargue data loss,5,ObjectLog
+3205.135973,3205.152109,0.016136,Malargue data loss,6,ObjectLog
+3205.136173,3205.153043,0.016870,Malargue data loss,4,ObjectLog
+3205.136463,3205.172574,0.036111,Malargue data loss,4,AGIS
+3205.136463,3205.172574,0.036111,Malargue data loss,5,AGIS
+3205.136463,3205.172574,0.036111,Malargue data loss,6,AGIS
+3205.136463,3205.172574,0.036111,Malargue data loss,7,AGIS
+3205.155244,3205.178167,0.022923,Malargue data loss,7,ObjectLog
+3205.155374,3205.159505,0.004131,Malargue data loss,4,ObjectLog
+3205.156000,3205.159545,0.003545,Malargue data loss,6,ObjectLog
+3205.156712,3205.160065,0.003354,Malargue data loss,7,ObjectLog
+3205.156769,3205.159565,0.002796,Malargue data loss,5,ObjectLog
+3205.156796,3205.159595,0.002799,Malargue data loss,4,ObjectLog
+3205.156832,3205.178013,0.021180,Malargue data loss,6,ObjectLog
+3205.156871,3205.159813,0.002942,Malargue data loss,5,ObjectLog
+3205.156901,3205.159678,0.002778,Malargue data loss,4,ObjectLog
+3205.156956,3205.159822,0.002866,Malargue data loss,4,ObjectLog
+3205.157097,3205.160031,0.002935,Malargue data loss,4,ObjectLog
+3205.157108,3205.159885,0.002778,Malargue data loss,5,ObjectLog
+3205.157169,3205.160016,0.002847,Malargue data loss,6,ObjectLog
+3205.157224,3205.161067,0.003843,Malargue data loss,5,ObjectLog
+3205.157285,3205.160166,0.002882,Malargue data loss,6,ObjectLog
+3205.157308,3205.160243,0.002935,Malargue data loss,4,ObjectLog
+3205.157338,3205.160267,0.002929,Malargue data loss,7,ObjectLog
+3205.157436,3205.161067,0.003631,Malargue data loss,6,ObjectLog
+3205.157559,3205.160493,0.002934,Malargue data loss,4,ObjectLog
+3205.157559,3205.160688,0.003130,Malargue data loss,7,ObjectLog
+3205.157764,3205.160563,0.002799,Malargue data loss,4,ObjectLog
+3205.157839,3205.160729,0.002890,Malargue data loss,4,ObjectLog
+3205.157974,3205.161333,0.003358,Malargue data loss,7,ObjectLog
+3205.158004,3205.161086,0.003082,Malargue data loss,4,ObjectLog
+3205.158343,3205.161174,0.002832,Malargue data loss,6,ObjectLog
+3205.158358,3205.161208,0.002851,Malargue data loss,4,ObjectLog
+3205.158376,3205.161488,0.003113,Malargue data loss,5,ObjectLog
+3205.158443,3205.161518,0.003075,Malargue data loss,6,ObjectLog
+3205.158530,3205.161312,0.002782,Malargue data loss,4,ObjectLog
+3205.158589,3205.161615,0.003027,Malargue data loss,4,ObjectLog
+3205.158605,3205.162322,0.003718,Malargue data loss,7,ObjectLog
+3205.158769,3205.161596,0.002827,Malargue data loss,5,ObjectLog
+3205.158787,3205.161887,0.003100,Malargue data loss,6,ObjectLog
+3205.158888,3205.161858,0.002970,Malargue data loss,5,ObjectLog
+3205.158894,3205.162038,0.003144,Malargue data loss,4,ObjectLog
+3205.159135,3205.161993,0.002858,Malargue data loss,5,ObjectLog
+3205.159174,3205.162196,0.003022,Malargue data loss,6,ObjectLog
+3205.159272,3205.162501,0.003229,Malargue data loss,5,ObjectLog
+3205.159314,3205.162416,0.003102,Malargue data loss,4,ObjectLog
+3205.159501,3205.162359,0.002858,Malargue data loss,6,ObjectLog
+3205.159609,3205.162893,0.003284,Malargue data loss,7,ObjectLog
+3205.159668,3205.162655,0.002986,Malargue data loss,6,ObjectLog
+3205.159716,3205.162714,0.002999,Malargue data loss,4,ObjectLog
+3205.159788,3205.162864,0.003076,Malargue data loss,5,ObjectLog
+3205.159935,3205.164415,0.004480,Malargue data loss,6,ObjectLog
+3205.159987,3205.162810,0.002823,Malargue data loss,4,ObjectLog
+3205.160094,3205.163066,0.002972,Malargue data loss,4,ObjectLog
+3205.160136,3205.163136,0.003000,Malargue data loss,5,ObjectLog
+3205.160177,3205.162992,0.002815,Malargue data loss,7,ObjectLog
+3205.160262,3205.163064,0.002801,Malargue data loss,7,ObjectLog
+3205.160351,3205.163129,0.002778,Malargue data loss,7,ObjectLog
+3205.160356,3205.163220,0.002863,Malargue data loss,4,ObjectLog
+3205.160408,3205.163316,0.002908,Malargue data loss,5,ObjectLog
+3205.160414,3205.163239,0.002824,Malargue data loss,7,ObjectLog
+3205.160518,3205.163485,0.002967,Malargue data loss,7,ObjectLog
+3205.160551,3205.163481,0.002929,Malargue data loss,4,ObjectLog
+3205.160588,3205.163573,0.002985,Malargue data loss,5,ObjectLog
+3205.160756,3205.163534,0.002778,Malargue data loss,4,ObjectLog
+3205.160788,3205.163879,0.003091,Malargue data loss,7,ObjectLog
+3205.160820,3205.163995,0.003175,Malargue data loss,4,ObjectLog
+3205.160873,3205.163984,0.003112,Malargue data loss,5,ObjectLog
+3205.161170,3205.164158,0.002988,Malargue data loss,7,ObjectLog
+3205.161257,3205.164159,0.002902,Malargue data loss,5,ObjectLog
+3205.161274,3205.164502,0.003228,Malargue data loss,4,ObjectLog
+3205.161433,3205.164247,0.002814,Malargue data loss,5,ObjectLog
+3205.161452,3205.164593,0.003141,Malargue data loss,7,ObjectLog
+3205.161523,3205.164443,0.002920,Malargue data loss,5,ObjectLog
+3205.161685,3205.165067,0.003383,Malargue data loss,6,ObjectLog
+3205.161713,3205.166366,0.004653,Malargue data loss,5,ObjectLog
+3205.161798,3205.165633,0.003835,Malargue data loss,4,ObjectLog
+3205.161918,3205.164695,0.002778,Malargue data loss,7,ObjectLog
+3205.161976,3205.165023,0.003047,Malargue data loss,7,ObjectLog
+3205.162295,3205.165077,0.002782,Malargue data loss,7,ObjectLog
+3205.162354,3205.167317,0.004962,Malargue data loss,7,ObjectLog
+3205.162373,3205.170338,0.007965,Malargue data loss,6,ObjectLog
+3205.162909,3205.168430,0.005522,Malargue data loss,4,ObjectLog
+3205.163637,3205.166514,0.002877,Malargue data loss,5,ObjectLog
+3205.163784,3205.167357,0.003572,Malargue data loss,5,ObjectLog
+3205.164599,3205.167463,0.002864,Malargue data loss,7,ObjectLog
+3205.164645,3205.169010,0.004365,Malargue data loss,5,ObjectLog
+3205.164740,3205.168486,0.003746,Malargue data loss,7,ObjectLog
+3205.165705,3205.168881,0.003176,Malargue data loss,4,ObjectLog
+3205.165761,3205.169998,0.004236,Malargue data loss,7,ObjectLog
+3205.166151,3205.178144,0.011993,Malargue data loss,4,ObjectLog
+3205.166279,3205.177318,0.011039,Malargue data loss,5,ObjectLog
+3205.167269,3205.170204,0.002935,Malargue data loss,7,ObjectLog
+3205.167491,3205.170704,0.003213,Malargue data loss,7,ObjectLog
+3205.167613,3205.177965,0.010351,Malargue data loss,6,ObjectLog
+3205.167975,3205.177632,0.009657,Malargue data loss,7,ObjectLog
+3205.180562,3205.186253,0.005691,Malargue data loss,4,ObjectLog
+3205.181001,3205.185598,0.004597,Malargue data loss,5,ObjectLog
+3205.181066,3205.185269,0.004202,Malargue data loss,6,ObjectLog
+3205.181285,3205.185004,0.003719,Malargue data loss,7,ObjectLog
+3205.183997,3205.187691,0.003694,Malargue data loss,7,ObjectLog
+3218.942963,3218.944352,0.001389,Micro-meteoroid hit,4,AGIS
+3218.942963,3218.944352,0.001389,Micro-meteoroid hit,5,AGIS
+3218.942963,3218.944352,0.001389,Micro-meteoroid hit,6,AGIS
+3218.942963,3218.944352,0.001389,Micro-meteoroid hit,7,AGIS
+3234.352916,3234.357314,0.004398,Micro-meteoroid hit,4,AGIS
+3234.352916,3234.357314,0.004398,Micro-meteoroid hit,5,AGIS
+3234.352916,3234.357314,0.004398,Micro-meteoroid hit,6,AGIS
+3234.352916,3234.357314,0.004398,Micro-meteoroid hit,7,AGIS
+3238.192731,3238.193888,0.001157,Micro-meteoroid hit,4,AGIS
+3238.192731,3238.193888,0.001157,Micro-meteoroid hit,5,AGIS
+3238.192731,3238.193888,0.001157,Micro-meteoroid hit,6,AGIS
+3238.192731,3238.193888,0.001157,Micro-meteoroid hit,7,AGIS
+3239.564027,3239.565416,0.001389,Micro-meteoroid hit,4,AGIS
+3239.564027,3239.565416,0.001389,Micro-meteoroid hit,5,AGIS
+3239.564027,3239.565416,0.001389,Micro-meteoroid hit,6,AGIS
+3239.564027,3239.565416,0.001389,Micro-meteoroid hit,7,AGIS
+3243.898749,3243.900370,0.001621,Micro-meteoroid hit,4,AGIS
+3243.898749,3243.900370,0.001621,Micro-meteoroid hit,5,AGIS
+3243.898749,3243.900370,0.001621,Micro-meteoroid hit,6,AGIS
+3243.898749,3243.900370,0.001621,Micro-meteoroid hit,7,AGIS
+3254.082689,3254.086972,0.004283,Station-keeping manoeuvre #20,7,ObjectLog
+3254.082974,3254.086975,0.004001,Station-keeping manoeuvre #20,5,ObjectLog
+3254.083582,3254.086974,0.003392,Station-keeping manoeuvre #20,6,ObjectLog
+3254.083899,3254.086977,0.003078,Station-keeping manoeuvre #20,4,ObjectLog
+3254.087851,3254.286462,0.198611,Station-keeping manoeuvre #20,4,AGIS
+3254.087851,3254.286462,0.198611,Station-keeping manoeuvre #20,5,AGIS
+3254.087851,3254.286462,0.198611,Station-keeping manoeuvre #20,6,AGIS
+3254.087851,3254.286462,0.198611,Station-keeping manoeuvre #20,7,AGIS
+3269.454518,3269.469795,0.015278,Malargue data loss,4,AGIS
+3269.454518,3269.469795,0.015278,Malargue data loss,5,AGIS
+3269.454518,3269.469795,0.015278,Malargue data loss,6,AGIS
+3269.454518,3269.469795,0.015278,Malargue data loss,7,AGIS
+3269.460413,3269.481108,0.020695,Malargue data loss,4,ObjectLog
+3269.461101,3269.480865,0.019765,Malargue data loss,7,ObjectLog
+3269.461183,3269.480820,0.019637,Malargue data loss,6,ObjectLog
+3269.461453,3269.481108,0.019654,Malargue data loss,5,ObjectLog
+3271.502277,3271.534923,0.032646,New Norcia data loss,4,ObjectLog
+3271.502394,3271.535248,0.032855,New Norcia data loss,5,ObjectLog
+3271.502516,3271.535556,0.033041,New Norcia data loss,6,ObjectLog
+3271.502559,3271.535733,0.033175,New Norcia data loss,7,ObjectLog
+3271.503129,3271.532295,0.029167,New Norcia data loss,4,AGIS
+3271.503129,3271.532295,0.029167,New Norcia data loss,5,AGIS
+3271.503129,3271.532295,0.029167,New Norcia data loss,6,AGIS
+3271.503129,3271.532295,0.029167,New Norcia data loss,7,AGIS
+3280.473054,3280.473980,0.000926,Micro-meteoroid hit,4,AGIS
+3280.473054,3280.473980,0.000926,Micro-meteoroid hit,5,AGIS
+3280.473054,3280.473980,0.000926,Micro-meteoroid hit,6,AGIS
+3280.473054,3280.473980,0.000926,Micro-meteoroid hit,7,AGIS
+3284.667548,3284.677398,0.009850,Malargue data loss,6,ObjectLog
+3284.668057,3284.685251,0.017194,Malargue data loss,7,ObjectLog
+3284.669684,3284.675744,0.006060,Malargue data loss,4,ObjectLog
+3284.671205,3284.677617,0.006412,Malargue data loss,5,ObjectLog
+3284.676555,3284.682715,0.006160,Malargue data loss,4,ObjectLog
+3284.677492,3284.683497,0.006004,Malargue data loss,6,ObjectLog
+3284.678487,3284.684857,0.006370,Malargue data loss,5,ObjectLog
+3284.700611,3284.711103,0.010493,Malargue data loss,7,ObjectLog
+3284.701590,3284.711103,0.009513,Malargue data loss,6,ObjectLog
+3284.703132,3284.709549,0.006417,Malargue data loss,4,ObjectLog
+3284.703342,3284.709754,0.006411,Malargue data loss,5,ObjectLog
+3314.860856,3314.864214,0.003357,Payload data handling unit update,7,ObjectLog
+3314.860864,3314.864206,0.003342,Payload data handling unit update,4,ObjectLog
+3314.861046,3314.864214,0.003168,Payload data handling unit update,6,ObjectLog
+3314.861108,3314.864205,0.003097,Payload data handling unit update,5,ObjectLog
+3314.877052,3314.880001,0.002948,Payload data handling unit update,6,ObjectLog
+3314.877075,3314.879993,0.002918,Payload data handling unit update,4,ObjectLog
+3314.877137,3314.879988,0.002851,Payload data handling unit update,7,ObjectLog
+3317.179304,3317.180924,0.001620,Micro-meteoroid hit,4,AGIS
+3317.179304,3317.180924,0.001620,Micro-meteoroid hit,5,AGIS
+3317.179304,3317.180924,0.001620,Micro-meteoroid hit,6,AGIS
+3317.179304,3317.180924,0.001620,Micro-meteoroid hit,7,AGIS
+3317.523399,3317.527307,0.003908,Malargue data loss,4,ObjectLog
+3317.523442,3317.527362,0.003920,Malargue data loss,7,ObjectLog
+3317.528148,3317.532159,0.004012,Malargue data loss,7,ObjectLog
+3317.528518,3317.532159,0.003641,Malargue data loss,4,ObjectLog
+3317.535072,3317.562850,0.027778,Malargue data loss,4,AGIS
+3317.535072,3317.562850,0.027778,Malargue data loss,5,AGIS
+3317.535072,3317.562850,0.027778,Malargue data loss,6,AGIS
+3317.535072,3317.562850,0.027778,Malargue data loss,7,AGIS
+3317.536760,3317.539889,0.003130,Malargue data loss,6,ObjectLog
+3317.536879,3317.539885,0.003007,Malargue data loss,5,ObjectLog
+3317.537041,3317.539885,0.002844,Malargue data loss,4,ObjectLog
+3317.537094,3317.539891,0.002796,Malargue data loss,7,ObjectLog
+3317.552084,3317.566025,0.013941,Malargue data loss,6,ObjectLog
+3317.552088,3317.554968,0.002880,Malargue data loss,7,ObjectLog
+3317.552089,3317.554916,0.002827,Malargue data loss,4,ObjectLog
+3317.552108,3317.554928,0.002820,Malargue data loss,5,ObjectLog
+3317.552199,3317.555020,0.002822,Malargue data loss,5,ObjectLog
+3317.552200,3317.555024,0.002824,Malargue data loss,4,ObjectLog
+3317.552239,3317.555084,0.002845,Malargue data loss,7,ObjectLog
+3317.552298,3317.555095,0.002797,Malargue data loss,5,ObjectLog
+3317.552328,3317.555159,0.002831,Malargue data loss,4,ObjectLog
+3317.552383,3317.555499,0.003117,Malargue data loss,7,ObjectLog
+3317.552434,3317.555347,0.002912,Malargue data loss,4,ObjectLog
+3317.552449,3317.555245,0.002796,Malargue data loss,5,ObjectLog
+3317.552537,3317.555468,0.002931,Malargue data loss,5,ObjectLog
+3317.552559,3317.555447,0.002888,Malargue data loss,6,ObjectLog
+3317.552619,3317.556025,0.003406,Malargue data loss,4,ObjectLog
+3317.552745,3317.555901,0.003157,Malargue data loss,5,ObjectLog
+3317.552756,3317.555594,0.002838,Malargue data loss,6,ObjectLog
+3317.552769,3317.555549,0.002780,Malargue data loss,7,ObjectLog
+3317.552834,3317.555670,0.002837,Malargue data loss,7,ObjectLog
+3317.552864,3317.556122,0.003257,Malargue data loss,6,ObjectLog
+3317.552942,3317.555878,0.002936,Malargue data loss,7,ObjectLog
+3317.553149,3317.556082,0.002933,Malargue data loss,7,ObjectLog
+3317.553180,3317.556089,0.002909,Malargue data loss,5,ObjectLog
+3317.553297,3317.556255,0.002958,Malargue data loss,4,ObjectLog
+3317.553366,3317.556515,0.003149,Malargue data loss,5,ObjectLog
+3317.553380,3317.556191,0.002811,Malargue data loss,7,ObjectLog
+3317.553402,3317.566025,0.012623,Malargue data loss,6,ObjectLog
+3317.553460,3317.556714,0.003254,Malargue data loss,7,ObjectLog
+3317.553545,3317.556853,0.003307,Malargue data loss,4,ObjectLog
+3317.553614,3317.556461,0.002847,Malargue data loss,6,ObjectLog
+3317.553759,3317.556666,0.002906,Malargue data loss,6,ObjectLog
+3317.553788,3317.556684,0.002896,Malargue data loss,5,ObjectLog
+3317.553948,3317.556971,0.003022,Malargue data loss,6,ObjectLog
+3317.553957,3317.556920,0.002963,Malargue data loss,5,ObjectLog
+3317.554049,3317.556917,0.002868,Malargue data loss,7,ObjectLog
+3317.554133,3317.557167,0.003034,Malargue data loss,4,ObjectLog
+3317.554195,3317.557350,0.003155,Malargue data loss,7,ObjectLog
+3317.554205,3317.557048,0.002842,Malargue data loss,5,ObjectLog
+3317.554248,3317.557442,0.003194,Malargue data loss,6,ObjectLog
+3317.554318,3317.557313,0.002996,Malargue data loss,5,ObjectLog
+3317.554459,3317.557844,0.003385,Malargue data loss,4,ObjectLog
+3317.554583,3317.557567,0.002984,Malargue data loss,5,ObjectLog
+3317.554619,3317.557793,0.003173,Malargue data loss,7,ObjectLog
+3317.554714,3317.557564,0.002850,Malargue data loss,6,ObjectLog
+3317.554837,3317.558099,0.003262,Malargue data loss,6,ObjectLog
+3317.554840,3317.557618,0.002778,Malargue data loss,5,ObjectLog
+3317.554893,3317.557748,0.002855,Malargue data loss,5,ObjectLog
+3317.555029,3317.558596,0.003567,Malargue data loss,5,ObjectLog
+3317.555072,3317.557850,0.002778,Malargue data loss,7,ObjectLog
+3317.555121,3317.558602,0.003481,Malargue data loss,4,ObjectLog
+3317.555140,3317.565925,0.010785,Malargue data loss,7,ObjectLog
+3317.555419,3317.558853,0.003434,Malargue data loss,6,ObjectLog
+3317.555874,3317.565936,0.010062,Malargue data loss,5,ObjectLog
+3317.555877,3317.565970,0.010093,Malargue data loss,4,ObjectLog
+3317.556147,3317.558955,0.002808,Malargue data loss,6,ObjectLog
+3317.556238,3317.566025,0.009787,Malargue data loss,6,ObjectLog
+3318.856619,3318.858239,0.001620,Micro-meteoroid hit,4,AGIS
+3318.856619,3318.858239,0.001620,Micro-meteoroid hit,5,AGIS
+3318.856619,3318.858239,0.001620,Micro-meteoroid hit,6,AGIS
+3318.856619,3318.858239,0.001620,Micro-meteoroid hit,7,AGIS
+3370.871929,3370.879570,0.007641,Cebreros data loss,5,ObjectLog
+3374.891109,3374.892729,0.001620,Micro-meteoroid hit,4,AGIS
+3374.891109,3374.892729,0.001620,Micro-meteoroid hit,5,AGIS
+3374.891109,3374.892729,0.001620,Micro-meteoroid hit,6,AGIS
+3374.891109,3374.892729,0.001620,Micro-meteoroid hit,7,AGIS
+3402.865139,3402.868947,0.003808,Payload data handling unit update,5,ObjectLog
+3407.296664,3407.298284,0.001620,Micro-meteoroid hit,4,AGIS
+3407.296664,3407.298284,0.001620,Micro-meteoroid hit,5,AGIS
+3407.296664,3407.298284,0.001620,Micro-meteoroid hit,6,AGIS
+3407.296664,3407.298284,0.001620,Micro-meteoroid hit,7,AGIS
+3412.033509,3412.038146,0.004637,Cebreros data loss,4,ObjectLog
+3412.033559,3412.038146,0.004587,Cebreros data loss,6,ObjectLog
+3412.033563,3412.037639,0.004076,Cebreros data loss,5,ObjectLog
+3412.033911,3412.038146,0.004235,Cebreros data loss,7,ObjectLog
+3421.436015,3421.437636,0.001621,Micro-meteoroid hit,4,AGIS
+3421.436015,3421.437636,0.001621,Micro-meteoroid hit,5,AGIS
+3421.436015,3421.437636,0.001621,Micro-meteoroid hit,6,AGIS
+3421.436015,3421.437636,0.001621,Micro-meteoroid hit,7,AGIS
+3446.169050,3446.174960,0.005911,New Norcia data loss,7,ObjectLog
+3473.806153,3473.808005,0.001852,Micro-meteoroid hit,4,AGIS
+3473.806153,3473.808005,0.001852,Micro-meteoroid hit,5,AGIS
+3473.806153,3473.808005,0.001852,Micro-meteoroid hit,6,AGIS
+3473.806153,3473.808005,0.001852,Micro-meteoroid hit,7,AGIS
+3477.408005,3477.409163,0.001158,Micro-meteoroid hit,4,AGIS
+3477.408005,3477.409163,0.001158,Micro-meteoroid hit,5,AGIS
+3477.408005,3477.409163,0.001158,Micro-meteoroid hit,6,AGIS
+3477.408005,3477.409163,0.001158,Micro-meteoroid hit,7,AGIS
+3480.752913,3480.754070,0.001157,Micro-meteoroid hit,4,AGIS
+3480.752913,3480.754070,0.001157,Micro-meteoroid hit,5,AGIS
+3480.752913,3480.754070,0.001157,Micro-meteoroid hit,6,AGIS
+3480.752913,3480.754070,0.001157,Micro-meteoroid hit,7,AGIS
+3497.851524,3497.852912,0.001388,Micro-meteoroid hit,4,AGIS
+3497.851524,3497.852912,0.001388,Micro-meteoroid hit,5,AGIS
+3497.851524,3497.852912,0.001388,Micro-meteoroid hit,6,AGIS
+3497.851524,3497.852912,0.001388,Micro-meteoroid hit,7,AGIS
+3508.983005,3508.984625,0.001620,Micro-meteoroid hit,4,AGIS
+3508.983005,3508.984625,0.001620,Micro-meteoroid hit,5,AGIS
+3508.983005,3508.984625,0.001620,Micro-meteoroid hit,6,AGIS
+3508.983005,3508.984625,0.001620,Micro-meteoroid hit,7,AGIS
+3532.621893,3532.623514,0.001621,Micro-meteoroid hit,4,AGIS
+3532.621893,3532.623514,0.001621,Micro-meteoroid hit,5,AGIS
+3532.621893,3532.623514,0.001621,Micro-meteoroid hit,6,AGIS
+3532.621893,3532.623514,0.001621,Micro-meteoroid hit,7,AGIS
+3541.595736,3541.604514,0.008778,Micro-meteoroid hit,4,AGIS
+3541.595736,3541.604514,0.008778,Micro-meteoroid hit,5,AGIS
+3541.595736,3541.604514,0.008778,Micro-meteoroid hit,6,AGIS
+3541.595736,3541.604514,0.008778,Micro-meteoroid hit,7,AGIS
+3542.108554,3542.113737,0.005183,Station-keeping manoeuvre #21,4,ObjectLog
+3542.109571,3542.113778,0.004207,Station-keeping manoeuvre #21,7,ObjectLog
+3542.109713,3542.113779,0.004066,Station-keeping manoeuvre #21,6,ObjectLog
+3542.109727,3542.113776,0.004049,Station-keeping manoeuvre #21,5,ObjectLog
+3542.114236,3542.311458,0.197222,Station-keeping manoeuvre #21,4,AGIS
+3542.114236,3542.311458,0.197222,Station-keeping manoeuvre #21,5,AGIS
+3542.114236,3542.311458,0.197222,Station-keeping manoeuvre #21,6,AGIS
+3542.114236,3542.311458,0.197222,Station-keeping manoeuvre #21,7,AGIS
+3590.968984,3590.986308,0.017324,New Norcia data loss,4,ObjectLog
+3603.247135,3603.251798,0.004663,AOCS anomaly,6,ObjectLog
+3603.248192,3603.251788,0.003596,AOCS anomaly,7,ObjectLog
+3603.248389,3603.251791,0.003402,AOCS anomaly,4,ObjectLog
+3603.248648,3603.251789,0.003141,AOCS anomaly,5,ObjectLog
+3603.250365,3605.226735,1.976370,AOCS anomaly,4,AGIS
+3603.250365,3605.226735,1.976370,AOCS anomaly,5,AGIS
+3603.250365,3605.226735,1.976370,AOCS anomaly,6,AGIS
+3603.250365,3605.226735,1.976370,AOCS anomaly,7,AGIS
+3611.783698,3611.785550,0.001852,Micro-meteoroid hit,4,AGIS
+3611.783698,3611.785550,0.001852,Micro-meteoroid hit,5,AGIS
+3611.783698,3611.785550,0.001852,Micro-meteoroid hit,6,AGIS
+3611.783698,3611.785550,0.001852,Micro-meteoroid hit,7,AGIS
+3623.125133,3623.132077,0.006944,Micro-meteoroid hit,4,AGIS
+3623.125133,3623.132077,0.006944,Micro-meteoroid hit,5,AGIS
+3623.125133,3623.132077,0.006944,Micro-meteoroid hit,6,AGIS
+3623.125133,3623.132077,0.006944,Micro-meteoroid hit,7,AGIS
+3625.088793,3625.099201,0.010408,Cebreros data loss,7,ObjectLog
+3650.427216,3650.428836,0.001620,Micro-meteoroid hit,4,AGIS
+3650.427216,3650.428836,0.001620,Micro-meteoroid hit,5,AGIS
+3650.427216,3650.428836,0.001620,Micro-meteoroid hit,6,AGIS
+3650.427216,3650.428836,0.001620,Micro-meteoroid hit,7,AGIS
+3668.784623,3668.786012,0.001389,Micro-meteoroid hit,4,AGIS
+3668.784623,3668.786012,0.001389,Micro-meteoroid hit,5,AGIS
+3668.784623,3668.786012,0.001389,Micro-meteoroid hit,6,AGIS
+3668.784623,3668.786012,0.001389,Micro-meteoroid hit,7,AGIS
+3671.838558,3671.840178,0.001620,Micro-meteoroid hit,4,AGIS
+3671.838558,3671.840178,0.001620,Micro-meteoroid hit,5,AGIS
+3671.838558,3671.840178,0.001620,Micro-meteoroid hit,6,AGIS
+3671.838558,3671.840178,0.001620,Micro-meteoroid hit,7,AGIS
+3708.791567,3708.792724,0.001157,Micro-meteoroid hit,4,AGIS
+3708.791567,3708.792724,0.001157,Micro-meteoroid hit,5,AGIS
+3708.791567,3708.792724,0.001157,Micro-meteoroid hit,6,AGIS
+3708.791567,3708.792724,0.001157,Micro-meteoroid hit,7,AGIS
+3744.438557,3744.439946,0.001389,Micro-meteoroid hit,4,AGIS
+3744.438557,3744.439946,0.001389,Micro-meteoroid hit,5,AGIS
+3744.438557,3744.439946,0.001389,Micro-meteoroid hit,6,AGIS
+3744.438557,3744.439946,0.001389,Micro-meteoroid hit,7,AGIS
+3777.050117,3777.054193,0.004076,New Norcia data loss,4,ObjectLog
+3821.368000,3821.377000,0.009000,Gap tuning based on AGIS residuals,4,AGIS
+3821.368000,3821.377000,0.009000,Gap tuning based on AGIS residuals,5,AGIS
+3821.368000,3821.377000,0.009000,Gap tuning based on AGIS residuals,6,AGIS
+3821.368000,3821.377000,0.009000,Gap tuning based on AGIS residuals,7,AGIS
+3849.833526,3849.837648,0.004122,Unknown,7,ObjectLog
+4006.200317,4006.205919,0.005602,Payload data handling unit update,5,ObjectLog
+4006.200487,4006.205919,0.005432,Payload data handling unit update,6,ObjectLog
+4006.201681,4006.205917,0.004236,Payload data handling unit update,4,ObjectLog
+4006.202456,4006.205914,0.003458,Payload data handling unit update,7,ObjectLog
+4009.655776,4009.660459,0.004683,Station-keeping manoeuvre #22,5,ObjectLog
+4009.656779,4009.660459,0.003680,Station-keeping manoeuvre #22,7,ObjectLog
+4009.656945,4009.660458,0.003514,Station-keeping manoeuvre #22,4,ObjectLog
+4009.656950,4009.660459,0.003508,Station-keeping manoeuvre #22,6,ObjectLog
+4009.661452,4009.855896,0.194444,Station-keeping manoeuvre #22,4,AGIS
+4009.661452,4009.855896,0.194444,Station-keeping manoeuvre #22,5,AGIS
+4009.661452,4009.855896,0.194444,Station-keeping manoeuvre #22,6,AGIS
+4009.661452,4009.855896,0.194444,Station-keeping manoeuvre #22,7,AGIS
+4027.756875,4027.760200,0.003325,New Norcia data loss,5,ObjectLog
+4032.705695,4032.709475,0.003779,Unknown,5,ObjectLog
+4074.210062,4076.062840,1.852778,Payload data handling unit anomaly,4,AGIS
+4074.210062,4076.062840,1.852778,Payload data handling unit anomaly,5,AGIS
+4074.210062,4076.062840,1.852778,Payload data handling unit anomaly,6,AGIS
+4074.210062,4076.062840,1.852778,Payload data handling unit anomaly,7,AGIS
+4105.827489,4105.831422,0.003933,Malargue data loss,5,ObjectLog
+4112.463000,4180.000000,67.537000,Decontamination 6,4,AGIS
+4112.463000,4180.000000,67.537000,Decontamination 6,5,AGIS
+4112.463000,4180.000000,67.537000,Decontamination 6,6,AGIS
+4112.463000,4180.000000,67.537000,Decontamination 6,7,AGIS
+4112.761864,4112.767897,0.006033,Decontamination 6,6,ObjectLog
+4112.764659,4112.767897,0.003238,Decontamination 6,4,ObjectLog
+4112.764749,4112.767897,0.003148,Decontamination 6,7,ObjectLog
+4112.764763,4112.767897,0.003134,Decontamination 6,5,ObjectLog
+4182.011053,4182.015177,0.004124,Payload data handling unit update,6,ObjectLog
+4182.011607,4182.015183,0.003576,Payload data handling unit update,5,ObjectLog
+4182.015616,4182.029505,0.013889,Payload data handling unit update,4,AGIS
+4182.015616,4182.029505,0.013889,Payload data handling unit update,5,AGIS
+4182.015616,4182.029505,0.013889,Payload data handling unit update,6,AGIS
+4182.015616,4182.029505,0.013889,Payload data handling unit update,7,AGIS
+4263.513814,4263.516966,0.003153,Station-keeping manoeuvre #23,7,ObjectLog
+4263.513838,4263.516965,0.003127,Station-keeping manoeuvre #23,6,ObjectLog
+4263.514125,4263.516966,0.002841,Station-keeping manoeuvre #23,4,ObjectLog
+4263.514145,4263.516966,0.002821,Station-keeping manoeuvre #23,5,ObjectLog
+4263.518393,4263.717004,0.198611,Station-keeping manoeuvre #23,4,AGIS
+4263.518393,4263.717004,0.198611,Station-keeping manoeuvre #23,5,AGIS
+4263.518393,4263.717004,0.198611,Station-keeping manoeuvre #23,6,AGIS
+4263.518393,4263.717004,0.198611,Station-keeping manoeuvre #23,7,AGIS
+4281.104760,4281.109380,0.004620,Unknown,6,ObjectLog
+4317.756890,4317.761169,0.004279,Cebreros data loss,5,ObjectLog
+4399.051420,4399.056185,0.004766,Station-keeping manoeuvre #24,4,ObjectLog
+4399.051693,4399.056222,0.004529,Station-keeping manoeuvre #24,7,ObjectLog
+4399.053207,4399.056224,0.003018,Station-keeping manoeuvre #24,6,ObjectLog
+4399.053341,4399.056185,0.002844,Station-keeping manoeuvre #24,5,ObjectLog
+4399.057280,4399.251724,0.194444,Station-keeping manoeuvre #24,4,AGIS
+4399.057280,4399.251724,0.194444,Station-keeping manoeuvre #24,5,AGIS
+4399.057280,4399.251724,0.194444,Station-keeping manoeuvre #24,6,AGIS
+4399.057280,4399.251724,0.194444,Station-keeping manoeuvre #24,7,AGIS
+4461.278216,4461.282339,0.004123,Malargue data loss,4,ObjectLog
+4477.440612,4477.737834,0.297222,Phased-array antenna anomaly,4,AGIS
+4477.440612,4477.737834,0.297222,Phased-array antenna anomaly,5,AGIS
+4477.440612,4477.737834,0.297222,Phased-array antenna anomaly,6,AGIS
+4477.440612,4477.737834,0.297222,Phased-array antenna anomaly,7,AGIS
+4478.018390,4478.083667,0.065278,Phased-array antenna anomaly,4,AGIS
+4478.018390,4478.083667,0.065278,Phased-array antenna anomaly,5,AGIS
+4478.018390,4478.083667,0.065278,Phased-array antenna anomaly,6,AGIS
+4478.018390,4478.083667,0.065278,Phased-array antenna anomaly,7,AGIS
+4545.371166,4545.383666,0.012500,Phased-array antenna anomaly,4,AGIS
+4545.371166,4545.383666,0.012500,Phased-array antenna anomaly,5,AGIS
+4545.371166,4545.383666,0.012500,Phased-array antenna anomaly,6,AGIS
+4545.371166,4545.383666,0.012500,Phased-array antenna anomaly,7,AGIS
+4545.398800,4545.504050,0.105250,Phased-array antenna anomaly,4,AGIS
+4545.398800,4545.504050,0.105250,Phased-array antenna anomaly,5,AGIS
+4545.398800,4545.504050,0.105250,Phased-array antenna anomaly,6,AGIS
+4545.398800,4545.504050,0.105250,Phased-array antenna anomaly,7,AGIS
+4626.850471,4626.856553,0.006082,Station-keeping manoeuvre #25,7,ObjectLog
+4626.851386,4626.856552,0.005166,Station-keeping manoeuvre #25,6,ObjectLog
+4626.851799,4626.856553,0.004754,Station-keeping manoeuvre #25,5,ObjectLog
+4626.852221,4626.856551,0.004330,Station-keeping manoeuvre #25,4,ObjectLog
+4626.857276,4627.057276,0.200000,Station-keeping manoeuvre #25,4,AGIS
+4626.857276,4627.057276,0.200000,Station-keeping manoeuvre #25,5,AGIS
+4626.857276,4627.057276,0.200000,Station-keeping manoeuvre #25,6,AGIS
+4626.857276,4627.057276,0.200000,Station-keeping manoeuvre #25,7,AGIS
+4729.669775,4729.683664,0.013889,Malargue data loss,4,AGIS
+4729.669775,4729.683664,0.013889,Malargue data loss,5,AGIS
+4729.669775,4729.683664,0.013889,Malargue data loss,6,AGIS
+4729.669775,4729.683664,0.013889,Malargue data loss,7,AGIS
+4730.079969,4730.085037,0.005068,Malargue data loss,5,ObjectLog
+4795.366299,4795.372140,0.005841,Scanning-law change,7,ObjectLog
+4795.367430,4795.372142,0.004712,Scanning-law change,4,ObjectLog
+4795.368219,4795.372141,0.003922,Scanning-law change,6,ObjectLog
+4795.368448,4795.372141,0.003693,Scanning-law change,5,ObjectLog
+4795.372552,4795.805885,0.433333,Scanning-law change,4,AGIS
+4795.372552,4795.805885,0.433333,Scanning-law change,5,AGIS
+4795.372552,4795.805885,0.433333,Scanning-law change,6,AGIS
+4795.372552,4795.805885,0.433333,Scanning-law change,7,AGIS
+4845.772323,4845.778124,0.005801,Micro-meteoroid hit,6,ObjectLog
+4845.772927,4845.778122,0.005195,Micro-meteoroid hit,4,ObjectLog
+4845.773131,4845.778120,0.004989,Micro-meteoroid hit,7,ObjectLog
+4845.773606,4845.778123,0.004516,Micro-meteoroid hit,5,ObjectLog
+4845.776718,4845.819773,0.043056,Micro-meteoroid hit,4,AGIS
+4845.776718,4845.819773,0.043056,Micro-meteoroid hit,5,AGIS
+4845.776718,4845.819773,0.043056,Micro-meteoroid hit,6,AGIS
+4845.776718,4845.819773,0.043056,Micro-meteoroid hit,7,AGIS
+4873.513784,4873.517579,0.003794,Micro-meteoroid hit,7,ObjectLog
+4873.514018,4873.517578,0.003560,Micro-meteoroid hit,4,ObjectLog
+4873.514029,4873.517578,0.003549,Micro-meteoroid hit,5,ObjectLog
+4873.514376,4873.517576,0.003200,Micro-meteoroid hit,6,ObjectLog
+4873.516995,4873.558662,0.041667,Micro-meteoroid hit,4,AGIS
+4873.516995,4873.558662,0.041667,Micro-meteoroid hit,5,AGIS
+4873.516995,4873.558662,0.041667,Micro-meteoroid hit,6,AGIS
+4873.516995,4873.558662,0.041667,Micro-meteoroid hit,7,AGIS
+4876.978000,4877.397000,0.419000,Gap tuning based on AGIS residuals,4,AGIS
+4876.978000,4877.397000,0.419000,Gap tuning based on AGIS residuals,5,AGIS
+4876.978000,4877.397000,0.419000,Gap tuning based on AGIS residuals,6,AGIS
+4876.978000,4877.397000,0.419000,Gap tuning based on AGIS residuals,7,AGIS
+4889.007564,4889.010934,0.003371,Cebreros data loss,6,ObjectLog
+4965.730883,4965.753105,0.022222,Unknown,4,AGIS
+4965.730883,4965.753105,0.022222,Unknown,5,AGIS
+4965.730883,4965.753105,0.022222,Unknown,6,AGIS
+4965.730883,4965.753105,0.022222,Unknown,7,AGIS
+4999.084889,4999.088929,0.004040,New Norcia data loss,6,ObjectLog
+4999.840083,4999.844302,0.004219,New Norcia data loss,4,ObjectLog
+5012.284940,5012.289246,0.004306,New Norcia data loss,6,ObjectLog
+5056.166409,5056.172404,0.005995,Micro-meteoroid hit,4,ObjectLog
+5056.167693,5056.172404,0.004711,Micro-meteoroid hit,6,ObjectLog
+5056.167830,5056.172403,0.004573,Micro-meteoroid hit,7,ObjectLog
+5056.167898,5056.172402,0.004504,Micro-meteoroid hit,5,ObjectLog
+5056.171159,5056.215604,0.044444,Micro-meteoroid hit,4,AGIS
+5056.171159,5056.215604,0.044444,Micro-meteoroid hit,5,AGIS
+5056.171159,5056.215604,0.044444,Micro-meteoroid hit,6,AGIS
+5056.171159,5056.215604,0.044444,Micro-meteoroid hit,7,AGIS
+5061.627095,5061.631685,0.004590,Unknown,7,ObjectLog
+5078.626290,5078.630481,0.004191,Station-keeping manoeuvre #26 + STR misconfiguration,6,ObjectLog
+5078.627101,5078.630450,0.003349,Station-keeping manoeuvre #26 + STR misconfiguration,4,ObjectLog
+5078.627388,5078.630481,0.003093,Station-keeping manoeuvre #26 + STR misconfiguration,7,ObjectLog
+5078.627596,5078.630481,0.002885,Station-keeping manoeuvre #26 + STR misconfiguration,5,ObjectLog
+5078.630881,5078.835048,0.204167,Station-keeping manoeuvre #26 + STR misconfiguration,4,AGIS
+5078.630881,5078.835048,0.204167,Station-keeping manoeuvre #26 + STR misconfiguration,5,AGIS
+5078.630881,5078.835048,0.204167,Station-keeping manoeuvre #26 + STR misconfiguration,6,AGIS
+5078.630881,5078.835048,0.204167,Station-keeping manoeuvre #26 + STR misconfiguration,7,AGIS
+5132.518039,5132.522055,0.004017,Unknown,7,ObjectLog
+5132.518223,5132.522055,0.003832,Unknown,4,ObjectLog
+5135.722100,5135.724971,0.002871,Issues in daily pipeline,4,ObjectLog
+5136.663022,5136.666458,0.003436,Issues in daily pipeline,4,ObjectLog
+5137.025723,5137.028591,0.002868,Issues in daily pipeline,5,ObjectLog
+5137.124825,5137.128129,0.003304,Issues in daily pipeline,4,ObjectLog
+5138.465646,5138.469439,0.003792,Issues in daily pipeline,4,ObjectLog
+5138.600734,5138.604115,0.003381,Issues in daily pipeline,4,ObjectLog
+5203.604913,5203.609800,0.004887,Micro-meteoroid hit,6,ObjectLog
+5203.605287,5203.609796,0.004510,Micro-meteoroid hit,5,ObjectLog
+5203.606339,5203.609797,0.003458,Micro-meteoroid hit,7,ObjectLog
+5203.606583,5203.609800,0.003217,Micro-meteoroid hit,4,ObjectLog
+5203.610046,5203.651713,0.041667,Micro-meteoroid hit,4,AGIS
+5203.610046,5203.651713,0.041667,Micro-meteoroid hit,5,AGIS
+5203.610046,5203.651713,0.041667,Micro-meteoroid hit,6,AGIS
+5203.610046,5203.651713,0.041667,Micro-meteoroid hit,7,AGIS
