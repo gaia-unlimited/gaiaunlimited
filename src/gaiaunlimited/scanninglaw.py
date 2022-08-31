@@ -130,9 +130,16 @@ class GaiaScanningLaw:
     """Initialize a version of Gaia's scanning law.
 
     Args:
-        version (str, optional): Version of the FoV pointing data file to use.
+        version (str, required): Version of the FoV pointing data file to use.
             One of ["dr3_nominal", "dr2_nominal", "dr2_cog3"]. Defaults to "dr3_nominal".
-        gaplist (str, optional): Name of the gap list. Defaults to "dr2/Astrometry".
+        gaplist (str, optional): Name of the gap list. Defaults to "dr3/Astrometry".
+            The gaplist should be "<dr?>/<sample_name>". Possible values are:
+
+            - ``None``: To apply no gaps.
+            - "dr2/Astrometry", "dr2/Photometry", "dr2/Spectrocopy"
+            - "dr3/Astrometry", "dr3/Photometry", "dr3/Spectrocopy"
+
+            These gaps lists are provided as auxiliary data products by DPAC.
 
     """
 
@@ -143,7 +150,7 @@ class GaiaScanningLaw:
         "dr3_nominal": [1192.13, 5230.09],
     }
 
-    def __init__(self, version="dr3_nominal", gaplist="dr3/Astrometry", **kwargs):
+    def __init__(self, version="dr3_nominal", gaplist="dr3/Astrometry"):
 
         if version not in version_mapping:
             raise ValueError("Unsupported version")

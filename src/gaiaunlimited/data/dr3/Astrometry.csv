@@ -1,26 +1,139 @@
-tbeg,tend,length,description
-1220.400,1225.200,4.800,VPU reset
-1316.490,1389.113,72.623,decontamination #4
-1443.800,1444.200,0.400,refocus (following FoV)
-1653.800,1660.000,6.200,PAA anomaly
-1820.900,1830.000,9.100,PAA anomaly
-2094.000,2099.000,5.000,PDHU anomaly
-2179.125,2191.000,11.875,VPU software update
-2192.252,2195.218,2.967,observation gap
-2238.000,2242.000,4.000,unknown
-2322.300,2401.559,79.259,decontamination #5
-2405.967,2408.643,2.676,observation gap
-2408.935,2409.968,1.033,observation gap
-2574.640,2575.400,0.760,refocus (preceding FoV)
-2954.200,2958.000,3.800,moon eclipse
-3045.133,3049.000,3.867,PDHU anomaly
-3603.250,3605.227,1.976,observation gap
-3646.800,3650.000,3.200,moon eclipse
-3663.700,3667.000,3.300,moon eclipse
-4074.210,4076.063,1.853,observation gap
-4112.463,4180.000,67.537,decontamination #6
-4271.753,4275.200,3.445,PAA anomaly
-4477.441,4481.000,3.550,PAA anomaly
-4512.502,4515.000,2.498,PAA anomaly
-4545.144,4548.000,2.856,PAA anomaly
-5078.547,5080.600,2.053,STR anomaly
+﻿start,end,duration [rev],description
+1088.1200,1090.2000,2.0800,VPU-7 anomaly
+1195.7550,1195.7670,0.0120,Micro-meteoroid hit
+1205.2120,1205.2129,0.0009,Micro-meteoroid hit
+1220.4000,1225.2000,4.8000,VPU-4 anomaly
+1246.0817,1246.0840,0.0023,Micro-meteoroid hit
+1264.9294,1264.9305,0.0012,Micro-meteoroid hit
+1305.3933,1305.3951,0.0019,Micro-meteoroid hit
+1316.4900,1389.1130,72.6230,Decontamination 4
+1390.5333,1390.5349,0.0016,Micro-meteoroid hit
+1411.7425,1411.7472,0.0046,Micro-meteoroid hit
+1411.7490,1411.7532,0.0042,Micro-meteoroid hit
+1432.1835,1432.1852,0.0016,Micro-meteoroid hit
+1443.8000,1444.2000,0.4000,Refocus (following FoV = FoV-2)
+1503.7243,1503.7252,0.0009,Micro-meteoroid hit
+1510.4896,1510.4908,0.0012,Micro-meteoroid hit
+1514.7826,1514.7838,0.0012,Micro-meteoroid hit
+1525.8160,1525.8172,0.0012,Micro-meteoroid hit
+1584.2090,1584.2103,0.0014,Micro-meteoroid hit
+1588.5598,1588.5638,0.0039,Micro-meteoroid hit
+1623.5709,1624.2171,0.6461,AOCS operations
+1625.0781,1625.0846,0.0065,Micro-meteoroid hit
+1628.6164,1628.6192,0.0028,Micro-meteoroid hit
+1637.7783,1637.7792,0.0009,Micro-meteoroid hit
+1653.8000,1660.0000,6.2000,Phased array antenna anomaly
+1672.8296,1672.8315,0.0019,Micro-meteoroid hit
+1689.2971,1689.2982,0.0012,Micro-meteoroid hit
+1697.7697,1697.7709,0.0012,Micro-meteoroid hit
+1733.8955,1733.8965,0.0009,Micro-meteoroid hit
+1776.9368,1777.2425,0.3057,Micro-meteoroid hit
+1784.5614,1784.5658,0.0044,Micro-meteoroid hit
+1793.1844,1793.1874,0.0030,Micro-meteoroid hit
+1820.9000,1830.0000,9.1000,Phased array antenna anomaly
+1873.7880,1873.7891,0.0012,Micro-meteoroid hit
+1886.0849,1886.0863,0.0014,Micro-meteoroid hit
+1889.5852,1889.5889,0.0037,Micro-meteoroid hit
+1943.4544,1943.5536,0.0992,VPU-4 anomaly
+1951.3397,1951.3409,0.0012,Micro-meteoroid hit
+1951.3413,1951.5996,0.2583,VPU-5 anomaly
+2021.3042,2021.3075,0.0032,Micro-meteoroid hit
+2066.7636,2066.7657,0.0021,Micro-meteoroid hit
+2094.0000,2099.0000,5.0000,Payload data handling unit anomaly
+2103.5989,2103.7132,0.1143,VPU software update
+2123.1912,2123.1935,0.0023,Micro-meteoroid hit
+2129.7307,2129.7336,0.0030,Micro-meteoroid hit
+2154.1180,2154.2253,0.1073,VPU-7 anomaly
+2178.2438,2178.2674,0.0236,AOCS loss of convergence
+2179.1250,2191.0000,11.8750,VPU software update + commissioning
+2192.2520,2195.2180,2.9660,Payload data handling unit anomaly
+2210.7657,2210.7683,0.0025,Micro-meteoroid hit
+2228.4053,2228.4064,0.0012,Micro-meteoroid hit
+2238.0000,2242.0000,4.0000,VPU software test
+2278.9376,2278.9392,0.0016,Micro-meteoroid hit
+2286.1492,2286.1503,0.0012,Micro-meteoroid hit
+2299.1327,2299.1362,0.0035,Micro-meteoroid hit
+2305.4631,2305.4684,0.0053,Micro-meteoroid hit
+2305.4709,2305.4744,0.0035,Micro-meteoroid hit
+2322.3000,2401.5590,79.2590,Decontamination 5 (including basic-angle test)
+2405.9670,2408.6430,2.6760,Malargue communication delay
+2408.9350,2409.9680,1.0330,VPU-6 anomaly
+2452.0133,2452.0147,0.0014,Micro-meteoroid hit
+2462.8922,2462.8938,0.0016,Micro-meteoroid hit
+2462.8966,2462.8975,0.0009,Micro-meteoroid hit
+2485.6761,2485.6775,0.0014,Micro-meteoroid hit
+2496.1812,2496.1831,0.0019,Micro-meteoroid hit
+2568.0425,2568.0443,0.0019,Micro-meteoroid hit
+2568.0452,2568.0462,0.0009,Micro-meteoroid hit
+2570.4868,2570.4880,0.0012,Micro-meteoroid hit
+2574.6400,2575.4000,0.7600,Refocus (preceding FoV = FoV-1)
+2632.0406,2632.0457,0.0051,Micro-meteoroid hit
+2640.5054,2640.5114,0.0060,Micro-meteoroid hit
+2640.5161,2640.5521,0.0361,Malargue data loss
+2641.6026,2641.6055,0.0030,Micro-meteoroid hit
+2644.7982,2644.7991,0.0009,Micro-meteoroid hit
+2644.8014,2644.8030,0.0016,Micro-meteoroid hit
+2671.7351,2671.7363,0.0012,Micro-meteoroid hit
+2675.7857,2675.7904,0.0046,Micro-meteoroid hit
+2676.9030,2676.9063,0.0032,Micro-meteoroid hit
+2760.3657,2760.3707,0.0051,Micro-meteoroid hit
+2782.5298,2782.5374,0.0076,Micro-meteoroid hit
+2810.8027,2810.8043,0.0016,Micro-meteoroid hit
+2866.1788,2866.1837,0.0049,Micro-meteoroid hit
+2881.1617,2881.1631,0.0014,Micro-meteoroid hit
+2897.5004,2897.5015,0.0012,Micro-meteoroid hit
+2954.2000,2958.0000,3.8000,Moon eclipse
+2958.9295,2958.9337,0.0042,Micro-meteoroid hit
+2959.0962,2959.0981,0.0019,Micro-meteoroid hit
+2966.4494,2966.4511,0.0016,Micro-meteoroid hit
+2978.4015,2978.4032,0.0016,Micro-meteoroid hit
+2981.8254,2981.8270,0.0016,Micro-meteoroid hit
+2995.3258,2995.3272,0.0014,Micro-meteoroid hit
+3005.9775,3005.9837,0.0062,Micro-meteoroid hit
+3045.1329,3049.0000,3.8671,Payload data handling unit anomaly
+3074.4872,3074.4888,0.0016,Micro-meteoroid hit
+3087.7953,3087.7969,0.0016,Micro-meteoroid hit
+3109.0439,3109.0448,0.0009,Micro-meteoroid hit
+3142.8740,3142.8788,0.0049,Micro-meteoroid hit
+3161.7909,3161.7969,0.0060,Micro-meteoroid hit
+3193.4603,3193.4650,0.0046,Micro-meteoroid hit
+3218.9430,3218.9444,0.0014,Micro-meteoroid hit
+3234.3529,3234.3573,0.0044,Micro-meteoroid hit
+3238.1927,3238.1939,0.0012,Micro-meteoroid hit
+3239.5640,3239.5654,0.0014,Micro-meteoroid hit
+3243.8987,3243.9004,0.0016,Micro-meteoroid hit
+3280.4731,3280.4740,0.0009,Micro-meteoroid hit
+3317.1793,3317.1809,0.0016,Micro-meteoroid hit
+3318.8566,3318.8582,0.0016,Micro-meteoroid hit
+3374.8911,3374.8927,0.0016,Micro-meteoroid hit
+3407.2967,3407.2983,0.0016,Micro-meteoroid hit
+3421.4360,3421.4376,0.0016,Micro-meteoroid hit
+3473.8062,3473.8080,0.0019,Micro-meteoroid hit
+3477.4080,3477.4092,0.0012,Micro-meteoroid hit
+3480.7529,3480.7541,0.0012,Micro-meteoroid hit
+3497.8515,3497.8529,0.0014,Micro-meteoroid hit
+3508.9830,3508.9846,0.0016,Micro-meteoroid hit
+3532.6219,3532.6235,0.0016,Micro-meteoroid hit
+3541.5957,3541.6041,0.0083,Micro-meteoroid hit
+3603.2500,3605.2270,1.9770,AOCS anomaly
+3603.2504,3603.2522,0.0019,Micro-meteoroid hit
+3611.7837,3611.7856,0.0019,Micro-meteoroid hit
+3623.1251,3623.1321,0.0069,Micro-meteoroid hit
+3646.8000,3650.0000,3.2000,Moon eclipse
+3650.4272,3650.4288,0.0016,Micro-meteoroid hit
+3663.7000,3667.0000,3.3000,Moon eclipse
+3668.7846,3668.7860,0.0014,Micro-meteoroid hit
+3671.8386,3671.8402,0.0016,Micro-meteoroid hit
+3708.7916,3708.7927,0.0012,Micro-meteoroid hit
+3744.4386,3744.4399,0.0014,Micro-meteoroid hit
+3821.3680,3821.3770,0.0090,Gap tuning based on AGIS residuals
+4074.2100,4076.0630,1.8530,Payload data handling unit anomaly
+4112.4630,4180.0000,67.5370,Decontamination 6
+4271.7530,4275.2000,3.4470,Phased array antenna anomaly
+4477.4410,4481.0000,3.5590,Phased array antenna anomaly
+4512.5020,4515.0000,2.4980,Phased array antenna anomaly
+4545.1440,4548.0000,2.8560,Phased array antenna anomaly
+4876.9780,4877.3970,0.4190,Gap tuning based on AGIS residuals
+4999.7020,4999.8410,0.1390,Gap tuning based on AGIS residuals
+5017.7820,5018.6170,0.8350,Gap tuning based on AGIS residuals
+5078.5466,5080.6000,2.0534,Station-keeping manoeuvre #26 + STR misconfiguration
