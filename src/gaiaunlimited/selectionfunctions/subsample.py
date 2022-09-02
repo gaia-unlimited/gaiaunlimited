@@ -111,7 +111,9 @@ class DR3RVSSelectionFunction(SelectionFunctionBase, fetch_utils.DownloadMixin):
     """Internal selection function for the RVS sample in DR3.
 
     This function gives the probability
+
         P(has RV | has G and G_RP)
+
     as a function of G magnitude and G-RP color.
     """
 

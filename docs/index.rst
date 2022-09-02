@@ -1,11 +1,15 @@
 .. You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Gaiaunlimited's documentation!
-============================================
+Welcome to the gaiaunlimited documentation!
+===========================================
 
-Gaiaunlimited is a package for querying and constructing selection functions for the
-`Gaia`_ survey. It is developed by the `GaiaUnlimited collaboration <https://gaia-unlimited.org>`_.
+`gaiaunlimited` is a Python package for querying and constructing selection functions for the `Gaia
+<https://www.cosmos.esa.int/web/gaia/home>`_ survey. It is developed by the `GaiaUnlimited collaboration
+<https://gaia-unlimited.org>`_. 
+
+The GaiaUnlimited project is funded by the European Union’s Horizon 2020 research and
+innovation program under grant agreement No 101004110.
 
 .. attention::
 
