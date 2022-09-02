@@ -1,6 +1,7 @@
-furo
-sphinx_copybutton
-nbsphinx
-sphinx-automodapi
+sphinx>=4.4.0
+sphinx-book-theme>=0.3.3
+sphinx-automodapi>=0.14
+sphinx_copybutton>=0.5
+nbsphinx>=0.8
 # for syntax highlighting (https://nbsphinx.readthedocs.io/en/0.8.0/installation.html#Pygments-Lexer-for-Syntax-Highlighting)
-IPython
+IPython>=8.0

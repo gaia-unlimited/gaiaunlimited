@@ -29,10 +29,12 @@ author = "GaiaUnlimited"
 # ones.
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
+    "sphinx_automodapi.automodapi",
     "sphinx.ext.napoleon",
+    "matplotlib.sphinxext.plot_directive",
     "sphinx_copybutton",
     "nbsphinx",
-    "sphinx_automodapi.automodapi",
 ]
 numpydoc_show_class_members = False
 
@@ -52,7 +54,22 @@ nbsphinx_prompt_width = "0"
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "furo"
+html_theme = "sphinx_book_theme"
+html_theme_options = {
+    "path_to_docs": "docs",
+    "repository_url": "https://github.com/gaia-unlimited/gaiaunlimited",
+    "repository_branch": "main",
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        "colab_url": "https://colab.research.google.com/",
+        "notebook_interface": "jupyterlab",
+    },
+    "use_edit_page_button": False,
+    "use_issues_button": True,
+    "use_repository_button": True,
+    "use_download_button": True,
+}
+html_baseurl = "https://gaiaunlimited.readthedocs.io/en/latest/"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
