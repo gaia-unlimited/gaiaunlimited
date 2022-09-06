@@ -9,7 +9,7 @@ If you use this package, please cite Castro-Ginard et al. 2022 (in prep).
 
 If you make use of empirical DR3 survey selection function
 :py:class:`gaiaunlimited.selectionfunctions.DR3SelectionFunctionTCG`,
-please cite Cantat-Gaudin et al. 2022.
+please cite `Cantat-Gaudin et al. 2022 <https://arxiv.org/abs/2208.09335>`_.
 
 
 Data ported from Gaiaverse
