@@ -1,6 +1,8 @@
-# Gaiaunlimited
+# gaiaunlimited
 
-Gaiaunlimited is a package for querying and constructing selection functions for the Gaia survey. It is developed by the GaiaUnlimited collaboration.
+gaiaunlimited is a package for querying and constructing selection functions for the Gaia survey. It is developed by the GaiaUnlimited collaboration.
+
+The [GaiaUnlimited](https://gaia-unlimited.org/) project is funded by the European Union’s Horizon 2020 research and innovation program under grant agreement No 101004110.
 
 ## Features
 
