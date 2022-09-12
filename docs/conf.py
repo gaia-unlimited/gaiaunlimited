@@ -46,6 +46,8 @@ source_suffix = {
 }
 nb_execution_mode = "off"
 myst_enable_extensions = ["dollarmath"]
+# auto-generate heading anchors down to this level
+myst_heading_anchors = 3
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
