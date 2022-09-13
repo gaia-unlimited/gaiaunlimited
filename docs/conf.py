@@ -34,9 +34,20 @@ extensions = [
     "sphinx.ext.napoleon",
     "matplotlib.sphinxext.plot_directive",
     "sphinx_copybutton",
-    "nbsphinx",
+    "myst_nb",
 ]
 numpydoc_show_class_members = False
+
+# myst_nb configurations
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".ipynb": "myst-nb",
+    ".myst": "myst-nb",
+}
+nb_execution_mode = "off"
+myst_enable_extensions = ["dollarmath"]
+# auto-generate heading anchors down to this level
+myst_heading_anchors = 3
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -74,8 +85,8 @@ html_baseurl = "https://gaiaunlimited.readthedocs.io/en/latest/"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-#html_static_path = ["_static"]
+html_static_path = ["_static"]
 
 
 # hide coppy button on outputs
-copybutton_selector = "div:not(.output_area) > div.highlight pre"
+copybutton_selector = "div:not(.output) > div.highlight pre"
