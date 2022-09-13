@@ -6,7 +6,7 @@ Welcome to the gaiaunlimited documentation!
 
 `gaiaunlimited` is a Python package for querying and constructing selection functions for the `Gaia
 <https://www.cosmos.esa.int/web/gaia/home>`_ survey. It is developed by the `GaiaUnlimited collaboration
-<https://gaia-unlimited.org>`_. 
+<https://gaia-unlimited.org>`_.
 
 The GaiaUnlimited project is funded by the European Union’s Horizon 2020 research and
 innovation program under grant agreement No 101004110.
@@ -40,6 +40,7 @@ Horizon 2020 research and innovation program under grant agreement No 101004110.
    scanninglaw
    getting-started
    dr3-empirical-completeness
+   dr3-rvs
    citation
    api
 
