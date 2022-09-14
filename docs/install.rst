@@ -15,6 +15,14 @@ To install gaiaunlimited through github, run:
 
    pip install gaiaunlimited@git+https://github.com/gaia-unlimited/gaiaunlimited@<latest release>
 
+Alternatively, clone the repository and install:
+
+.. code-block:: bash
+
+   git clone https://github.com/gaia-unlimited/gaiaunlimited.git
+   cd gaiaunlimited
+   python -m pip install .
+
 Setting the data directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
