@@ -19,7 +19,7 @@ def get_healpix_centers(order):
     npix = hp.order2npix(order)
     ipix = np.arange(npix)
     ra, dec = hp.pix2ang(nside, ipix, lonlat=True)
-    return coord.SkyCoord(ra * u.deg, dec * u.deg,frame = 'icrs')
+    return coord.SkyCoord(ra * u.deg, dec * u.deg)
 
 
 def coord2healpix(coords, frame, nside, nest=True):
