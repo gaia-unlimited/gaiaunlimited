@@ -160,6 +160,10 @@ class DownloadMixin:
 
     def _get_data(self, filename):
         """Download data files specified in datafiles dict class attribute."""
+        savedir = get_datadir()
+        if not savedir.exists():
+            print('Creating directory',savedir)
+            os.makedirs(savedir)
         fullpath = get_datadir() / filename
         if not fullpath.exists():
             url = self.datafiles[filename]
