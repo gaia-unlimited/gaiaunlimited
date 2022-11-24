@@ -3,9 +3,55 @@ import healpy as hp
 from gaiaunlimited import fetch_utils, utils
 import h5py
 from astroquery.gaia import Gaia
+from astropy.table import Table
+import astropy_healpix as ah 
 
 Gaia.MAIN_GAIA_TABLE = "gaiadr3.gaia_source"
 Gaia.ROW_LIMIT = -1  # default is 50 rows max, -1 for unlimited
+
+
+
+
+class DR3SelectionFunctionTCG_multi(fetch_utils.DownloadMixin):
+    """Model of the Gaia DR3 survey selection function calibrated on DECaPS.
+       This implementation uses a precomputed map of variable resolution,
+       with healpixels as small as order 10, provided they contain at least 20 sources."""
+
+    datafiles = {
+        "allsky_uniq_10.fits": "https://github.com/TristanCantatGaudin/GaiaCompleteness/blob/main/allsky_M10_hpx7.hdf5?raw=true"
+    }
+
+    def __init__(self):
+        self.skymap = Table.read(   self._get_data("allsky_uniq_10.fits")  )
+        #For every healpixel large or small, represent it with is first order 29 division.
+        #Once ordered, any sky position can quickly be linked to its nearest healpixel
+        #(which will correspond to the one containing it)
+        max_level = 29
+        level, ipix = ah.uniq_to_level_ipix(self.skymap['UNIQ'])
+        self.index = ipix * (2**(max_level - level))**2
+        self.sorter = np.argsort(self.index)
+        self.max_nside = ah.level_to_nside(max_level)
+
+    def query(self, coords, gmag):
+        """Query the selection function.
+
+        Args:
+            coords: sky coordinates as an astropy coordinates instance.
+            gmag (float or array): G magnitudes. Should have the same shape as coords.
+
+        Returns:
+            prob: array of selection probabilities.
+        """
+        ra = coords.ra
+        dec = coords.dec
+        #Determine the NESTED pixel index of the target sky location at that max resolution.
+        match_ipix = ah.lonlat_to_healpix(ra, dec, self.max_nside, order='nested')
+        #Do a binary search for that value:
+        i = self.sorter[np.searchsorted(self.index, match_ipix, side='right', sorter=self.sorter) - 1]
+        #That pixel contains the target sky position.
+        allM10 = self.skymap[i]['M10']
+        prob = m10_to_completeness(gmag.astype(float), allM10)
+        return prob
 
 
 class DR3SelectionFunctionTCG:
