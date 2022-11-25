@@ -18,7 +18,7 @@ class DR3SelectionFunctionTCG_multi(fetch_utils.DownloadMixin):
        with healpixels as small as order 10, provided they contain at least 20 sources."""
 
     datafiles = {
-        "allsky_uniq_10.fits": "https://github.com/TristanCantatGaudin/GaiaCompleteness/blob/main/allsky_M10_hpx7.hdf5?raw=true"
+        "allsky_uniq_10.fits": "https://keeper.mpdl.mpg.de/f/c4fb744aa7e941928da6/?dl=1"
     }
 
     def __init__(self):
