@@ -4,6 +4,7 @@ import healpy as hp
 import numpy as np
 import xarray as xr
 from scipy.special import expit, logit
+from astroquery.gaia import Gaia
 
 from gaiaunlimited import fetch_utils, utils
 
@@ -131,6 +132,75 @@ class DR3RVSSelectionFunction(SelectionFunctionBase, fetch_utils.DownloadMixin):
             dset_dr3 = dset_dr3.assign_coords(i_g=gcenters, i_c=ccenters)
             dset_dr3 = dset_dr3.rename({"i_g": "g", "i_c": "c"})
             super().__init__(dset_dr3)
+
+class SubsampleSelectionFunction(SelectionFunctionBase):
+    """Internal selection function for any sample of DR3.
+
+    This function gives the probability
+
+        P(has RV | has G and G_RP)
+
+    as a function of G magnitude and G-RP color.
+    """
+    def __init__(self,query_subsample,name_query,\
+        healpix_level = 5,\
+        magnitude_low = 3,magnitude_high = 20,magnitude_bin = 0.2,\
+        color_low = -2.5,color_high = 5.1,color_bin = 0.4):
+
+        print('WARNING: This functionality is currently under development. Use it with caution.')
+
+        self.query_subsample = query_subsample
+        self.name_query = name_query
+        self.healpix_level = healpix_level
+        self.magnitude_low = magnitude_low
+        self.magnitude_high = magnitude_high
+        self.magnitude_bin = magnitude_bin
+        self.color_low = color_low
+        self.color_high = color_high
+        self.color_bin = color_bin
+        self.factor = 2**(59-2*self.healpix_level)
+
+        self.file_name = fetch_utils.get_datadir() / '{}_lvl_{}_G_{}_{}_{}_G-Grp_{}_{}_{}.csv'.format(self.name_query,self.healpix_level,\
+                                                                                               self.magnitude_low,self.magnitude_high,self.magnitude_bin,\
+                                                                                               self.color_low,self.color_high,self.color_bin)
+
+        if self.file_name.exists():
+            df = pd.read_csv(self.file_name)
+        else:
+            self.query_to_gaia = """SELECT magnitude, colour, position, COUNT(*) AS n, SUM(selection) AS k 
+                                FROM (SELECT to_integer(floor((phot_g_mean_mag - {})/{})) AS magnitude, 
+                                             to_integer(floor((g_rp - ({}))/{})) AS colour, 
+                                             to_integer(floor(source_id/{})) AS position, 
+                                             to_integer(IF_THEN_ELSE('{}', 1.0,0.0)) AS selection 
+                                    FROM gaiadr3.gaia_source 
+                                    WHERE phot_g_mean_mag > {} AND phot_g_mean_mag < {} 
+                                    AND g_rp > {} AND g_rp < {}) AS subquery 
+                                GROUP BY magnitude, colour, position""".format(self.magnitude_low,\
+                                                                               self.magnitude_bin,\
+                                                                               self.color_low,\
+                                                                               self.color_bin,\
+                                                                               self.factor,\
+                                                                               self.query_subsample,\
+                                                                               self.magnitude_low,\
+                                                                               self.magnitude_high,\
+                                                                               self.color_low,\
+                                                                               self.color_high)
+            job = Gaia.launch_job_async(self.query_to_gaia,name = self.name_query)
+            r = job.get_results()
+            df = r.to_pandas()
+            df = df.rename(columns = {'magnitude': 'i_g', 'colour': 'i_c','position': 'ipix'})
+            df.to_csv(self.file_name)
+
+        df["p"] = (df["k"] + 1) / (df["n"] + 2)
+        df["logitp"] = logit(df["p"])
+        dset_dr3 = xr.Dataset.from_dataframe(df.set_index(["ipix", "i_g", "i_c"]))
+        gcenters, ccenters = \
+        np.arange(self.magnitude_low+self.magnitude_bin/2,self.magnitude_high,self.magnitude_bin), \
+        np.arange(self.color_low+self.color_bin/2,self.color_high,self.color_bin)
+        dset_dr3 = dset_dr3.assign_coords(i_g=gcenters, i_c=ccenters)
+        dset_dr3 = dset_dr3.rename({"i_g": "g", "i_c": "c"})
+        super().__init__(dset_dr3)
+
 
 
 # Selection functions ported from gaiaverse's work ----------------
