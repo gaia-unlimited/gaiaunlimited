@@ -27,6 +27,11 @@ def apogee_sf(apparentH: float,unreddenedJK: float, position: SkyCoord):
     #Read the precomputed table with the details for each field:
     apogee_frac_path = pkg_resources.resource_filename('gaiaunlimited', 'data/apogee_sampling_fractions.csv')
     if not Path(apogee_frac_path).resolve().is_file():
+        datadir_path = pkg_resources.resource_filename('gaiaunlimited', 'data/')
+        import os
+        print( datadir_path )
+        print( os.listdir(datadir_path) )
+        print( os.listdir(datadir_path+"/..") )
         print( Path(apogee_frac_path).resolve() )
         raise ValueError("Precomputed APOGEE selection fraction file not found.")
     tApogeeSF = Table.read( apogee_frac_path )
