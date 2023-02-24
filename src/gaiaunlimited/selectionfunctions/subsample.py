@@ -5,6 +5,7 @@ import numpy as np
 import xarray as xr
 from scipy.special import expit, logit
 from astroquery.gaia import Gaia
+import ast
 
 from gaiaunlimited import fetch_utils, utils
 
@@ -22,7 +23,10 @@ def _validate_ds(ds):
     for required_variable in ["logitp"]:
         if required_variable not in ds:
             raise ValueError(f"missing required variable {required_variable}.")
-    diff = set(ds["logitp"].dims) - set(["g", "c", "ipix"])
+    if ds.dims.keys() - set(["ipix"]) == {"g","c"}:
+        diff = set(ds["logitp"].dims) - set(["g", "c", "ipix"])
+    else: 
+        diff = set(ds["logitp"].dims) - ds.dims.keys()
     if diff:
         raise ValueError(f"Unrecognized dims of probability array: {diff}")
 
@@ -138,70 +142,71 @@ class SubsampleSelectionFunction(SelectionFunctionBase):
 
     This function gives the probability
 
-        P(has RV | has G and G_RP)
+        P(is in subsample| is in Gaia and has G and G_RP)
 
     as a function of G magnitude and G-RP color.
     """
-    def __init__(self,query_subsample,name_query,\
-        healpix_level = 5,\
-        magnitude_low = 3,magnitude_high = 20,magnitude_bin = 0.2,\
-        color_low = -2.5,color_high = 5.1,color_bin = 0.4):
+
+    def __init__(self,query_subsample,file_name,on):
+
+        def download_table(self):
+            query_to_gaia = """SELECT {}COUNT(*) AS n, SUM(selection) AS k
+                                    FROM (SELECT {}
+                                        to_integer(IF_THEN_ELSE('{}',1.0,0.0)) AS selection
+                                        FROM gaiadr3.gaia_source
+                                        WHERE {}) AS subquery
+                                    GROUP BY {}""".format(self.cols,self.binning,self.query_subsample,self.where.strip('AND '),self.cols.strip(', '))
+            job = Gaia.launch_job_async(query_to_gaia,name = self.file_name)
+            r = job.get_results()
+            df = r.to_pandas()
+            columns = [key+'_' for key in self.on.keys()]
+            columns += ['n','k']
+            with open(fetch_utils.get_datadir() / '{}.csv'.format(self.file_name),'w') as f:
+                f.write('#{}\n'.format(self.on))
+                df[columns].to_csv(f)
+            return df[columns]
 
         print('WARNING: This functionality is currently under development. Use it with caution.')
 
         self.query_subsample = query_subsample
-        self.name_query = name_query
-        self.healpix_level = healpix_level
-        self.magnitude_low = magnitude_low
-        self.magnitude_high = magnitude_high
-        self.magnitude_bin = magnitude_bin
-        self.color_low = color_low
-        self.color_high = color_high
-        self.color_bin = color_bin
-        self.factor = 2**(59-2*self.healpix_level)
+        self.file_name = file_name
+        self.on = on
+        self.cols = ''
+        self.binning = ''
+        self.where = ''
+        for key in self.on.keys():
+            if key == 'healpix':
+                self.healpix_level = self.on[key]
+                self.binning = self.binning + 'to_integer(GAIA_HEALPIX_INDEX({},source_id)) AS {}, '.format(self.healpix_level,key+'_')
+            else:
+                self.low,self.high,self.bins = self.on[key]
+                self.binning = self.binning + 'to_integer(floor(({} - {})/{})) AS {}, '.format(key,self.low,self.bins,key+'_')
+                self.where = self.where + '{} > {} AND {} < {} AND '.format(key,self.low,key,self.high)
+            self.cols = self.cols + key + '_' + ', '
 
-        self.file_name = fetch_utils.get_datadir() / '{}_lvl_{}_G_{}_{}_{}_G-Grp_{}_{}_{}.csv'.format(self.name_query,self.healpix_level,\
-                                                                                               self.magnitude_low,self.magnitude_high,self.magnitude_bin,\
-                                                                                               self.color_low,self.color_high,self.color_bin)
-
-        if self.file_name.exists():
-            df = pd.read_csv(self.file_name)
+        if (fetch_utils.get_datadir() / '{}.csv'.format(self.file_name)).exists():
+            with open(fetch_utils.get_datadir() / '{}.csv'.format(self.file_name),'r') as f:
+                params = f.readline()
+            if self.on == ast.literal_eval(params.strip('#').strip('\n')):
+                df = pd.read_csv(fetch_utils.get_datadir() / '{}.csv'.format(self.file_name),comment = '#')
+            else:
+                df = download_table(self)
         else:
-            self.query_to_gaia = """SELECT magnitude, colour, position, COUNT(*) AS n, SUM(selection) AS k 
-                                FROM (SELECT to_integer(floor((phot_g_mean_mag - {})/{})) AS magnitude, 
-                                             to_integer(floor((g_rp - ({}))/{})) AS colour, 
-                                             to_integer(floor(source_id/{})) AS position, 
-                                             to_integer(IF_THEN_ELSE('{}', 1.0,0.0)) AS selection 
-                                    FROM gaiadr3.gaia_source 
-                                    WHERE phot_g_mean_mag > {} AND phot_g_mean_mag < {} 
-                                    AND g_rp > {} AND g_rp < {}) AS subquery 
-                                GROUP BY magnitude, colour, position""".format(self.magnitude_low,\
-                                                                               self.magnitude_bin,\
-                                                                               self.color_low,\
-                                                                               self.color_bin,\
-                                                                               self.factor,\
-                                                                               self.query_subsample,\
-                                                                               self.magnitude_low,\
-                                                                               self.magnitude_high,\
-                                                                               self.color_low,\
-                                                                               self.color_high)
-            job = Gaia.launch_job_async(self.query_to_gaia,name = self.name_query)
-            r = job.get_results()
-            df = r.to_pandas()
-            df = df.rename(columns = {'magnitude': 'i_g', 'colour': 'i_c','position': 'ipix'})
-            df.to_csv(self.file_name)
+            df = download_table(self)
 
+        columns = [key+'_' for key in self.on.keys()]
+        columns += ['n','k']
+        df = df[columns]
         df["p"] = (df["k"] + 1) / (df["n"] + 2)
         df["logitp"] = logit(df["p"])
-        dset_dr3 = xr.Dataset.from_dataframe(df.set_index(["ipix", "i_g", "i_c"]))
-        gcenters, ccenters = \
-        np.arange(self.magnitude_low+self.magnitude_bin/2,self.magnitude_high,self.magnitude_bin), \
-        np.arange(self.color_low+self.color_bin/2,self.color_high,self.color_bin)
-        dset_dr3 = dset_dr3.assign_coords(i_g=gcenters, i_c=ccenters)
-        dset_dr3 = dset_dr3.rename({"i_g": "g", "i_c": "c"})
+        dset_dr3 = xr.Dataset.from_dataframe(df.set_index([key+'_' for key in self.on.keys()]))
+        dict_coords = {}
+        for key in self.on.keys():
+            if key == 'healpix': continue
+            dict_coords[key+'_'] = np.arange(self.on[key][0] + self.on[key][2]/2,self.on[key][1],self.on[key][2])
+        dset_dr3 = dset_dr3.assign_coords(dict_coords)
+        dset_dr3 = dset_dr3.rename({"healpix_":"ipix"})
         super().__init__(dset_dr3)
-
-
 
 # Selection functions ported from gaiaverse's work ----------------
 class EDR3RVSSelectionFunction(SelectionFunctionBase, fetch_utils.DownloadMixin):
