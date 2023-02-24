@@ -4,7 +4,7 @@ import astropy.units as units
 from astropy.table import Table
 import numpy as np
 from pathlib import Path
-pkgdatadir = Path(__file__).parent.parent / "data"
+import pkg_resources
 
 def apogee_sf(apparentH: float,unreddenedJK: float, position: SkyCoord):
     """
@@ -25,8 +25,8 @@ def apogee_sf(apparentH: float,unreddenedJK: float, position: SkyCoord):
         of floats, with the same length as the input.
     """
     #Read the precomputed table with the details for each field:
-    apogee_frac_path = pkgdatadir / ('apogee_sampling_fractions.csv')
-    if not apogee_frac_path.exists():
+    apogee_frac_path = pkg_resources.resource_filename('gaiaunlimited', 'data/apogee_sampling_fractions.csv')
+    if not Path(apogee_frac_path).is_file():
 	    raise ValueError("Precomputed APOGEE selection fraction file not found.")
     tApogeeSF = Table.read( apogee_frac_path )
     allFieldNames = sorted(set(tApogeeSF['FIELD']))
