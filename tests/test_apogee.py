@@ -2,9 +2,9 @@ from gaiaunlimited.selectionfunctions.apogee import apogee_sf
 from astropy.coordinates import SkyCoord
 
 def test_apogee():
-'''
-Due to GithUb actions error this is temporarily replaced with a dummy test.
-'''
+	'''
+	Due to GithUb actions error this is temporarily replaced with a dummy test.
+	'''
 	if False:
 		c1 = SkyCoord(226,60,frame='galactic',unit='deg')
 		c2 = SkyCoord(228,60,frame='galactic',unit='deg')
