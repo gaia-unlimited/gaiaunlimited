@@ -23,9 +23,9 @@ def _validate_ds(ds):
     for required_variable in ["logitp"]:
         if required_variable not in ds:
             raise ValueError(f"missing required variable {required_variable}.")
-    if ds.dims.keys() - set(["ipix"]) == {"g","c"}:
+    if ds.dims.keys() - set(["ipix"]) == {"g", "c"}:
         diff = set(ds["logitp"].dims) - set(["g", "c", "ipix"])
-    else: 
+    else:
         diff = set(ds["logitp"].dims) - ds.dims.keys()
     if diff:
         raise ValueError(f"Unrecognized dims of probability array: {diff}")
@@ -137,6 +137,7 @@ class DR3RVSSelectionFunction(SelectionFunctionBase, fetch_utils.DownloadMixin):
             dset_dr3 = dset_dr3.rename({"i_g": "g", "i_c": "c"})
             super().__init__(dset_dr3)
 
+
 class SubsampleSelectionFunction(SelectionFunctionBase):
     """Internal selection function for any sample of DR3.
 
@@ -147,66 +148,84 @@ class SubsampleSelectionFunction(SelectionFunctionBase):
     as a function of G magnitude and G-RP color.
     """
 
-    def __init__(self,query_subsample,file_name,on):
-
-        def download_table(self):
-            query_to_gaia = """SELECT {}COUNT(*) AS n, SUM(selection) AS k
-                                    FROM (SELECT {}
-                                        to_integer(IF_THEN_ELSE('{}',1.0,0.0)) AS selection
+    def __init__(self, query_subsample, file_name, on):
+        def _download_binned_subset(self):
+            query_to_gaia = f"""SELECT {self.cols} COUNT(*) AS n, SUM(selection) AS k
+                                    FROM (SELECT {self.binning}
+                                        to_integer(IF_THEN_ELSE('{self.query_subsample}',1.0,0.0)) AS selection
                                         FROM gaiadr3.gaia_source
-                                        WHERE {}) AS subquery
-                                    GROUP BY {}""".format(self.cols,self.binning,self.query_subsample,self.where.strip('AND '),self.cols.strip(', '))
-            job = Gaia.launch_job_async(query_to_gaia,name = self.file_name)
+                                        WHERE {self.where.strip("AND ")}) AS subquery
+                                    GROUP BY {self.cols.strip(", ")}"""
+            job = Gaia.launch_job_async(query_to_gaia, name=self.file_name)
             r = job.get_results()
             df = r.to_pandas()
-            columns = [key+'_' for key in self.on.keys()]
-            columns += ['n','k']
-            with open(fetch_utils.get_datadir() / '{}.csv'.format(self.file_name),'w') as f:
-                f.write('#{}\n'.format(self.on))
+            columns = [key + "_" for key in self.on.keys()]
+            columns += ["n", "k"]
+            with open(fetch_utils.get_datadir() / f"{self.file_name}.csv", "w") as f:
+                f.write(f"#{self.on}\n")
                 df[columns].to_csv(f)
             return df[columns]
 
-        print('WARNING: This functionality is currently under development. Use it with caution.')
+        print(
+            "WARNING: This functionality is currently under development. Use it with caution."
+        )
 
         self.query_subsample = query_subsample
         self.file_name = file_name
         self.on = on
-        self.cols = ''
-        self.binning = ''
-        self.where = ''
+        self.cols = ""
+        self.binning = ""
+        self.where = ""
         for key in self.on.keys():
-            if key == 'healpix':
+            if key == "healpix":
                 self.healpix_level = self.on[key]
-                self.binning = self.binning + 'to_integer(GAIA_HEALPIX_INDEX({},source_id)) AS {}, '.format(self.healpix_level,key+'_')
+                self.binning = (
+                    self.binning
+                    + f"""to_integer(GAIA_HEALPIX_INDEX({self.healpix_level},source_id)) AS {key+"_"}, """
+                )
             else:
-                self.low,self.high,self.bins = self.on[key]
-                self.binning = self.binning + 'to_integer(floor(({} - {})/{})) AS {}, '.format(key,self.low,self.bins,key+'_')
-                self.where = self.where + '{} > {} AND {} < {} AND '.format(key,self.low,key,self.high)
-            self.cols = self.cols + key + '_' + ', '
+                self.low, self.high, self.bins = self.on[key]
+                self.binning = (
+                    self.binning
+                    + f"""to_integer(floor(({key} - {self.low})/{self.bins})) AS {key+"_"}, """
+                )
+                self.where = (
+                    self.where + f"""{key} > {self.low} AND {key} < {self.high} AND """
+                )
+            self.cols = self.cols + key + "_" + ", "
 
-        if (fetch_utils.get_datadir() / '{}.csv'.format(self.file_name)).exists():
-            with open(fetch_utils.get_datadir() / '{}.csv'.format(self.file_name),'r') as f:
+        if (fetch_utils.get_datadir() / f"{self.file_name}.csv").exists():
+            with open(fetch_utils.get_datadir() / f"{self.file_name}.csv", "r") as f:
                 params = f.readline()
-            if self.on == ast.literal_eval(params.strip('#').strip('\n')):
-                df = pd.read_csv(fetch_utils.get_datadir() / '{}.csv'.format(self.file_name),comment = '#')
+            if self.on == ast.literal_eval(params.strip("#").strip("\n")):
+                df = pd.read_csv(
+                    fetch_utils.get_datadir() / f"{self.file_name}.csv",
+                    comment="#",
+                )
             else:
-                df = download_table(self)
+                df = _download_binned_subset(self)
         else:
-            df = download_table(self)
+            df = _download_binned_subset(self)
 
-        columns = [key+'_' for key in self.on.keys()]
-        columns += ['n','k']
+        columns = [key + "_" for key in self.on.keys()]
+        columns += ["n", "k"]
         df = df[columns]
         df["p"] = (df["k"] + 1) / (df["n"] + 2)
         df["logitp"] = logit(df["p"])
-        dset_dr3 = xr.Dataset.from_dataframe(df.set_index([key+'_' for key in self.on.keys()]))
+        dset_dr3 = xr.Dataset.from_dataframe(
+            df.set_index([key + "_" for key in self.on.keys()])
+        )
         dict_coords = {}
         for key in self.on.keys():
-            if key == 'healpix': continue
-            dict_coords[key+'_'] = np.arange(self.on[key][0] + self.on[key][2]/2,self.on[key][1],self.on[key][2])
+            if key == "healpix":
+                continue
+            dict_coords[key + "_"] = np.arange(
+                self.on[key][0] + self.on[key][2] / 2, self.on[key][1], self.on[key][2]
+            )
         dset_dr3 = dset_dr3.assign_coords(dict_coords)
-        dset_dr3 = dset_dr3.rename({"healpix_":"ipix"})
+        dset_dr3 = dset_dr3.rename({"healpix_": "ipix"})
         super().__init__(dset_dr3)
+
 
 # Selection functions ported from gaiaverse's work ----------------
 class EDR3RVSSelectionFunction(SelectionFunctionBase, fetch_utils.DownloadMixin):
