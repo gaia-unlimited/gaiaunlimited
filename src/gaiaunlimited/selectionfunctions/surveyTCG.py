@@ -4,31 +4,157 @@ from gaiaunlimited import fetch_utils, utils
 import h5py
 from astroquery.gaia import Gaia
 from astropy.table import Table
-import astropy_healpix as ah 
+import astropy_healpix as ah
+import astropy.units as u
+from astropy.coordinates import SkyCoord
 
 Gaia.MAIN_GAIA_TABLE = "gaiadr3.gaia_source"
 Gaia.ROW_LIMIT = -1  # default is 50 rows max, -1 for unlimited
 
 
+class DR3SelectionFunctionTCG(fetch_utils.DownloadMixin):
+    """Model of the Gaia DR3 survey selection function calibrated on DECaPS.
+
+    Available in three flavours:
+
+    mode = 'hpx7' (default)
+    Uses a map precomputed in healpix regions of order 7.
+
+    mode='multi'
+    Uses a precomputed map of variable resolution,
+    with healpixels as small as order 10, provided they contain at least 20 sources.
+
+    mode='patch'
+    The field of view is a circular patch of radius 'radius' centered on (ra,dec).
+    The spatial resolution will vary across the field of view,
+    from healpix order 6 to 12, enforcing that bins must contain
+    at least min_points sources (default 20). A low number makes the map
+    more detailed but also noisier.
+
+    Arguments:
+        mode: 'hpx7' or 'multi' or 'patch' (defaults to 'hpx7')
+
+    In 'patch' mode only:
+        ra: right ascension of centre of field of view, in degrees
+        dec: declination of centre of field of view, in degrees
+        size: width/height of the square field of view, in degrees
+        min_points: minimum number of sources used to compute the map"""
+
+    datafiles = {
+        "allsky_M10_hpx7.hdf5": "https://github.com/TristanCantatGaudin/GaiaCompleteness/blob/main/allsky_M10_hpx7.hdf5?raw=true",
+        "allsky_uniq_10.fits": "https://keeper.mpdl.mpg.de/f/c4fb744aa7e941928da6/?dl=1",
+    }
+
+    def __init__(self, mode="hpx7", coord=None, radius=None, min_points=20):
+        self.mode = mode
+
+        if self.mode == "multi":
+            self.m10map = Table.read(self._get_data("allsky_uniq_10.fits"))
+            # For every healpixel large or small, represent it with is first order 29 division.
+            # Once ordered, any sky position can quickly be linked to its nearest healpixel
+            # (which will correspond to the one containing it)
+            max_level = 29
+            level, ipix = ah.uniq_to_level_ipix(self.m10map["UNIQ"])
+            self.index = ipix * (2 ** (max_level - level)) ** 2
+            self.sorter = np.argsort(self.index)
+            self.max_nside = ah.level_to_nside(max_level)
+
+        elif self.mode == "patch":
+            self.coord = coord
+            self.radius_patch = radius
+            self.min_points = min_points
+            # The m10map is not read from a file, we have to build it on the fly:
+            self.m10map = build_patch_map(coord, radius, min_points)
+
+        else:
+            # Any invalid choice of mode defaults to the healpix 7 map.
+            if mode != "hpx7":
+                print("Mode %s unknown, defaulting to 'hpx7'." % (mode))
+            self.mode = "hpx7"
+            with h5py.File(self._get_data("allsky_M10_hpx7.hdf5"), "r") as f:
+                self.m10map = f["data"][()]
+
+    def query(self, coords, gmag):
+        """Query the selection function.
+
+        Args:
+            coords: sky coordinates as an astropy coordinates instance.
+            gmag (float or array): G magnitudes. Should have the same shape as coords.
+
+        Returns:
+            prob: array of selection probabilities.
+        """
+        if not isinstance(coords, SkyCoord):
+            print(
+                "*** WARNING: The coordinates do not seem to be an astropy.coord.SkyCoord object."
+            )
+            print(
+                "This could lead to the error:\n     \"object has no attribute 'frame'\""
+            )
+            print(
+                "The syntax to query the completeness map is:\n    mapName.query( coordinates , gmags )"
+            )
+        if self.mode == "multi":
+            ra = coords.ra
+            dec = coords.dec
+            # Determine the NESTED pixel index of the target sky location at that max resolution.
+            match_ipix = ah.lonlat_to_healpix(ra, dec, self.max_nside, order="nested")
+            # Do a binary search for that value:
+            i = self.sorter[
+                np.searchsorted(
+                    self.index, match_ipix, side="right", sorter=self.sorter
+                )
+                - 1
+            ]
+            # That pixel contains the target sky position.
+            allM10 = self.m10map[i]["M10"]
+            prob = m10_to_completeness(gmag.astype(float), allM10)
+            return prob
+        else:
+            if coords.shape != np.shape(gmag):
+                raise ValueError(
+                    f"Input shape mismatch: {coords.shape} != {gmag.shape}"
+                )
+            order_map = self.m10map[:, 0].astype(np.int64)
+            ipix_map = self.m10map[:, 1].astype(np.int64)
+            m10_map = self.m10map[:, 2]
+            nside = 2 ** order_map[0]
+            ipix = utils.coord2healpix(coords, "icrs", nside)
+            # if using custom maps, the user might query a point outside the map:
+            is_in_map = np.in1d(ipix, ipix_map)
+            if np.all(is_in_map) == False:
+                print("Warning: the following points are outside the map:")
+                print(coords[~is_in_map])
+                # find the missing ipix, temporarily add them with value Nan
+                missingIpix = sorted(set(ipix[~is_in_map]))
+                for mip in missingIpix:
+                    ipix_map = np.append(ipix_map, mip)
+                    m10_map = np.append(m10_map, np.nan)
+            pointIndices = np.array(
+                [np.where(ipix_map == foo)[0][0] for foo in ipix]
+            )  # horrendous but works, could be clearer with np.in1d?
+            allM10 = m10_map[pointIndices]
+            prob = m10_to_completeness(gmag.astype(float), allM10)
+            return prob
 
 
 class DR3SelectionFunctionTCG_multi(fetch_utils.DownloadMixin):
     """Model of the Gaia DR3 survey selection function calibrated on DECaPS.
-       This implementation uses a precomputed map of variable resolution,
-       with healpixels as small as order 10, provided they contain at least 20 sources."""
+    This implementation uses a precomputed map of variable resolution,
+    with healpixels as small as order 10, provided they contain at least 20 sources."""
 
     datafiles = {
         "allsky_uniq_10.fits": "https://keeper.mpdl.mpg.de/f/c4fb744aa7e941928da6/?dl=1"
     }
 
     def __init__(self):
-        self.skymap = Table.read(   self._get_data("allsky_uniq_10.fits")  )
-        #For every healpixel large or small, represent it with is first order 29 division.
-        #Once ordered, any sky position can quickly be linked to its nearest healpixel
-        #(which will correspond to the one containing it)
+        self.skymap = Table.read(self._get_data("allsky_uniq_10.fits"))
+        # For every healpixel large or small, represent it with is first order 29 division.
+        # Once ordered, any sky position can quickly be linked to its nearest healpixel
+        # (which will correspond to the one containing it)
         max_level = 29
-        level, ipix = ah.uniq_to_level_ipix(self.skymap['UNIQ'])
-        self.index = ipix * (2**(max_level - level))**2
+        level, ipix = ah.uniq_to_level_ipix(self.skymap["UNIQ"])
+        self.index = ipix * (2 ** (max_level - level)) ** 2
         self.sorter = np.argsort(self.index)
         self.max_nside = ah.level_to_nside(max_level)
 
@@ -44,17 +170,20 @@ class DR3SelectionFunctionTCG_multi(fetch_utils.DownloadMixin):
         """
         ra = coords.ra
         dec = coords.dec
-        #Determine the NESTED pixel index of the target sky location at that max resolution.
-        match_ipix = ah.lonlat_to_healpix(ra, dec, self.max_nside, order='nested')
-        #Do a binary search for that value:
-        i = self.sorter[np.searchsorted(self.index, match_ipix, side='right', sorter=self.sorter) - 1]
-        #That pixel contains the target sky position.
-        allM10 = self.skymap[i]['M10']
+        # Determine the NESTED pixel index of the target sky location at that max resolution.
+        match_ipix = ah.lonlat_to_healpix(ra, dec, self.max_nside, order="nested")
+        # Do a binary search for that value:
+        i = self.sorter[
+            np.searchsorted(self.index, match_ipix, side="right", sorter=self.sorter)
+            - 1
+        ]
+        # That pixel contains the target sky position.
+        allM10 = self.skymap[i]["M10"]
         prob = m10_to_completeness(gmag.astype(float), allM10)
         return prob
 
 
-class DR3SelectionFunctionTCG:
+class DR3SelectionFunctionTCG_base:
     """Model of the Gaia DR3 survey selection function calibrated on DECaPS."""
 
     def __init__(self, m10map):
@@ -102,7 +231,9 @@ class DR3SelectionFunctionTCG:
     #    # return cls(m10map)
 
 
-class DR3SelectionFunctionTCG_hpx7(DR3SelectionFunctionTCG, fetch_utils.DownloadMixin):
+class DR3SelectionFunctionTCG_hpx7(
+    DR3SelectionFunctionTCG_base, fetch_utils.DownloadMixin
+):
     """Initialises the model from the all-sky map precomputed in healpix order 7 (Nside=128)."""
 
     datafiles = {
@@ -115,7 +246,7 @@ class DR3SelectionFunctionTCG_hpx7(DR3SelectionFunctionTCG, fetch_utils.Download
         super().__init__(m10_order7)
 
 
-class DR3SelectionFunctionTCG_from_patch(DR3SelectionFunctionTCG):
+class DR3SelectionFunctionTCG_from_patch(DR3SelectionFunctionTCG_base):
     """Initialises the model for a requested patch of sky.
     The field of view is a square of width 'size' centered on (ra,dec).
     The spatial resolution will vary across the field of view,
@@ -234,6 +365,90 @@ class DR3SelectionFunctionTCG_from_patch(DR3SelectionFunctionTCG):
         import matplotlib.pyplot as plt
 
         plt.show()
+
+
+def build_patch_map(coord, radius: float, min_points: int = 20):
+    """
+    Query the Gaia database and create a high-resolution healpix map of the M_10
+    parameter for a given circular patch of sky.
+    The pixels without a sufficient number of sources will be grouped together.
+
+    Parameters
+    ----------
+    coord: astropy SkyCoord object
+        sky coordinates of the center of the patch, as an astropy SkyCoord object
+    radius: float
+        the radius of the patch, in degrees
+    min_points: int
+        minimum number of sources used to compute M_10 in a given pixel.
+        A given region will be subdivided into four higher-order regions
+        if all its subdivisions contain more than min_points points.
+
+    Returns:
+    -------
+    A numpy array of shape (3,N) where the first column is the order of the maximum resolution reached,
+    the second column is the healpixel number, and the third is the M_10 value in that healpixel.
+    """
+    ra_patch = coord.icrs.ra / u.degree
+    dec_patch = coord.icrs.dec / u.degree
+    print("Querying the Gaia archive...")
+    queryStringGaia = """SELECT ra, dec, source_id,phot_g_mean_mag
+    FROM gaiadr3.gaia_source
+    WHERE 1 = CONTAINS(POINT(ra,dec),CIRCLE(%f, %f, %f))
+    and astrometric_matched_transits<11
+    and phot_g_mean_mag<50""" % (
+        ra_patch,
+        dec_patch,
+        radius,
+    )
+    print(queryStringGaia)
+    job = Gaia.launch_job_async(queryStringGaia)
+    GaiaT = job.get_results()
+    print(f"Obtained {len(GaiaT)} sources.")
+
+    # find all the potential hpx ids of queried sources:
+    allHpx6 = sorted(set(GaiaT["source_id"] // (2**35 * 4 ** (12 - 6))))
+    allHpx7 = [foo for i in allHpx6 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]]
+    allHpx8 = [foo for i in allHpx7 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]]
+    allHpx9 = [foo for i in allHpx8 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]]
+    allHpx10 = [
+        foo for i in allHpx9 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]
+    ]
+    allHpx11 = [
+        foo for i in allHpx10 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]
+    ]
+    allHpx12 = [
+        foo for i in allHpx11 for foo in [4 * i, 4 * i + 1, 4 * i + 2, 4 * i + 3]
+    ]
+    # identify which ones have centers inside the user-requested patch:
+    allGoodHpx12 = []
+    for h in allHpx12:
+        rah, dech = hp.pix2ang(2**12, h, nest=True, lonlat=True)
+        if coord.separation(SkyCoord(ra=rah, dec=dech, unit="deg")) < u.Quantity(
+            radius, u.deg
+        ):
+            allGoodHpx12.append(h)
+
+    fineMap = [np.nan for foo in allGoodHpx12]
+    for stepUp in range(5):
+        print(f"Grouping the stars by hpx level {12-stepUp}...")
+        sourceHpxThisOrder = np.array(GaiaT["source_id"]) // (
+            2**35 * 4 ** (12 - (12 - stepUp))
+        )
+        for i, h in enumerate(allGoodHpx12):
+            if np.isnan(fineMap[i]):
+                gI = GaiaT["phot_g_mean_mag"][sourceHpxThisOrder == h // 4**stepUp]
+                # print(i,h,gI); input()
+                if len(gI) >= min_points:
+                    fineMap[i] = np.median(gI)
+                else:
+                    pass
+    print("Done.")
+    fineMap = np.array(fineMap)
+    allGoodHpx12 = np.array(allGoodHpx12)
+    order = 12 * np.ones_like(allGoodHpx12)
+    m10_map = np.column_stack((order, allGoodHpx12, fineMap))
+    return m10_map
 
 
 def sigmoid(
