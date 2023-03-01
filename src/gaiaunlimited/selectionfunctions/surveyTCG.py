@@ -123,8 +123,8 @@ class DR3SelectionFunctionTCG(fetch_utils.DownloadMixin):
             # if using custom maps, the user might query a point outside the map:
             is_in_map = np.in1d(ipix, ipix_map)
             if np.all(is_in_map) == False:
-                print("Warning: the following points are outside the map:")
-                print(coords[~is_in_map])
+                print("Warning: some requested points are outside the map.")
+                # print(coords[~is_in_map])
                 # find the missing ipix, temporarily add them with value Nan
                 missingIpix = sorted(set(ipix[~is_in_map]))
                 for mip in missingIpix:
