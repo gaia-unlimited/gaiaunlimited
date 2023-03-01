@@ -12,7 +12,7 @@ Gaia.MAIN_GAIA_TABLE = "gaiadr3.gaia_source"
 Gaia.ROW_LIMIT = -1  # default is 50 rows max, -1 for unlimited
 
 
-class DR3SelectionFunction(fetch_utils.DownloadMixin):
+class DR3SelectionFunctionTCG(fetch_utils.DownloadMixin):
     """Model of the Gaia DR3 survey selection function calibrated on DECaPS.
 
     Available in three flavours:
@@ -183,7 +183,7 @@ class DR3SelectionFunctionTCG_multi(fetch_utils.DownloadMixin):
         return prob
 
 
-class DR3SelectionFunctionTCG:
+class DR3SelectionFunctionTCG_base:
     """Model of the Gaia DR3 survey selection function calibrated on DECaPS."""
 
     def __init__(self, m10map):
@@ -231,7 +231,9 @@ class DR3SelectionFunctionTCG:
     #    # return cls(m10map)
 
 
-class DR3SelectionFunctionTCG_hpx7(DR3SelectionFunctionTCG, fetch_utils.DownloadMixin):
+class DR3SelectionFunctionTCG_hpx7(
+    DR3SelectionFunctionTCG_base, fetch_utils.DownloadMixin
+):
     """Initialises the model from the all-sky map precomputed in healpix order 7 (Nside=128)."""
 
     datafiles = {
@@ -244,7 +246,7 @@ class DR3SelectionFunctionTCG_hpx7(DR3SelectionFunctionTCG, fetch_utils.Download
         super().__init__(m10_order7)
 
 
-class DR3SelectionFunctionTCG_from_patch(DR3SelectionFunctionTCG):
+class DR3SelectionFunctionTCG_from_patch(DR3SelectionFunctionTCG_base):
     """Initialises the model for a requested patch of sky.
     The field of view is a square of width 'size' centered on (ra,dec).
     The spatial resolution will vary across the field of view,
