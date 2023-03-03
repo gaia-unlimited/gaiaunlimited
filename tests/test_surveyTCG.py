@@ -1,5 +1,5 @@
 from astropy.coordinates import SkyCoord
-from gaiaunlimited.selectionfunctions.surveyTCG import DR3SelectionFunctionTCG
+from gaiaunlimited.selectionfunctions import DR3SelectionFunctionTCG
 import numpy as np
 
 
