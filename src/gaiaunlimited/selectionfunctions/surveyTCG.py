@@ -1,12 +1,13 @@
 import numpy as np
 import healpy as hp
-from gaiaunlimited import fetch_utils, utils
 import h5py
 from astroquery.gaia import Gaia
 from astropy.table import Table
 import astropy_healpix as ah
 import astropy.units as u
 from astropy.coordinates import SkyCoord
+
+from .. import fetch_utils, utils
 
 __all__ = [
     "DR3SelectionFunctionTCG",

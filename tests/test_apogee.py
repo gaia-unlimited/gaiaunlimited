@@ -1,4 +1,4 @@
-from gaiaunlimited.selectionfunctions.apogee import apogee_sf
+from gaiaunlimited.selectionfunctions import apogee_sf
 from astropy.coordinates import SkyCoord
 
 

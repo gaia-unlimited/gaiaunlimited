@@ -7,7 +7,7 @@ from scipy.special import expit, logit
 from astroquery.gaia import Gaia
 import ast
 
-from gaiaunlimited import fetch_utils, utils
+from .. import fetch_utils, utils
 
 __all__ = [
     "SelectionFunctionBase",
