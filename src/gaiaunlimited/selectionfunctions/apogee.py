@@ -6,6 +6,8 @@ import numpy as np
 from pathlib import Path
 import pkg_resources
 
+__all__ = ["apogee_sf"]
+
 
 def apogee_sf(apparentH: float, unreddenedJK: float, position: SkyCoord):
     """

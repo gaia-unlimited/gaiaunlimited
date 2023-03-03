@@ -4,7 +4,7 @@ import numpy as np
 import xarray as xr
 from scipy import stats
 
-from gaiaunlimited import fetch_utils, utils
+from .. import fetch_utils, utils
 
 __all__ = ["DR2SelectionFunction", "DR3SelectionFunction"]
 
@@ -39,7 +39,6 @@ archivePrefix = {arXiv},
     nside_crowding = 1024
 
     def __init__(self):
-
         with h5py.File(self._get_data("cog_ii_dr2.h5")) as f:
             # NOTE: HEAL pixelisation is in ICRS in these files!
             # n_field heal order=12, nside=4096
