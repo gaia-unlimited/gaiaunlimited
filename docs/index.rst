@@ -37,10 +37,10 @@ Horizon 2020 research and innovation program under grant agreement No 101004110.
    :caption: Contents:
 
    install
-   scanninglaw
-   getting-started
-   dr3-empirical-completeness
-   dr3-rvs
+   notebooks/scanninglaw
+   notebooks/getting-started
+   notebooks/dr3-empirical-completeness
+   notebooks/dr3-rvs
    citation
    api
 
