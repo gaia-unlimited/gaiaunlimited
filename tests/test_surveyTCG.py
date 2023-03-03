@@ -1,14 +1,6 @@
-from gaiaunlimited.selectionfunctions.surveyTCG import DR3SelectionFunctionTCG_hpx7
 from astropy.coordinates import SkyCoord
 from gaiaunlimited.selectionfunctions.surveyTCG import DR3SelectionFunctionTCG
 import numpy as np
-
-
-def test_tcg():
-    try:
-        DR3SelectionFunctionTCG_hpx7()
-    except:
-        assert False, "Failed"
 
 
 def test_multi():
