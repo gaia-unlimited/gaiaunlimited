@@ -8,6 +8,13 @@ import astropy_healpix as ah
 import astropy.units as u
 from astropy.coordinates import SkyCoord
 
+__all__ = [
+    "DR3SelectionFunctionTCG",
+    "build_patch_map",
+    "sigmoid",
+    "m10_to_completeness",
+]
+
 Gaia.MAIN_GAIA_TABLE = "gaiadr3.gaia_source"
 Gaia.ROW_LIMIT = -1  # default is 50 rows max, -1 for unlimited
 
