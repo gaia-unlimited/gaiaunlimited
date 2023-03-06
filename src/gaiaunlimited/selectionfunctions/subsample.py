@@ -152,56 +152,57 @@ class SubsampleSelectionFunction(SelectionFunctionBase):
     as a function of G magnitude and G-RP color.
     """
 
-    def __init__(self, query_subsample, file_name, on):
+    def __init__(self, subsample_query, file_name, hplevel_and_binning):
         def _download_binned_subset(self):
-            query_to_gaia = f"""SELECT {self.cols} COUNT(*) AS n, SUM(selection) AS k
+            query_to_gaia = f"""SELECT {self.column_names_for_select_clause} COUNT(*) AS n, SUM(selection) AS k
                                     FROM (SELECT {self.binning}
-                                        to_integer(IF_THEN_ELSE('{self.query_subsample}',1.0,0.0)) AS selection
+                                        to_integer(IF_THEN_ELSE('{self.subsample_query}',1.0,0.0)) AS selection
                                         FROM gaiadr3.gaia_source
-                                        WHERE {self.where.strip("AND ")}) AS subquery
-                                    GROUP BY {self.cols.strip(", ")}"""
+                                        WHERE {self.where_clause.strip("AND ")}) AS subquery
+                                    GROUP BY {self.group_by_clause}"""
             job = Gaia.launch_job_async(query_to_gaia, name=self.file_name)
             r = job.get_results()
             df = r.to_pandas()
-            columns = [key + "_" for key in self.on.keys()]
+            columns = [key + "_" for key in self.hplevel_and_binning.keys()]
             columns += ["n", "k"]
             with open(fetch_utils.get_datadir() / f"{self.file_name}.csv", "w") as f:
-                f.write(f"#{self.on}\n")
-                df[columns].to_csv(f)
+                f.write(f"#{self.hplevel_and_binning}\n")
+                df[columns].to_csv(f, index = False)
             return df[columns]
 
         print(
             "WARNING: This functionality is currently under development. Use it with caution."
         )
 
-        self.query_subsample = query_subsample
+        self.subsample_query = subsample_query
         self.file_name = file_name
-        self.on = on
-        self.cols = ""
+        self.hplevel_and_binning = hplevel_and_binning
+        self.column_names_for_select_clause = ""
         self.binning = ""
-        self.where = ""
-        for key in self.on.keys():
+        self.where_clause = ""
+        for key in self.hplevel_and_binning.keys():
             if key == "healpix":
-                self.healpix_level = self.on[key]
+                self.healpix_level = self.hplevel_and_binning[key]
                 self.binning = (
                     self.binning
                     + f"""to_integer(GAIA_HEALPIX_INDEX({self.healpix_level},source_id)) AS {key+"_"}, """
                 )
             else:
-                self.low, self.high, self.bins = self.on[key]
+                self.low, self.high, self.bins = self.hplevel_and_binning[key]
                 self.binning = (
                     self.binning
                     + f"""to_integer(floor(({key} - {self.low})/{self.bins})) AS {key+"_"}, """
                 )
-                self.where = (
-                    self.where + f"""{key} > {self.low} AND {key} < {self.high} AND """
+                self.where_clause = (
+                    self.where_clause + f"""{key} > {self.low} AND {key} < {self.high} AND """
                 )
-            self.cols = self.cols + key + "_" + ", "
+            self.column_names_for_select_clause = self.column_names_for_select_clause + key + "_" + ", "
+        self.group_by_clause = self.column_names_for_select_clause.strip(", ")
 
         if (fetch_utils.get_datadir() / f"{self.file_name}.csv").exists():
             with open(fetch_utils.get_datadir() / f"{self.file_name}.csv", "r") as f:
                 params = f.readline()
-            if self.on == ast.literal_eval(params.strip("#").strip("\n")):
+            if self.hplevel_and_binning == ast.literal_eval(params.strip("#").strip("\n")):
                 df = pd.read_csv(
                     fetch_utils.get_datadir() / f"{self.file_name}.csv",
                     comment="#",
@@ -211,20 +212,20 @@ class SubsampleSelectionFunction(SelectionFunctionBase):
         else:
             df = _download_binned_subset(self)
 
-        columns = [key + "_" for key in self.on.keys()]
+        columns = [key + "_" for key in self.hplevel_and_binning.keys()]
         columns += ["n", "k"]
         df = df[columns]
         df["p"] = (df["k"] + 1) / (df["n"] + 2)
         df["logitp"] = logit(df["p"])
         dset_dr3 = xr.Dataset.from_dataframe(
-            df.set_index([key + "_" for key in self.on.keys()])
+            df.set_index([key + "_" for key in self.hplevel_and_binning.keys()])
         )
         dict_coords = {}
-        for key in self.on.keys():
+        for key in self.hplevel_and_binning.keys():
             if key == "healpix":
                 continue
             dict_coords[key + "_"] = np.arange(
-                self.on[key][0] + self.on[key][2] / 2, self.on[key][1], self.on[key][2]
+                self.hplevel_and_binning[key][0] + self.hplevel_and_binning[key][2] / 2, self.hplevel_and_binning[key][1], self.hplevel_and_binning[key][2]
             )
         dset_dr3 = dset_dr3.assign_coords(dict_coords)
         dset_dr3 = dset_dr3.rename({"healpix_": "ipix"})
