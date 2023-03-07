@@ -97,10 +97,13 @@ class SelectionFunctionBase:
             np.array: array of internal selection probabilities.
         """
         # NOTE: make input atleast_1d for .interp keyword consistency.
-        if list(self.datafiles)[0] == "dr3-rvs-nk.h5":
-            print("here!!!!")
-            ipix = utils.coord2healpix(coords, "galactic", self.nside, nest=True)
-        else:
+        try:
+            if list(self.datafiles)[0] == "dr3-rvs-nk.h5":
+                print("here!!!!")
+                ipix = utils.coord2healpix(coords, "galactic", self.nside, nest=True)
+            else:
+                ipix = utils.coord2healpix(coords, "icrs", self.nside, nest=True)
+        except: 
             ipix = utils.coord2healpix(coords, "icrs", self.nside, nest=True)
         ipix = xr.DataArray(np.atleast_1d(ipix))
         d = {}
