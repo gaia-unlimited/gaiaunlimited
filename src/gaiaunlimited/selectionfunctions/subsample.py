@@ -13,6 +13,7 @@ __all__ = [
     "SelectionFunctionBase",
     "DR3RVSSelectionFunction",
     "EDR3RVSSelectionFunction",
+    "SubsampleSelectionFunction",
 ]
 
 
