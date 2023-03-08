@@ -99,7 +99,6 @@ class SelectionFunctionBase:
         # NOTE: make input atleast_1d for .interp keyword consistency.
         try:
             if list(self.datafiles)[0] == "dr3-rvs-nk.h5":
-                print("here!!!!")
                 ipix = utils.coord2healpix(coords, "galactic", self.nside, nest=True)
             else:
                 ipix = utils.coord2healpix(coords, "icrs", self.nside, nest=True)
