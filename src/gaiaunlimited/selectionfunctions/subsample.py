@@ -85,7 +85,7 @@ class SelectionFunctionBase:
         # TODO: query for conditions and make Dataset from result
         raise NotImplementedError()
 
-    def query(self, coords, **kwargs):
+    def query(self, coords,return_variance = False,fill_nan = False, **kwargs):
         """Query the selection function at the given coordinates.
 
         Args:
@@ -116,7 +116,16 @@ class SelectionFunctionBase:
         out = self.ds["logitp"].interp(ipix=ipix, **d).to_numpy()
         if len(coords.shape) == 0:
             out = out.squeeze()
-        return expit(out)
+        if return_variance:
+            out_variance = self.ds["logit_p_variance"].interp(ipix=ipix, **d).to_numpy()
+            out_variance.squeeze()
+            if fill_nan:
+                out = np.nan_to_num(out,nan = logit(1./2.))
+                out_variance = np.nan_to_num(out_variance,nan = logit(1./12.))
+            return expit(out),expit(out_variance)
+        else:
+            if fill_nan: out = np.nan_to_num(out,nan = logit(1./2.))
+            return expit(out)
 
 
 class DR3RVSSelectionFunction(SelectionFunctionBase, fetch_utils.DownloadMixin):
@@ -220,6 +229,8 @@ class SubsampleSelectionFunction(SelectionFunctionBase):
         df = df[columns]
         df["p"] = (df["k"] + 1) / (df["n"] + 2)
         df["logitp"] = logit(df["p"])
+        df["p_variance"] = (df["n"] + 1) * (df["n"] - df["k"] + 1) / (df["n"] + 2) / (df["n"] + 2) / (df["n"] + 3)
+        df["logit_p_variance"] = logit(df["p_variance"])
         dset_dr3 = xr.Dataset.from_dataframe(
             df.set_index([key + "_" for key in self.hplevel_and_binning.keys()])
         )
