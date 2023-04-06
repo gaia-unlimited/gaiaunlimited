@@ -108,7 +108,8 @@ def apogee_sf(apparentH: float, unreddenedJK: float, position: SkyCoord):
 
             if apparentH[i] < tF["Hmin"][0] or apparentH[i] > tF["Hmax"][2]:
                 # the star is too bright or too faint
-                to_return[-1].append(0)
+                selectionFraction.append(0)
+                akFraction.append(0)
 
             # bright enough to be short cohort:
             elif apparentH[i] < tF["Hmax"][0]:
