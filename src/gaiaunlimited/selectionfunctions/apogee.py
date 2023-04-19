@@ -124,7 +124,7 @@ def apogee_sf(apparentH: float, unreddenedJK: float, position: SkyCoord):
                 akFraction.append(tF["fracAK"][1])
 
             # long cohort
-            elif apparentH[i] < tF["Hmax"][2] and apparentH[i] < tF["Hmin"][2]:
+            elif apparentH[i] < tF["Hmax"][2] and apparentH[i] > tF["Hmin"][2]:
                 # long cohort
                 selectionFraction.append(tF["fracSampling"][2])
                 akFraction.append(tF["fracAK"][2])
