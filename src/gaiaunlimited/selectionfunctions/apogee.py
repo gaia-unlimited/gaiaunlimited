@@ -129,6 +129,11 @@ def apogee_sf(apparentH: float, unreddenedJK: float, position: SkyCoord):
                 selectionFraction.append(tF["fracSampling"][2])
                 akFraction.append(tF["fracAK"][2])
 
+            #not in any cohort: typically between short/medium in some fields
+            else:    
+                selectionFraction.append(0)
+                akFraction.append(0)
+
         if len(selectionFraction) == 1:
             to_return.append(selectionFraction[0] * akFraction[0])
         else:
