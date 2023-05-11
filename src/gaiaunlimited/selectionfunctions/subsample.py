@@ -182,10 +182,6 @@ class SubsampleSelectionFunction(SelectionFunctionBase):
                 df[columns].to_csv(f, index = False)
             return df[columns]
 
-        print(
-            "WARNING: This functionality is currently under development. Use it with caution."
-        )
-
         self.subsample_query = subsample_query
         self.file_name = file_name
         self.hplevel_and_binning = hplevel_and_binning
