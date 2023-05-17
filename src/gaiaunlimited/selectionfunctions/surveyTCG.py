@@ -173,21 +173,16 @@ def build_patch_map(coord, radius: float, min_points: int = 20):
     parameter for a given circular patch of sky.
     The pixels without a sufficient number of sources will be grouped together.
 
-    Parameters
-    ----------
-    coord: astropy SkyCoord object
-        sky coordinates of the center of the patch, as an astropy SkyCoord object
-    radius: float
-        the radius of the patch, in degrees
-    min_points: int
-        minimum number of sources used to compute M_10 in a given pixel.
-        A given region will be subdivided into four higher-order regions
-        if all its subdivisions contain more than min_points points.
+    Args:
+        coord (astropy SkyCoord object): sky coordinates of the center of the patch, as an astropy SkyCoord object
+        radius (float): the radius of the patch, in degrees
+        min_points (int): minimum number of sources used to compute M_10 in a given pixel.
+            A given region will be subdivided into four higher-order regions
+            if all its subdivisions contain more than min_points points.
 
     Returns:
-    -------
-    A numpy array of shape (3,N) where the first column is the order of the maximum resolution reached,
-    the second column is the healpixel number, and the third is the M_10 value in that healpixel.
+        A numpy array of shape (3,N) where the first column is the order of the maximum resolution reached,
+        the second column is the healpixel number, and the third is the M_10 value in that healpixel.
     """
     ra_patch = coord.icrs.ra / u.degree
     dec_patch = coord.icrs.dec / u.degree
