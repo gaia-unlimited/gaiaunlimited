@@ -240,7 +240,7 @@ def build_patch_map(coord, radius: float, min_points: int = 20):
                 gI = GaiaT["phot_g_mean_mag"][sourceHpxThisOrder == h // 4**stepUp]
                 # print(i,h,gI); input()
                 if len(gI) >= min_points:
-                    fineMap[i] = np.median(gI)
+                    fineMap[i] = np.ma.median(gI)
                 else:
                     pass
     print("Done.")
