@@ -65,7 +65,7 @@ def angle2dist3d(sepangle):
         sepangle (float): separation in degree
         
     Returns:
-        r (float): distance corresponding to the angle on a unit sphere
+        float: distance corresponding to the angle on a unit sphere
     """
     r = 2 * np.sin(np.deg2rad(sepangle) / 2.0)
     return r
@@ -79,7 +79,7 @@ def cartesian_to_spherical(xyz):
         xyz ((N,3) array): (X,Y,Z) coordinates for each point
         
     Returns:
-        lon,lat (array (2,N)): longitude and latitude of each point
+        (2,N) array: longitude and latitude of each point
     """
     lon = np.rad2deg(np.arctan2(xyz[:, 1], xyz[:, 0]))
     lat = np.rad2deg(
