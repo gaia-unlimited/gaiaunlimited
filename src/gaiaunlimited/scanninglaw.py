@@ -41,8 +41,8 @@ def make_rotmat(fov1_xyz, fov2_xyz):
     """Make rotational matrix from ICRS to Gaia body frame(ish).
 
     Args:
-    fov1_xyz (array-like): vector pointing to FoV1. Should have shape (..., 3)
-    fov2_xyz (array-like): vector pointing to FoV2. Should have shape (..., 3)
+        fov1_xyz (array-like): vector pointing to FoV1. Should have shape (..., 3)
+        fov2_xyz (array-like): vector pointing to FoV2. Should have shape (..., 3)
 
     Returns:
         rotation matrix (..., 3, 3)
@@ -58,12 +58,30 @@ def make_rotmat(fov1_xyz, fov2_xyz):
 
 
 def angle2dist3d(sepangle):
-    """Get equivalent 3d distance of an angle on a unit sphere."""
+    """
+    Get equivalent 3d distance of an angle on a unit sphere.
+    
+    Args:
+        sepangle (float): separation in degree
+        
+    Returns:
+        r (float): distance corresponding to the angle on a unit sphere
+    """
     r = 2 * np.sin(np.deg2rad(sepangle) / 2.0)
     return r
 
 
 def cartesian_to_spherical(xyz):
+    """
+    Convert cartesian XYZ to (longitude,latitude).
+    
+    Args:
+        xyz (array of shape (N,3)): (X,Y,Z) coordinates for each point
+        
+    Returns:
+        lon (array): longitude of each point
+        lat (array): latitude of each point
+    """
     lon = np.rad2deg(np.arctan2(xyz[:, 1], xyz[:, 0]))
     lat = np.rad2deg(
         np.arctan2(xyz[:, 2], np.sqrt(xyz[:, 0] ** 2.0 + xyz[:, 1] ** 2.0))
