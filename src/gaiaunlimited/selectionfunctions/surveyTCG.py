@@ -167,14 +167,14 @@ class DR3SelectionFunctionTCG(fetch_utils.DownloadMixin):
             return prob
 
 
-def build_patch_map(coord, radius: float, min_points: int = 20):
+def build_patch_map(coord, radius, min_points=20):
     """
     Query the Gaia database and create a high-resolution healpix map of the M_10
     parameter for a given circular patch of sky.
     The pixels without a sufficient number of sources will be grouped together.
 
     Args:
-        coord (astropy SkyCoord object): sky coordinates of the center of the patch, as an astropy SkyCoord object
+        coord (:obj:`astropy.coordinates.SkyCoord`): sky coordinates of the center of the patch, as an astropy SkyCoord object
         radius (float): the radius of the patch, in degrees
         min_points (int): minimum number of sources used to compute M_10 in a given pixel.
             A given region will be subdivided into four higher-order regions
@@ -246,28 +246,20 @@ def build_patch_map(coord, radius: float, min_points: int = 20):
     return m10_map
 
 
-def sigmoid(
-    G: np.ndarray, G0: np.ndarray, invslope: np.ndarray, shape: np.ndarray
-) -> np.ndarray:
-    """Generalized sigmoid function
+def sigmoid(G, G0, invslope, shape):
+    """Generalized sigmoid function.
 
-    Parameters
-    ----------
-    G: nd.array
-        where to evaluate the function
-    G0: float
-        inflection point
-    invslope: float
-        steepness of the linear part. Shallower for larger values
-    shape: float
-        if shape=1, model is the classical logistic function,
-        shape converges to zero, then the model is a Gompertz function.
+    Note: this function is not robust to numerical issues but works within the range of values we feed it.
 
-    Returns
-    -------
-    f(G) evaluation of the model.
+    Args:
+        G (nd.array): where to evaluate the function
+        G0 (float): inflection point
+        invslope (float): steepness of the linear part. Shallower for larger values
+        shape (float): if shape=1, model is the classical logistic function,
+            shape converges to zero, then the model is a Gompertz function.
 
-        FIXME: this function is not robust to numerical issues (but works within the range of values we feed it)
+    Returns:
+        f(G) evaluation of the model.
     """
     delta = G - G0
     return 1 - (0.5 * (np.tanh(delta / invslope) + 1)) ** shape
@@ -276,20 +268,16 @@ def sigmoid(
 def m10_to_completeness(G, m10):
     """Predicts the completeness at magnitude G, given a value of M_10 read from a precomputed map.
 
-    Parameters
-    ----------
-    G:   float or nd.array
-                    where to evaluate the function
-    m10: float or nd.array
-                    the value of M_10 in a given region
+    Args:
+        G (float or nd.array): where to evaluate the function
+        m10 (float or nd.array): the value of M_10 in a given region
 
-    Returns
-    -------
-    sf(G) between 0 and 1.
-    The shape of the output will match the input:
-            if given an array (i.e. an array of positions) the output is an array
-            if given an array of Gmag and either one position or a matching array of positions, the output is also an array
-            if only given scalars, the output is one number.
+    Returns:
+        sf(G) between 0 and 1.
+        The shape of the output will match the input:
+                if given an array (i.e. an array of positions) the output is an array
+                if given an array of Gmag and either one position or a matching array of positions, the output is also an array
+                if only given scalars, the output is one number.
 
     """
     # These are the best-fit value of the free parameters we optimised in our model:
