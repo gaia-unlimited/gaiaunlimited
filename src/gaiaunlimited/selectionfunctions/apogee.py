@@ -9,16 +9,16 @@ import pkg_resources
 __all__ = ["apogee_sf"]
 
 
-def apogee_sf(apparentH: float, unreddenedJK: float, position: SkyCoord):
+def apogee_sf(apparentH, unreddenedJK, position):
     """
     Returns the probability that a star of given intrinsic colour (J-K)_0
     and apparent magnitude H and given position on the sky was targeted by
     APOGEE or APOGEE-2.
 
     Args:
-        apparentH (:float): the apparent magnitude H of the source.
+        apparentH (float or 1-d array): the apparent magnitude H of the source.
 
-        unreddenedJK (:float): the intrinsic (J-K) colour of the source.
+        unreddenedJK (float or 1-d array): the intrinsic (J-K) colour of the source.
 
         position (:obj:`astropy.coordinates.SkyCoord`): Sky coordinates at which
             to compute the selection function.
