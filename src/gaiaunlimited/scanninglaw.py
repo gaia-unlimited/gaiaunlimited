@@ -76,11 +76,10 @@ def cartesian_to_spherical(xyz):
     Convert cartesian XYZ to (longitude,latitude).
     
     Args:
-        xyz (array of shape (N,3)): (X,Y,Z) coordinates for each point
+        xyz ((N,3) array): (X,Y,Z) coordinates for each point
         
     Returns:
-        lon (array): longitude of each point
-        lat (array): latitude of each point
+        lon,lat (array (2,N)): longitude and latitude of each point
     """
     lon = np.rad2deg(np.arctan2(xyz[:, 1], xyz[:, 0]))
     lat = np.rad2deg(
