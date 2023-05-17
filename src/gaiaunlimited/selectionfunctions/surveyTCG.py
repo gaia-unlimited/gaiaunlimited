@@ -259,7 +259,8 @@ def sigmoid(G, G0, invslope, shape):
             shape converges to zero, then the model is a Gompertz function.
 
     Returns:
-        f(G) evaluation of the model.
+        evaluation of the model:
+        f(G) = 1 - (0.5 * (np.tanh(delta / invslope) + 1)) ** shape
     """
     delta = G - G0
     return 1 - (0.5 * (np.tanh(delta / invslope) + 1)) ** shape
@@ -275,9 +276,9 @@ def m10_to_completeness(G, m10):
     Returns:
         sf(G) between 0 and 1.
         The shape of the output will match the input:
-                if given an array (i.e. an array of positions) the output is an array
-                if given an array of Gmag and either one position or a matching array of positions, the output is also an array
-                if only given scalars, the output is one number.
+            if given an array (i.e. an array of positions) the output is an array
+            if given an array of Gmag and either one position or a matching array of positions, the output is also an array
+            if only given scalars, the output is one number.
 
     """
     # These are the best-fit value of the free parameters we optimised in our model:
