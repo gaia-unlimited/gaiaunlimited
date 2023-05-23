@@ -5,11 +5,12 @@ Citations and attributions
 .. TODO: add links to the article
 .. TODO: make use of __bibtex__
 
-If you use this package, please cite Castro-Ginard et al. 2022 (in prep).
+If you make use of the subset selection function
+:py:class:`gaiaunlimited.selectionfunctions.SubsampleSelectionFunction`, please cite `Castro-Ginard et al. 2023 <https://ui.adsabs.harvard.edu/abs/2023arXiv230317738C/abstract>`_.
 
 If you make use of empirical DR3 survey selection function
 :py:class:`gaiaunlimited.selectionfunctions.DR3SelectionFunctionTCG`,
-please cite `Cantat-Gaudin et al. 2022 <https://arxiv.org/abs/2208.09335>`_.
+please cite `Cantat-Gaudin et al. 2023 <https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..55C/abstract>`_.
 
 
 Data ported from Gaiaverse
