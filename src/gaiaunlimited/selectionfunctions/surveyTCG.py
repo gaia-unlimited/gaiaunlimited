@@ -50,23 +50,23 @@ class DR3SelectionFunctionTCG(fetch_utils.DownloadMixin):
 
     If you use this model in a publication please cite:
 
-        @ARTICLE{2023A&A...669A..55C,
-               author = {{Cantat-Gaudin}, Tristan and {Fouesneau}, Morgan and {Rix}, Hans-Walter and {Brown}, Anthony G.~A. and {Castro-Ginard}, Alfred and {Kostrzewa-Rutkowska}, Zuzanna and {Drimmel}, Ronald and {Hogg}, David W. and {Casey}, Andrew R. and {Khanna}, Shourya and {Oh}, Semyeong and {Price-Whelan}, Adrian M. and {Belokurov}, Vasily and {Saydjari}, Andrew K. and {Green}, G.},
-                title = "{An empirical model of the Gaia DR3 selection function}",
-              journal = {\aap},
-             keywords = {astrometry, catalogs, methods: data analysis, methods: statistical, Astrophysics - Astrophysics of Galaxies, Astrophysics - Instrumentation and Methods for Astrophysics},
-                 year = 2023,
-                month = jan,
-               volume = {669},
-                  eid = {A55},
-                pages = {A55},
-                  doi = {10.1051/0004-6361/202244784},
-        archivePrefix = {arXiv},
-               eprint = {2208.09335},
-         primaryClass = {astro-ph.GA},
-               adsurl = {https://ui.adsabs.harvard.edu/abs/2023A&A...669A..55C},
-              adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-        }
+    ``@ARTICLE{2023A&A...669A..55C,
+           author = {{Cantat-Gaudin}, Tristan and {Fouesneau}, Morgan and {Rix}, Hans-Walter and {Brown}, Anthony G.~A. and {Castro-Ginard}, Alfred and {Kostrzewa-Rutkowska}, Zuzanna and {Drimmel}, Ronald and {Hogg}, David W. and {Casey}, Andrew R. and {Khanna}, Shourya and {Oh}, Semyeong and {Price-Whelan}, Adrian M. and {Belokurov}, Vasily and {Saydjari}, Andrew K. and {Green}, G.},
+            title = "{An empirical model of the Gaia DR3 selection function}",
+          journal = {\aap},
+         keywords = {astrometry, catalogs, methods: data analysis, methods: statistical, Astrophysics - Astrophysics of Galaxies, Astrophysics - Instrumentation and Methods for Astrophysics},
+             year = 2023,
+            month = jan,
+           volume = {669},
+              eid = {A55},
+            pages = {A55},
+              doi = {10.1051/0004-6361/202244784},
+    archivePrefix = {arXiv},
+           eprint = {2208.09335},
+     primaryClass = {astro-ph.GA},
+           adsurl = {https://ui.adsabs.harvard.edu/abs/2023A&A...669A..55C},
+          adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+    }``
     """
 
     datafiles = {
