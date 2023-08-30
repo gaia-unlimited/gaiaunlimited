@@ -157,7 +157,7 @@ archivePrefix = {arXiv},
 """
     datafiles = DR2SelectionFunction.datafiles.copy()
     datafiles.update(
-        {"n_field_dr3.h5": "https://dataverse.harvard.edu/api/access/datafile/4204267"}
+        {"n_field_dr3.h5": "https://zenodo.org/record/8300616/files/n_field_dr3.h5"}
     )
     nside_n_field = 1024
     nside_crowding = 1024
