@@ -139,7 +139,7 @@ class DR3RVSSelectionFunction(SelectionFunctionBase, fetch_utils.DownloadMixin):
     """
 
     datafiles = {
-        "dr3-rvs-nk.h5": "https://dataverse.harvard.edu/api/access/datafile/6424746"
+        "dr3-rvs-nk.h5": "https://zenodo.org/record/8300616/files/dr3-rvs-nk.h5"
     }
 
     def __init__(self):
@@ -272,7 +272,7 @@ archivePrefix = {arXiv},
 """
 
     datafiles = {
-        "rvs_cogv.h5": "https://dataverse.harvard.edu/api/access/datafile/5203267"
+        "rvs_cogv.h5": "https://zenodo.org/record/8300616/files/rvs_cogv.h5"
     }
 
     # frame = ''
