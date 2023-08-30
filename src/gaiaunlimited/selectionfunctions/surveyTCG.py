@@ -70,8 +70,8 @@ class DR3SelectionFunctionTCG(fetch_utils.DownloadMixin):
     """
 
     datafiles = {
-        "allsky_M10_hpx7.hdf5": "https://github.com/TristanCantatGaudin/GaiaCompleteness/blob/main/allsky_M10_hpx7.hdf5?raw=true",
-        "allsky_uniq_10.fits": "https://keeper.mpdl.mpg.de/f/c4fb744aa7e941928da6/?dl=1",
+        "allsky_M10_hpx7.hdf5": "https://zenodo.org/record/8063930/files/allsky_M10_hpx7.hdf5",
+        "allsky_uniq_10.fits": "https://zenodo.org/record/8063930/files/allsky_uniq_10.fits",
     }
 
     def __init__(self, mode="hpx7", coord=None, radius=None, min_points=20):
