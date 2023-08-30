@@ -85,7 +85,7 @@ def download(url, file, desc=None, chunk_size=1024, md5sum=None):
 
 scanlaw_datafiles = {
     "dr2_cog3": {
-        "url": "https://dataverse.harvard.edu/api/access/datafile/4180696",
+        "url": "https://zenodo.org/record/8300616/files/cog_dr2_scanning_law_v2.csv",
         "md5sum": "b4dc9cd9f3a6930c38a19a3535eaeb86",
         "column_mapping": {
             "JulianDayNumberRefEpoch2010TCB@Gaia": "tcb_at_gaia",
