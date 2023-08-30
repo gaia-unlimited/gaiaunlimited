@@ -33,7 +33,7 @@ archivePrefix = {arXiv},
 }
 """
     datafiles = {
-        "cog_ii_dr2.h5": "https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/PDFOVC/NYV9DM"
+        "cog_ii_dr2.h5": "https://zenodo.org/record/8300616/files/cog_ii_dr2.h5"
     }
     nside_n_field = 4096
     nside_crowding = 1024
