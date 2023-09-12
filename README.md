@@ -16,6 +16,7 @@ The documentation for gaiaunlimited is hosted on [Read the docs](https://gaiaunl
 - Query ready-made Gaia DR3 subsample selection functions for
 	- the astrometry sample
 	- the RVS sample
+    - other subsets of the Gaia catalog
 
 ## Acknowledgements
 
