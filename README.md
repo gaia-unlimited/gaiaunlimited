@@ -1,6 +1,6 @@
 # gaiaunlimited
 
-[![pypi status](https://img.shields.io/pypi/v/dustapprox.svg)](https://pypi.org/project/dustapprox/)
+[![pypi status](https://img.shields.io/pypi/v/gaiaunlimited.svg)](https://pypi.org/project/gaiaunlimited/)
 [![Documentation Status](https://readthedocs.org/projects/gaiaunlimited/badge/?version=latest)](https://gaiaunlimited.readthedocs.io/en/latest/?badge=latest)
 
 gaiaunlimited is a package for querying and constructing selection functions for the Gaia survey. It is developed by the GaiaUnlimited collaboration.
