@@ -227,6 +227,13 @@ class SubsampleSelectionFunction(SelectionFunctionBase):
         df["logitp"] = logit(df["p"])
         df["p_variance"] = (df["n"] + 1) * (df["n"] - df["k"] + 1) / (df["n"] + 2) / (df["n"] + 2) / (df["n"] + 3)
         df["logit_p_variance"] = logit(df["p_variance"])
+        for key in self.hplevel_and_binning.keys():
+            if key == 'healpix': continue
+            lencol = len(np.unique(df[key+'_']))
+            if len(np.arange(self.hplevel_and_binning[key][0],self.hplevel_and_binning[key][1],self.hplevel_and_binning[key][2])) == lencol: continue
+            print('Empty slice in {}, filling with nan'.format(key))
+            for bin_key in range(len(np.arange(self.hplevel_and_binning[key][0],self.hplevel_and_binning[key][1],self.hplevel_and_binning[key][2]))):
+                if bin_key not in np.unique(df[key+'_']): df.loc[len(df),key+'_'] = bin_key
         dset_dr3 = xr.Dataset.from_dataframe(
             df.set_index([key + "_" for key in self.hplevel_and_binning.keys()])
         )
