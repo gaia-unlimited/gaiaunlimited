@@ -166,7 +166,14 @@ class SubsampleSelectionFunction(SelectionFunctionBase):
 
     def __init__(self, subsample_query, file_name, hplevel_and_binning):
         def _download_binned_subset(self):
-            query_to_gaia = f"""SELECT {self.column_names_for_select_clause} COUNT(*) AS n, SUM(selection) AS k
+            if len(self.hplevel_and_binning) == 1:
+                query_to_gaia = f"""SELECT {self.column_names_for_select_clause} COUNT(*) AS n, SUM(selection) AS k
+                                    FROM (SELECT {self.binning}
+                                        to_integer(IF_THEN_ELSE('{self.subsample_query}',1.0,0.0)) AS selection
+                                        FROM gaiadr3.gaia_source) AS subquery
+                                    GROUP BY {self.group_by_clause}"""
+            else:
+                query_to_gaia = f"""SELECT {self.column_names_for_select_clause} COUNT(*) AS n, SUM(selection) AS k
                                     FROM (SELECT {self.binning}
                                         to_integer(IF_THEN_ELSE('{self.subsample_query}',1.0,0.0)) AS selection
                                         FROM gaiadr3.gaia_source
