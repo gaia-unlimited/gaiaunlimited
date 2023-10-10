@@ -162,6 +162,28 @@ class SubsampleSelectionFunction(SelectionFunctionBase):
         P(is in subsample| is in Gaia and has G and G_RP)
 
     as a function of G magnitude and G-RP color.
+
+    See example: https://gaiaunlimited.readthedocs.io/en/latest/notebooks/SubsampleSF_Tutorial.html
+
+    If you use this module in a publication please cite::
+
+        @ARTICLE{2023A&A...677A..37C,
+               author = {{Castro-Ginard}, Alfred and {Brown}, Anthony G.~A. and {Kostrzewa-Rutkowska}, Zuzanna and {Cantat-Gaudin}, Tristan and {Drimmel}, Ronald and {Oh}, Semyeong and {Belokurov}, Vasily and {Casey}, Andrew R. and {Fouesneau}, Morgan and {Khanna}, Shourya and {Price-Whelan}, Adrian M. and {Rix}, Hans-Walter},
+                title = "{Estimating the selection function of Gaia DR3 subsamples}",
+              journal = {\aap},
+             keywords = {Galaxy: general, methods: statistical, catalogs, Astrophysics - Astrophysics of Galaxies},
+                 year = 2023,
+                month = sep,
+               volume = {677},
+                  eid = {A37},
+                pages = {A37},
+                  doi = {10.1051/0004-6361/202346547},
+        archivePrefix = {arXiv},
+               eprint = {2303.17738},
+         primaryClass = {astro-ph.GA},
+               adsurl = {https://ui.adsabs.harvard.edu/abs/2023A&A...677A..37C},
+              adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+        }
     """
 
     def __init__(self, subsample_query, file_name, hplevel_and_binning):
