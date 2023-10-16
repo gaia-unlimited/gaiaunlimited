@@ -23,6 +23,8 @@ Alternatively, clone the repository and install:
    cd gaiaunlimited
    python -m pip install .
 
+In case a local installation is not possible, the package can also be installed inside a Google Colab notebook by executing the command ``!pip install gaiaunlimited`` or  ``%pip install gaiaunlimited``.
+
 Setting the data directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
