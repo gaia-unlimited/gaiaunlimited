@@ -6,11 +6,15 @@ import numpy as np
 __all__ = ["coord2healpix", "get_healpix_centers"]
 
 
-def get_healpix_centers(order):
+def get_healpix_centers(order,nest=False):
     """Get centers of HEALPix as astropy coordinates.
 
     Args:
         order (int): The order of the pixelisation
+
+    Optional args:
+        nest (boolean): ``False`` for RING healpix scheme, ``True`` for nested.
+            default is ``False``.
 
     Returns:
         astropy.coordinates.SkyCoord: coordinates of the centers.
@@ -18,7 +22,7 @@ def get_healpix_centers(order):
     nside = hp.order2nside(order)
     npix = hp.order2npix(order)
     ipix = np.arange(npix)
-    ra, dec = hp.pix2ang(nside, ipix, lonlat=True)
+    ra, dec = hp.pix2ang(nside, ipix, lonlat=True, nest=nest)
     return coord.SkyCoord(ra * u.deg, dec * u.deg)
 
 
