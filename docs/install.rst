@@ -25,7 +25,7 @@ Alternatively, clone the repository and install:
 
 In case a local installation is not possible, the package can also be installed inside a Google Colab notebook by executing the command ``!pip install gaiaunlimited`` or  ``%pip install gaiaunlimited``.
 
-Setting the data directory
+Optional: setting the data directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Gaiaunlimited downloads and caches large binary data files. To set the data directory to store these files,
