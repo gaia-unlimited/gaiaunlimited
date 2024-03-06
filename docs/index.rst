@@ -49,7 +49,7 @@ Horizon 2020 research and innovation program under grant agreement No 101004110.
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 0
    :caption: Tutorials and illustrated examples:
 
    notebooks/rave_ratios.ipynb
