@@ -46,7 +46,11 @@ Horizon 2020 research and innovation program under grant agreement No 101004110.
    citation
    api
 
-Tutorials and illustrated examples:
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Tutorials and illustrated examples:
 
    notebooks/rave_ratios.ipynb
    notebooks/APOGEE_selection_function.ipynb
