@@ -46,4 +46,11 @@ Horizon 2020 research and innovation program under grant agreement No 101004110.
    citation
    api
 
+Tutorials and illustrated examples:
+
+   notebooks/rave_ratios.ipynb
+   notebooks/APOGEE_selection_function.ipynb
+   notebooks/RedClump_GSP-Spec_SF.ipynb
+   notebooks/cube_galaxy_sky.ipynb
+
 .. _Gaia: https://www.cosmos.esa.int/web/gaia/home
