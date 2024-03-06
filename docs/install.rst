@@ -46,6 +46,9 @@ This code queries a precomputed all-sky map and displays the completeness at mag
                title='Gaia DR3 selection function at G=21',
                min=0,max=1)
 
+.. image:: docs/notebooks/static/dr3_tcg_g21.png
+   :width: 600
+
 
 Optional: setting the data directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
