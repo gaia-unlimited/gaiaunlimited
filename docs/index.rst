@@ -40,8 +40,7 @@ Horizon 2020 research and innovation program under grant agreement No 101004110.
    notebooks/getting-started
    notebooks/dr3-empirical-completeness
    notebooks/dr3-rvs
-   notebooks/SubsampleSelectionFunction
-   notebooks/SubsampleSF_Tutorial
+   notebooks/constructing_SelectionFunctions
    notebooks/scanninglaw
    citation
    api
@@ -52,6 +51,7 @@ Horizon 2020 research and innovation program under grant agreement No 101004110.
    :maxdepth: 1
    :caption: Tutorials and illustrated examples:
 
+   notebooks/SubsampleSF_Tutorial.ipynb
    notebooks/rave_ratios.ipynb
    notebooks/APOGEE_selection_function.ipynb
    notebooks/RedClump_GSP-Spec_SF.ipynb
