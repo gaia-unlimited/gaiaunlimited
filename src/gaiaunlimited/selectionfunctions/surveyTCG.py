@@ -200,6 +200,13 @@ def build_patch_map(coord, radius, min_points=20):
     job = Gaia.launch_job_async(queryStringGaia)
     GaiaT = job.get_results()
     print(f"Obtained {len(GaiaT)} sources.")
+    # - - - TEMPORARY FIX - - - 
+    # in astroquery v0.4.7 (March 2024) some columns names
+    # are now passed in upper case (see issues 2911 and 2965).
+    try:
+        GaiaT["source_id"] = GaiaT["SOURCE_ID"]
+    except:
+        pass
 
     # find all the potential hpx ids of queried sources:
     allHpx6 = sorted(set(GaiaT["source_id"] // (2**35 * 4 ** (12 - 6))))
