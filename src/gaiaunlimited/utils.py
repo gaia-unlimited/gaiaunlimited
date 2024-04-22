@@ -7,6 +7,7 @@ from typing import Iterable, Optional, Tuple, Union
 from astropy import constants, coordinates
 import pickle
 from astromet import sigma_ast
+import time
 
 __all__ = ["coord2healpix", "get_healpix_centers","SimulateGaiaSource"]
 
@@ -89,8 +90,6 @@ class SimulateGaiaSource(fetch_utils.DownloadMixin):
         }
     """
 
-    print("Functionality under development")
-    
     datafiles = {
         "dict_SL_ruwe.pkl": " "#"https://zenodo.org/record/8063930/files/allsky_M10_hpx7.hdf5"
    }
@@ -224,8 +223,8 @@ def eta(
         η += delta_η
         if (np.max(np.abs(delta_η)) < 1e-5):
             break
-    else:
-        logger.warn(f"Did not converge after {max_iter} iterations ({delta_η:.1e}).")
+    #else:
+    #    logger.warn(f"Did not converge after {max_iter} iterations ({delta_η:.1e}).")
     
     return η
 

@@ -13,8 +13,6 @@ class BinarySystemsSelectionFunction(fetch_utils.DownloadMixin):
 
         }
     """
-
-    print("Functionality under development")
     
     datafiles = {
         "dict_SL_ruwe.pkl": " "#"https://zenodo.org/record/8063930/files/allsky_M10_hpx7.hdf5"
