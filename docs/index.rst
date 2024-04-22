@@ -40,6 +40,7 @@ Horizon 2020 research and innovation program under grant agreement No 101004110.
    notebooks/getting-started
    notebooks/dr3-empirical-completeness
    notebooks/constructing_SelectionFunctions
+   notebooks/dr3-unresolved-binaries
    notebooks/scanninglaw
    citation
    api
