@@ -9,7 +9,7 @@ import pickle
 from astromet import sigma_ast
 import time
 
-import .fetch_utils
+from . import fetch_utils
 
 __all__ = ["coord2healpix", "get_healpix_centers","SimulateGaiaSource"]
 
