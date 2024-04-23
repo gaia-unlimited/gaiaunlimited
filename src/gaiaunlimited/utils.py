@@ -102,7 +102,7 @@ class SimulateGaiaSource(fetch_utils.DownloadMixin):
 #############################################################################################
         try:
             with open(self._get_data("dict_SL_ruwe.pkl"),'rb') as f:
-                SL_hpx5 = pickle.load(f)
+                self.SL_hpx5 = pickle.load(f)
         except:
             print("WARNING: missing data file.")
             raise
@@ -113,10 +113,10 @@ class SimulateGaiaSource(fetch_utils.DownloadMixin):
         coord = coordinates.SkyCoord(ra=ra*u.degree, dec=dec*u.degree, frame='icrs')
         phi_ = coord.ra.deg
         theta_ = coord.dec.deg
-        hp_ind = hp.ang2pix(hp.order2nside(5),phi_,theta_,lonlat = True,nest = False)
-        self.t_obs = np.array(SL_hpx5[hp_ind]['observation_times_years'])
-        self.scan_angle = np.array(SL_hpx5[hp_ind]['scanning_angles_radians'])
-        self.parallax_factor = np.array(SL_hpx5[hp_ind]['AL_parallax_factor'])
+        self.hp_ind = hp.ang2pix(hp.order2nside(5),phi_,theta_,lonlat = True,nest = False)
+        self.t_obs = np.array(self.SL_hpx5[self.hp_ind]['observation_times_years'])
+        self.scan_angle = np.array(self.SL_hpx5[self.hp_ind]['scanning_angles_radians'])
+        self.parallax_factor = np.array(self.SL_hpx5[self.hp_ind]['AL_parallax_factor'])
         self.set_period_eccentricity_and_phase(period, eccentricity, initial_phase)
         return None
     def set_period_eccentricity_and_phase(self, period, eccentricity, initial_phase):
@@ -156,14 +156,18 @@ class SimulateGaiaSource(fetch_utils.DownloadMixin):
         al_errors = sigma_ast(phot_g_mean_mag).flatten()
         al_positions += np.random.normal(np.zeros_like(al_positions),al_errors.reshape((-1,1)))
         return (al_positions, al_errors)
-    def unit_weight_error(self, al_positions, al_errors):
+    def unit_weight_error(self, al_positions, al_errors,crowding = False):
         N, T = al_positions.shape
         assert al_errors.size == N
         A = self.design_matrix_solveRUWE
         C = np.linalg.solve(A.T @ A, np.eye(5))
         ACAT = A @ C @ A.T
         R = al_positions - al_positions @ ACAT
-        return np.sqrt(np.sum((R/al_errors.reshape((-1, 1)))**2, axis=1) / (T - 5))
+        if crowding: 
+            offset = np.array(self.SL_hpx5[self.hp_ind]['ruwe_threshold']) - np.array(self.SL_hpx5[self.hp_ind]['ruwe_simulation'])
+            return np.sqrt(np.sum((R/al_errors.reshape((-1, 1)))**2, axis=1) / (T - 5)) + offset
+        else:
+            return np.sqrt(np.sum((R/al_errors.reshape((-1, 1)))**2, axis=1) / (T - 5))
     @property
     def design_matrix_solveRUWE(self):
         return np.column_stack([
