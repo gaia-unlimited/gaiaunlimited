@@ -9,7 +9,24 @@ from .. import fetch_utils, utils
 class BinarySystemsSelectionFunction(fetch_utils.DownloadMixin):
     """Model to estimate detectability of binary systems in Gaia DR3 based on RUWE.
 
-    If you use this model in a publication please cite (change for new paper):
+    If you use this model in a publication please cite:
+
+    @ARTICLE{2024arXiv240414127C,
+       author = {{Castro-Ginard}, Alfred and {Penoyre}, Zephyr and {Casey}, Andrew R. and {Brown}, Anthony G.~A. and {Belokurov}, Vasily and {Cantat-Gaudin}, Tristan and {Drimmel}, Ronald and {Fouesneau}, Morgan and {Khanna}, Shourya and {Kurbatov}, Evgeny P. and {Price-Whelan}, Adrian M. and {Rix}, Hans-Walter and {Smart}, Richard L.},
+        title = "{Gaia DR3 detectability of unresolved binary systems}",
+      journal = {arXiv e-prints},
+     keywords = {Astrophysics - Astrophysics of Galaxies},
+         year = 2024,
+        month = apr,
+          eid = {arXiv:2404.14127},
+        pages = {arXiv:2404.14127},
+          doi = {10.48550/arXiv.2404.14127},
+archivePrefix = {arXiv},
+       eprint = {2404.14127},
+ primaryClass = {astro-ph.GA},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240414127C},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
 
         }
     """
