@@ -41,7 +41,6 @@ archivePrefix = {arXiv},
         try:
             with open(self._get_data("dict_SL_ruwe.pkl"),'rb') as f:
                 SL_hpx5 = pickle.load(f)
-                
 #############################################################################################
         self.ra = np.hstack([SL_hpx5[i]['ra_degrees'] for i in range(hp.order2npix(5))])
         self.dec = np.hstack([SL_hpx5[i]['dec_degrees'] for i in range(hp.order2npix(5))])
