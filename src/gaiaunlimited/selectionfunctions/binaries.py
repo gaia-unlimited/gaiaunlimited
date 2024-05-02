@@ -36,12 +36,8 @@ archivePrefix = {arXiv},
    }
 
     def __init__(self):
-        print("WARNING: This functionality is currently under development. Use with caution.")
-#############################################################################################
-        try:
-            with open(self._get_data("dict_SL_ruwe.pkl"),'rb') as f:
-                SL_hpx5 = pickle.load(f)
-#############################################################################################
+        with open(self._get_data("dict_SL_ruwe.pkl"),'rb') as f:
+            SL_hpx5 = pickle.load(f)
         self.ra = np.hstack([SL_hpx5[i]['ra_degrees'] for i in range(hp.order2npix(5))])
         self.dec = np.hstack([SL_hpx5[i]['dec_degrees'] for i in range(hp.order2npix(5))])
         self.ruwe_threshold = np.hstack([SL_hpx5[i]['ruwe_threshold'] for i in range(hp.order2npix(5))])
