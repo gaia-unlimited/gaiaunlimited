@@ -14,6 +14,7 @@ __all__ = [
     "DR3RVSSelectionFunction",
     "EDR3RVSSelectionFunction",
     "SubsampleSelectionFunction",
+    "SubsampleSelectionFunctionHMLE",
 ]
 
 
@@ -103,7 +104,7 @@ class SelectionFunctionBase:
                 ipix = utils.coord2healpix(coords, "galactic", self.nside, nest=True)
             else:
                 ipix = utils.coord2healpix(coords, "icrs", self.nside, nest=True)
-        except: 
+        except:
             ipix = utils.coord2healpix(coords, "icrs", self.nside, nest=True)
         ipix = xr.DataArray(np.atleast_1d(ipix))
         d = {}
@@ -332,3 +333,285 @@ archivePrefix = {arXiv},
                 coords=dict(g=gcenters, c=ccenters),
             )
         super().__init__(ds)
+
+
+class SubsampleSelectionFunctionHMLE():
+    """Hierarchical maximum-likelihood estimate for the subsample selection function.
+
+    This function gives the probability
+
+        P(is in subsample| is in Gaia and has the certain HEALPix [, G [, color]])
+
+    The Binomial MLE is used for estimation of the probability in the
+    HEALPix [, G [, color]] bins. If a bin is empty (no trials), the upper
+    HEALPix level will be used for estimate. If it is empty too, the next upper
+    will be used, etc.
+
+    Args:
+    subsample_query : str, optional
+    file_name : str, optional
+        File name (without extension) to store the fetched data.
+    hplevel_and_binning : dict, optional
+    data : pandas.DataFrame or xarray.Dataset or dict, optional
+
+    These are the possible use cases:
+    1. `subsample_query`, `file_name` and `hplevel_and_binning` are given
+       The data will collected through the Gaia TAP+ interface, according to
+       these parameters, then processed (see a use case #5 below).
+    2. No parameters are given
+       An empty class instance is created. The data can be processed later with
+       the `use` method.
+    3. An instance of the `SubsampleSelectionFunction` class is passed to the
+       function `use`. It is assumed that the data is already been collected.
+    4. `pandas.DataFrame` and `hplevel_and_binning` are passed to the function
+       `use`.
+    5. `xarray.Dataset` and `hplevel_and_binning` are passed to the function
+    """
+
+
+    """
+    def __init__(self, *args, **kwargs):
+        if args or kwargs:
+            if type(args[0]) is SubsampleSelectionFunction:
+                # Use case #3
+                ssf = args[0]
+                self.use_dataset(ssf.ds, ssf.hplevel_and_binning, **kwargs)
+            elif type(args[0]) is pd.DataFrame:
+                # Use case #4
+                self.use_pandas(args[0], *args, **kwargs)
+            else:
+                # Use case #2
+                subsample_query, file_name, hplevel_and_binning = args[:3]
+                ssf = SubsampleSelectionFunction(subsample_query, file_name, hplevel_and_binning)
+                self.use_dataset(ssf.ds, ssf.hplevel_and_binning, **kwargs)
+        else:
+            # Use case #1
+            pass
+    """
+
+
+    def __init__(self, subsample_query=None, file_name=None, hplevel_and_binning=None, z=None):
+        if subsample_query and file_name and hplevel_and_binning:
+            # Use case #1
+            subsample_query, file_name, hplevel_and_binning = args[:3]
+            ssf = SubsampleSelectionFunction(subsample_query, file_name, hplevel_and_binning)
+            self.use(ssf.ds, hplevel_and_binning, *args, **kwargs)
+        if (subsample_query is None) and (file_name is None) and (hplevel_and_binning is None):
+            # Use case #2, #3, ...
+            return
+        else:
+            raise ValueError("`subsample_query`, `file_name` and `hplevel_and_binning` must be set simultaneously or not.")
+
+
+    def use(self, obj, hplevel_and_binning=None, z=None):
+        if type(obj) is SubsampleSelectionFunction:
+            # Use case #3
+            self.use_dataset(obj.ds, obj.hplevel_and_binning, z)
+        elif type(obj) is xarray.Dataset:
+            # Use case #4
+            self.use_dataset(obj, hplevel_and_binning, z)
+        elif type(obj) is pd.DataFrame:
+            # Use case #5
+            self.use_pandas(obj, hplevel_and_binning, z)
+        else:
+            raise ValueError("The allowed types for `obj` are `SubsampleSelectionFunction`, `xarray.Dataset`, and `pandas.Dataframe`.")
+
+        return self
+
+
+    def use_dataset(self, ds, hplevel_and_binning, z=None):
+        """Evaluate completeness using data collected in the native format at the `SubsampleSelectionFunction` class.
+
+        Args:
+        ds: xarray.Dataset
+        hplevel_and_binning : dict
+        z : float, optional
+        """
+
+        # Check dimensions
+        assert ds['n'].shape == ds['k'].shape
+
+        self.hplevel_and_binning = hplevel_and_binning
+
+        # Convert types
+        n = ds['n'].fillna(0).astype(int).to_numpy()
+        k = ds['k'].fillna(0).astype(int).to_numpy()
+
+        # Correct counts
+        n[n < 0] = 0
+        k[k < 0] = 0
+        mask = k > n
+        k[mask] = n[mask]
+
+        self.evaluate(n, k, z)
+
+
+    def use_pandas(self, df, hplevel_and_binning, z=None):
+        """Evaluate completeness using data collected in the 'melted' format.
+
+        Args:
+        df: pandas.DataFrame
+        hplevel_and_binning : dict
+        z : float, optional
+        """
+
+        columns = list(ds.keys())
+        assert ('ipix' in columns) and ('n' in columns) and ('k' in columns), \
+            "The data frame must contain 'ipix', 'n' and 'k' fields"
+
+        self.hplevel_and_binning = hplevel_and_binning
+
+        #
+        df[['n', 'k']].fillna(0, inplace=True)
+
+        # Collect dimensions and keys
+        keys = [ 'ipix' ]
+        dims = [ hp.order2npix(self.hplevel_and_binning['healpix']) ]
+        for key in self.hplevel_and_binning.keys():
+            if key != 'healpix':
+                keys.append(key + '_')
+                val = self.hplevel_and_binning[key]
+                dims.append(len(np.arange(val[0], val[1], val[2])))
+
+        # Allocate data cubes of integers
+        # HEALPixels will occupy the zeroth dimension, the other dims will be
+        # in the order as the keys appear in the `hplevel_and_binning` dict
+        n = np.zeros(dims, dtype=int)
+        k = n.copy()
+
+        inds = tuple(df[k] for k in keys)
+        n[inds] += df['n']
+        k[inds] += df['k']
+
+        # Correct counts
+        n[n < 0] = 0
+        k[k < 0] = 0
+        mask = k > n
+        k[mask] = n[mask]
+
+        self.evaluate(n, k, z)
+
+
+    def evaluate(self, n, k, z=None):
+        """Evaluate success probability and optionally confidence interval for every pixel and magnitude/color bin.
+
+        Args:
+        n : ndarray
+        k : ndarray
+        z : float, optional
+        """
+
+        healpix_level = hp.npix2order(n.shape[0])
+
+        #
+        # Count bottom-up along the HEALPixels hierarchy
+
+        nn = [n]
+        kk = [k]
+
+        npix = n.shape[0]
+        ipix = np.arange(npix)
+        for _ in range(healpix_level, 0, -1):
+            npix_ = npix // 4
+            ipix_ = ipix.reshape((npix_, 4))
+
+            n_ = nn[0][ipix_].sum(axis=1)
+            k_ = kk[0][ipix_].sum(axis=1)
+
+            nn.insert(0, n_)
+            kk.insert(0, k_)
+
+            npix = npix_
+            ipix = np.arange(npix)
+
+        #
+        # Evaluate the hierarchical MLE
+
+        pp = []
+        ci_lo = []
+        ci_hi = []
+
+        if z is not None:
+            z2 = z**2
+
+        # Non-informative prior estimate at the global level
+        nn00 = nn[0].sum(axis=0)
+        kk00 = kk[0].sum(axis=0)
+        p_ = (kk00 + 1.0) / (nn00 + 2.0) + np.zeros_like(nn[0])
+
+        if z is not None:
+            # Confidence interval
+            var = z * np.sqrt(p_*(1.0 - p_)*nn00 + 0.25*z2)
+            ci_lo_ = (p_*nn00 + 0.5*z2 - var) / (nn00 + z2) + np.zeros_like(nn[0])
+            ci_hi_ = (p_*nn00 + 0.5*z2 + var) / (nn00 + z2) + np.zeros_like(nn[0])
+
+        for l in range(0, healpix_level+1):
+            n_ = nn[l]
+            k_ = kk[l]
+
+            if l > 0:
+                # Use a previous-level estimate by default
+                ipix_ = np.arange(n_.shape[0]) // 4
+                p_ = p_[ipix_].copy()
+
+                if z is not None:
+                    # Confidence interval
+                    ci_lo_ = ci_lo_[ipix_].copy()
+                    ci_hi_ = ci_hi_[ipix_].copy()
+
+            # Get the MLE and CI where they're defined
+            mask = n_ > 0
+            p_[mask] = k_[mask] / n_[mask]
+            pp.append(p_)
+
+            if z is not None:
+                # Confidence interval
+                var = z * np.sqrt(p_[mask]*(1.0 - p_[mask])*n_[mask] + 0.25*z2)
+                ci_lo_[mask] = (k_[mask] + 0.5*z2 - var) / (n_[mask] + z2)
+                ci_hi_[mask] = (k_[mask] + 0.5*z2 + var) / (n_[mask] + z2)
+                ci_lo.append(ci_lo_)
+                ci_hi.append(ci_hi_)
+
+        #
+        # Done
+
+        #self.p = pp[-1]
+        #self.logitp = logit(self.p)
+        #if z is not None:
+        #    self.ci_lo = hci_lo[-1]
+        #    self.ci_hi = hci_hi[-1]
+
+        self.nn = nn
+        self.kk = kk
+        self.pp = pp
+        self.ci_lo = ci_lo
+        self.ci_hi = ci_hi
+
+
+    def query(self, coords, hplevel=-1, return_confidence=False):
+        """Query the selection function at the given coordinates.
+
+        Args:
+        coords : astropy.coordinates.SkyCoord
+            Sky coordinates as an astropy coordinates instance.
+        l : int, optional
+            HEALPixel order. If omitted, the lrgest (finest) possible is used.
+
+        Returns:
+        numpy.ndarray
+            Selection probabilities
+        """
+
+        if hplevel == -1:
+            nside = hp.npix2nside(self.nn[hplevel].shape[0])
+        else:
+            nside = hp.order2nside(hplevel)
+
+        # NOTE: make input atleast_1d for .interp keyword consistency.
+        ipix = utils.coord2healpix(coords, "icrs", nside, nest=True)
+        ipix = xr.DataArray(np.atleast_1d(ipix))
+
+        if return_confidence == False:
+            return self.pp[hplevel][ipix]
+        else:
+            return self.pp[hplevel][ipix], self.ci_lo[hplevel][ipix], self.ci_hi[hplevel][ipix]
