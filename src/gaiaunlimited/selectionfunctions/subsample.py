@@ -1,3 +1,4 @@
+from collections import OrderedDict
 import h5py
 import pandas as pd
 import healpy as hp
@@ -369,33 +370,11 @@ class SubsampleSelectionFunctionHMLE():
     """
 
 
-    """
-    def __init__(self, *args, **kwargs):
-        if args or kwargs:
-            if type(args[0]) is SubsampleSelectionFunction:
-                # Use case #3
-                ssf = args[0]
-                self.use_dataset(ssf.ds, ssf.hplevel_and_binning, **kwargs)
-            elif type(args[0]) is pd.DataFrame:
-                # Use case #4
-                self.use_pandas(args[0], *args, **kwargs)
-            else:
-                # Use case #2
-                subsample_query, file_name, hplevel_and_binning = args[:3]
-                ssf = SubsampleSelectionFunction(subsample_query, file_name, hplevel_and_binning)
-                self.use_dataset(ssf.ds, ssf.hplevel_and_binning, **kwargs)
-        else:
-            # Use case #1
-            pass
-    """
-
-
     def __init__(self, subsample_query=None, file_name=None, hplevel_and_binning=None, z=None):
         if subsample_query and file_name and hplevel_and_binning:
             # Use case #1
-            subsample_query, file_name, hplevel_and_binning = args[:3]
             ssf = SubsampleSelectionFunction(subsample_query, file_name, hplevel_and_binning)
-            self.use(ssf.ds, hplevel_and_binning, *args, **kwargs)
+            self.use(ssf.ds, hplevel_and_binning, z)
         if (subsample_query is None) and (file_name is None) and (hplevel_and_binning is None):
             # Use case #2, #3, ...
             return
@@ -407,7 +386,7 @@ class SubsampleSelectionFunctionHMLE():
         if type(obj) is SubsampleSelectionFunction:
             # Use case #3
             self.use_dataset(obj.ds, obj.hplevel_and_binning, z)
-        elif type(obj) is xarray.Dataset:
+        elif type(obj) is xr.Dataset:
             # Use case #4
             self.use_dataset(obj, hplevel_and_binning, z)
         elif type(obj) is pd.DataFrame:
@@ -431,6 +410,7 @@ class SubsampleSelectionFunctionHMLE():
         # Check dimensions
         assert ds['n'].shape == ds['k'].shape
 
+        # Save it for future use in `evaluate`
         self.hplevel_and_binning = hplevel_and_binning
 
         # Convert types
@@ -455,23 +435,24 @@ class SubsampleSelectionFunctionHMLE():
         z : float, optional
         """
 
-        columns = list(ds.keys())
+        columns = df.columns
         assert ('ipix' in columns) and ('n' in columns) and ('k' in columns), \
             "The data frame must contain 'ipix', 'n' and 'k' fields"
 
+        # Save it for future use in `evaluate`
         self.hplevel_and_binning = hplevel_and_binning
 
-        #
+        # No data means zero observations
         df[['n', 'k']].fillna(0, inplace=True)
 
-        # Collect dimensions and keys
+        # Collect keys and dimensions
         keys = [ 'ipix' ]
         dims = [ hp.order2npix(self.hplevel_and_binning['healpix']) ]
-        for key in self.hplevel_and_binning.keys():
-            if key != 'healpix':
-                keys.append(key + '_')
-                val = self.hplevel_and_binning[key]
-                dims.append(len(np.arange(val[0], val[1], val[2])))
+        for key, val in self.hplevel_and_binning.items():
+            if key == 'healpix':
+                continue
+            keys.append(key + '_')
+            dims.append(len(np.arange(val[0], val[1], val[2])))
 
         # Allocate data cubes of integers
         # HEALPixels will occupy the zeroth dimension, the other dims will be
@@ -501,7 +482,7 @@ class SubsampleSelectionFunctionHMLE():
         z : float, optional
         """
 
-        healpix_level = hp.npix2order(n.shape[0])
+        hplevel = hp.npix2order(n.shape[0])
 
         #
         # Count bottom-up along the HEALPixels hierarchy
@@ -511,7 +492,7 @@ class SubsampleSelectionFunctionHMLE():
 
         npix = n.shape[0]
         ipix = np.arange(npix)
-        for _ in range(healpix_level, 0, -1):
+        for _ in range(hplevel, 0, -1):
             npix_ = npix // 4
             ipix_ = ipix.reshape((npix_, 4))
 
@@ -545,7 +526,7 @@ class SubsampleSelectionFunctionHMLE():
             ci_lo_ = (p_*nn00 + 0.5*z2 - var) / (nn00 + z2) + np.zeros_like(nn[0])
             ci_hi_ = (p_*nn00 + 0.5*z2 + var) / (nn00 + z2) + np.zeros_like(nn[0])
 
-        for l in range(0, healpix_level+1):
+        for l in range(0, hplevel+1):
             n_ = nn[l]
             k_ = kk[l]
 
@@ -573,45 +554,90 @@ class SubsampleSelectionFunctionHMLE():
                 ci_hi.append(ci_hi_)
 
         #
-        # Done
+        # Collect everything into a list of the datasets, one for each HEALPix level
 
-        #self.p = pp[-1]
-        #self.logitp = logit(self.p)
-        #if z is not None:
-        #    self.ci_lo = hci_lo[-1]
-        #    self.ci_hi = hci_hi[-1]
+        # Don't need them anymore, save some memory
+        del(nn, kk)
 
-        self.nn = nn
-        self.kk = kk
-        self.pp = pp
-        self.ci_lo = ci_lo
-        self.ci_hi = ci_hi
+        if z is not None:
+            self.finalize(pp, ci_lo, ci_hi)
+        else:
+            self.finalize(pp)
 
 
-    def query(self, coords, hplevel=-1, return_confidence=False):
+    def finalize(self, pp, ci_lo=None, ci_hi=None):
+        """Collect everything into a list of the datasets, one for each HEALPix level.
+        """
+
+        coords = OrderedDict()
+        coords['ipix'] = None
+        for key, val in self.hplevel_and_binning.items():
+            if key == 'healpix':
+                continue
+            coords[key + '_'] = np.arange(val[0], val[1], val[2])
+        print("\n* finalize")
+        print("coords =", coords)
+
+        self.hds = []
+        #hplevel = self.hplevel_and_binning['healpix']
+        #for l in range(0, hplevel+1):
+        for l in range(len(pp)):
+            coords['ipix'] = list(range(hp.order2npix(l)))
+
+            ds = xr.DataArray(logit(pp[l]), name='logitp', coords=coords).to_dataset()
+            if ci_lo is not None:
+                ds['ci_lo'] = xr.DataArray(ci_lo[l], name='ci_lo', coords=coords)
+            if ci_hi is not None:
+                ds['ci_hi'] = xr.DataArray(ci_hi[l], name='ci_hi', coords=coords)
+            self.hds.append(ds)
+
+        return self.hds
+
+
+    def query(self, coords, hplevel=-1, return_confidence=False, fill_nan=False, **kwargs):
         """Query the selection function at the given coordinates.
 
         Args:
         coords : astropy.coordinates.SkyCoord
             Sky coordinates as an astropy coordinates instance.
-        l : int, optional
-            HEALPixel order. If omitted, the lrgest (finest) possible is used.
+        hplevel : int, optional
+            HEALPixel order. If omitted, the largest (finest) possible is used.
+        return_confidence : bool, optional
+            Whether to return the confidence interval (its lower and upper bounds).
+        fill_nan : bool, optional
+            There should not be any NaNs in the data. This parameter is left
+            for backwards compatibility.
+        kwargs : named variables
+            ....
+
+        Other factors that determine this selection function should be given
+        as keyword arguments of the same shape as coords.
 
         Returns:
         numpy.ndarray
             Selection probabilities
         """
 
-        if hplevel == -1:
-            nside = hp.npix2nside(self.nn[hplevel].shape[0])
-        else:
-            nside = hp.order2nside(hplevel)
-
-        # NOTE: make input atleast_1d for .interp keyword consistency.
-        ipix = utils.coord2healpix(coords, "icrs", nside, nest=True)
+        ipix = utils.coord2healpix(coords, 'icrs', hp.order2nside(hplevel), nest=True)
         ipix = xr.DataArray(np.atleast_1d(ipix))
 
-        if return_confidence == False:
-            return self.pp[hplevel][ipix]
+        d = {}
+        for k in self.factors:
+            if k not in kwargs:
+                raise ValueError(f"{k} values are missing.")
+            d[k] = xr.DataArray(np.atleast_1d(kwargs[k]))
+        d['method'] = 'nearest'
+        d['kwargs'] = dict(fill_value=None)  # extrapolates
+
+        out = self.hds[hplevel]['logitp'].interp(ipix=ipix, **d).to_numpy()
+        if len(coords.shape) == 0:
+            out = out.squeeze()
+
+        if return_confidence:
+            out_ci_lo = self.hds[hplevel]['ci_lo'].interp(ipix=ipix, **d).to_numpy()
+            out_ci_lo.squeeze()
+            out_ci_hi = self.hds[hplevel]['ci_hi'].interp(ipix=ipix, **d).to_numpy()
+            out_ci_hi.squeeze()
+            return expit(out), out_ci_lo, out_ci_hi
         else:
-            return self.pp[hplevel][ipix], self.ci_lo[hplevel][ipix], self.ci_hi[hplevel][ipix]
+            return expit(out)
