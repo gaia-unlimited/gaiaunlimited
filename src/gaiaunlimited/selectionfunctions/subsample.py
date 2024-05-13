@@ -575,8 +575,8 @@ class SubsampleSelectionFunctionHMLE():
             if key == 'healpix':
                 continue
             coords[key + '_'] = np.arange(val[0], val[1], val[2])
-        print("\n* finalize")
-        print("coords =", coords)
+        #print("\n* finalize")
+        #print("coords =", coords)
 
         self.hds = []
         #hplevel = self.hplevel_and_binning['healpix']
@@ -622,7 +622,8 @@ class SubsampleSelectionFunctionHMLE():
         ipix = xr.DataArray(np.atleast_1d(ipix))
 
         d = {}
-        for k in self.factors:
+        factors = set(self.hds[hplevel]['logitp'].dims) - set({'ipix'})
+        for k in factors:
             if k not in kwargs:
                 raise ValueError(f"{k} values are missing.")
             d[k] = xr.DataArray(np.atleast_1d(kwargs[k]))
