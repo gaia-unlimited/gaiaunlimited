@@ -556,16 +556,13 @@ class SubsampleSelectionFunctionHMLE():
         #
         # Collect everything into a list of the datasets, one for each HEALPix level
 
-        # Don't need them anymore, save some memory
-        del(nn, kk)
-
         if z is not None:
-            self.finalize(pp, ci_lo, ci_hi)
+            self.finalize(nn, kk, pp, ci_lo, ci_hi)
         else:
-            self.finalize(pp)
+            self.finalize(nn, kk, pp)
 
 
-    def finalize(self, pp, ci_lo=None, ci_hi=None):
+    def finalize(self, nn, kk, pp, ci_lo=None, ci_hi=None):
         """Collect everything into a list of the datasets, one for each HEALPix level.
         """
 
@@ -585,6 +582,9 @@ class SubsampleSelectionFunctionHMLE():
             coords['ipix'] = list(range(hp.order2npix(l)))
 
             ds = xr.DataArray(logit(pp[l]), name='logitp', coords=coords).to_dataset()
+            ds['n'] = xr.DataArray(nn[l], name='n', coords=coords)
+            ds['k'] = xr.DataArray(kk[l], name='k', coords=coords)
+
             if ci_lo is not None:
                 ds['ci_lo'] = xr.DataArray(ci_lo[l], name='ci_lo', coords=coords)
             if ci_hi is not None:
@@ -607,8 +607,10 @@ class SubsampleSelectionFunctionHMLE():
         fill_nan : bool, optional
             There should not be any NaNs in the data. This parameter is left
             for backwards compatibility.
-        kwargs : named variables
-            ....
+        kwargs : key-value pairs
+            The key is a variable name (with '_' suffix), the value is an array
+            of the values of the variable where to interpolate. The shape of
+            the values must be the same as the shape of the 'coords'.
 
         Other factors that determine this selection function should be given
         as keyword arguments of the same shape as coords.
