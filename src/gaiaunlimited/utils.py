@@ -110,20 +110,13 @@ archivePrefix = {arXiv},
     """
 
     datafiles = {
-        "dict_SL_ruwe.pkl": " "#"https://zenodo.org/record/8063930/files/allsky_M10_hpx7.hdf5"
+        "dict_SL_ruwe.pkl": "https://zenodo.org/records/11102437/files/dict_SL_ruwe.pkl"
    }
     
     def __init__(self, ra, dec, period=0, eccentricity=0, initial_phase=0, epoch=2016.0):
         
-        print("WARNING: This functionality is currently under development. Use with caution.")
-#############################################################################################
-        try:
-            with open(self._get_data("dict_SL_ruwe.pkl"),'rb') as f:
-                self.SL_hpx5 = pickle.load(f)
-        except:
-            print("WARNING: missing data file.")
-            raise
-#############################################################################################
+        with open(self._get_data("dict_SL_ruwe.pkl"),'rb') as f:
+            self.SL_hpx5 = pickle.load(f)
         self.ra = ra
         self.dec = dec
         self.epoch = epoch
