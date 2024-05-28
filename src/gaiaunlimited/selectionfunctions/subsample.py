@@ -357,16 +357,17 @@ class SubsampleSelectionFunctionHMLE():
 
     These are the possible use cases:
     1. `subsample_query`, `file_name` and `hplevel_and_binning` are given
-       The data will collected through the Gaia TAP+ interface, according to
-       these parameters, then processed (see a use case #5 below).
-    2. No parameters are given
-       An empty class instance is created. The data can be processed later with
-       the `use` method.
+       The data will be collected through the Gaia TAP+ interface then
+        processed.
+    2. No parameters are passed
+       An empty class instance is created. The data should be provided later by
+       the user and processed with the `use` method.
     3. An instance of the `SubsampleSelectionFunction` class is passed to the
-       function `use`. It is assumed that the data is already been collected.
+       function `use`. This assumes that the data has already been collected.
     4. `pandas.DataFrame` and `hplevel_and_binning` are passed to the function
        `use`.
     5. `xarray.Dataset` and `hplevel_and_binning` are passed to the function
+       `use`.
     """
 
 
@@ -375,6 +376,7 @@ class SubsampleSelectionFunctionHMLE():
             # Use case #1
             ssf = SubsampleSelectionFunction(subsample_query, file_name, hplevel_and_binning)
             self.use(ssf.ds, hplevel_and_binning, z)
+            return
         if (subsample_query is None) and (file_name is None) and (hplevel_and_binning is None):
             # Use case #2, #3, ...
             return
@@ -423,7 +425,12 @@ class SubsampleSelectionFunctionHMLE():
         mask = k > n
         k[mask] = n[mask]
 
-        self.evaluate(n, k, z)
+        if z is not None:
+            nn, kk, pp, ci_lo, ci_hi = self.evaluate(n, k, z)
+            self.finalize(nn, kk, pp, ci_lo, ci_hi)
+        else:
+            nn, kk, pp = self.evaluate(n, k, z)
+            self.finalize(nn, kk, pp)
 
 
     def use_pandas(self, df, hplevel_and_binning, z=None):
@@ -470,7 +477,12 @@ class SubsampleSelectionFunctionHMLE():
         mask = k > n
         k[mask] = n[mask]
 
-        self.evaluate(n, k, z)
+        if z is not None:
+            nn, kk, pp, ci_lo, ci_hi = self.evaluate(n, k, z)
+            self.finalize(nn, kk, pp, ci_lo, ci_hi)
+        else:
+            nn, kk, pp = self.evaluate(n, k, z)
+            self.finalize(nn, kk, pp)
 
 
     def evaluate(self, n, k, z=None):
@@ -553,13 +565,10 @@ class SubsampleSelectionFunctionHMLE():
                 ci_lo.append(ci_lo_)
                 ci_hi.append(ci_hi_)
 
-        #
-        # Collect everything into a list of the datasets, one for each HEALPix level
-
         if z is not None:
-            self.finalize(nn, kk, pp, ci_lo, ci_hi)
+            return nn, kk, pp, ci_lo, ci_hi
         else:
-            self.finalize(nn, kk, pp)
+            return nn, kk, pp
 
 
     def finalize(self, nn, kk, pp, ci_lo=None, ci_hi=None):
