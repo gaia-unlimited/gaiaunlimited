@@ -52,10 +52,11 @@ Horizon 2020 research and innovation program under grant agreement No 101004110.
    :caption: Tutorials and illustrated examples:
 
    notebooks/SubsampleSF_Tutorial.ipynb
+   notebooks/SubsampleSF_HMLE_Tutorial.ipynb
    notebooks/rave_ratios.ipynb
    notebooks/APOGEE_selection_function.ipynb
    notebooks/RedClump_GSP-Spec_SF.ipynb
    notebooks/cube_galaxy_sky.ipynb
-   notebooks/SubsampleSF_HMLE_Tutorial.ipynb
+
 
 .. _Gaia: https://www.cosmos.esa.int/web/gaia/home
