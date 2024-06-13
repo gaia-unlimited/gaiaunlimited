@@ -13,7 +13,7 @@ __all__ = ["DR2SelectionFunction", "DR3SelectionFunction"]
 class DR2SelectionFunction(fetch_utils.DownloadMixin):
     """DR2 selection function developed by the Gaiaverse team."""
 
-    __bibtex__ = """
+    __bibtex__ = r"""
 @ARTICLE{2020MNRAS.497.4246B,
        author = {{Boubert}, Douglas and {Everall}, Andrew},
         title = "{Completeness of the Gaia verse II: what are the odds that a star is missing from Gaia DR2?}",
@@ -136,7 +136,7 @@ class DR3SelectionFunction(DR2SelectionFunction):
     (nside=1024).
     """
 
-    __bibtex__ = """
+    __bibtex__ = r"""
 @ARTICLE{2022MNRAS.509.6205E,
        author = {{Everall}, Andrew and {Boubert}, Douglas},
         title = "{Completeness of the Gaia verse - V. Astrometry and radial velocity sample selection functions in Gaia EDR3}",
