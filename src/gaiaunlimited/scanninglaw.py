@@ -121,6 +121,10 @@ def check_gaps(gaps, x):
 
 
 version_mapping = {
+    "full_operational_mission": {
+        "filename": "commanded_scan_law.csv",
+        "column_mapping": {"jd_time": "tcb_at_gaia"},
+    },
     "dr3_nominal": {
         "filename": "CommandedScanLaw_001.csv",
         "column_mapping": {"jd_time": "tcb_at_gaia"},
@@ -178,10 +182,10 @@ class GaiaScanningLaw:
         "cog3_2020": [1192.13, 3750.56],
         "dr2_nominal": [1192.13, 3750.56],
         "dr3_nominal": [1192.13, 5230.09],
+        "full_operational_mission": [1078.38, 17052.625],
     }
 
     def __init__(self, version="dr3_nominal", gaplist="dr3/Astrometry"):
-
         if version not in version_mapping:
             raise ValueError("Unsupported version")
         self.version = version
