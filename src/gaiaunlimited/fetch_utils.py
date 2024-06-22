@@ -228,7 +228,7 @@ def download_scanninglaw(name):
                 download_ftp(item["url"], f, md5sum=item["md5sum"], desc=desc)
             else:
                 download(item["url"], f, md5sum=item["md5sum"], desc=desc)
-            df = pd.read_csv(f).rename(columns=item["column_mapping"])
+            df = pd.read_csv(f, comment="#").rename(columns=item["column_mapping"])
             savedir.mkdir(exist_ok=True)
             df.to_pickle(savepath)
 
