@@ -187,8 +187,8 @@ scanlaw_datafiles = {
         "column_mapping": {"jd_time": "tcb_at_gaia"},
     },
     "full_operational_mission": {
-        "url": "sftp://anonymous@ftp.cosmos.esa.int/GAIA_PUBLIC_DATA/GaiaScanningLaw/FullGaiaMissionScanningLaw/commanded_scan_law.csv.gz",
-        "md5sum": "36a30f236da021b10573917ccba6d89a",
+        "url": "sftp://anonymous:@ftp.cosmos.esa.int/GAIA_PUBLIC_DATA/GaiaScanningLaw/FullGaiaMissionScanningLaw/commanded_scan_law.csv.gz",
+        "md5sum": "d41d8cd98f00b204e9800998ecf8427e",
         "column_mapping": {"jd_time": "tcb_at_gaia"},
     },
 }
