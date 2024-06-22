@@ -2,12 +2,11 @@ import pickle
 from pathlib import Path
 
 # from time import perf_counter
-
 import astropy.coordinates as coord
 import astropy.units as u
-from astropy.coordinates.funcs import spherical_to_cartesian
 import numpy as np
 import pandas as pd
+from astropy.coordinates.funcs import spherical_to_cartesian
 from scipy import spatial
 
 from gaiaunlimited import fetch_utils
@@ -37,6 +36,19 @@ def obmt2tcbgaia(obmt):
     return (obmt - 1717.6256) / 4 - (2455197.5 - 2457023.5 - 0.25)
 
 
+def tcbgaia2obmt(tcb_jd):
+    """
+    Calculate OnBoard Mission Time (OBMT, revs) from Gaia Barycenter coordinate time (TCB, days).
+
+    Args:
+        tcb: TCB in days.
+
+    Returns:
+        obmt: OBMT in revs.
+    """
+    return 4 * (tcb_jd + (2455197.5 - 2457023.5 - 0.25)) + 1717.6256
+
+
 def make_rotmat(fov1_xyz, fov2_xyz):
     """Make rotational matrix from ICRS to Gaia body frame(ish).
 
@@ -60,10 +72,10 @@ def make_rotmat(fov1_xyz, fov2_xyz):
 def angle2dist3d(sepangle):
     """
     Get equivalent 3d distance of an angle on a unit sphere.
-    
+
     Args:
         sepangle (float): separation in degree
-        
+
     Returns:
         float: distance corresponding to the angle on a unit sphere
     """
@@ -74,10 +86,10 @@ def angle2dist3d(sepangle):
 def cartesian_to_spherical(xyz):
     """
     Convert cartesian XYZ to (longitude,latitude).
-    
+
     Args:
         xyz ((N,3) array): (X,Y,Z) coordinates for each point
-        
+
     Returns:
         (2,N) array: longitude and latitude of each point
     """
@@ -89,6 +101,7 @@ def cartesian_to_spherical(xyz):
 
 
 # def spherical_to_cartesian()
+
 
 # TODO jit
 def check_gaps(gaps, x):
