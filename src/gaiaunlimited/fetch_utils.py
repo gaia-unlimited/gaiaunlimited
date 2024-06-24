@@ -1,3 +1,4 @@
+import ftplib
 import gzip
 import hashlib
 import io
@@ -20,7 +21,7 @@ class DownloadError(Exception):
 
 def get_datadir():
     """Get gaiasf data directory as Path.
-    
+
     Return type:
         pathlib.PosixPath object
     """
@@ -83,6 +84,87 @@ def download(url, file, desc=None, chunk_size=1024, md5sum=None):
     file.seek(0)
 
 
+def download_ftp(url, dest_file, desc=None, chunk_size=1024, md5sum=None):
+    """Download file from an FTP url.
+
+    Args:
+        url (str): url string
+        dest_file (file object): destination file object to write the content to.
+        desc (str, optional): Description of progressbar. Defaults to None.
+        chunk_size (int, optional): Chunk size to iteratively update progrss and md5sum. Defaults to 1024.
+        md5sum (str, optional): The expected md5sum to check against. Defaults to None.
+
+    Raises:
+        DownloadError: raised when md5sum differs.
+        ValueError: raised when the input url is invalid
+    """
+    url_bits = [x for x in url.split("/") if x]
+    if url_bits[0].startswith("ftp"):
+        FTP_Class = ftplib.FTP
+    elif url_bits[0].startswith("sftp"):
+        FTP_Class = ftplib.FTP_TLS
+    else:
+        raise ValueError("invalid url for FTP download")
+
+    auth_bits = url_bits[1].split("@")
+    if len(auth_bits) == 1:
+        user = ""
+        passwd = ""
+        host = auth_bits[0]
+    else:
+        user, passwd = auth_bits[0].split(":")
+        host = auth_bits[1]
+
+    path = "/".join(url_bits[2:-1])
+    filename = url_bits[-1]
+
+    if desc is None:
+        desc = filename
+
+    if len(path) == 0 or len(filename) == 0:
+        raise ValueError(
+            "failed to parse input url as a valid server, path, and filename"
+        )
+
+    with FTP_Class(host=host, user=user, passwd=passwd) as ftp:
+        ftp.prot_p()
+        ftp.cwd(path)
+        total = ftp.size(filename)
+        sig = hashlib.md5()
+
+        with io.BytesIO() as rawfile:
+            with tqdm(
+                desc=desc,
+                total=total,
+                unit="iB",
+                unit_scale=True,
+                unit_divisor=1024,
+            ) as bar:
+
+                def tqdm_callback(data):
+                    bar.update(len(data))
+                    rawfile.write(data)
+
+                ftp.retrbinary(f"RETR {filename}", tqdm_callback)
+
+            if md5sum:
+                if sig.hexdigest() != md5sum:
+                    raise DownloadError(
+                        "The MD5 sum of the downloaded file is incorrect.\n"
+                        + f"  download: {sig.hexdigest()}\n"
+                        + f"  expected: {md5sum}\n"
+                    )
+
+            rawfile.seek(0)
+            if filename.endswith("gz"):
+                with gzip.open(rawfile) as tmp:
+                    shutil.copyfileobj(tmp, dest_file)
+            else:
+                shutil.copyfileobj(rawfile, dest_file)
+
+    dest_file.seek(0)
+
+
 scanlaw_datafiles = {
     "dr2_cog3": {
         "url": "https://zenodo.org/record/8300616/files/cog_dr2_scanning_law_v2.csv",
@@ -102,6 +184,11 @@ scanlaw_datafiles = {
     "dr3_nominal": {
         "url": "http://cdn.gea.esac.esa.int/Gaia/gedr3/auxiliary/commanded_scan_law/CommandedScanLaw_001.csv.gz",
         "md5sum": "82d24407396f6008a9d72608839533a8",
+        "column_mapping": {"jd_time": "tcb_at_gaia"},
+    },
+    "full_operational_mission": {
+        "url": "sftp://anonymous:@ftp.cosmos.esa.int/GAIA_PUBLIC_DATA/GaiaScanningLaw/FullGaiaMissionScanningLaw/commanded_scan_law.csv.gz",
+        "md5sum": "d41d8cd98f00b204e9800998ecf8427e",
         "column_mapping": {"jd_time": "tcb_at_gaia"},
     },
 }
@@ -137,8 +224,11 @@ def download_scanninglaw(name):
             return
         with io.BytesIO() as f:
             desc = "Downloading {name} scanning law file".format(name=name)
-            download(item["url"], f, md5sum=item["md5sum"], desc=desc)
-            df = pd.read_csv(f).rename(columns=item["column_mapping"])
+            if item["url"].startswith("ftp") or item["url"].startswith("sftp"):
+                download_ftp(item["url"], f, md5sum=item["md5sum"], desc=desc)
+            else:
+                download(item["url"], f, md5sum=item["md5sum"], desc=desc)
+            df = pd.read_csv(f, comment="#").rename(columns=item["column_mapping"])
             savedir.mkdir(exist_ok=True)
             df.to_pickle(savepath)
 
@@ -166,7 +256,7 @@ class DownloadMixin:
         """Download data files specified in datafiles dict class attribute."""
         savedir = get_datadir()
         if not savedir.exists():
-            print('Creating directory',savedir)
+            print("Creating directory", savedir)
             os.makedirs(savedir)
         fullpath = get_datadir() / filename
         if not fullpath.exists():
