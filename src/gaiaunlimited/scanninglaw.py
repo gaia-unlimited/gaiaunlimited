@@ -2,12 +2,11 @@ import pickle
 from pathlib import Path
 
 # from time import perf_counter
-
 import astropy.coordinates as coord
 import astropy.units as u
-from astropy.coordinates.funcs import spherical_to_cartesian
 import numpy as np
 import pandas as pd
+from astropy.coordinates.funcs import spherical_to_cartesian
 from scipy import spatial
 
 from gaiaunlimited import fetch_utils
@@ -37,6 +36,19 @@ def obmt2tcbgaia(obmt):
     return (obmt - 1717.6256) / 4 - (2455197.5 - 2457023.5 - 0.25)
 
 
+def tcbgaia2obmt(tcb_jd):
+    """
+    Calculate OnBoard Mission Time (OBMT, revs) from Gaia Barycenter coordinate time (TCB, days).
+
+    Args:
+        tcb: TCB in days.
+
+    Returns:
+        obmt: OBMT in revs.
+    """
+    return 4 * (tcb_jd + (2455197.5 - 2457023.5 - 0.25)) + 1717.6256
+
+
 def make_rotmat(fov1_xyz, fov2_xyz):
     """Make rotational matrix from ICRS to Gaia body frame(ish).
 
@@ -60,10 +72,10 @@ def make_rotmat(fov1_xyz, fov2_xyz):
 def angle2dist3d(sepangle):
     """
     Get equivalent 3d distance of an angle on a unit sphere.
-    
+
     Args:
         sepangle (float): separation in degree
-        
+
     Returns:
         float: distance corresponding to the angle on a unit sphere
     """
@@ -74,10 +86,10 @@ def angle2dist3d(sepangle):
 def cartesian_to_spherical(xyz):
     """
     Convert cartesian XYZ to (longitude,latitude).
-    
+
     Args:
         xyz ((N,3) array): (X,Y,Z) coordinates for each point
-        
+
     Returns:
         (2,N) array: longitude and latitude of each point
     """
@@ -89,6 +101,7 @@ def cartesian_to_spherical(xyz):
 
 
 # def spherical_to_cartesian()
+
 
 # TODO jit
 def check_gaps(gaps, x):
@@ -108,6 +121,10 @@ def check_gaps(gaps, x):
 
 
 version_mapping = {
+    "full_operational_mission": {
+        "filename": "commanded_scan_law.csv",
+        "column_mapping": {"jd_time": "tcb_at_gaia"},
+    },
     "dr3_nominal": {
         "filename": "CommandedScanLaw_001.csv",
         "column_mapping": {"jd_time": "tcb_at_gaia"},
@@ -148,7 +165,8 @@ class GaiaScanningLaw:
 
     Args:
         version (str, required): Version of the FoV pointing data file to use.
-            One of ["dr3_nominal", "dr2_nominal", "dr2_cog3"]. Defaults to "dr3_nominal".
+            One of ["dr3_nominal", "dr2_nominal", "dr2_cog3",
+            "full_operational_mission"]. Defaults to "dr3_nominal".
         gaplist (str, optional): Name of the gap list. Defaults to "dr3/Astrometry".
             The gaplist should be "<dr?>/<sample_name>". Possible values are:
 
@@ -165,10 +183,10 @@ class GaiaScanningLaw:
         "cog3_2020": [1192.13, 3750.56],
         "dr2_nominal": [1192.13, 3750.56],
         "dr3_nominal": [1192.13, 5230.09],
+        "full_operational_mission": [1078.38, 17052.625],
     }
 
     def __init__(self, version="dr3_nominal", gaplist="dr3/Astrometry"):
-
         if version not in version_mapping:
             raise ValueError("Unsupported version")
         self.version = version
