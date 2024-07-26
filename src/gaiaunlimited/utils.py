@@ -3,7 +3,7 @@ import astropy.units as u
 import healpy as hp
 import numpy as np
 
-from typing import Iterable, Optional, Tuple, Union
+from typing import Iterable, Optional
 from astropy import constants, coordinates
 import pickle
 from astromet import sigma_ast
