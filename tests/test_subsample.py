@@ -3,7 +3,6 @@ import astropy.coordinates as coord
 import astropy.units as u
 
 from gaiaunlimited.selectionfunctions.subsample import (
-    SelectionFunctionBase,
     EDR3RVSSelectionFunction,
     DR3RVSSelectionFunction,
 )
