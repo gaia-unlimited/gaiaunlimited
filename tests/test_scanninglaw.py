@@ -1,5 +1,3 @@
-import numpy as np
-
 from gaiaunlimited.scanninglaw import GaiaScanningLaw
 from gaiaunlimited.utils import get_healpix_centers
 
