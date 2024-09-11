@@ -90,5 +90,12 @@ Andy Everall (IoA Cambridge),
    notebooks/RedClump_GSP-Spec_SF.ipynb
    notebooks/cube_galaxy_sky.ipynb
 
+.. toctree:: 
+   :maxdepth: 1
+   :caption: Community contributed tutorial and examples:
+
+   https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/SyntheticSkyMap.ipynb
+   https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/xp_sf.ipynb
+
 
 .. _Gaia: https://www.cosmos.esa.int/web/gaia/home
