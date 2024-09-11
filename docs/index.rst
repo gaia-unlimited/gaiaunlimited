@@ -25,6 +25,8 @@ Features
 + Query Gaia scanning laws for when a given sky position is scanned.
 + Query Gaia survey selection functions for the probabilities that sources of given properties are included in the Gaia catalog.
 + Query ready-made Gaia DR3 subsample selection functions for the astrometry and RVS sample.
++ Extensive worked examples of constructing selection functions for specialized samples crated form combinations of Gaia and other surveys.
++ Community contributed examples and tutorials.
 
 Acknowledgements
 ----------------
@@ -94,8 +96,8 @@ Andy Everall (IoA Cambridge),
    :maxdepth: 1
    :caption: Community contributed tutorial and examples:
 
-   [Simulated observations including selection function](https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/SyntheticSkyMap.ipynb)
-   [Completes of the Gaia DR3 XP spectra subsample](https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/xp_sf.ipynb)
+   `Simulated observations including selection function <https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/SyntheticSkyMap.ipynb>`_`
+   `Completes of the Gaia DR3 XP spectra subsample <https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/xp_sf.ipynb>`_`
 
 
 .. _Gaia: https://www.cosmos.esa.int/web/gaia/home
