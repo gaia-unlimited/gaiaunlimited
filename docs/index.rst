@@ -91,13 +91,6 @@ Andy Everall (IoA Cambridge),
    notebooks/APOGEE_selection_function.ipynb
    notebooks/RedClump_GSP-Spec_SF.ipynb
    notebooks/cube_galaxy_sky.ipynb
-
-.. toctree:: 
-   :maxdepth: 1
-   :caption: Community contributed tutorial and examples:
-
-   `Simulated observations including selection function <https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/SyntheticSkyMap.ipynb>`_
-   `Completes of the Gaia DR3 XP spectra subsample <https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/xp_sf.ipynb>`_
-
+   community-examples
 
 .. _Gaia: https://www.cosmos.esa.int/web/gaia/home
