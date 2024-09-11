@@ -94,8 +94,8 @@ Andy Everall (IoA Cambridge),
    :maxdepth: 1
    :caption: Community contributed tutorial and examples:
 
-   https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/SyntheticSkyMap.ipynb
-   https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/xp_sf.ipynb
+   [Simulated observations including selection function](https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/SyntheticSkyMap.ipynb)
+   [Completes of the Gaia DR3 XP spectra subsample](https://github.com/gaia-unlimited/community-example-applications/tree/main/notebooks/xp_sf.ipynb)
 
 
 .. _Gaia: https://www.cosmos.esa.int/web/gaia/home
