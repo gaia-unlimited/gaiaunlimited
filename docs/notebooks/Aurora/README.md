@@ -1,4 +1,4 @@
-# Density distribution of metal-poor giants in the heart of the Galaxy
+# Selection function for metal-poor giants in the heart of the Galaxy
 
 <!-- URL: [https://github.com/evgenykurbatov/kp23-turb-conv-ppd](https://github.com/evgenykurbatov/kp23-turb-conv-ppd) -->
 
@@ -7,9 +7,11 @@ This is a part of the [_GaiaUnlimited_](https://github.com/gaia-unlimited) proje
 <!-- [![arxiv](http://img.shields.io/badge/astro.GA-arXiv%3A2106.07653-B31B1B.svg)](https://arxiv.org/abs/2106.07653) -->
 
 
-## Abstract
+## Summary
 
-we utilize red giant branch (RGB) stars from *Gaia*, with metallicities estimated by Andrae et al. (2023) using spectro-photometry from *Gaia* Data Release 3 (XP). By accounting for *Gaia*'s selection functions and testing several parametric density models, we examine the spatial distribution of metal-poor ([M/H]<-1.3) RGB stars, from the Galactic center (r ~ 1 kpc) out to beyond the Solar radius (r ~ 20 kpc).
+We utilize red giant branch (RGB) stars from *Gaia*, with metallicities estimated by Andrae et al. (2023) using spectro-photometry from *Gaia* Data Release 3 (XP). By accounting for *Gaia*'s selection functions and testing several parametric density models, we examine the spatial distribution of metal-poor ([M/H]<-1.3) RGB stars, from the Galactic center (r ~ 1 kpc) out to beyond the Solar radius (r ~ 20 kpc).
+
+This is a worked example of a specialized selection function for the Gaia survey, based on the forthcoming paper by Evgeney Kurbatov et al.
 
 
 ## Installation
