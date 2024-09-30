@@ -90,6 +90,8 @@ Andy Everall (IoA Cambridge),
    notebooks/rave_ratios.ipynb
    notebooks/APOGEE_selection_function.ipynb
    notebooks/RedClump_GSP-Spec_SF.ipynb
+   notebooks/Aurora/README.md
+   notebooks/RedClumpGaiaAllWISE/README.md
    notebooks/cube_galaxy_sky.ipynb
    community-examples
 
