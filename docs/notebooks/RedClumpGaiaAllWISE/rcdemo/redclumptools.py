@@ -3,6 +3,7 @@
 '''
 
 exec(open("./packages.py").read()) 
+import numpy as np
 
 # imp.reload(dtools)
 
