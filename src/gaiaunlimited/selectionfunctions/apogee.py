@@ -136,12 +136,21 @@ def apogee_sf(apparentH, unreddenedJK, position):
 
         if len(selectionFraction) == 1:
             to_return.append(selectionFraction[0] * akFraction[0])
-        else:
+        elif len(selectionFraction) == 2 and all(selectionFraction):
             to_return.append(
                 (
                     sum(selectionFraction)
-                    - np.prod(selectionFraction) * 0.5 * sum(akFraction)
+                    - np.prod(selectionFraction) * np.mean(akFraction)
                 )
+            )
+        else:
+            selectionFraction = np.array(selectionFraction)
+            non_zero_index = selectionFraction.nonzero()
+            to_return.append(
+                (
+                    selectionFraction[non_zero_index]
+                    * np.array(akFraction)[non_zero_index]
+                )[0]
             )
 
     if inputIsList:
