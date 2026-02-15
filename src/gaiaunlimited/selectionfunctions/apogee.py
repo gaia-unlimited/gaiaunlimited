@@ -1,10 +1,8 @@
 from astropy.coordinates import SkyCoord
-import astropy.coordinates as coord
 import astropy.units as units
 from astropy.table import Table
 import numpy as np
-from pathlib import Path
-import pkg_resources
+import importlib_resources
 
 __all__ = ["apogee_sf"]
 
@@ -27,20 +25,29 @@ def apogee_sf(apparentH, unreddenedJK, position):
         The selection function as either a float (between 0 and 1) or a numpy array
         of floats, with the same length as the input.
     """
-    # Read the precomputed table with the details for each field:
-    apogee_frac_path = pkg_resources.resource_filename(
-        "gaiaunlimited", "data/apogee_sampling_fractions.csv"
+    # Read the precomputed table with the details for each field. First, check if it exists.
+    ref = (
+        importlib_resources.files("gaiaunlimited")
+        / "data/apogee_sampling_fractions.csv"
     )
-    if not Path(apogee_frac_path).resolve().is_file():
-        datadir_path = pkg_resources.resource_filename("gaiaunlimited", "data/")
-        import os
+    with importlib_resources.as_file(ref) as apogee_frac_path:
+        if not apogee_frac_path.resolve().is_file():
+            ref_b = importlib_resources.files("gaiaunlimited") / "data/"
+            with importlib_resources.as_file(ref_b) as datadir_path:
+                import os
 
-        print(datadir_path)
-        print(os.listdir(datadir_path))
-        print(os.listdir(datadir_path + "/.."))
-        print(Path(apogee_frac_path).resolve())
-        raise ValueError("Precomputed APOGEE selection fraction file not found.")
-    tApogeeSF = Table.read(apogee_frac_path)
+                print("\n-----------------------------")
+                print(f"File expected in folder: {datadir_path}")
+                print(f"Folder contents: {os.listdir(datadir_path)}")
+                print(f"Parent folder contents: {os.listdir(datadir_path / '..')}")
+                print(f"Missing file: {apogee_frac_path.resolve()}")
+                print(f"------------------------------\n")
+                raise ValueError(
+                    "Precomputed APOGEE selection fraction file not found."
+                )
+        else:
+            tApogeeSF = Table.read(apogee_frac_path)
+
     allFieldNames = sorted(set(tApogeeSF["FIELD"]))
     allFieldCenterL = [
         tApogeeSF["GLON"][tApogeeSF["FIELD"] == f][0] for f in allFieldNames
@@ -129,8 +136,8 @@ def apogee_sf(apparentH, unreddenedJK, position):
                 selectionFraction.append(tF["fracSampling"][2])
                 akFraction.append(tF["fracAK"][2])
 
-            #not in any cohort: typically between short/medium in some fields
-            else:    
+            # not in any cohort: typically between short/medium in some fields
+            else:
                 selectionFraction.append(0)
                 akFraction.append(0)
 
