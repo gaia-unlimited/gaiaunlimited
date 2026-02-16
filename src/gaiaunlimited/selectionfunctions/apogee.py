@@ -2,7 +2,7 @@ from astropy.coordinates import SkyCoord
 import astropy.units as units
 from astropy.table import Table
 import numpy as np
-import importlib_resources
+from importlib import resources
 
 __all__ = ["apogee_sf"]
 
@@ -26,14 +26,11 @@ def apogee_sf(apparentH, unreddenedJK, position):
         of floats, with the same length as the input.
     """
     # Read the precomputed table with the details for each field. First, check if it exists.
-    ref = (
-        importlib_resources.files("gaiaunlimited")
-        / "data/apogee_sampling_fractions.csv"
-    )
-    with importlib_resources.as_file(ref) as apogee_frac_path:
+    ref = resources.files("gaiaunlimited") / "data/apogee_sampling_fractions.csv"
+    with resources.as_file(ref) as apogee_frac_path:
         if not apogee_frac_path.resolve().is_file():
-            ref_b = importlib_resources.files("gaiaunlimited") / "data/"
-            with importlib_resources.as_file(ref_b) as datadir_path:
+            ref_b = resources.files("gaiaunlimited") / "data/"
+            with resources.as_file(ref_b) as datadir_path:
                 import os
 
                 print("\n-----------------------------")
