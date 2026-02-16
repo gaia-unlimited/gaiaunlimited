@@ -150,7 +150,7 @@ class DR3SelectionFunctionTCG(fetch_utils.DownloadMixin):
             nside = 2 ** order_map[0]
             ipix = utils.coord2healpix(coords, "icrs", nside)
             # if using custom maps, the user might query a point outside the map:
-            is_in_map = np.in1d(ipix, ipix_map)
+            is_in_map = np.isin(ipix, ipix_map)
             if np.all(is_in_map) == False:
                 print("Warning: some requested points are outside the map.")
                 # print(coords[~is_in_map])
@@ -161,7 +161,7 @@ class DR3SelectionFunctionTCG(fetch_utils.DownloadMixin):
                     m10_map = np.append(m10_map, np.nan)
             pointIndices = np.array(
                 [np.where(ipix_map == foo)[0][0] for foo in ipix]
-            )  # horrendous but works, could be clearer with np.in1d?
+            )  # horrendous but works, could be clearer with np.isin?
             allM10 = m10_map[pointIndices]
             prob = m10_to_completeness(gmag.astype(float), allM10)
             return prob
@@ -200,7 +200,7 @@ def build_patch_map(coord, radius, min_points=20):
     job = Gaia.launch_job_async(queryStringGaia)
     GaiaT = job.get_results()
     print(f"Obtained {len(GaiaT)} sources.")
-    # - - - TEMPORARY FIX - - - 
+    # - - - TEMPORARY FIX - - -
     # in astroquery v0.4.7 (March 2024) some columns names
     # are now passed in upper case (see issues 2911 and 2965).
     try:
