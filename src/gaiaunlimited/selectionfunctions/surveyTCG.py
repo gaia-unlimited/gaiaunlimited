@@ -70,8 +70,8 @@ class DR3SelectionFunctionTCG(fetch_utils.DownloadMixin):
     """
 
     datafiles = {
-        "allsky_M10_hpx7.hdf5": "https://zenodo.org/record/8063930/files/allsky_M10_hpx7.hdf5",
-        "allsky_uniq_10.fits": "https://zenodo.org/record/8063930/files/allsky_uniq_10.fits",
+        "allsky_M10_hpx7.hdf5": "https://doi.org/10.5281/zenodo.8063929/files/allsky_M10_hpx7.hdf5",
+        "allsky_uniq_10.fits": "https://doi.org/10.5281/zenodo.8063929/files/allsky_uniq_10.fits",
     }
 
     def __init__(self, mode="hpx7", coord=None, radius=None, min_points=20):
