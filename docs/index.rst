@@ -24,6 +24,7 @@ Features
 
 + Query Gaia scanning laws for when a given sky position is scanned.
 + Query Gaia survey selection functions for the probabilities that sources of given properties are included in the Gaia catalog.
++ Query the forward model of the Gaia DR3 survey selection function, and the effective scanning law it recovers.
 + Query ready-made Gaia DR3 subsample selection functions for the astrometry and RVS sample.
 + Extensive worked examples of constructing selection functions for specialized samples crated form combinations of Gaia and other surveys.
 + Community contributed examples and tutorials.
@@ -73,6 +74,7 @@ Andy Everall (IoA Cambridge),
    install
    notebooks/getting-started
    notebooks/dr3-empirical-completeness
+   notebooks/dr3-forward-model
    notebooks/constructing_SelectionFunctions
    notebooks/dr3-unresolved-binaries
    notebooks/scanninglaw

@@ -12,6 +12,10 @@ If you make use of empirical DR3 survey selection function
 :py:class:`gaiaunlimited.selectionfunctions.DR3SelectionFunctionTCG`,
 please cite `Cantat-Gaudin et al. 2023 <https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..55C/abstract>`_.
 
+If you make use of the forward model of the DR3 survey selection function
+:py:class:`gaiaunlimited.selectionfunctions.DR3SelectionFunctionForwardModel`,
+please cite `Castro-Ginard et al. 2026 <https://arxiv.org/abs/2610.32551>`_.
+
 
 Data ported from Gaiaverse
 ------------------------------------------------
